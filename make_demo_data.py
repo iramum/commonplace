@@ -2,7 +2,7 @@
 """Commonplace — synthetic demo data (portfolio version). “Oops, I wrote it again.”
 
 Fictional writer “Nora Vale”, Medium publication “The Open Studio”.
-Topic: contemporary art and curating — how young artists live, open calls, residencies,
+Topic: contemporary art, curating and AI — how young artists live, open calls, residencies,
 prices, galleries. Every number, name, quote and title here is invented. Same JSON shape as the
 real morning robot, so the app screens are reused one-to-one; “notes” is new (the commonplace book).
 
@@ -41,9 +41,9 @@ ARTS = [
     ("instagram-artists", "Instagram Is Not Your Portfolio", "essay", 73, "instagram for artists", "dead"),
     ("curator-studio-visit", "How to Prepare for a Curator's Studio Visit", "guide", 67, "studio visit tips", "work"),
     ("grant-applications", "Grant Applications for Artists: A Plain Checklist", "guide", 60, "grants for artists", "grow"),
-    ("shipping-artworks", "Shipping Artworks Abroad Without Losing Your Fee", "guide", 54, "shipping artwork internationally", "wave"),
+    ("ai-curating", "Can an Algorithm Curate a Show? I Tried It for a Month", "essay", 54, "ai curating exhibition", "wave"),
     ("artist-run-spaces", "Artist-Run Spaces Are the New Galleries", "essay", 47, "artist run space", "dead"),
-    ("consignment-contract", "The Consignment Contract, Clause by Clause", "guide", 41, "artist consignment agreement", "wave"),
+    ("ai-authorship", "Who Owns an AI-Assisted Artwork?", "guide", 41, "ai art copyright", "wave"),
     ("curating-without-institution", "Curating Without an Institution", "essay", 35, "independent curator", "grow"),
     ("portfolio-pdf", "The Portfolio PDF Curators Open to Page Two", "guide", 29, "artist portfolio pdf", "wave"),
     ("ai-images-artists", "AI Images and Young Artists: One Year of Data", "data", 22, "ai art artists income", "grow"),
@@ -69,8 +69,9 @@ def series(shape, age_days):
     return out
 
 
+PUBS = ["The Open Studio on Medium", "Atlas Review", "Gallery Notes"]
 articles = []
-for slug, title, typ, ago, key, shape in ARTS:
+for k_, (slug, title, typ, ago, key, shape) in enumerate(ARTS):
     imp = series(shape, ago)
     rate = {"work": 0.11, "wave": 0.05, "grow": 0.07, "new": 0.06, "dead": 0.02}[shape]
     views, views_prev = sum(imp[-4:]), sum(imp[-8:-4])
@@ -78,7 +79,8 @@ for slug, title, typ, ago, key, shape in ARTS:
     pos = round({"work": 4.2, "wave": 9.5, "grow": 7.8, "new": 12.4, "dead": 18.6}[shape] * random.uniform(.85, 1.15), 1)
     follows = max(0, int(reads * {"work": .05, "wave": .02, "grow": .04, "new": .03, "dead": .005}[shape]))
     articles.append({
-        "slug": slug, "url": f"https://medium.com/{PUB}/{slug}", "live": True, "title": title, "keyword": key, "type": typ,
+        "slug": slug, "publication": PUBS[0] if k_ % 3 != 2 else PUBS[1 + (k_ // 3) % 2],
+        "url": f"https://medium.com/{PUB}/{slug}", "live": True, "title": title, "keyword": key, "type": typ,
         "published": d(-ago), "modified": d(-9) if slug == "gallery-commission" else d(-ago),
         "gsc": {"clicks": reads, "impr": views, "pos": pos, "ctr": round(reads / views * 100, 1) if views else 0},
         "gsc_prev": {"clicks": reads_prev, "impr": views_prev, "pos": round(pos + random.uniform(-1.5, 2), 1)},
@@ -176,6 +178,25 @@ feeds = [
         "New residency map: 120 programmes without a fee", "Museums start paying exhibition fees to living artists"]},
 ]
 
+
+# ---------------------------------------------------------------- about me (copy-paste kit for editors, CVs, festivals)
+profile = {
+    "name": "Nora Vale", "role": "Writer on contemporary art, curating and AI", "city": "Berlin",
+    "email": "nora@example.com", "site": "noravale.example", "links": ["Medium: @noravale", "Instagram: @nora.vale.writes"],
+    "bios": [
+        {"id": "line", "label": "One line", "for": "Bylines, social profiles", "text": "Nora Vale writes about how young artists live, curate and work with AI."},
+        {"id": "short", "label": "Short, third person", "for": "Magazines and festival programmes",
+         "text": "Nora Vale is a Berlin-based writer on contemporary art, curating and AI. She runs The Open Studio on Medium, where she writes about what young artists earn, how open calls really work and what AI changes in the studio. Her essays also appear in Atlas Review and Gallery Notes."},
+        {"id": "first", "label": "Short, first person", "for": "Pitches and emails to editors",
+         "text": "I write about contemporary art from the studio side: prices, open calls, residencies and, lately, what AI changes for artists and curators. My Medium publication The Open Studio has around 3,000 reads a month."},
+        {"id": "cv", "label": "CV line", "for": "CVs and grant applications",
+         "text": "Writer and editor, The Open Studio (Medium), since 2024. Contributing writer, Atlas Review and Gallery Notes. Topics: art market for emerging artists, independent curating, AI and authorship."},
+        {"id": "talk", "label": "Speaker intro", "for": "Panels and talks",
+         "text": "Nora Vale writes about the economy of young artists and the arrival of AI in curating. She has applied to forty open calls, curated two shows without an institution and now writes so that others do not have to learn it the hard way."},
+    ],
+    "used": [{"bio": "short", "where": "Atlas Review, contributor page", "date": d(-12)}, {"bio": "cv", "where": "Grant application, city arts fund", "date": d(-30)}],
+}
+
 # ---------------------------------------------------------------- notes (the commonplace book)
 notes = [
     {"id": "n-01", "date": d(0), "source": "Studio visit", "text": "A curator spent 4 minutes on the walls and 20 on the sketchbooks. Show the process, not only the finished works.",
@@ -194,6 +215,8 @@ notes = [
      "tags": ["gallery", "quote"], "status": "idea", "link": "gallery-commission"},
     {"id": "n-08", "date": d(-15), "source": "Idea", "text": "A piece written as a price list: what a first solo show actually costs, line by line, paid by whom.",
      "tags": ["solo show", "money"], "status": "used", "link": "first-solo-show"},
+    {"id": "n-10", "date": d(-3), "source": "Panel", "text": "A curator on AI: “The machine can sort a thousand portfolios. It cannot sit in a studio and notice what the artist is afraid to show.”",
+     "tags": ["ai", "curating", "quote"], "status": "idea", "link": "ai-curating"},
     {"id": "n-09", "date": d(-19), "source": "Walk", "text": "Artist-run spaces close because the founder burns out, not because nobody comes.",
      "tags": ["artist-run", "burnout"], "status": "seed", "link": None},
 ]
@@ -214,6 +237,8 @@ ideas = [
      "why": "Search suggests 9 versions; no piece of yours answers it", "score": 9},
     {"source": "keys", "keyword": "how to start collecting art", "variants": ["buying art for the first time"], "cluster": "Collecting", "audience": "collector",
      "why": "Search suggests 7 versions; the collectors piece is data, not a how-to", "score": 7},
+    {"source": "keys", "keyword": "ai art copyright", "variants": ["who owns ai generated art", "ai art exhibition rules"], "cluster": "AI", "audience": "curator",
+     "why": "Search suggests 10 versions; your authorship piece waved and faded, a plain Q&A could hold", "score": 11},
     {"source": "telegram", "keyword": None, "cluster": "Survey: what emerging artists earned from sales in 2026", "audience": None,
      "why": f"Digest, {d(-3)}", "url": "https://example.com/digest/1", "score": 3},
     {"source": "telegram", "keyword": None, "cluster": "Museums start paying exhibition fees to living artists", "audience": None,
@@ -281,11 +306,11 @@ data = {
     "generated_at": dt.datetime.utcnow().replace(microsecond=0).isoformat() + "Z", "gsc_last_day": d(-2), "site_last_published": d(-2),
     "totals": totals, "alerts": alerts, "plan": plan, "articles": articles, "opportunities": opportunities, "rising_queries": rising,
     "keywords": keywords, "queue": queue, "reddit": reddit, "ai": ai, "audits": audits, "done": done, "errors": [],
-    "audiences": {"rule": "Write for the people who already read and follow: art-school graduates, artists with a day job and independent curators. Young gallerists and first-time collectors read occasionally, and collectors are growing.",
+    "audiences": {"rule": "Write for the people who already read and follow: art-school graduates, artists with a day job and independent curators, and more and more people asking what AI changes in art. Young gallerists and first-time collectors read occasionally, and collectors are growing.",
                   "personas": personas, "confirmed_pains": confirmed,
                   "content_not_offer": "Asked about, but not worth a piece yet: which brushes, which camera for artwork photos, studio lighting."},
     "pain_map": pain_map, "research_extra": {"docs": research_docs, "sections": [], "pains": [], "ideas": []},
-    "telegram": feeds, "ideas": ideas, "notes": notes, "calendar": calendar,
+    "telegram": feeds, "ideas": ideas, "notes": notes, "calendar": calendar, "profile": profile, "publications": PUBS,
     "calendar_notion": True, "calendar_ig": True, "stale_notion": 0,
 }
 os.makedirs(os.path.dirname(OUT), exist_ok=True)

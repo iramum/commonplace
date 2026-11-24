@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Commonplace, case study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#242424;--ink2:#191919;--body:#6B6B6B;--muted:#8C8C8C;--line:#F2F2F2;--line2:#E5E5E5;--yellow:#FFC017;--yp:#FFFAE1;--green:#1A8917;--gp:#E8F3E8;--red:#C94A4A;--rp:#FBECEC;
+ --display:'Newsreader',Georgia,serif;--serif:'Source Serif 4',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--ink);font-family:var(--serif);font-size:20px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.col{max-width:720px;margin:0 auto;padding:0 24px}
+.wide{max-width:1180px;margin:0 auto;padding:0 24px}
+header{border-bottom:1px solid var(--line)}
+header .in{display:flex;align-items:center;gap:14px;max-width:1180px;margin:0 auto;padding:14px 24px;font-family:var(--sans);font-size:14px}
+header .wm{font-family:var(--display);font-size:24px}
+header .sp{flex:1}
+a{color:inherit}
+.btn{display:inline-flex;align-items:center;height:36px;padding:0 16px;border-radius:999px;background:var(--ink2);color:#fff;text-decoration:none;font-family:var(--sans);font-size:13px;font-weight:500}
+.btn.o{background:#fff;color:var(--ink2);border:1px solid var(--ink2)}
+.kicker{font-family:var(--sans);font-size:13px;color:var(--body);letter-spacing:.02em}
+h1{font-family:var(--display);font-weight:400;font-size:64px;line-height:1.02;letter-spacing:-.02em;margin:12px 0 10px}
+.tag{font-family:var(--display);font-style:italic;font-size:30px;color:var(--body);margin:0 0 28px}
+h2{font-family:var(--display);font-weight:500;font-size:34px;line-height:1.15;letter-spacing:-.01em;margin:0 0 16px}
+h3{font-family:var(--sans);font-weight:600;font-size:16px;margin:28px 0 8px}
+p{margin:0 0 18px}
+.chap{padding:72px 0;border-top:1px solid var(--line)}
+.num{font-family:var(--sans);font-size:13px;color:var(--muted);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.sq{display:inline-block;width:10px;height:10px;background:var(--ink2)}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);margin:36px 0;font-family:var(--sans)}
+.facts div{padding:16px 16px 16px 0}
+.facts .k{font-size:12px;color:var(--muted)}
+.facts .v{font-size:15px;color:var(--ink);margin-top:4px}
+@media(max-width:760px){.facts{grid-template-columns:repeat(2,minmax(0,1fr))} h1{font-size:44px} .tag{font-size:24px} h2{font-size:28px} body{font-size:18px}}
+.hero{margin:40px 0 0;border:1px solid var(--line2);border-radius:4px;overflow:hidden}
+.hero img,.shot img{display:block;width:100%;height:auto}
+.quote{font-family:var(--serif);font-style:italic;font-size:26px;line-height:1.45;border-left:3px solid var(--yellow);padding-left:20px;margin:28px 0}
+.list{font-family:var(--sans);font-size:16px;line-height:1.55;padding:0;margin:0 0 18px;list-style:none}
+.list li{padding:12px 0;border-bottom:1px solid var(--line);display:flex;gap:12px}
+.list li .sq{margin-top:7px;flex:none}
+.jobs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;font-family:var(--sans);font-size:15px;line-height:1.5}
+@media(max-width:760px){.jobs{grid-template-columns:1fr}}
+.job{border:1px solid var(--line2);border-radius:4px;padding:18px}
+.job .w{font-size:12px;color:var(--muted)}
+.job .t{font-family:var(--serif);font-size:18px;margin:6px 0 0;color:var(--ink)}
+.flow{overflow-x:auto;margin:28px 0}
+.flowsvg{min-width:980px;display:block}
+.legend{font-family:var(--sans);font-size:13px;color:var(--body);display:flex;gap:18px;flex-wrap:wrap}
+.dot{display:inline-block;width:10px;height:10px;border-radius:999px;margin-right:6px;vertical-align:0}
+.shot{margin:28px 0 8px;border:1px solid var(--line2);border-radius:4px;overflow:hidden}
+.note{font-family:var(--sans);font-size:14px;line-height:1.55;color:var(--ink2);background:#fff;border-left:3px solid var(--ink2);padding:4px 0 4px 16px;margin:14px 0 44px;display:grid;grid-template-columns:90px 1fr;gap:4px 14px}
+.note b{font-weight:600}
+.two{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:40px;align-items:start}
+@media(max-width:900px){.two{grid-template-columns:1fr}}
+.decisions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;font-family:var(--sans);font-size:15px;line-height:1.55}
+@media(max-width:760px){.decisions{grid-template-columns:1fr}}
+.dec{border-top:2px solid var(--ink2);padding-top:12px}
+.dec .h{font-weight:600;margin-bottom:6px}
+footer{border-top:1px solid var(--line);padding:40px 0 80px;font-family:var(--sans);font-size:14px;color:var(--body)}
+.pill{display:inline-block;font-family:var(--sans);font-size:12px;padding:2px 9px;border-radius:999px;background:var(--line);color:var(--body)}
+</style>
+</head>
+<body>
+<header><div class="in"><span class="wm">Commonplace</span><span class="kicker">Case study</span><span class="sp"></span><a class="btn" href="index.html">Open the prototype</a></div></header>
+
+<section class="col" style="padding-top:64px">
+  <div class="kicker">Personal product, 2026</div>
+  <h1>Commonplace</h1>
+  <p class="tag">Oops, I wrote it again.</p>
+  <p>A workspace for writers who publish in several digital outlets. It keeps the notes a writer collects, shows which published pieces are still alive, suggests what to write next from evidence, and holds the short texts about yourself that you paste again and again.</p>
+  <div class="facts">
+    <div><div class="k">Role</div><div class="v">Product and UX design, prototype</div></div>
+    <div><div class="k">Built with</div><div class="v">AI-assisted coding (Claude Code)</div></div>
+    <div><div class="k">Platform</div><div class="v">Web app, desktop and phone</div></div>
+    <div><div class="k">Status</div><div class="v">Personal tool, demo on invented data</div></div>
+  </div>
+</section>
+<div class="wide"><div class="hero"><img src="shots/today.png" alt="Commonplace, the Today screen: greeting, latest note as a quote, reads and views, a two-week calendar and the plan for the day"></div></div>
+
+<section class="col chap" style="margin-top:72px">
+  <div class="num"><span class="sq"></span>01 Where it comes from</div>
+  <h2>I built it for my own writing work first</h2>
+  <p>I write long articles for a website every week. My morning used to start in several places: site analytics, Google Search Console, a content calendar, research files and my notes. Before I knew what needed me, a good part of the morning was gone.</p>
+  <p>So I built myself one screen for the morning, with an automatic data pull behind it. It worked, and I kept adding to it: a calendar, a pain map of my readers, a list of ideas checked against what I had already published.</p>
+  <p>This case shows the same product turned into a general tool for any writer. The writer, Nora Vale, and every number, note and quote in the demo are invented. The flow and the screens are the ones I use.</p>
+  <div class="quote">The writer does not lack data. She lacks one place that says what the data means this morning.</div>
+</section>
+
+<section class="col chap">
+  <div class="num"><span class="sq"></span>02 Who it is for</div>
+  <h2>Nora writes about art, curating and AI</h2>
+  <p>She runs a publication on Medium and contributes to two digital magazines. Her readers are young artists, artists with a day job and independent curators, and more and more people who ask what AI changes in art. She writes three or four pieces a month next to curating and teaching.</p>
+  <h3>Jobs to be done</h3>
+  <div class="jobs">
+    <div class="job"><div class="w">When I start the day</div><div class="t">I want to see what needs me first, so I do not open several tabs before I write a line.</div></div>
+    <div class="job"><div class="w">When I notice something at a show or a studio visit</div><div class="t">I want to keep it in one place, so it can grow into a piece later.</div></div>
+    <div class="job"><div class="w">When I choose the next topic</div><div class="t">I want evidence that readers ask for it and that I have not written it already.</div></div>
+    <div class="job"><div class="w">When I look back</div><div class="t">I want to know which pieces still live and which to let go, without opening every stats page.</div></div>
+    <div class="job"><div class="w">When an editor or a festival asks who I am</div><div class="t">I want the right bio in the right length in one click.</div></div>
+    <div class="job"><div class="w">When a planned piece slips</div><div class="t">I want the calendar to tell me honestly, not to keep pretending it is on track.</div></div>
+  </div>
+</section>
+
+<section class="wide chap">
+  <div class="col" style="padding:0">
+    <div class="num"><span class="sq"></span>03 The flow</div>
+    <h2>From a note to a piece, and back</h2>
+    <p>The loop has eight steps. Five of them are hers, one belongs to AI, and two run on their own every morning. Measuring closes the loop: what readers ask in the comments comes back as notes and ideas.</p>
+  </div>
+  <div class="flow">
+    <svg class="flowsvg" viewBox="0 0 1130 230" role="img" aria-label="Flow: notice, note, idea, plan, write with AI, publish, ask Google to index, measure, and back to notes">
+      <defs><marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#191919"/></marker></defs>
+      <g font-family="Inter, sans-serif" font-size="13">
+        <g transform="translate(10,40)"><rect width="118" height="76" rx="4" fill="#191919"/><text x="14" y="30" fill="#fff" font-weight="600">Notice</text><text x="14" y="52" fill="#fff" font-size="12">show, studio,</text><text x="14" y="67" fill="#fff" font-size="12">reading</text></g>
+        <g transform="translate(150,40)"><rect width="118" height="76" rx="4" fill="#191919"/><text x="14" y="30" fill="#fff" font-weight="600">Note</text><text x="14" y="52" fill="#fff" font-size="12">Notes, a seed</text></g>
+        <g transform="translate(290,40)"><rect width="118" height="76" rx="4" fill="#E8F3E8"/><text x="14" y="30" fill="#1A8917" font-weight="600">Idea</text><text x="14" y="52" fill="#1A8917" font-size="12">checked against</text><text x="14" y="67" fill="#1A8917" font-size="12">what exists</text></g>
+        <g transform="translate(430,40)"><rect width="118" height="76" rx="4" fill="#191919"/><text x="14" y="30" fill="#fff" font-weight="600">Plan</text><text x="14" y="52" fill="#fff" font-size="12">a date in the</text><text x="14" y="67" fill="#fff" font-size="12">calendar</text></g>
+        <g transform="translate(570,40)"><rect width="118" height="76" rx="4" fill="#FFFAE1" stroke="#FFC017"/><text x="14" y="30" fill="#7A5A00" font-weight="600">Write with AI</text><text x="14" y="52" fill="#7A5A00" font-size="12">brief, questions,</text><text x="14" y="67" fill="#7A5A00" font-size="12">fact check</text></g>
+        <g transform="translate(710,40)"><rect width="118" height="76" rx="4" fill="#191919"/><text x="14" y="30" fill="#fff" font-weight="600">Publish</text><text x="14" y="52" fill="#fff" font-size="12">only on her word</text></g>
+        <g transform="translate(850,40)"><rect width="118" height="76" rx="4" fill="#191919"/><text x="14" y="30" fill="#fff" font-weight="600">Index</text><text x="14" y="52" fill="#fff" font-size="12">one tap to</text><text x="14" y="67" fill="#fff" font-size="12">Search Console</text></g>
+        <g transform="translate(990,40)"><rect width="118" height="76" rx="4" fill="#E8F3E8"/><text x="14" y="30" fill="#1A8917" font-weight="600">Measure</text><text x="14" y="52" fill="#1A8917" font-size="12">Darlings, every</text><text x="14" y="67" fill="#1A8917" font-size="12">morning</text></g>
+        <g stroke="#191919" stroke-width="1.5" fill="none" marker-end="url(#ar)">
+          <path d="M128,78 H148"/><path d="M268,78 H288"/><path d="M408,78 H428"/><path d="M548,78 H568"/><path d="M688,78 H708"/><path d="M828,78 H848"/><path d="M968,78 H988"/>
+          <path d="M1049,116 V170 H209 V120" stroke-dasharray="5 4"/>
+        </g>
+        <text x="520" y="192" fill="#6B6B6B" font-size="12">readers’ questions come back as notes and ideas</text>
+      </g>
+    </svg>
+  </div>
+  <div class="col legend" style="padding:0"><span><span class="dot" style="background:#191919"></span>Her step</span><span><span class="dot" style="background:#FFC017"></span>AI</span><span><span class="dot" style="background:#1A8917"></span>Runs on its own every morning</span></div>
+</section>
+
+<section class="wide chap">
+  <div class="col" style="padding:0"><div class="num"><span class="sq"></span>04 The screens</div><h2>Seven screens, one morning</h2></div>
+
+  <div class="shot"><img src="shots/today.png" alt="Today screen"></div>
+  <div class="note"><b>Task</b><span>Answer “what needs me first” before she opens anything else.</span><b>Decision</b><span>A greeting with a count, her latest note as a quote, four numbers, two weeks of calendar, then three lists: today, needs attention, taking off.</span><b>Why</b><span>The note on top reminds her she is a writer first; the numbers come second.</span></div>
+
+  <div class="shot"><img src="shots/notes.png" alt="Notes screen, the commonplace book"></div>
+  <div class="note"><b>Task</b><span>Keep what she notices before it is lost.</span><b>Decision</b><span>One field, a source (exhibition, studio visit, overheard, reading, comments) and tags. Every note is a seed, an idea or already in a piece, and can become a plan or a brief in one tap.</span><b>Why</b><span>A commonplace book is how writers have kept material for centuries. The product is named after it.</span></div>
+
+  <div class="shot"><img src="shots/ideas.png" alt="Ideas screen"></div>
+  <div class="note"><b>Task</b><span>Choose the next topic with evidence, not mood.</span><b>Decision</b><span>Ideas come from five sources: her notes, readers’ questions, search demand, keywords with no piece yet and the digests she follows. Each is checked against what she has published, so nothing duplicates.</span><b>Why</b><span>A second piece on a topic that already has one is easy to write by accident.</span></div>
+
+  <div class="shot"><img src="shots/calendar.png" alt="Calendar screen"></div>
+  <div class="note"><b>Task</b><span>See what went out, what is planned and what slipped.</span><b>Decision</b><span>Published pieces and social posts are picked up automatically; plans are hers. A plan that missed its date turns red with one action: move it.</span><b>Why</b><span>In my own content calendar many statuses were stale, because a person had to update them. Facts should come from where the piece actually lives.</span></div>
+
+  <div class="shot"><img src="shots/darlings.png" alt="Darlings screen"></div>
+  <div class="note"><b>Task</b><span>Know which pieces live and which to let go.</span><b>Decision</b><span>Every piece sits in one group: working, growing, waved and faded, let it go?, new. Each card shows reads, views, read ratio, Google position, read time, followers and earnings, with twelve weeks of views.</span><b>Why</b><span>“Kill your darlings” is writers’ advice. The question mark is deliberate: the data suggests, she decides.</span></div>
+
+  <div class="two">
+    <div><div class="shot"><img src="shots/readers.png" alt="Readers screen"></div>
+    <div class="note"><b>Task</b><span>Write for people, not for keywords.</span><b>Decision</b><span>Five reader types with what they want, what hurts and what loses them, the questions they ask most, and a pain map with sources.</span><b>Why</b><span>Keyword tools were nearly blind for my niche: one of them showed volume for 7 searches out of 931. Readers’ own questions filled the gap.</span></div></div>
+    <div><div class="shot"><img src="shots/about.png" alt="About me screen"></div>
+    <div class="note"><b>Task</b><span>Send the right bio in seconds.</span><b>Decision</b><span>One line, short third person, short first person, CV line, speaker intro. Word count, where it was last used, edit in place, copy.</span><b>Why</b><span>Every editor, festival and grant asks for a bio in a different length, and it always lives in an old email.</span></div></div>
+  </div>
+
+  <div class="col" style="padding:0"><h3>On the phone</h3><p>The same morning in a browser on the phone: the side panel becomes a bottom bar with the five daily tabs.</p></div>
+  <div class="shot" style="max-width:830px"><img src="shots/phone.png" alt="Today and Notes on a phone"></div>
+</section>
+
+<section class="col chap">
+  <div class="num"><span class="sq"></span>05 Decisions</div>
+  <h2>What shaped it</h2>
+  <div class="decisions">
+    <div class="dec"><div class="h">Speak the writer’s language</div>Commonplace, Darlings, seeds, pieces. The product borrows words writers already use instead of dashboard words.</div>
+    <div class="dec"><div class="h">Look like the place she writes</div>A Medium-like visual language: serif headlines, plain sans for the tools, black pill buttons, one yellow accent. The tool should feel like the desk next to the page.</div>
+    <div class="dec"><div class="h">Facts from the source</div>What was published and when comes from the outlet itself, not from a status someone forgot to update.</div>
+    <div class="dec"><div class="h">The human decides</div>AI drafts a brief and checks facts, but publishing and letting a piece go are always her call.</div>
+    <div class="dec"><div class="h">Quiet by default</div>One accent colour, red only for what missed a date or fell out of the index, green only for what grows.</div>
+    <div class="dec"><div class="h">Work on top, me at the bottom</div>The side panel keeps daily tools on top and the personal things (about me, settings) at the bottom, so the morning list stays short.</div>
+  </div>
+</section>
+
+<section class="col chap">
+  <div class="num"><span class="sq"></span>06 Under the hood</div>
+  <h2>A morning robot does the boring part</h2>
+  <ul class="list">
+    <li><span class="sq"></span><span>Every morning a scheduled job collects stats, search data, the calendar and the digests she follows, and recalculates groups, alerts and ideas.</span></li>
+    <li><span class="sq"></span><span>The app is a static page: it reads one data file, so it opens fast on a phone and can move to any server.</span></li>
+    <li><span class="sq"></span><span>Briefs for AI carry the rules she writes by: check for duplicates, verify every number against a primary source, plain language, stop after the outline.</span></li>
+    <li><span class="sq"></span><span>The demo runs on invented data generated by a script, with the same structure as the real one.</span></li>
+  </ul>
+</section>
+
+<section class="col chap">
+  <div class="num"><span class="sq"></span>07 Outcome and next</div>
+  <h2>The morning is one screen now</h2>
+  <p>The real version already collects my data every morning on its own and shows the day on one screen, with a calendar that marks slipped pieces instead of pretending they are on track. I keep testing it on my own work and fix what gets in the way.</p>
+  <p>Next: social posts cut from each piece, a pitch tracker for editors, and a weekly review that suggests one darling to refresh and one to let go.</p>
+  <p><a class="btn" href="index.html">Open the prototype</a> <a class="btn o" href="index.html?tab=notes">Start with Notes</a></p>
+</section>
+
+<footer><div class="col">Commonplace is a personal project by Irina Mumrikova. The writer, outlets, numbers, notes and quotes in the demo are invented. Fonts: Newsreader, Inter, Source Serif 4.</div></footer>
+</body>
+</html>

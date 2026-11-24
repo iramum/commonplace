@@ -4,7 +4,7 @@
  "tagline": "Oops, I wrote it again.",
  "writer": "Nora Vale",
  "publication": "The Open Studio",
- "generated_at": "2026-11-24T12:59:12Z",
+ "generated_at": "2026-11-24T13:06:31Z",
  "gsc_last_day": "2026-11-22",
  "site_last_published": "2026-11-22",
  "totals": {
@@ -99,6 +99,7 @@
  "articles": [
   {
    "slug": "artist-statement",
+   "publication": "The Open Studio on Medium",
    "url": "https://medium.com/the-open-studio/artist-statement",
    "live": true,
    "title": "Writing an Artist Statement People Actually Read",
@@ -225,6 +226,7 @@
   },
   {
    "slug": "side-jobs-artists",
+   "publication": "The Open Studio on Medium",
    "url": "https://medium.com/the-open-studio/side-jobs-artists",
    "live": true,
    "title": "Side Jobs That Fund a Studio Practice",
@@ -351,6 +353,7 @@
   },
   {
    "slug": "pricing-first-works",
+   "publication": "The Open Studio on Medium",
    "url": "https://medium.com/the-open-studio/pricing-first-works",
    "live": true,
    "title": "How to Price Your First Artworks Without Underselling",
@@ -477,6 +480,7 @@
   },
   {
    "slug": "gallery-commission",
+   "publication": "The Open Studio on Medium",
    "url": "https://medium.com/the-open-studio/gallery-commission",
    "live": true,
    "title": "Why Galleries Take 50% and What You Get for It",
@@ -603,6 +607,7 @@
   },
   {
    "slug": "open-calls-rejected",
+   "publication": "The Open Studio on Medium",
    "url": "https://medium.com/the-open-studio/open-calls-rejected",
    "live": true,
    "title": "I Applied to 40 Open Calls. Here Is What the Rejections Taught Me",
@@ -729,6 +734,7 @@
   },
   {
    "slug": "curator-studio-visit",
+   "publication": "The Open Studio on Medium",
    "url": "https://medium.com/the-open-studio/curator-studio-visit",
    "live": true,
    "title": "How to Prepare for a Curator's Studio Visit",
@@ -855,6 +861,7 @@
   },
   {
    "slug": "grant-applications",
+   "publication": "Gallery Notes",
    "url": "https://medium.com/the-open-studio/grant-applications",
    "live": true,
    "title": "Grant Applications for Artists: A Plain Checklist",
@@ -981,6 +988,7 @@
   },
   {
    "slug": "portfolio-pdf",
+   "publication": "The Open Studio on Medium",
    "url": "https://medium.com/the-open-studio/portfolio-pdf",
    "live": true,
    "title": "The Portfolio PDF Curators Open to Page Two",
@@ -1106,11 +1114,12 @@
    "earnings": 2.11
   },
   {
-   "slug": "consignment-contract",
-   "url": "https://medium.com/the-open-studio/consignment-contract",
+   "slug": "ai-authorship",
+   "publication": "Atlas Review",
+   "url": "https://medium.com/the-open-studio/ai-authorship",
    "live": true,
-   "title": "The Consignment Contract, Clause by Clause",
-   "keyword": "artist consignment agreement",
+   "title": "Who Owns an AI-Assisted Artwork?",
+   "keyword": "ai art copyright",
    "type": "guide",
    "published": "2026-10-14",
    "modified": "2026-10-14",
@@ -1204,19 +1213,19 @@
    },
    "top_queries": [
     [
-     "artist consignment agreement",
+     "ai art copyright",
      50,
      365,
      10.0
     ],
     [
-     "artist consignment agreement 2026",
+     "ai art copyright 2026",
      13,
      125,
      12.1
     ],
     [
-     "how to artist consignment agreement",
+     "how to ai art copyright",
      8,
      93,
      14.3
@@ -1233,6 +1242,7 @@
   },
   {
    "slug": "artist-taxes",
+   "publication": "The Open Studio on Medium",
    "url": "https://medium.com/the-open-studio/artist-taxes",
    "live": true,
    "title": "Taxes for Artists Selling Abroad, Plainly",
@@ -1359,6 +1369,7 @@
   },
   {
    "slug": "curating-without-institution",
+   "publication": "The Open Studio on Medium",
    "url": "https://medium.com/the-open-studio/curating-without-institution",
    "live": true,
    "title": "Curating Without an Institution",
@@ -1485,6 +1496,7 @@
   },
   {
    "slug": "collectors-2026",
+   "publication": "The Open Studio on Medium",
    "url": "https://medium.com/the-open-studio/collectors-2026",
    "live": true,
    "title": "Who Buys Emerging Art in 2026",
@@ -1611,6 +1623,7 @@
   },
   {
    "slug": "ai-images-artists",
+   "publication": "Gallery Notes",
    "url": "https://medium.com/the-open-studio/ai-images-artists",
    "live": true,
    "title": "AI Images and Young Artists: One Year of Data",
@@ -1736,12 +1749,13 @@
    "earnings": 1.06
   },
   {
-   "slug": "shipping-artworks",
-   "url": "https://medium.com/the-open-studio/shipping-artworks",
+   "slug": "ai-curating",
+   "publication": "The Open Studio on Medium",
+   "url": "https://medium.com/the-open-studio/ai-curating",
    "live": true,
-   "title": "Shipping Artworks Abroad Without Losing Your Fee",
-   "keyword": "shipping artwork internationally",
-   "type": "guide",
+   "title": "Can an Algorithm Curate a Show? I Tried It for a Month",
+   "keyword": "ai curating exhibition",
+   "type": "essay",
    "published": "2026-10-01",
    "modified": "2026-10-01",
    "gsc": {
@@ -1834,19 +1848,19 @@
    },
    "top_queries": [
     [
-     "shipping artwork internationally",
+     "ai curating exhibition",
      9,
      68,
      10.6
     ],
     [
-     "shipping artwork internationally 2026",
+     "ai curating exhibition 2026",
      2,
      23,
      12.7
     ],
     [
-     "how to shipping artwork internationally",
+     "how to ai curating exhibition",
      1,
      17,
      14.9
@@ -1863,6 +1877,7 @@
   },
   {
    "slug": "first-solo-show",
+   "publication": "Atlas Review",
    "url": "https://medium.com/the-open-studio/first-solo-show",
    "live": true,
    "title": "Negotiating Your First Solo Show",
@@ -1989,6 +2004,7 @@
   },
   {
    "slug": "studio-routine",
+   "publication": "The Open Studio on Medium",
    "url": "https://medium.com/the-open-studio/studio-routine",
    "live": true,
    "title": "My Studio Routine as a Painter With a Day Job",
@@ -2115,6 +2131,7 @@
   },
   {
    "slug": "residency-real-cost",
+   "publication": "Atlas Review",
    "url": "https://medium.com/the-open-studio/residency-real-cost",
    "live": true,
    "title": "The Real Cost of an Artist Residency, Line by Line",
@@ -2241,6 +2258,7 @@
   },
   {
    "slug": "art-fair-booth",
+   "publication": "The Open Studio on Medium",
    "url": "https://medium.com/the-open-studio/art-fair-booth",
    "live": true,
    "title": "What an Art Fair Booth Really Costs a Young Gallery",
@@ -2367,6 +2385,7 @@
   },
   {
    "slug": "biennale-notes",
+   "publication": "Gallery Notes",
    "url": "https://medium.com/the-open-studio/biennale-notes",
    "live": true,
    "title": "Notes From the Biennale: What Young Curators Look For",
@@ -2493,6 +2512,7 @@
   },
   {
    "slug": "artist-run-spaces",
+   "publication": "The Open Studio on Medium",
    "url": "https://medium.com/the-open-studio/artist-run-spaces",
    "live": true,
    "title": "Artist-Run Spaces Are the New Galleries",
@@ -2619,6 +2639,7 @@
   },
   {
    "slug": "studio-burnout",
+   "publication": "Atlas Review",
    "url": "https://medium.com/the-open-studio/studio-burnout",
    "live": true,
    "title": "Studio Burnout Looks Like Productivity",
@@ -2745,6 +2766,7 @@
   },
   {
    "slug": "instagram-artists",
+   "publication": "The Open Studio on Medium",
    "url": "https://medium.com/the-open-studio/instagram-artists",
    "live": true,
    "title": "Instagram Is Not Your Portfolio",
@@ -4613,7 +4635,7 @@
  ],
  "errors": [],
  "audiences": {
-  "rule": "Write for the people who already read and follow: art-school graduates, artists with a day job and independent curators. Young gallerists and first-time collectors read occasionally, and collectors are growing.",
+  "rule": "Write for the people who already read and follow: art-school graduates, artists with a day job and independent curators, and more and more people asking what AI changes in art. Young gallerists and first-time collectors read occasionally, and collectors are growing.",
   "personas": [
    {
     "id": "graduate",
@@ -4968,6 +4990,18 @@
    "score": 7
   },
   {
+   "source": "keys",
+   "keyword": "ai art copyright",
+   "variants": [
+    "who owns ai generated art",
+    "ai art exhibition rules"
+   ],
+   "cluster": "AI",
+   "audience": "curator",
+   "why": "Search suggests 10 versions; your authorship piece waved and faded, a plain Q&A could hold",
+   "score": 11
+  },
+  {
    "source": "telegram",
    "keyword": null,
    "cluster": "Survey: what emerging artists earned from sales in 2026",
@@ -5102,6 +5136,19 @@
    "link": "first-solo-show"
   },
   {
+   "id": "n-10",
+   "date": "2026-11-21",
+   "source": "Panel",
+   "text": "A curator on AI: “The machine can sort a thousand portfolios. It cannot sit in a studio and notice what the artist is afraid to show.”",
+   "tags": [
+    "ai",
+    "curating",
+    "quote"
+   ],
+   "status": "idea",
+   "link": "ai-curating"
+  },
+  {
    "id": "n-09",
    "date": "2026-11-05",
    "source": "Walk",
@@ -5202,8 +5249,8 @@
   {
    "date": "2026-10-01",
    "kind": "article",
-   "title": "Shipping Artworks Abroad Without Losing Your Fee",
-   "slug": "shipping-artworks",
+   "title": "Can an Algorithm Curate a Show? I Tried It for a Month",
+   "slug": "ai-curating",
    "status": "Published"
   },
   {
@@ -5216,8 +5263,8 @@
   {
    "date": "2026-10-14",
    "kind": "article",
-   "title": "The Consignment Contract, Clause by Clause",
-   "slug": "consignment-contract",
+   "title": "Who Owns an AI-Assisted Artwork?",
+   "slug": "ai-authorship",
    "status": "Published"
   },
   {
@@ -5284,7 +5331,7 @@
    "date": "2026-11-09",
    "kind": "ig_live",
    "format": "linkedin",
-   "title": "Studio photo and quote from The Consignment Contract, Clause by Clau",
+   "title": "Studio photo and quote from Who Owns an AI-Assisted Artwork?",
    "status": "Posted",
    "url": null
   },
@@ -5424,6 +5471,66 @@
    "source": "workspace",
    "id": "p15"
   }
+ ],
+ "profile": {
+  "name": "Nora Vale",
+  "role": "Writer on contemporary art, curating and AI",
+  "city": "Berlin",
+  "email": "nora@example.com",
+  "site": "noravale.example",
+  "links": [
+   "Medium: @noravale",
+   "Instagram: @nora.vale.writes"
+  ],
+  "bios": [
+   {
+    "id": "line",
+    "label": "One line",
+    "for": "Bylines, social profiles",
+    "text": "Nora Vale writes about how young artists live, curate and work with AI."
+   },
+   {
+    "id": "short",
+    "label": "Short, third person",
+    "for": "Magazines and festival programmes",
+    "text": "Nora Vale is a Berlin-based writer on contemporary art, curating and AI. She runs The Open Studio on Medium, where she writes about what young artists earn, how open calls really work and what AI changes in the studio. Her essays also appear in Atlas Review and Gallery Notes."
+   },
+   {
+    "id": "first",
+    "label": "Short, first person",
+    "for": "Pitches and emails to editors",
+    "text": "I write about contemporary art from the studio side: prices, open calls, residencies and, lately, what AI changes for artists and curators. My Medium publication The Open Studio has around 3,000 reads a month."
+   },
+   {
+    "id": "cv",
+    "label": "CV line",
+    "for": "CVs and grant applications",
+    "text": "Writer and editor, The Open Studio (Medium), since 2024. Contributing writer, Atlas Review and Gallery Notes. Topics: art market for emerging artists, independent curating, AI and authorship."
+   },
+   {
+    "id": "talk",
+    "label": "Speaker intro",
+    "for": "Panels and talks",
+    "text": "Nora Vale writes about the economy of young artists and the arrival of AI in curating. She has applied to forty open calls, curated two shows without an institution and now writes so that others do not have to learn it the hard way."
+   }
+  ],
+  "used": [
+   {
+    "bio": "short",
+    "where": "Atlas Review, contributor page",
+    "date": "2026-11-12"
+   },
+   {
+    "bio": "cv",
+    "where": "Grant application, city arts fund",
+    "date": "2026-10-25"
+   }
+  ]
+ },
+ "publications": [
+  "The Open Studio on Medium",
+  "Atlas Review",
+  "Gallery Notes"
  ],
  "calendar_notion": true,
  "calendar_ig": true,
