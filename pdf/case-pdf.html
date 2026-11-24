@@ -22,7 +22,7 @@ p { margin: 0; font-size: 9.3pt; line-height: 1.5; color: var(--body); }
 .lede { font: 400 13pt/1.45 var(--serif); color: var(--ink); }
 .sec { display: flex; align-items: center; gap: 4mm; }
 .sec .n { width: 9mm; height: 9mm; background: var(--ink2); color: #fff; font: 500 13pt/9mm var(--display); text-align: center; flex: none; }
-.box { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; background: #fff; position: relative; }
+.box { border: 1px solid rgba(0,0,0,.06); border-radius: 6px; overflow: hidden; background: #fff; position: relative; box-shadow: 0 0.3mm 0.8mm rgba(0,0,0,.04), 0 2.5mm 7mm rgba(0,0,0,.07); }
 .box img { width: 100%; display: block; }
 .crop { overflow: hidden; }
 .fit { display: flex; align-items: center; justify-content: center; overflow: hidden; }
@@ -78,6 +78,8 @@ ul { margin: 0; padding-left: 4.5mm; font-size: 8.6pt; line-height: 1.5; color: 
 .cv-shot { position: absolute; left: 18mm; top: 36mm; width: 200mm; border-radius: 6px; overflow: hidden; box-shadow: 0 14mm 30mm rgba(0,0,0,.45); }
 .cv-shot img { width: 100%; display: block; }
 .cv-comma { position: absolute; left: 16mm; top: 2mm; font: 500 120pt/1 var(--display); color: var(--y); }
+.phones { display: flex; gap: 8mm; justify-content: center; }
+.box.ph { width: 62mm; border-radius: 5mm; }
 .sw div { border-radius: 4px; height: 18mm; padding: 2mm; display: flex; flex-direction: column; justify-content: flex-end; font-size: 7pt; border: 1px solid var(--line); }
 </style>
 </head>
@@ -307,7 +309,7 @@ ul { margin: 0; padding-left: 4.5mm; font-size: 8.6pt; line-height: 1.5; color: 
 <section class="page">
   <div class="sec"><span class="n">6</span><div><span class="eyebrow">On the phone</span><h2>The same morning, in a browser on the way</h2></div></div>
   <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:8mm;flex:1;min-height:0;align-items:center">
-    <div class="fit" style="height:150mm"><img src="../shots/phone.png" alt=""></div>
+    <div class="phones"><div class="box ph"><img src="../shots/phone-a.png" alt=""></div><div class="box ph"><img src="../shots/phone-b.png" alt=""></div></div>
     <div style="display:flex;flex-direction:column;gap:4mm">
       <p class="lede">Notes happen at a show or in a studio, not at a desk. The phone view keeps the five daily tabs in a bottom bar and puts the composer one tap away.</p>
       <div class="card"><span class="k">What changes on the phone</span><ul><li>The side menu becomes a bottom bar: Today, Notes, Calendar, Ideas, Darlings</li><li>The four numbers sit in a two by two grid</li><li>The month calendar turns into a list by day</li><li>No horizontal scroll at 390 pixels, checked on every screen</li></ul></div>
