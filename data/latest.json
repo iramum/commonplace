@@ -1,0 +1,5431 @@
+{
+ "demo": true,
+ "app": "Commonplace",
+ "tagline": "Oops, I wrote it again.",
+ "writer": "Nora Vale",
+ "publication": "The Open Studio",
+ "generated_at": "2026-11-24T12:59:12Z",
+ "gsc_last_day": "2026-11-22",
+ "site_last_published": "2026-11-22",
+ "totals": {
+  "live": 22,
+  "clicks": 3114,
+  "clicks_prev": 2489,
+  "impr": 12980,
+  "impr_prev": 10715,
+  "sessions": 1237,
+  "sessions_prev": 987,
+  "apply_clicks": 117,
+  "apply_clicks_prev": 102,
+  "earnings": 46.48,
+  "groups": {
+   "B": 5,
+   "A": 4,
+   "C": 6,
+   "N": 4,
+   "D": 3
+  }
+ },
+ "alerts": [
+  {
+   "level": "high",
+   "kind": "not_indexed",
+   "slug": "instagram-artists",
+   "text": "Not in the Google index: crawled, currently not indexed"
+  },
+  {
+   "level": "high",
+   "kind": "clicks_drop",
+   "slug": "studio-burnout",
+   "text": "Views 37 → 18 (28 days vs the 28 before)"
+  },
+  {
+   "level": "mid",
+   "kind": "fading",
+   "slug": "artist-run-spaces",
+   "text": "Fading: the last 2 weeks are under 35% of its peak"
+  },
+  {
+   "level": "mid",
+   "kind": "fading",
+   "slug": "art-fair-booth",
+   "text": "Fading after the fair season"
+  },
+  {
+   "level": "win",
+   "kind": "taking_off",
+   "slug": "ai-images-artists",
+   "text": "294 views in its first 3 weeks, reads up 3× this week"
+  },
+  {
+   "level": "win",
+   "kind": "taking_off",
+   "slug": "artist-statement",
+   "text": "Picked up by a Medium publication digest: reads doubled"
+  },
+  {
+   "level": "win",
+   "kind": "taking_off",
+   "slug": "curating-without-institution",
+   "text": "Top comment thread with 41 responses: follows up 5×"
+  }
+ ],
+ "plan": [
+  {
+   "do": "Ask Google to index it again",
+   "slug": "instagram-artists",
+   "why": "Crawled, currently not indexed for 40 days",
+   "action": "gsc"
+  },
+  {
+   "do": "Find out why it dropped",
+   "slug": "studio-burnout",
+   "why": "Views 37 → 18 (28 days vs the 28 before)",
+   "action": "article"
+  },
+  {
+   "do": "Rewrite the title for a search that already finds you",
+   "slug": "artist-statement",
+   "why": "“artist statement template”: 310 views at position 8, almost no reads",
+   "action": "article"
+  },
+  {
+   "do": "Answer the top comment and link a follow-up",
+   "slug": "curating-without-institution",
+   "why": "41 responses, 7 readers ask how to find a first venue",
+   "action": "article"
+  }
+ ],
+ "articles": [
+  {
+   "slug": "artist-statement",
+   "url": "https://medium.com/the-open-studio/artist-statement",
+   "live": true,
+   "title": "Writing an Artist Statement People Actually Read",
+   "keyword": "artist statement examples",
+   "type": "guide",
+   "published": "2026-08-06",
+   "modified": "2026-08-06",
+   "gsc": {
+    "clicks": 420,
+    "impr": 1876,
+    "pos": 6.9,
+    "ctr": 22.4
+   },
+   "gsc_prev": {
+    "clicks": 353,
+    "impr": 1681,
+    "pos": 7.9
+   },
+   "ga": {
+    "sessions": 168,
+    "views": 420,
+    "engaged_sec": 25536,
+    "apply_clicks": 16
+   },
+   "ga_prev": {
+    "sessions": 141,
+    "apply_clicks": 19
+   },
+   "weekly": [
+    [
+     "2026-W37",
+     13,
+     189
+    ],
+    [
+     "2026-W38",
+     17,
+     247
+    ],
+    [
+     "2026-W39",
+     21,
+     313
+    ],
+    [
+     "2026-W40",
+     22,
+     325
+    ],
+    [
+     "2026-W41",
+     26,
+     378
+    ],
+    [
+     "2026-W42",
+     26,
+     372
+    ],
+    [
+     "2026-W43",
+     32,
+     470
+    ],
+    [
+     "2026-W44",
+     32,
+     461
+    ],
+    [
+     "2026-W45",
+     34,
+     493
+    ],
+    [
+     "2026-W46",
+     33,
+     479
+    ],
+    [
+     "2026-W47",
+     40,
+     582
+    ],
+    [
+     "2026-W48",
+     22,
+     322
+    ]
+   ],
+   "fading": false,
+   "on_keyword": {
+    "impr": 656,
+    "pos": 6.9
+   },
+   "top_queries": [
+    [
+     "artist statement examples",
+     126,
+     656,
+     6.9
+    ],
+    [
+     "artist statement examples 2026",
+     33,
+     225,
+     9.0
+    ],
+    [
+     "how to artist statement examples",
+     21,
+     168,
+     11.2
+    ]
+   ],
+   "index": {
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "last_crawl": "2026-11-16"
+   },
+   "gsc_inspect_url": "https://search.google.com/search-console",
+   "group": "B",
+   "earnings": 7.38
+  },
+  {
+   "slug": "side-jobs-artists",
+   "url": "https://medium.com/the-open-studio/side-jobs-artists",
+   "live": true,
+   "title": "Side Jobs That Fund a Studio Practice",
+   "keyword": "jobs for artists",
+   "type": "data",
+   "published": "2026-08-25",
+   "modified": "2026-08-25",
+   "gsc": {
+    "clicks": 362,
+    "impr": 1617,
+    "pos": 8.2,
+    "ctr": 22.4
+   },
+   "gsc_prev": {
+    "clicks": 267,
+    "impr": 1275,
+    "pos": 8.1
+   },
+   "ga": {
+    "sessions": 144,
+    "views": 362,
+    "engaged_sec": 39530,
+    "apply_clicks": 14
+   },
+   "ga_prev": {
+    "sessions": 106,
+    "apply_clicks": 8
+   },
+   "weekly": [
+    [
+     "2026-W37",
+     8,
+     119
+    ],
+    [
+     "2026-W38",
+     11,
+     169
+    ],
+    [
+     "2026-W39",
+     11,
+     171
+    ],
+    [
+     "2026-W40",
+     15,
+     222
+    ],
+    [
+     "2026-W41",
+     19,
+     278
+    ],
+    [
+     "2026-W42",
+     20,
+     288
+    ],
+    [
+     "2026-W43",
+     22,
+     315
+    ],
+    [
+     "2026-W44",
+     27,
+     394
+    ],
+    [
+     "2026-W45",
+     31,
+     448
+    ],
+    [
+     "2026-W46",
+     28,
+     411
+    ],
+    [
+     "2026-W47",
+     36,
+     515
+    ],
+    [
+     "2026-W48",
+     17,
+     243
+    ]
+   ],
+   "fading": false,
+   "on_keyword": {
+    "impr": 565,
+    "pos": 8.2
+   },
+   "top_queries": [
+    [
+     "jobs for artists",
+     108,
+     565,
+     8.2
+    ],
+    [
+     "jobs for artists 2026",
+     28,
+     194,
+     10.3
+    ],
+    [
+     "how to jobs for artists",
+     18,
+     145,
+     12.5
+    ]
+   ],
+   "index": {
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "last_crawl": "2026-11-22"
+   },
+   "gsc_inspect_url": "https://search.google.com/search-console",
+   "group": "B",
+   "earnings": 4.73
+  },
+  {
+   "slug": "pricing-first-works",
+   "url": "https://medium.com/the-open-studio/pricing-first-works",
+   "live": true,
+   "title": "How to Price Your First Artworks Without Underselling",
+   "keyword": "how to price artwork",
+   "type": "guide",
+   "published": "2026-06-27",
+   "modified": "2026-06-27",
+   "gsc": {
+    "clicks": 318,
+    "impr": 904,
+    "pos": 3.7,
+    "ctr": 35.2
+   },
+   "gsc_prev": {
+    "clicks": 326,
+    "impr": 989,
+    "pos": 5.0
+   },
+   "ga": {
+    "sessions": 127,
+    "views": 318,
+    "engaged_sec": 20352,
+    "apply_clicks": 15
+   },
+   "ga_prev": {
+    "sessions": 130,
+    "apply_clicks": 9
+   },
+   "weekly": [
+    [
+     "2026-W37",
+     28,
+     256
+    ],
+    [
+     "2026-W38",
+     31,
+     286
+    ],
+    [
+     "2026-W39",
+     34,
+     318
+    ],
+    [
+     "2026-W40",
+     28,
+     260
+    ],
+    [
+     "2026-W41",
+     26,
+     241
+    ],
+    [
+     "2026-W42",
+     26,
+     242
+    ],
+    [
+     "2026-W43",
+     25,
+     229
+    ],
+    [
+     "2026-W44",
+     30,
+     277
+    ],
+    [
+     "2026-W45",
+     32,
+     295
+    ],
+    [
+     "2026-W46",
+     32,
+     294
+    ],
+    [
+     "2026-W47",
+     23,
+     216
+    ],
+    [
+     "2026-W48",
+     10,
+     99
+    ]
+   ],
+   "fading": false,
+   "on_keyword": {
+    "impr": 316,
+    "pos": 3.7
+   },
+   "top_queries": [
+    [
+     "how to price artwork",
+     95,
+     316,
+     3.7
+    ],
+    [
+     "how to price artwork 2026",
+     25,
+     108,
+     5.8
+    ],
+    [
+     "how to how to price artwork",
+     15,
+     81,
+     8.0
+    ]
+   ],
+   "index": {
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "last_crawl": "2026-11-17"
+   },
+   "gsc_inspect_url": "https://search.google.com/search-console",
+   "group": "A",
+   "earnings": 6.23
+  },
+  {
+   "slug": "gallery-commission",
+   "url": "https://medium.com/the-open-studio/gallery-commission",
+   "live": true,
+   "title": "Why Galleries Take 50% and What You Get for It",
+   "keyword": "gallery commission",
+   "type": "guide",
+   "published": "2026-08-12",
+   "modified": "2026-11-15",
+   "gsc": {
+    "clicks": 307,
+    "impr": 873,
+    "pos": 4.6,
+    "ctr": 35.2
+   },
+   "gsc_prev": {
+    "clicks": 321,
+    "impr": 973,
+    "pos": 4.2
+   },
+   "ga": {
+    "sessions": 122,
+    "views": 307,
+    "engaged_sec": 19034,
+    "apply_clicks": 15
+   },
+   "ga_prev": {
+    "sessions": 128,
+    "apply_clicks": 15
+   },
+   "weekly": [
+    [
+     "2026-W37",
+     25,
+     234
+    ],
+    [
+     "2026-W38",
+     31,
+     286
+    ],
+    [
+     "2026-W39",
+     30,
+     278
+    ],
+    [
+     "2026-W40",
+     26,
+     239
+    ],
+    [
+     "2026-W41",
+     28,
+     257
+    ],
+    [
+     "2026-W42",
+     22,
+     209
+    ],
+    [
+     "2026-W43",
+     28,
+     263
+    ],
+    [
+     "2026-W44",
+     26,
+     244
+    ],
+    [
+     "2026-W45",
+     30,
+     277
+    ],
+    [
+     "2026-W46",
+     27,
+     247
+    ],
+    [
+     "2026-W47",
+     25,
+     229
+    ],
+    [
+     "2026-W48",
+     13,
+     120
+    ]
+   ],
+   "fading": false,
+   "on_keyword": {
+    "impr": 305,
+    "pos": 4.6
+   },
+   "top_queries": [
+    [
+     "gallery commission",
+     92,
+     305,
+     4.6
+    ],
+    [
+     "gallery commission 2026",
+     24,
+     104,
+     6.7
+    ],
+    [
+     "how to gallery commission",
+     15,
+     78,
+     8.9
+    ]
+   ],
+   "index": {
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "last_crawl": "2026-11-21"
+   },
+   "gsc_inspect_url": "https://search.google.com/search-console",
+   "group": "A",
+   "earnings": 3.91
+  },
+  {
+   "slug": "open-calls-rejected",
+   "url": "https://medium.com/the-open-studio/open-calls-rejected",
+   "live": true,
+   "title": "I Applied to 40 Open Calls. Here Is What the Rejections Taught Me",
+   "keyword": "open call for artists",
+   "type": "essay",
+   "published": "2026-07-15",
+   "modified": "2026-07-15",
+   "gsc": {
+    "clicks": 305,
+    "impr": 869,
+    "pos": 4.2,
+    "ctr": 35.1
+   },
+   "gsc_prev": {
+    "clicks": 307,
+    "impr": 931,
+    "pos": 4.9
+   },
+   "ga": {
+    "sessions": 122,
+    "views": 305,
+    "engaged_sec": 33794,
+    "apply_clicks": 15
+   },
+   "ga_prev": {
+    "sessions": 122,
+    "apply_clicks": 18
+   },
+   "weekly": [
+    [
+     "2026-W37",
+     29,
+     272
+    ],
+    [
+     "2026-W38",
+     31,
+     290
+    ],
+    [
+     "2026-W39",
+     27,
+     253
+    ],
+    [
+     "2026-W40",
+     24,
+     225
+    ],
+    [
+     "2026-W41",
+     26,
+     243
+    ],
+    [
+     "2026-W42",
+     22,
+     204
+    ],
+    [
+     "2026-W43",
+     25,
+     229
+    ],
+    [
+     "2026-W44",
+     28,
+     255
+    ],
+    [
+     "2026-W45",
+     26,
+     244
+    ],
+    [
+     "2026-W46",
+     29,
+     267
+    ],
+    [
+     "2026-W47",
+     26,
+     242
+    ],
+    [
+     "2026-W48",
+     12,
+     116
+    ]
+   ],
+   "fading": false,
+   "on_keyword": {
+    "impr": 304,
+    "pos": 4.2
+   },
+   "top_queries": [
+    [
+     "open call for artists",
+     91,
+     304,
+     4.2
+    ],
+    [
+     "open call for artists 2026",
+     24,
+     104,
+     6.3
+    ],
+    [
+     "how to open call for artists",
+     15,
+     78,
+     8.5
+    ]
+   ],
+   "index": {
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "last_crawl": "2026-11-22"
+   },
+   "gsc_inspect_url": "https://search.google.com/search-console",
+   "group": "A",
+   "earnings": 4.11
+  },
+  {
+   "slug": "curator-studio-visit",
+   "url": "https://medium.com/the-open-studio/curator-studio-visit",
+   "live": true,
+   "title": "How to Prepare for a Curator's Studio Visit",
+   "keyword": "studio visit tips",
+   "type": "guide",
+   "published": "2026-09-18",
+   "modified": "2026-09-18",
+   "gsc": {
+    "clicks": 300,
+    "impr": 853,
+    "pos": 3.7,
+    "ctr": 35.2
+   },
+   "gsc_prev": {
+    "clicks": 338,
+    "impr": 1026,
+    "pos": 2.5
+   },
+   "ga": {
+    "sessions": 120,
+    "views": 300,
+    "engaged_sec": 21480,
+    "apply_clicks": 15
+   },
+   "ga_prev": {
+    "sessions": 135,
+    "apply_clicks": 14
+   },
+   "weekly": [
+    [
+     "2026-W37",
+     0,
+     0
+    ],
+    [
+     "2026-W38",
+     0,
+     0
+    ],
+    [
+     "2026-W39",
+     30,
+     280
+    ],
+    [
+     "2026-W40",
+     25,
+     230
+    ],
+    [
+     "2026-W41",
+     29,
+     266
+    ],
+    [
+     "2026-W42",
+     29,
+     267
+    ],
+    [
+     "2026-W43",
+     23,
+     217
+    ],
+    [
+     "2026-W44",
+     30,
+     276
+    ],
+    [
+     "2026-W45",
+     26,
+     243
+    ],
+    [
+     "2026-W46",
+     31,
+     283
+    ],
+    [
+     "2026-W47",
+     26,
+     237
+    ],
+    [
+     "2026-W48",
+     9,
+     90
+    ]
+   ],
+   "fading": false,
+   "on_keyword": {
+    "impr": 298,
+    "pos": 3.7
+   },
+   "top_queries": [
+    [
+     "studio visit tips",
+     90,
+     298,
+     3.7
+    ],
+    [
+     "studio visit tips 2026",
+     24,
+     102,
+     5.8
+    ],
+    [
+     "how to studio visit tips",
+     15,
+     76,
+     8.0
+    ]
+   ],
+   "index": {
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "last_crawl": "2026-11-17"
+   },
+   "gsc_inspect_url": "https://search.google.com/search-console",
+   "group": "A",
+   "earnings": 5.02
+  },
+  {
+   "slug": "grant-applications",
+   "url": "https://medium.com/the-open-studio/grant-applications",
+   "live": true,
+   "title": "Grant Applications for Artists: A Plain Checklist",
+   "keyword": "grants for artists",
+   "type": "guide",
+   "published": "2026-09-25",
+   "modified": "2026-09-25",
+   "gsc": {
+    "clicks": 219,
+    "impr": 981,
+    "pos": 7.8,
+    "ctr": 22.3
+   },
+   "gsc_prev": {
+    "clicks": 137,
+    "impr": 654,
+    "pos": 7.1
+   },
+   "ga": {
+    "sessions": 87,
+    "views": 219,
+    "engaged_sec": 15592,
+    "apply_clicks": 8
+   },
+   "ga_prev": {
+    "sessions": 54,
+    "apply_clicks": 4
+   },
+   "weekly": [
+    [
+     "2026-W37",
+     0,
+     0
+    ],
+    [
+     "2026-W38",
+     0,
+     0
+    ],
+    [
+     "2026-W39",
+     0,
+     0
+    ],
+    [
+     "2026-W40",
+     4,
+     59
+    ],
+    [
+     "2026-W41",
+     7,
+     106
+    ],
+    [
+     "2026-W42",
+     9,
+     141
+    ],
+    [
+     "2026-W43",
+     12,
+     172
+    ],
+    [
+     "2026-W44",
+     16,
+     235
+    ],
+    [
+     "2026-W45",
+     15,
+     220
+    ],
+    [
+     "2026-W46",
+     21,
+     311
+    ],
+    [
+     "2026-W47",
+     19,
+     281
+    ],
+    [
+     "2026-W48",
+     11,
+     169
+    ]
+   ],
+   "fading": false,
+   "on_keyword": {
+    "impr": 343,
+    "pos": 7.8
+   },
+   "top_queries": [
+    [
+     "grants for artists",
+     65,
+     343,
+     7.8
+    ],
+    [
+     "grants for artists 2026",
+     17,
+     117,
+     9.9
+    ],
+    [
+     "how to grants for artists",
+     10,
+     88,
+     12.1
+    ]
+   ],
+   "index": {
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "last_crawl": "2026-11-16"
+   },
+   "gsc_inspect_url": "https://search.google.com/search-console",
+   "group": "B",
+   "earnings": 2.42
+  },
+  {
+   "slug": "portfolio-pdf",
+   "url": "https://medium.com/the-open-studio/portfolio-pdf",
+   "live": true,
+   "title": "The Portfolio PDF Curators Open to Page Two",
+   "keyword": "artist portfolio pdf",
+   "type": "guide",
+   "published": "2026-10-26",
+   "modified": "2026-10-26",
+   "gsc": {
+    "clicks": 203,
+    "impr": 1271,
+    "pos": 9.3,
+    "ctr": 16.0
+   },
+   "gsc_prev": {
+    "clicks": 17,
+    "impr": 117,
+    "pos": 10.0
+   },
+   "ga": {
+    "sessions": 81,
+    "views": 203,
+    "engaged_sec": 19812,
+    "apply_clicks": 4
+   },
+   "ga_prev": {
+    "sessions": 6,
+    "apply_clicks": 6
+   },
+   "weekly": [
+    [
+     "2026-W37",
+     0,
+     0
+    ],
+    [
+     "2026-W38",
+     0,
+     0
+    ],
+    [
+     "2026-W39",
+     0,
+     0
+    ],
+    [
+     "2026-W40",
+     0,
+     0
+    ],
+    [
+     "2026-W41",
+     0,
+     0
+    ],
+    [
+     "2026-W42",
+     0,
+     0
+    ],
+    [
+     "2026-W43",
+     0,
+     0
+    ],
+    [
+     "2026-W44",
+     5,
+     117
+    ],
+    [
+     "2026-W45",
+     14,
+     282
+    ],
+    [
+     "2026-W46",
+     23,
+     466
+    ],
+    [
+     "2026-W47",
+     20,
+     413
+    ],
+    [
+     "2026-W48",
+     5,
+     110
+    ]
+   ],
+   "fading": false,
+   "on_keyword": {
+    "impr": 444,
+    "pos": 9.3
+   },
+   "top_queries": [
+    [
+     "artist portfolio pdf",
+     60,
+     444,
+     9.3
+    ],
+    [
+     "artist portfolio pdf 2026",
+     16,
+     152,
+     11.4
+    ],
+    [
+     "how to artist portfolio pdf",
+     10,
+     114,
+     13.6
+    ]
+   ],
+   "index": {
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "last_crawl": "2026-11-20"
+   },
+   "gsc_inspect_url": "https://search.google.com/search-console",
+   "group": "C",
+   "earnings": 2.11
+  },
+  {
+   "slug": "consignment-contract",
+   "url": "https://medium.com/the-open-studio/consignment-contract",
+   "live": true,
+   "title": "The Consignment Contract, Clause by Clause",
+   "keyword": "artist consignment agreement",
+   "type": "guide",
+   "published": "2026-10-14",
+   "modified": "2026-10-14",
+   "gsc": {
+    "clicks": 167,
+    "impr": 1044,
+    "pos": 10.0,
+    "ctr": 16.0
+   },
+   "gsc_prev": {
+    "clicks": 102,
+    "impr": 682,
+    "pos": 11.0
+   },
+   "ga": {
+    "sessions": 66,
+    "views": 167,
+    "engaged_sec": 17702,
+    "apply_clicks": 3
+   },
+   "ga_prev": {
+    "sessions": 40,
+    "apply_clicks": 1
+   },
+   "weekly": [
+    [
+     "2026-W37",
+     0,
+     0
+    ],
+    [
+     "2026-W38",
+     0,
+     0
+    ],
+    [
+     "2026-W39",
+     0,
+     0
+    ],
+    [
+     "2026-W40",
+     0,
+     0
+    ],
+    [
+     "2026-W41",
+     0,
+     0
+    ],
+    [
+     "2026-W42",
+     0,
+     0
+    ],
+    [
+     "2026-W43",
+     10,
+     209
+    ],
+    [
+     "2026-W44",
+     23,
+     473
+    ],
+    [
+     "2026-W45",
+     29,
+     590
+    ],
+    [
+     "2026-W46",
+     16,
+     336
+    ],
+    [
+     "2026-W47",
+     5,
+     102
+    ],
+    [
+     "2026-W48",
+     0,
+     16
+    ]
+   ],
+   "fading": false,
+   "on_keyword": {
+    "impr": 365,
+    "pos": 10.0
+   },
+   "top_queries": [
+    [
+     "artist consignment agreement",
+     50,
+     365,
+     10.0
+    ],
+    [
+     "artist consignment agreement 2026",
+     13,
+     125,
+     12.1
+    ],
+    [
+     "how to artist consignment agreement",
+     8,
+     93,
+     14.3
+    ]
+   ],
+   "index": {
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "last_crawl": "2026-11-22"
+   },
+   "gsc_inspect_url": "https://search.google.com/search-console",
+   "group": "C",
+   "earnings": 3.0
+  },
+  {
+   "slug": "artist-taxes",
+   "url": "https://medium.com/the-open-studio/artist-taxes",
+   "live": true,
+   "title": "Taxes for Artists Selling Abroad, Plainly",
+   "keyword": "artist taxes",
+   "type": "guide",
+   "published": "2026-11-08",
+   "modified": "2026-11-08",
+   "gsc": {
+    "clicks": 141,
+    "impr": 737,
+    "pos": 12.0,
+    "ctr": 19.1
+   },
+   "gsc_prev": {
+    "clicks": 0,
+    "impr": 0,
+    "pos": 13.3
+   },
+   "ga": {
+    "sessions": 56,
+    "views": 141,
+    "engaged_sec": 11674,
+    "apply_clicks": 4
+   },
+   "ga_prev": {
+    "sessions": 0,
+    "apply_clicks": 6
+   },
+   "weekly": [
+    [
+     "2026-W37",
+     0,
+     0
+    ],
+    [
+     "2026-W38",
+     0,
+     0
+    ],
+    [
+     "2026-W39",
+     0,
+     0
+    ],
+    [
+     "2026-W40",
+     0,
+     0
+    ],
+    [
+     "2026-W41",
+     0,
+     0
+    ],
+    [
+     "2026-W42",
+     0,
+     0
+    ],
+    [
+     "2026-W43",
+     0,
+     0
+    ],
+    [
+     "2026-W44",
+     0,
+     0
+    ],
+    [
+     "2026-W45",
+     0,
+     0
+    ],
+    [
+     "2026-W46",
+     9,
+     166
+    ],
+    [
+     "2026-W47",
+     20,
+     336
+    ],
+    [
+     "2026-W48",
+     14,
+     235
+    ]
+   ],
+   "fading": false,
+   "on_keyword": {
+    "impr": 257,
+    "pos": 12.0
+   },
+   "top_queries": [
+    [
+     "artist taxes",
+     42,
+     257,
+     12.0
+    ],
+    [
+     "artist taxes 2026",
+     11,
+     88,
+     14.1
+    ],
+    [
+     "how to artist taxes",
+     7,
+     66,
+     16.3
+    ]
+   ],
+   "index": {
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "last_crawl": "2026-11-17"
+   },
+   "gsc_inspect_url": "https://search.google.com/search-console",
+   "group": "N",
+   "earnings": 2.71
+  },
+  {
+   "slug": "curating-without-institution",
+   "url": "https://medium.com/the-open-studio/curating-without-institution",
+   "live": true,
+   "title": "Curating Without an Institution",
+   "keyword": "independent curator",
+   "type": "essay",
+   "published": "2026-10-20",
+   "modified": "2026-10-20",
+   "gsc": {
+    "clicks": 124,
+    "impr": 556,
+    "pos": 7.9,
+    "ctr": 22.3
+   },
+   "gsc_prev": {
+    "clicks": 24,
+    "impr": 117,
+    "pos": 8.6
+   },
+   "ga": {
+    "sessions": 49,
+    "views": 124,
+    "engaged_sec": 12548,
+    "apply_clicks": 4
+   },
+   "ga_prev": {
+    "sessions": 9,
+    "apply_clicks": 0
+   },
+   "weekly": [
+    [
+     "2026-W37",
+     0,
+     0
+    ],
+    [
+     "2026-W38",
+     0,
+     0
+    ],
+    [
+     "2026-W39",
+     0,
+     0
+    ],
+    [
+     "2026-W40",
+     0,
+     0
+    ],
+    [
+     "2026-W41",
+     0,
+     0
+    ],
+    [
+     "2026-W42",
+     0,
+     0
+    ],
+    [
+     "2026-W43",
+     2,
+     37
+    ],
+    [
+     "2026-W44",
+     5,
+     80
+    ],
+    [
+     "2026-W45",
+     8,
+     122
+    ],
+    [
+     "2026-W46",
+     10,
+     143
+    ],
+    [
+     "2026-W47",
+     12,
+     183
+    ],
+    [
+     "2026-W48",
+     7,
+     108
+    ]
+   ],
+   "fading": false,
+   "on_keyword": {
+    "impr": 194,
+    "pos": 7.9
+   },
+   "top_queries": [
+    [
+     "independent curator",
+     37,
+     194,
+     7.9
+    ],
+    [
+     "independent curator 2026",
+     9,
+     66,
+     10.0
+    ],
+    [
+     "how to independent curator",
+     6,
+     50,
+     12.2
+    ]
+   ],
+   "index": {
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "last_crawl": "2026-11-20"
+   },
+   "gsc_inspect_url": "https://search.google.com/search-console",
+   "group": "B",
+   "earnings": 1.03
+  },
+  {
+   "slug": "collectors-2026",
+   "url": "https://medium.com/the-open-studio/collectors-2026",
+   "live": true,
+   "title": "Who Buys Emerging Art in 2026",
+   "keyword": "emerging art collectors",
+   "type": "data",
+   "published": "2026-11-13",
+   "modified": "2026-11-13",
+   "gsc": {
+    "clicks": 71,
+    "impr": 373,
+    "pos": 12.2,
+    "ctr": 19.0
+   },
+   "gsc_prev": {
+    "clicks": 0,
+    "impr": 0,
+    "pos": 12.9
+   },
+   "ga": {
+    "sessions": 28,
+    "views": 71,
+    "engaged_sec": 4288,
+    "apply_clicks": 2
+   },
+   "ga_prev": {
+    "sessions": 0,
+    "apply_clicks": 0
+   },
+   "weekly": [
+    [
+     "2026-W37",
+     0,
+     0
+    ],
+    [
+     "2026-W38",
+     0,
+     0
+    ],
+    [
+     "2026-W39",
+     0,
+     0
+    ],
+    [
+     "2026-W40",
+     0,
+     0
+    ],
+    [
+     "2026-W41",
+     0,
+     0
+    ],
+    [
+     "2026-W42",
+     0,
+     0
+    ],
+    [
+     "2026-W43",
+     0,
+     0
+    ],
+    [
+     "2026-W44",
+     0,
+     0
+    ],
+    [
+     "2026-W45",
+     0,
+     0
+    ],
+    [
+     "2026-W46",
+     0,
+     0
+    ],
+    [
+     "2026-W47",
+     13,
+     225
+    ],
+    [
+     "2026-W48",
+     8,
+     148
+    ]
+   ],
+   "fading": false,
+   "on_keyword": {
+    "impr": 130,
+    "pos": 12.2
+   },
+   "top_queries": [
+    [
+     "emerging art collectors",
+     21,
+     130,
+     12.2
+    ],
+    [
+     "emerging art collectors 2026",
+     5,
+     44,
+     14.3
+    ],
+    [
+     "how to emerging art collectors",
+     3,
+     33,
+     16.5
+    ]
+   ],
+   "index": {
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "last_crawl": "2026-11-15"
+   },
+   "gsc_inspect_url": "https://search.google.com/search-console",
+   "group": "N",
+   "earnings": 1.05
+  },
+  {
+   "slug": "ai-images-artists",
+   "url": "https://medium.com/the-open-studio/ai-images-artists",
+   "live": true,
+   "title": "AI Images and Young Artists: One Year of Data",
+   "keyword": "ai art artists income",
+   "type": "data",
+   "published": "2026-11-02",
+   "modified": "2026-11-02",
+   "gsc": {
+    "clicks": 65,
+    "impr": 294,
+    "pos": 8.3,
+    "ctr": 22.1
+   },
+   "gsc_prev": {
+    "clicks": 0,
+    "impr": 0,
+    "pos": 7.4
+   },
+   "ga": {
+    "sessions": 26,
+    "views": 65,
+    "engaged_sec": 5694,
+    "apply_clicks": 2
+   },
+   "ga_prev": {
+    "sessions": 0,
+    "apply_clicks": 0
+   },
+   "weekly": [
+    [
+     "2026-W37",
+     0,
+     0
+    ],
+    [
+     "2026-W38",
+     0,
+     0
+    ],
+    [
+     "2026-W39",
+     0,
+     0
+    ],
+    [
+     "2026-W40",
+     0,
+     0
+    ],
+    [
+     "2026-W41",
+     0,
+     0
+    ],
+    [
+     "2026-W42",
+     0,
+     0
+    ],
+    [
+     "2026-W43",
+     0,
+     0
+    ],
+    [
+     "2026-W44",
+     0,
+     0
+    ],
+    [
+     "2026-W45",
+     3,
+     45
+    ],
+    [
+     "2026-W46",
+     5,
+     75
+    ],
+    [
+     "2026-W47",
+     7,
+     103
+    ],
+    [
+     "2026-W48",
+     4,
+     71
+    ]
+   ],
+   "fading": false,
+   "on_keyword": {
+    "impr": 102,
+    "pos": 8.3
+   },
+   "top_queries": [
+    [
+     "ai art artists income",
+     19,
+     102,
+     8.3
+    ],
+    [
+     "ai art artists income 2026",
+     5,
+     35,
+     10.4
+    ],
+    [
+     "how to ai art artists income",
+     3,
+     26,
+     12.6
+    ]
+   ],
+   "index": {
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "last_crawl": "2026-11-15"
+   },
+   "gsc_inspect_url": "https://search.google.com/search-console",
+   "group": "B",
+   "earnings": 1.06
+  },
+  {
+   "slug": "shipping-artworks",
+   "url": "https://medium.com/the-open-studio/shipping-artworks",
+   "live": true,
+   "title": "Shipping Artworks Abroad Without Losing Your Fee",
+   "keyword": "shipping artwork internationally",
+   "type": "guide",
+   "published": "2026-10-01",
+   "modified": "2026-10-01",
+   "gsc": {
+    "clicks": 31,
+    "impr": 196,
+    "pos": 10.6,
+    "ctr": 15.8
+   },
+   "gsc_prev": {
+    "clicks": 220,
+    "impr": 1472,
+    "pos": 10.2
+   },
+   "ga": {
+    "sessions": 12,
+    "views": 31,
+    "engaged_sec": 2653,
+    "apply_clicks": 0
+   },
+   "ga_prev": {
+    "sessions": 88,
+    "apply_clicks": 0
+   },
+   "weekly": [
+    [
+     "2026-W37",
+     0,
+     0
+    ],
+    [
+     "2026-W38",
+     0,
+     0
+    ],
+    [
+     "2026-W39",
+     0,
+     0
+    ],
+    [
+     "2026-W40",
+     0,
+     0
+    ],
+    [
+     "2026-W41",
+     8,
+     174
+    ],
+    [
+     "2026-W42",
+     21,
+     421
+    ],
+    [
+     "2026-W43",
+     28,
+     565
+    ],
+    [
+     "2026-W44",
+     15,
+     312
+    ],
+    [
+     "2026-W45",
+     5,
+     113
+    ],
+    [
+     "2026-W46",
+     2,
+     46
+    ],
+    [
+     "2026-W47",
+     1,
+     27
+    ],
+    [
+     "2026-W48",
+     0,
+     10
+    ]
+   ],
+   "fading": false,
+   "on_keyword": {
+    "impr": 68,
+    "pos": 10.6
+   },
+   "top_queries": [
+    [
+     "shipping artwork internationally",
+     9,
+     68,
+     10.6
+    ],
+    [
+     "shipping artwork internationally 2026",
+     2,
+     23,
+     12.7
+    ],
+    [
+     "how to shipping artwork internationally",
+     1,
+     17,
+     14.9
+    ]
+   ],
+   "index": {
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "last_crawl": "2026-11-17"
+   },
+   "gsc_inspect_url": "https://search.google.com/search-console",
+   "group": "C",
+   "earnings": 0.55
+  },
+  {
+   "slug": "first-solo-show",
+   "url": "https://medium.com/the-open-studio/first-solo-show",
+   "live": true,
+   "title": "Negotiating Your First Solo Show",
+   "keyword": "first solo exhibition",
+   "type": "guide",
+   "published": "2026-11-18",
+   "modified": "2026-11-18",
+   "gsc": {
+    "clicks": 24,
+    "impr": 128,
+    "pos": 13.5,
+    "ctr": 18.8
+   },
+   "gsc_prev": {
+    "clicks": 0,
+    "impr": 0,
+    "pos": 15.3
+   },
+   "ga": {
+    "sessions": 9,
+    "views": 24,
+    "engaged_sec": 2572,
+    "apply_clicks": 0
+   },
+   "ga_prev": {
+    "sessions": 0,
+    "apply_clicks": 0
+   },
+   "weekly": [
+    [
+     "2026-W37",
+     0,
+     0
+    ],
+    [
+     "2026-W38",
+     0,
+     0
+    ],
+    [
+     "2026-W39",
+     0,
+     0
+    ],
+    [
+     "2026-W40",
+     0,
+     0
+    ],
+    [
+     "2026-W41",
+     0,
+     0
+    ],
+    [
+     "2026-W42",
+     0,
+     0
+    ],
+    [
+     "2026-W43",
+     0,
+     0
+    ],
+    [
+     "2026-W44",
+     0,
+     0
+    ],
+    [
+     "2026-W45",
+     0,
+     0
+    ],
+    [
+     "2026-W46",
+     0,
+     0
+    ],
+    [
+     "2026-W47",
+     0,
+     0
+    ],
+    [
+     "2026-W48",
+     7,
+     128
+    ]
+   ],
+   "fading": false,
+   "on_keyword": {
+    "impr": 44,
+    "pos": 13.5
+   },
+   "top_queries": [
+    [
+     "first solo exhibition",
+     7,
+     44,
+     13.5
+    ],
+    [
+     "first solo exhibition 2026",
+     1,
+     15,
+     15.6
+    ],
+    [
+     "how to first solo exhibition",
+     1,
+     11,
+     17.8
+    ]
+   ],
+   "index": {
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "last_crawl": "2026-11-20"
+   },
+   "gsc_inspect_url": "https://search.google.com/search-console",
+   "group": "N",
+   "earnings": 0.22
+  },
+  {
+   "slug": "studio-routine",
+   "url": "https://medium.com/the-open-studio/studio-routine",
+   "live": true,
+   "title": "My Studio Routine as a Painter With a Day Job",
+   "keyword": "artist daily routine",
+   "type": "essay",
+   "published": "2026-11-22",
+   "modified": "2026-11-22",
+   "gsc": {
+    "clicks": 15,
+    "impr": 82,
+    "pos": 13.5,
+    "ctr": 18.3
+   },
+   "gsc_prev": {
+    "clicks": 0,
+    "impr": 0,
+    "pos": 15.2
+   },
+   "ga": {
+    "sessions": 6,
+    "views": 15,
+    "engaged_sec": 1086,
+    "apply_clicks": 0
+   },
+   "ga_prev": {
+    "sessions": 0,
+    "apply_clicks": 0
+   },
+   "weekly": [
+    [
+     "2026-W37",
+     0,
+     0
+    ],
+    [
+     "2026-W38",
+     0,
+     0
+    ],
+    [
+     "2026-W39",
+     0,
+     0
+    ],
+    [
+     "2026-W40",
+     0,
+     0
+    ],
+    [
+     "2026-W41",
+     0,
+     0
+    ],
+    [
+     "2026-W42",
+     0,
+     0
+    ],
+    [
+     "2026-W43",
+     0,
+     0
+    ],
+    [
+     "2026-W44",
+     0,
+     0
+    ],
+    [
+     "2026-W45",
+     0,
+     0
+    ],
+    [
+     "2026-W46",
+     0,
+     0
+    ],
+    [
+     "2026-W47",
+     0,
+     0
+    ],
+    [
+     "2026-W48",
+     4,
+     82
+    ]
+   ],
+   "fading": false,
+   "on_keyword": {
+    "impr": 28,
+    "pos": 13.5
+   },
+   "top_queries": [
+    [
+     "artist daily routine",
+     4,
+     28,
+     13.5
+    ],
+    [
+     "artist daily routine 2026",
+     1,
+     9,
+     15.6
+    ],
+    [
+     "how to artist daily routine",
+     0,
+     7,
+     17.8
+    ]
+   ],
+   "index": {
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "last_crawl": "2026-11-20"
+   },
+   "gsc_inspect_url": "https://search.google.com/search-console",
+   "group": "N",
+   "earnings": 0.28
+  },
+  {
+   "slug": "residency-real-cost",
+   "url": "https://medium.com/the-open-studio/residency-real-cost",
+   "live": true,
+   "title": "The Real Cost of an Artist Residency, Line by Line",
+   "keyword": "artist residency cost",
+   "type": "data",
+   "published": "2026-07-29",
+   "modified": "2026-07-29",
+   "gsc": {
+    "clicks": 13,
+    "impr": 83,
+    "pos": 9.2,
+    "ctr": 15.7
+   },
+   "gsc_prev": {
+    "clicks": 14,
+    "impr": 94,
+    "pos": 11.1
+   },
+   "ga": {
+    "sessions": 5,
+    "views": 13,
+    "engaged_sec": 780,
+    "apply_clicks": 0
+   },
+   "ga_prev": {
+    "sessions": 5,
+    "apply_clicks": 0
+   },
+   "weekly": [
+    [
+     "2026-W37",
+     1,
+     34
+    ],
+    [
+     "2026-W38",
+     1,
+     29
+    ],
+    [
+     "2026-W39",
+     1,
+     28
+    ],
+    [
+     "2026-W40",
+     1,
+     27
+    ],
+    [
+     "2026-W41",
+     1,
+     26
+    ],
+    [
+     "2026-W42",
+     1,
+     23
+    ],
+    [
+     "2026-W43",
+     1,
+     22
+    ],
+    [
+     "2026-W44",
+     1,
+     23
+    ],
+    [
+     "2026-W45",
+     1,
+     21
+    ],
+    [
+     "2026-W46",
+     1,
+     26
+    ],
+    [
+     "2026-W47",
+     1,
+     24
+    ],
+    [
+     "2026-W48",
+     0,
+     12
+    ]
+   ],
+   "fading": false,
+   "on_keyword": {
+    "impr": 29,
+    "pos": 9.2
+   },
+   "top_queries": [
+    [
+     "artist residency cost",
+     3,
+     29,
+     9.2
+    ],
+    [
+     "artist residency cost 2026",
+     1,
+     9,
+     11.3
+    ],
+    [
+     "how to artist residency cost",
+     0,
+     7,
+     13.5
+    ]
+   ],
+   "index": {
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "last_crawl": "2026-11-20"
+   },
+   "gsc_inspect_url": "https://search.google.com/search-console",
+   "group": "C",
+   "earnings": 0.25
+  },
+  {
+   "slug": "art-fair-booth",
+   "url": "https://medium.com/the-open-studio/art-fair-booth",
+   "live": true,
+   "title": "What an Art Fair Booth Really Costs a Young Gallery",
+   "keyword": "art fair booth cost",
+   "type": "data",
+   "published": "2026-08-31",
+   "modified": "2026-08-31",
+   "gsc": {
+    "clicks": 12,
+    "impr": 80,
+    "pos": 8.7,
+    "ctr": 15.0
+   },
+   "gsc_prev": {
+    "clicks": 24,
+    "impr": 160,
+    "pos": 9.2
+   },
+   "ga": {
+    "sessions": 4,
+    "views": 12,
+    "engaged_sec": 806,
+    "apply_clicks": 0
+   },
+   "ga_prev": {
+    "sessions": 9,
+    "apply_clicks": 0
+   },
+   "weekly": [
+    [
+     "2026-W37",
+     13,
+     270
+    ],
+    [
+     "2026-W38",
+     22,
+     450
+    ],
+    [
+     "2026-W39",
+     27,
+     544
+    ],
+    [
+     "2026-W40",
+     10,
+     217
+    ],
+    [
+     "2026-W41",
+     4,
+     80
+    ],
+    [
+     "2026-W42",
+     1,
+     28
+    ],
+    [
+     "2026-W43",
+     1,
+     27
+    ],
+    [
+     "2026-W44",
+     1,
+     25
+    ],
+    [
+     "2026-W45",
+     1,
+     23
+    ],
+    [
+     "2026-W46",
+     1,
+     22
+    ],
+    [
+     "2026-W47",
+     1,
+     26
+    ],
+    [
+     "2026-W48",
+     0,
+     9
+    ]
+   ],
+   "fading": false,
+   "on_keyword": {
+    "impr": 28,
+    "pos": 8.7
+   },
+   "top_queries": [
+    [
+     "art fair booth cost",
+     3,
+     28,
+     8.7
+    ],
+    [
+     "art fair booth cost 2026",
+     0,
+     9,
+     10.8
+    ],
+    [
+     "how to art fair booth cost",
+     0,
+     7,
+     13.0
+    ]
+   ],
+   "index": {
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "last_crawl": "2026-11-20"
+   },
+   "gsc_inspect_url": "https://search.google.com/search-console",
+   "group": "C",
+   "earnings": 0.23
+  },
+  {
+   "slug": "biennale-notes",
+   "url": "https://medium.com/the-open-studio/biennale-notes",
+   "live": true,
+   "title": "Notes From the Biennale: What Young Curators Look For",
+   "keyword": "biennale 2026",
+   "type": "essay",
+   "published": "2026-08-18",
+   "modified": "2026-08-18",
+   "gsc": {
+    "clicks": 12,
+    "impr": 76,
+    "pos": 8.8,
+    "ctr": 15.8
+   },
+   "gsc_prev": {
+    "clicks": 14,
+    "impr": 96,
+    "pos": 9.4
+   },
+   "ga": {
+    "sessions": 4,
+    "views": 12,
+    "engaged_sec": 1176,
+    "apply_clicks": 0
+   },
+   "ga_prev": {
+    "sessions": 5,
+    "apply_clicks": 0
+   },
+   "weekly": [
+    [
+     "2026-W37",
+     27,
+     556
+    ],
+    [
+     "2026-W38",
+     14,
+     282
+    ],
+    [
+     "2026-W39",
+     3,
+     78
+    ],
+    [
+     "2026-W40",
+     1,
+     38
+    ],
+    [
+     "2026-W41",
+     1,
+     23
+    ],
+    [
+     "2026-W42",
+     1,
+     23
+    ],
+    [
+     "2026-W43",
+     1,
+     27
+    ],
+    [
+     "2026-W44",
+     1,
+     23
+    ],
+    [
+     "2026-W45",
+     1,
+     23
+    ],
+    [
+     "2026-W46",
+     1,
+     21
+    ],
+    [
+     "2026-W47",
+     1,
+     21
+    ],
+    [
+     "2026-W48",
+     0,
+     11
+    ]
+   ],
+   "fading": false,
+   "on_keyword": {
+    "impr": 26,
+    "pos": 8.8
+   },
+   "top_queries": [
+    [
+     "biennale 2026",
+     3,
+     26,
+     8.8
+    ],
+    [
+     "biennale 2026 2026",
+     0,
+     9,
+     10.9
+    ],
+    [
+     "how to biennale 2026",
+     0,
+     6,
+     13.1
+    ]
+   ],
+   "index": {
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "last_crawl": "2026-11-16"
+   },
+   "gsc_inspect_url": "https://search.google.com/search-console",
+   "group": "C",
+   "earnings": 0.11
+  },
+  {
+   "slug": "artist-run-spaces",
+   "url": "https://medium.com/the-open-studio/artist-run-spaces",
+   "live": true,
+   "title": "Artist-Run Spaces Are the New Galleries",
+   "keyword": "artist run space",
+   "type": "essay",
+   "published": "2026-10-08",
+   "modified": "2026-10-08",
+   "gsc": {
+    "clicks": 3,
+    "impr": 52,
+    "pos": 17.8,
+    "ctr": 5.8
+   },
+   "gsc_prev": {
+    "clicks": 20,
+    "impr": 349,
+    "pos": 19.4
+   },
+   "ga": {
+    "sessions": 1,
+    "views": 3,
+    "engaged_sec": 192,
+    "apply_clicks": 0
+   },
+   "ga_prev": {
+    "sessions": 8,
+    "apply_clicks": 2
+   },
+   "weekly": [
+    [
+     "2026-W37",
+     0,
+     0
+    ],
+    [
+     "2026-W38",
+     0,
+     0
+    ],
+    [
+     "2026-W39",
+     0,
+     0
+    ],
+    [
+     "2026-W40",
+     0,
+     0
+    ],
+    [
+     "2026-W41",
+     0,
+     0
+    ],
+    [
+     "2026-W42",
+     4,
+     206
+    ],
+    [
+     "2026-W43",
+     1,
+     93
+    ],
+    [
+     "2026-W44",
+     1,
+     50
+    ],
+    [
+     "2026-W45",
+     0,
+     26
+    ],
+    [
+     "2026-W46",
+     0,
+     17
+    ],
+    [
+     "2026-W47",
+     0,
+     7
+    ],
+    [
+     "2026-W48",
+     0,
+     2
+    ]
+   ],
+   "fading": true,
+   "on_keyword": {
+    "impr": 18,
+    "pos": 17.8
+   },
+   "top_queries": [
+    [
+     "artist run space",
+     0,
+     18,
+     17.8
+    ],
+    [
+     "artist run space 2026",
+     0,
+     6,
+     19.9
+    ],
+    [
+     "how to artist run space",
+     0,
+     4,
+     22.1
+    ]
+   ],
+   "index": {
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "last_crawl": "2026-11-19"
+   },
+   "gsc_inspect_url": "https://search.google.com/search-console",
+   "group": "D",
+   "earnings": 0.05
+  },
+  {
+   "slug": "studio-burnout",
+   "url": "https://medium.com/the-open-studio/studio-burnout",
+   "live": true,
+   "title": "Studio Burnout Looks Like Productivity",
+   "keyword": "artist burnout",
+   "type": "essay",
+   "published": "2026-09-06",
+   "modified": "2026-09-06",
+   "gsc": {
+    "clicks": 1,
+    "impr": 18,
+    "pos": 19.5,
+    "ctr": 5.6
+   },
+   "gsc_prev": {
+    "clicks": 2,
+    "impr": 37,
+    "pos": 20.4
+   },
+   "ga": {
+    "sessions": 0,
+    "views": 1,
+    "engaged_sec": 74,
+    "apply_clicks": 0
+   },
+   "ga_prev": {
+    "sessions": 0,
+    "apply_clicks": 0
+   },
+   "weekly": [
+    [
+     "2026-W37",
+     4,
+     228
+    ],
+    [
+     "2026-W38",
+     2,
+     114
+    ],
+    [
+     "2026-W39",
+     1,
+     66
+    ],
+    [
+     "2026-W40",
+     0,
+     37
+    ],
+    [
+     "2026-W41",
+     0,
+     17
+    ],
+    [
+     "2026-W42",
+     0,
+     9
+    ],
+    [
+     "2026-W43",
+     0,
+     5
+    ],
+    [
+     "2026-W44",
+     0,
+     6
+    ],
+    [
+     "2026-W45",
+     0,
+     5
+    ],
+    [
+     "2026-W46",
+     0,
+     5
+    ],
+    [
+     "2026-W47",
+     0,
+     6
+    ],
+    [
+     "2026-W48",
+     0,
+     2
+    ]
+   ],
+   "fading": true,
+   "on_keyword": {
+    "impr": 6,
+    "pos": 19.5
+   },
+   "top_queries": [
+    [
+     "artist burnout",
+     0,
+     6,
+     19.5
+    ],
+    [
+     "artist burnout 2026",
+     0,
+     2,
+     21.6
+    ],
+    [
+     "how to artist burnout",
+     0,
+     1,
+     23.8
+    ]
+   ],
+   "index": {
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "last_crawl": "2026-11-23"
+   },
+   "gsc_inspect_url": "https://search.google.com/search-console",
+   "group": "D",
+   "earnings": 0.02
+  },
+  {
+   "slug": "instagram-artists",
+   "url": "https://medium.com/the-open-studio/instagram-artists",
+   "live": true,
+   "title": "Instagram Is Not Your Portfolio",
+   "keyword": "instagram for artists",
+   "type": "essay",
+   "published": "2026-09-12",
+   "modified": "2026-09-12",
+   "gsc": {
+    "clicks": 1,
+    "impr": 17,
+    "pos": 17.9,
+    "ctr": 5.9
+   },
+   "gsc_prev": {
+    "clicks": 3,
+    "impr": 62,
+    "pos": 16.6
+   },
+   "ga": {
+    "sessions": 0,
+    "views": 1,
+    "engaged_sec": 73,
+    "apply_clicks": 0
+   },
+   "ga_prev": {
+    "sessions": 1,
+    "apply_clicks": 0
+   },
+   "weekly": [
+    [
+     "2026-W37",
+     0,
+     0
+    ],
+    [
+     "2026-W38",
+     4,
+     227
+    ],
+    [
+     "2026-W39",
+     2,
+     117
+    ],
+    [
+     "2026-W40",
+     1,
+     62
+    ],
+    [
+     "2026-W41",
+     0,
+     30
+    ],
+    [
+     "2026-W42",
+     0,
+     19
+    ],
+    [
+     "2026-W43",
+     0,
+     8
+    ],
+    [
+     "2026-W44",
+     0,
+     5
+    ],
+    [
+     "2026-W45",
+     0,
+     5
+    ],
+    [
+     "2026-W46",
+     0,
+     5
+    ],
+    [
+     "2026-W47",
+     0,
+     5
+    ],
+    [
+     "2026-W48",
+     0,
+     2
+    ]
+   ],
+   "fading": true,
+   "on_keyword": {
+    "impr": 5,
+    "pos": 17.9
+   },
+   "top_queries": [
+    [
+     "instagram for artists",
+     0,
+     5,
+     17.9
+    ],
+    [
+     "instagram for artists 2026",
+     0,
+     2,
+     20.0
+    ],
+    [
+     "how to instagram for artists",
+     0,
+     1,
+     22.2
+    ]
+   ],
+   "index": {
+    "verdict": "NEUTRAL",
+    "coverage": "Crawled - currently not indexed",
+    "last_crawl": "2026-10-15"
+   },
+   "gsc_inspect_url": "https://search.google.com/search-console",
+   "group": "D",
+   "earnings": 0.01
+  }
+ ],
+ "opportunities": [
+  {
+   "slug": "artist-statement",
+   "query": "artist statement template",
+   "impr": 310,
+   "pos": 8.1
+  },
+  {
+   "slug": "pricing-first-works",
+   "query": "how much to charge for a painting",
+   "impr": 182,
+   "pos": 9.4
+  },
+  {
+   "slug": "grant-applications",
+   "query": "art grants for young artists",
+   "impr": 160,
+   "pos": 11.2
+  },
+  {
+   "slug": "residency-real-cost",
+   "query": "free artist residencies",
+   "impr": 141,
+   "pos": 7.7
+  },
+  {
+   "slug": "portfolio-pdf",
+   "query": "artist portfolio example",
+   "impr": 96,
+   "pos": 10.5
+  }
+ ],
+ "rising_queries": [
+  {
+   "query": "ai art and artists income",
+   "impr": 420,
+   "prev": 90,
+   "pos": 9.6,
+   "clicks": 31
+  },
+  {
+   "query": "open call deadline december",
+   "impr": 310,
+   "prev": 40,
+   "pos": 14.2,
+   "clicks": 9
+  },
+  {
+   "query": "artist taxes selling abroad",
+   "impr": 180,
+   "prev": 22,
+   "pos": 12.8,
+   "clicks": 6
+  },
+  {
+   "query": "independent curator how to start",
+   "impr": 150,
+   "prev": 60,
+   "pos": 6.1,
+   "clicks": 18
+  },
+  {
+   "query": "artist statement template",
+   "impr": 310,
+   "prev": 120,
+   "pos": 8.1,
+   "clicks": 4
+  }
+ ],
+ "keywords": [
+  {
+   "q": "artist residency",
+   "cluster": "Artist Residency",
+   "intent": "Informational",
+   "icp": "collector",
+   "status": "New",
+   "suggest": "10",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "artist residency 2026",
+   "cluster": "Artist Residency",
+   "intent": "Informational",
+   "icp": "curator",
+   "status": "New",
+   "suggest": "8",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "artist residency for young artists",
+   "cluster": "Artist Residency",
+   "intent": "Informational",
+   "icp": "curator",
+   "status": "New",
+   "suggest": "4",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "artist residency examples",
+   "cluster": "Artist Residency",
+   "intent": "Informational",
+   "icp": "collector",
+   "status": "New",
+   "suggest": "9",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "artist residency template",
+   "cluster": "Artist Residency",
+   "intent": "Informational",
+   "icp": "collector",
+   "status": "New",
+   "suggest": "3",
+   "verdict": "",
+   "impr": 112,
+   "clicks": 6,
+   "pos": 17.1,
+   "article": null
+  },
+  {
+   "q": "artist residency tips",
+   "cluster": "Artist Residency",
+   "intent": "Informational",
+   "icp": "graduate",
+   "status": "New",
+   "suggest": "10",
+   "verdict": "",
+   "impr": 319,
+   "clicks": 19,
+   "pos": 29.2,
+   "article": null
+  },
+  {
+   "q": "artist residency cost",
+   "cluster": "Artist Residency",
+   "intent": "Informational",
+   "icp": "collector",
+   "status": "Used",
+   "suggest": "3",
+   "verdict": "",
+   "impr": 274,
+   "clicks": 16,
+   "pos": 16.8,
+   "article": "residency-real-cost"
+  },
+  {
+   "q": "artist residency europe",
+   "cluster": "Artist Residency",
+   "intent": "Informational",
+   "icp": "graduate",
+   "status": "New",
+   "suggest": "10",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "artist residency application",
+   "cluster": "Artist Residency",
+   "intent": "Informational",
+   "icp": "gallerist",
+   "status": "New",
+   "suggest": "6",
+   "verdict": "",
+   "impr": 244,
+   "clicks": 14,
+   "pos": 10.4,
+   "article": null
+  },
+  {
+   "q": "artist residency how to",
+   "cluster": "Artist Residency",
+   "intent": "Informational",
+   "icp": "curator",
+   "status": "New",
+   "suggest": "8",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "open call",
+   "cluster": "Open Call",
+   "intent": "Informational",
+   "icp": "graduate",
+   "status": "New",
+   "suggest": "5",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "open call 2026",
+   "cluster": "Open Call",
+   "intent": "Informational",
+   "icp": "curator",
+   "status": "New",
+   "suggest": "4",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "open call for young artists",
+   "cluster": "Open Call",
+   "intent": "Informational",
+   "icp": "graduate",
+   "status": "New",
+   "suggest": "5",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "open call examples",
+   "cluster": "Open Call",
+   "intent": "Informational",
+   "icp": "graduate",
+   "status": "New",
+   "suggest": "6",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "open call template",
+   "cluster": "Open Call",
+   "intent": "Informational",
+   "icp": "daytime",
+   "status": "New",
+   "suggest": "9",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "open call tips",
+   "cluster": "Open Call",
+   "intent": "Informational",
+   "icp": "collector",
+   "status": "New",
+   "suggest": "3",
+   "verdict": "",
+   "impr": 63,
+   "clicks": 3,
+   "pos": 26.1,
+   "article": null
+  },
+  {
+   "q": "open call cost",
+   "cluster": "Open Call",
+   "intent": "Informational",
+   "icp": "daytime",
+   "status": "New",
+   "suggest": "10",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "open call europe",
+   "cluster": "Open Call",
+   "intent": "Informational",
+   "icp": "gallerist",
+   "status": "New",
+   "suggest": "8",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "open call application",
+   "cluster": "Open Call",
+   "intent": "Informational",
+   "icp": "collector",
+   "status": "New",
+   "suggest": "5",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "open call how to",
+   "cluster": "Open Call",
+   "intent": "Informational",
+   "icp": "collector",
+   "status": "New",
+   "suggest": "5",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "artist statement",
+   "cluster": "Artist Statement",
+   "intent": "Informational",
+   "icp": "daytime",
+   "status": "New",
+   "suggest": "7",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "artist statement 2026",
+   "cluster": "Artist Statement",
+   "intent": "Informational",
+   "icp": "collector",
+   "status": "New",
+   "suggest": "7",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "artist statement for young artists",
+   "cluster": "Artist Statement",
+   "intent": "Informational",
+   "icp": "daytime",
+   "status": "New",
+   "suggest": "3",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "artist statement examples",
+   "cluster": "Artist Statement",
+   "intent": "Informational",
+   "icp": "daytime",
+   "status": "Used",
+   "suggest": "3",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": "artist-statement"
+  },
+  {
+   "q": "artist statement template",
+   "cluster": "Artist Statement",
+   "intent": "Informational",
+   "icp": "graduate",
+   "status": "New",
+   "suggest": "8",
+   "verdict": "",
+   "impr": 142,
+   "clicks": 8,
+   "pos": 25.6,
+   "article": null
+  },
+  {
+   "q": "artist statement tips",
+   "cluster": "Artist Statement",
+   "intent": "Informational",
+   "icp": "daytime",
+   "status": "New",
+   "suggest": "8",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "artist statement cost",
+   "cluster": "Artist Statement",
+   "intent": "Informational",
+   "icp": "graduate",
+   "status": "New",
+   "suggest": "5",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "artist statement europe",
+   "cluster": "Artist Statement",
+   "intent": "Informational",
+   "icp": "curator",
+   "status": "New",
+   "suggest": "3",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "artist statement application",
+   "cluster": "Artist Statement",
+   "intent": "Informational",
+   "icp": "collector",
+   "status": "New",
+   "suggest": "5",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "artist statement how to",
+   "cluster": "Artist Statement",
+   "intent": "Informational",
+   "icp": "graduate",
+   "status": "New",
+   "suggest": "2",
+   "verdict": "",
+   "impr": 46,
+   "clicks": 2,
+   "pos": 5.0,
+   "article": null
+  },
+  {
+   "q": "art grants",
+   "cluster": "Art Grants",
+   "intent": "Informational",
+   "icp": "daytime",
+   "status": "New",
+   "suggest": "5",
+   "verdict": "",
+   "impr": 292,
+   "clicks": 17,
+   "pos": 8.8,
+   "article": null
+  },
+  {
+   "q": "art grants 2026",
+   "cluster": "Art Grants",
+   "intent": "Informational",
+   "icp": "daytime",
+   "status": "New",
+   "suggest": "6",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "art grants for young artists",
+   "cluster": "Art Grants",
+   "intent": "Informational",
+   "icp": "collector",
+   "status": "New",
+   "suggest": "2",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "art grants examples",
+   "cluster": "Art Grants",
+   "intent": "Informational",
+   "icp": "graduate",
+   "status": "New",
+   "suggest": "3",
+   "verdict": "",
+   "impr": 78,
+   "clicks": 4,
+   "pos": 12.5,
+   "article": null
+  },
+  {
+   "q": "art grants template",
+   "cluster": "Art Grants",
+   "intent": "Informational",
+   "icp": "collector",
+   "status": "New",
+   "suggest": "7",
+   "verdict": "",
+   "impr": 249,
+   "clicks": 14,
+   "pos": 15.2,
+   "article": null
+  },
+  {
+   "q": "art grants tips",
+   "cluster": "Art Grants",
+   "intent": "Informational",
+   "icp": "graduate",
+   "status": "New",
+   "suggest": "2",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "art grants cost",
+   "cluster": "Art Grants",
+   "intent": "Informational",
+   "icp": "gallerist",
+   "status": "New",
+   "suggest": "9",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "art grants europe",
+   "cluster": "Art Grants",
+   "intent": "Informational",
+   "icp": "gallerist",
+   "status": "New",
+   "suggest": "5",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "art grants application",
+   "cluster": "Art Grants",
+   "intent": "Informational",
+   "icp": "graduate",
+   "status": "New",
+   "suggest": "10",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "art grants how to",
+   "cluster": "Art Grants",
+   "intent": "Informational",
+   "icp": "graduate",
+   "status": "New",
+   "suggest": "8",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "gallery commission",
+   "cluster": "Gallery Commission",
+   "intent": "Informational",
+   "icp": "collector",
+   "status": "Used",
+   "suggest": "7",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": "gallery-commission"
+  },
+  {
+   "q": "gallery commission 2026",
+   "cluster": "Gallery Commission",
+   "intent": "Informational",
+   "icp": "curator",
+   "status": "New",
+   "suggest": "3",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "gallery commission for young artists",
+   "cluster": "Gallery Commission",
+   "intent": "Informational",
+   "icp": "gallerist",
+   "status": "New",
+   "suggest": "4",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "gallery commission examples",
+   "cluster": "Gallery Commission",
+   "intent": "Informational",
+   "icp": "gallerist",
+   "status": "New",
+   "suggest": "4",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "gallery commission template",
+   "cluster": "Gallery Commission",
+   "intent": "Informational",
+   "icp": "daytime",
+   "status": "New",
+   "suggest": "3",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "gallery commission tips",
+   "cluster": "Gallery Commission",
+   "intent": "Informational",
+   "icp": "gallerist",
+   "status": "New",
+   "suggest": "3",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "gallery commission cost",
+   "cluster": "Gallery Commission",
+   "intent": "Informational",
+   "icp": "collector",
+   "status": "New",
+   "suggest": "2",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "gallery commission europe",
+   "cluster": "Gallery Commission",
+   "intent": "Informational",
+   "icp": "curator",
+   "status": "New",
+   "suggest": "7",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "gallery commission application",
+   "cluster": "Gallery Commission",
+   "intent": "Informational",
+   "icp": "collector",
+   "status": "New",
+   "suggest": "4",
+   "verdict": "",
+   "impr": 120,
+   "clicks": 7,
+   "pos": 17.9,
+   "article": null
+  },
+  {
+   "q": "gallery commission how to",
+   "cluster": "Gallery Commission",
+   "intent": "Informational",
+   "icp": "daytime",
+   "status": "New",
+   "suggest": "3",
+   "verdict": "",
+   "impr": 209,
+   "clicks": 12,
+   "pos": 23.8,
+   "article": null
+  },
+  {
+   "q": "art pricing",
+   "cluster": "Art Pricing",
+   "intent": "Informational",
+   "icp": "graduate",
+   "status": "New",
+   "suggest": "3",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "art pricing 2026",
+   "cluster": "Art Pricing",
+   "intent": "Informational",
+   "icp": "curator",
+   "status": "New",
+   "suggest": "9",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "art pricing for young artists",
+   "cluster": "Art Pricing",
+   "intent": "Informational",
+   "icp": "daytime",
+   "status": "New",
+   "suggest": "8",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "art pricing examples",
+   "cluster": "Art Pricing",
+   "intent": "Informational",
+   "icp": "curator",
+   "status": "New",
+   "suggest": "6",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "art pricing template",
+   "cluster": "Art Pricing",
+   "intent": "Informational",
+   "icp": "collector",
+   "status": "New",
+   "suggest": "10",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "art pricing tips",
+   "cluster": "Art Pricing",
+   "intent": "Informational",
+   "icp": "collector",
+   "status": "New",
+   "suggest": "3",
+   "verdict": "",
+   "impr": 270,
+   "clicks": 16,
+   "pos": 20.6,
+   "article": null
+  },
+  {
+   "q": "art pricing cost",
+   "cluster": "Art Pricing",
+   "intent": "Informational",
+   "icp": "collector",
+   "status": "New",
+   "suggest": "2",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "art pricing europe",
+   "cluster": "Art Pricing",
+   "intent": "Informational",
+   "icp": "gallerist",
+   "status": "New",
+   "suggest": "9",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "art pricing application",
+   "cluster": "Art Pricing",
+   "intent": "Informational",
+   "icp": "collector",
+   "status": "New",
+   "suggest": "2",
+   "verdict": "",
+   "impr": 96,
+   "clicks": 5,
+   "pos": 15.2,
+   "article": null
+  },
+  {
+   "q": "art pricing how to",
+   "cluster": "Art Pricing",
+   "intent": "Informational",
+   "icp": "curator",
+   "status": "New",
+   "suggest": "10",
+   "verdict": "",
+   "impr": 263,
+   "clicks": 15,
+   "pos": 14.4,
+   "article": null
+  },
+  {
+   "q": "independent curator",
+   "cluster": "Independent Curator",
+   "intent": "Informational",
+   "icp": "collector",
+   "status": "Used",
+   "suggest": "6",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": "curating-without-institution"
+  },
+  {
+   "q": "independent curator 2026",
+   "cluster": "Independent Curator",
+   "intent": "Informational",
+   "icp": "collector",
+   "status": "New",
+   "suggest": "6",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "independent curator for young artists",
+   "cluster": "Independent Curator",
+   "intent": "Informational",
+   "icp": "graduate",
+   "status": "New",
+   "suggest": "2",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "independent curator examples",
+   "cluster": "Independent Curator",
+   "intent": "Informational",
+   "icp": "daytime",
+   "status": "New",
+   "suggest": "8",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "independent curator template",
+   "cluster": "Independent Curator",
+   "intent": "Informational",
+   "icp": "graduate",
+   "status": "New",
+   "suggest": "7",
+   "verdict": "",
+   "impr": 396,
+   "clicks": 23,
+   "pos": 23.5,
+   "article": null
+  },
+  {
+   "q": "independent curator tips",
+   "cluster": "Independent Curator",
+   "intent": "Informational",
+   "icp": "graduate",
+   "status": "New",
+   "suggest": "5",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "independent curator cost",
+   "cluster": "Independent Curator",
+   "intent": "Informational",
+   "icp": "curator",
+   "status": "New",
+   "suggest": "5",
+   "verdict": "",
+   "impr": 229,
+   "clicks": 13,
+   "pos": 5.2,
+   "article": null
+  },
+  {
+   "q": "independent curator europe",
+   "cluster": "Independent Curator",
+   "intent": "Informational",
+   "icp": "daytime",
+   "status": "New",
+   "suggest": "5",
+   "verdict": "",
+   "impr": 60,
+   "clicks": 3,
+   "pos": 19.7,
+   "article": null
+  },
+  {
+   "q": "independent curator application",
+   "cluster": "Independent Curator",
+   "intent": "Informational",
+   "icp": "collector",
+   "status": "New",
+   "suggest": "8",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "independent curator how to",
+   "cluster": "Independent Curator",
+   "intent": "Informational",
+   "icp": "daytime",
+   "status": "New",
+   "suggest": "2",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "art fair",
+   "cluster": "Art Fair",
+   "intent": "Informational",
+   "icp": "graduate",
+   "status": "New",
+   "suggest": "7",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "art fair 2026",
+   "cluster": "Art Fair",
+   "intent": "Informational",
+   "icp": "gallerist",
+   "status": "New",
+   "suggest": "9",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "art fair for young artists",
+   "cluster": "Art Fair",
+   "intent": "Informational",
+   "icp": "collector",
+   "status": "New",
+   "suggest": "8",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "art fair examples",
+   "cluster": "Art Fair",
+   "intent": "Informational",
+   "icp": "curator",
+   "status": "New",
+   "suggest": "4",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "art fair template",
+   "cluster": "Art Fair",
+   "intent": "Informational",
+   "icp": "graduate",
+   "status": "New",
+   "suggest": "10",
+   "verdict": "",
+   "impr": 132,
+   "clicks": 7,
+   "pos": 27.2,
+   "article": null
+  },
+  {
+   "q": "art fair tips",
+   "cluster": "Art Fair",
+   "intent": "Informational",
+   "icp": "curator",
+   "status": "New",
+   "suggest": "6",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "art fair cost",
+   "cluster": "Art Fair",
+   "intent": "Informational",
+   "icp": "curator",
+   "status": "New",
+   "suggest": "5",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "art fair europe",
+   "cluster": "Art Fair",
+   "intent": "Informational",
+   "icp": "collector",
+   "status": "New",
+   "suggest": "5",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "art fair application",
+   "cluster": "Art Fair",
+   "intent": "Informational",
+   "icp": "graduate",
+   "status": "New",
+   "suggest": "2",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "art fair how to",
+   "cluster": "Art Fair",
+   "intent": "Informational",
+   "icp": "gallerist",
+   "status": "New",
+   "suggest": "2",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "artist portfolio",
+   "cluster": "Artist Portfolio",
+   "intent": "Informational",
+   "icp": "graduate",
+   "status": "New",
+   "suggest": "5",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "artist portfolio 2026",
+   "cluster": "Artist Portfolio",
+   "intent": "Informational",
+   "icp": "graduate",
+   "status": "New",
+   "suggest": "3",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "artist portfolio for young artists",
+   "cluster": "Artist Portfolio",
+   "intent": "Informational",
+   "icp": "collector",
+   "status": "New",
+   "suggest": "5",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "artist portfolio examples",
+   "cluster": "Artist Portfolio",
+   "intent": "Informational",
+   "icp": "gallerist",
+   "status": "New",
+   "suggest": "9",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "artist portfolio template",
+   "cluster": "Artist Portfolio",
+   "intent": "Informational",
+   "icp": "curator",
+   "status": "New",
+   "suggest": "7",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "artist portfolio tips",
+   "cluster": "Artist Portfolio",
+   "intent": "Informational",
+   "icp": "graduate",
+   "status": "New",
+   "suggest": "3",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "artist portfolio cost",
+   "cluster": "Artist Portfolio",
+   "intent": "Informational",
+   "icp": "gallerist",
+   "status": "New",
+   "suggest": "8",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "artist portfolio europe",
+   "cluster": "Artist Portfolio",
+   "intent": "Informational",
+   "icp": "gallerist",
+   "status": "New",
+   "suggest": "4",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "artist portfolio application",
+   "cluster": "Artist Portfolio",
+   "intent": "Informational",
+   "icp": "collector",
+   "status": "New",
+   "suggest": "7",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "artist portfolio how to",
+   "cluster": "Artist Portfolio",
+   "intent": "Informational",
+   "icp": "gallerist",
+   "status": "New",
+   "suggest": "7",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "emerging art",
+   "cluster": "Emerging Art",
+   "intent": "Informational",
+   "icp": "gallerist",
+   "status": "New",
+   "suggest": "7",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "emerging art 2026",
+   "cluster": "Emerging Art",
+   "intent": "Informational",
+   "icp": "gallerist",
+   "status": "New",
+   "suggest": "9",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "emerging art for young artists",
+   "cluster": "Emerging Art",
+   "intent": "Informational",
+   "icp": "curator",
+   "status": "New",
+   "suggest": "2",
+   "verdict": "",
+   "impr": 360,
+   "clicks": 21,
+   "pos": 6.0,
+   "article": null
+  },
+  {
+   "q": "emerging art examples",
+   "cluster": "Emerging Art",
+   "intent": "Informational",
+   "icp": "curator",
+   "status": "New",
+   "suggest": "9",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "emerging art template",
+   "cluster": "Emerging Art",
+   "intent": "Informational",
+   "icp": "curator",
+   "status": "New",
+   "suggest": "4",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "emerging art tips",
+   "cluster": "Emerging Art",
+   "intent": "Informational",
+   "icp": "curator",
+   "status": "New",
+   "suggest": "7",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "emerging art cost",
+   "cluster": "Emerging Art",
+   "intent": "Informational",
+   "icp": "gallerist",
+   "status": "New",
+   "suggest": "6",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "emerging art europe",
+   "cluster": "Emerging Art",
+   "intent": "Informational",
+   "icp": "gallerist",
+   "status": "New",
+   "suggest": "7",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "emerging art application",
+   "cluster": "Emerging Art",
+   "intent": "Informational",
+   "icp": "collector",
+   "status": "New",
+   "suggest": "5",
+   "verdict": "",
+   "impr": 123,
+   "clicks": 7,
+   "pos": 6.2,
+   "article": null
+  },
+  {
+   "q": "emerging art how to",
+   "cluster": "Emerging Art",
+   "intent": "Informational",
+   "icp": "curator",
+   "status": "New",
+   "suggest": "8",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "artist taxes",
+   "cluster": "Artist Taxes",
+   "intent": "Informational",
+   "icp": "daytime",
+   "status": "Used",
+   "suggest": "7",
+   "verdict": "",
+   "impr": 309,
+   "clicks": 18,
+   "pos": 24.7,
+   "article": "artist-taxes"
+  },
+  {
+   "q": "artist taxes 2026",
+   "cluster": "Artist Taxes",
+   "intent": "Informational",
+   "icp": "collector",
+   "status": "New",
+   "suggest": "4",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "artist taxes for young artists",
+   "cluster": "Artist Taxes",
+   "intent": "Informational",
+   "icp": "gallerist",
+   "status": "New",
+   "suggest": "6",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "artist taxes examples",
+   "cluster": "Artist Taxes",
+   "intent": "Informational",
+   "icp": "collector",
+   "status": "New",
+   "suggest": "2",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "artist taxes template",
+   "cluster": "Artist Taxes",
+   "intent": "Informational",
+   "icp": "collector",
+   "status": "New",
+   "suggest": "6",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "artist taxes tips",
+   "cluster": "Artist Taxes",
+   "intent": "Informational",
+   "icp": "graduate",
+   "status": "New",
+   "suggest": "10",
+   "verdict": "",
+   "impr": 21,
+   "clicks": 1,
+   "pos": 11.9,
+   "article": null
+  },
+  {
+   "q": "artist taxes cost",
+   "cluster": "Artist Taxes",
+   "intent": "Informational",
+   "icp": "curator",
+   "status": "New",
+   "suggest": "3",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "artist taxes europe",
+   "cluster": "Artist Taxes",
+   "intent": "Informational",
+   "icp": "curator",
+   "status": "New",
+   "suggest": "3",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "artist taxes application",
+   "cluster": "Artist Taxes",
+   "intent": "Informational",
+   "icp": "graduate",
+   "status": "New",
+   "suggest": "8",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "artist taxes how to",
+   "cluster": "Artist Taxes",
+   "intent": "Informational",
+   "icp": "gallerist",
+   "status": "New",
+   "suggest": "10",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "studio visit",
+   "cluster": "Studio Visit",
+   "intent": "Informational",
+   "icp": "gallerist",
+   "status": "New",
+   "suggest": "7",
+   "verdict": "",
+   "impr": 183,
+   "clicks": 10,
+   "pos": 12.8,
+   "article": null
+  },
+  {
+   "q": "studio visit 2026",
+   "cluster": "Studio Visit",
+   "intent": "Informational",
+   "icp": "gallerist",
+   "status": "New",
+   "suggest": "9",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "studio visit for young artists",
+   "cluster": "Studio Visit",
+   "intent": "Informational",
+   "icp": "collector",
+   "status": "New",
+   "suggest": "2",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "studio visit examples",
+   "cluster": "Studio Visit",
+   "intent": "Informational",
+   "icp": "graduate",
+   "status": "New",
+   "suggest": "8",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "studio visit template",
+   "cluster": "Studio Visit",
+   "intent": "Informational",
+   "icp": "collector",
+   "status": "New",
+   "suggest": "2",
+   "verdict": "",
+   "impr": 55,
+   "clicks": 3,
+   "pos": 17.6,
+   "article": null
+  },
+  {
+   "q": "studio visit tips",
+   "cluster": "Studio Visit",
+   "intent": "Informational",
+   "icp": "graduate",
+   "status": "Used",
+   "suggest": "8",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": "curator-studio-visit"
+  },
+  {
+   "q": "studio visit cost",
+   "cluster": "Studio Visit",
+   "intent": "Informational",
+   "icp": "daytime",
+   "status": "New",
+   "suggest": "4",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "studio visit europe",
+   "cluster": "Studio Visit",
+   "intent": "Informational",
+   "icp": "daytime",
+   "status": "New",
+   "suggest": "7",
+   "verdict": "",
+   "impr": 335,
+   "clicks": 20,
+   "pos": 9.3,
+   "article": null
+  },
+  {
+   "q": "studio visit application",
+   "cluster": "Studio Visit",
+   "intent": "Informational",
+   "icp": "curator",
+   "status": "New",
+   "suggest": "2",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  },
+  {
+   "q": "studio visit how to",
+   "cluster": "Studio Visit",
+   "intent": "Informational",
+   "icp": "graduate",
+   "status": "New",
+   "suggest": "6",
+   "verdict": "",
+   "impr": 0,
+   "clicks": 0,
+   "pos": null,
+   "article": null
+  }
+ ],
+ "queue": [
+  {
+   "n": 23,
+   "slug": "first-venue-curating",
+   "status": "Draft ready, cover in review",
+   "next": "Pick one of 3 covers, then publish to The Open Studio",
+   "live": false
+  }
+ ],
+ "reddit": [
+  {
+   "file": "research/forums/pricing-art.md",
+   "slug": "pricing-art",
+   "date": "2026-10-11",
+   "questions": 18,
+   "failed": false
+  },
+  {
+   "file": "research/forums/open-calls.md",
+   "slug": "open-calls",
+   "date": "2026-10-03",
+   "questions": 20,
+   "failed": false
+  },
+  {
+   "file": "research/forums/artist-residencies.md",
+   "slug": "artist-residencies",
+   "date": "2026-11-18",
+   "questions": 38,
+   "failed": false
+  },
+  {
+   "file": "research/forums/day-job-artists.md",
+   "slug": "day-job-artists",
+   "date": "2026-11-20",
+   "questions": 39,
+   "failed": false
+  },
+  {
+   "file": "research/forums/first-solo-show.md",
+   "slug": "first-solo-show",
+   "date": "2026-10-01",
+   "questions": 11,
+   "failed": false
+  }
+ ],
+ "ai": [
+  {
+   "file": "research/ai-questions/ai-and-artists.md",
+   "slug": "ai-and-artists",
+   "date": "2026-11-01",
+   "questions": 11,
+   "failed": false
+  },
+  {
+   "file": "research/ai-questions/artist-taxes.md",
+   "slug": "artist-taxes",
+   "date": "2026-11-09",
+   "questions": 13,
+   "failed": false
+  },
+  {
+   "file": "research/ai-questions/independent-curating.md",
+   "slug": "independent-curating",
+   "date": "2026-10-30",
+   "questions": 14,
+   "failed": false
+  },
+  {
+   "file": "research/ai-questions/collecting-art.md",
+   "slug": "collecting-art",
+   "date": "2026-10-15",
+   "questions": 15,
+   "failed": false
+  }
+ ],
+ "audits": [
+  {
+   "file": "research/audits/monthly-review.md",
+   "title": "Monthly review: which darlings live and which to let go",
+   "date": "2026-11-19"
+  },
+  {
+   "file": "research/audits/search-check.md",
+   "title": "Search check: titles that rank but nobody opens",
+   "date": "2026-11-05"
+  }
+ ],
+ "done": [
+  {
+   "date": "2026-11-24",
+   "msg": "Published: My Studio Routine as a Painter With a Day Job"
+  },
+  {
+   "date": "2026-11-23",
+   "msg": "Updated the gallery commission piece with a contract checklist"
+  },
+  {
+   "date": "2026-11-22",
+   "msg": "Answered 14 comments on Curating Without an Institution"
+  },
+  {
+   "date": "2026-11-20",
+   "msg": "Brief ready: where to find a first venue"
+  },
+  {
+   "date": "2026-11-19",
+   "msg": "Monthly review: 3 darlings to refresh, 1 to let go"
+  }
+ ],
+ "errors": [],
+ "audiences": {
+  "rule": "Write for the people who already read and follow: art-school graduates, artists with a day job and independent curators. Young gallerists and first-time collectors read occasionally, and collectors are growing.",
+  "personas": [
+   {
+    "id": "graduate",
+    "name": "The fresh art-school graduate",
+    "who": "Left the academy in the last 2 years, shares a studio, sells to friends",
+    "weight": "core",
+    "jtbd": "Turn a degree show into a practice that pays the rent",
+    "pain": "No idea what to charge, which open calls are worth the fee",
+    "evidence": "Pricing and open-call pieces bring 45% of follows",
+    "loses_us": "Romantic essays with no numbers",
+    "use_case": "Guides"
+   },
+   {
+    "id": "daytime",
+    "name": "The artist with a day job",
+    "who": "Works 30 hours elsewhere, paints at night and on weekends",
+    "weight": "core",
+    "jtbd": "Keep making work without burning out",
+    "pain": "Always tired, the studio turns into a second job",
+    "evidence": "Longest read time; shares in private, rarely comments",
+    "loses_us": "Hustle advice",
+    "use_case": "Essays"
+   },
+   {
+    "id": "curator",
+    "name": "The independent curator",
+    "who": "Curates without an institution: pop-ups, artist-run spaces, online shows",
+    "weight": "core",
+    "jtbd": "Put on a show with no budget and still pay the artists",
+    "pain": "Venues, money and a CV that institutions take seriously",
+    "evidence": "41 responses on one piece, the most saved highlights",
+    "loses_us": "Pieces that ignore curators",
+    "use_case": "Essays"
+   },
+   {
+    "id": "gallerist",
+    "name": "The young gallerist",
+    "who": "Runs a small gallery for 1–4 years, weighs every fair",
+    "weight": "occasional",
+    "jtbd": "Decide which fair and which artists are worth the risk",
+    "pain": "Booth costs and contracts eat the margin",
+    "evidence": "Search waves around fair season, few follows",
+    "loses_us": "Outdated cost lists",
+    "use_case": "Data"
+   },
+   {
+    "id": "collector",
+    "name": "The first-time collector",
+    "who": "Buys the first works under €3,000, unsure what is fair",
+    "weight": "growing",
+    "jtbd": "Buy without being fooled and support artists directly",
+    "pain": "Prices feel random, galleries feel closed",
+    "evidence": "Collector searches tripled in 28 days",
+    "loses_us": "Insider jargon",
+    "use_case": "Data"
+   }
+  ],
+  "confirmed_pains": [
+   {
+    "pain": "“How do I price my work?”",
+    "apps": 38,
+    "persona": "graduate",
+    "verdict": "asked in comments under 7 pieces",
+    "en": "price artwork"
+   },
+   {
+    "pain": "“Which open calls are worth the entry fee?”",
+    "apps": 29,
+    "persona": "graduate",
+    "verdict": "the most saved highlight on Medium",
+    "en": "open call artists"
+   },
+   {
+    "pain": "“How do I keep painting with a full-time job?”",
+    "apps": 22,
+    "persona": "daytime",
+    "verdict": "a new piece just went out",
+    "en": "artist daily routine day job"
+   },
+   {
+    "pain": "“How do I curate my first show with no venue?”",
+    "apps": 17,
+    "persona": "curator",
+    "verdict": "41 responses on one piece",
+    "en": "independent curator"
+   },
+   {
+    "pain": "“What should a first painting cost me as a buyer?”",
+    "apps": 9,
+    "persona": "collector",
+    "verdict": "new this month",
+    "en": "buy emerging art collectors"
+   }
+  ],
+  "content_not_offer": "Asked about, but not worth a piece yet: which brushes, which camera for artwork photos, studio lighting."
+ },
+ "pain_map": [
+  {
+   "pain": "Entry fees for open calls add up",
+   "audience": "graduate",
+   "number": "€25–60 per call, 20+ calls a year (demo)",
+   "what": "",
+   "why_bank": "Fees fund the organisers, not the artists",
+   "use_case": "Guides",
+   "rubric": "",
+   "confidence": "High",
+   "source_status": "Verified",
+   "status": "New",
+   "source": "demo source",
+   "url": null,
+   "date": "2026"
+  },
+  {
+   "pain": "Pricing by the hour",
+   "audience": "graduate",
+   "number": "First prices often below the cost of materials (demo)",
+   "what": "",
+   "why_bank": "No public price data for emerging artists",
+   "use_case": "Guides",
+   "rubric": "",
+   "confidence": "High",
+   "source_status": "Verified",
+   "status": "New",
+   "source": "demo source",
+   "url": null,
+   "date": "2026"
+  },
+  {
+   "pain": "Residencies that cost more than rent",
+   "audience": "graduate",
+   "number": "Half of listed residencies charge a fee (demo)",
+   "what": "",
+   "why_bank": "Free ones are oversubscribed",
+   "use_case": "Data",
+   "rubric": "",
+   "confidence": "High",
+   "source_status": "Needs-source",
+   "status": "New",
+   "source": "demo source",
+   "url": null,
+   "date": "2026"
+  },
+  {
+   "pain": "The second job eats the studio",
+   "audience": "daytime",
+   "number": "8–12 studio hours a week (demo)",
+   "what": "",
+   "why_bank": "No funding model for part-time practice",
+   "use_case": "Essays",
+   "rubric": "",
+   "confidence": "High",
+   "source_status": "Verified",
+   "status": "New",
+   "source": "demo source",
+   "url": null,
+   "date": "2026"
+  },
+  {
+   "pain": "No venue, no budget",
+   "audience": "curator",
+   "number": "Most first shows happen in borrowed spaces (demo)",
+   "what": "",
+   "why_bank": "Institutions look for a CV first",
+   "use_case": "Essays",
+   "rubric": "",
+   "confidence": "High",
+   "source_status": "Verified",
+   "status": "New",
+   "source": "demo source",
+   "url": null,
+   "date": "2026"
+  },
+  {
+   "pain": "Paying artists fairly",
+   "audience": "curator",
+   "number": "Artist fees missing in many small shows (demo)",
+   "what": "",
+   "why_bank": "Budgets go to rent and transport",
+   "use_case": "Guides",
+   "rubric": "",
+   "confidence": "High",
+   "source_status": "Verified",
+   "status": "New",
+   "source": "demo source",
+   "url": null,
+   "date": "2026"
+  },
+  {
+   "pain": "Booth costs",
+   "audience": "gallerist",
+   "number": "A small booth costs as much as a year of rent (demo)",
+   "what": "",
+   "why_bank": "Fairs price for big galleries",
+   "use_case": "Data",
+   "rubric": "",
+   "confidence": "High",
+   "source_status": "Needs-source",
+   "status": "New",
+   "source": "demo source",
+   "url": null,
+   "date": "2026"
+  },
+  {
+   "pain": "Consignment terms",
+   "audience": "gallerist",
+   "number": "50/50 split is the default, little else is (demo)",
+   "what": "",
+   "why_bank": "Contracts copied, not negotiated",
+   "use_case": "Guides",
+   "rubric": "",
+   "confidence": "High",
+   "source_status": "Verified",
+   "status": "New",
+   "source": "demo source",
+   "url": null,
+   "date": "2026"
+  },
+  {
+   "pain": "Prices feel random",
+   "audience": "collector",
+   "number": "Same size, same year, 5× price gap (demo)",
+   "what": "",
+   "why_bank": "Few public price lists",
+   "use_case": "Data",
+   "rubric": "",
+   "confidence": "High",
+   "source_status": "Verified",
+   "status": "New",
+   "source": "demo source",
+   "url": null,
+   "date": "2026"
+  }
+ ],
+ "research_extra": {
+  "docs": [
+   {
+    "title": "Readers' questions this quarter: what the comments ask",
+    "date": "2026-11-12",
+    "author": "Nora Vale",
+    "file": "research/readers-questions.md"
+   },
+   {
+    "title": "Open calls 2026: fees, odds and who actually gets in",
+    "date": "2026-10-29",
+    "author": "Nora Vale",
+    "file": "research/open-calls-2026.md"
+   }
+  ],
+  "sections": [],
+  "pains": [],
+  "ideas": []
+ },
+ "telegram": [
+  {
+   "id": "n1",
+   "url": "https://example.com/digest/1",
+   "date": "2026-11-21",
+   "text": "",
+   "headlines": [
+    "Survey: what emerging artists earned from sales in 2026",
+    "Three city grants open for artists under 35",
+    "A major fair cuts booth prices for galleries under five years old"
+   ]
+  },
+  {
+   "id": "n2",
+   "url": "https://example.com/digest/2",
+   "date": "2026-11-14",
+   "text": "",
+   "headlines": [
+    "New residency map: 120 programmes without a fee",
+    "Museums start paying exhibition fees to living artists"
+   ]
+  }
+ ],
+ "ideas": [
+  {
+   "source": "pain",
+   "keyword": "price artwork",
+   "cluster": "“How do I price my work?”",
+   "audience": "graduate",
+   "covered_by": "pricing-first-works",
+   "why": "Asked 38 times in comments. A piece exists, so a new angle: when and how to raise prices",
+   "score": 22
+  },
+  {
+   "source": "pain",
+   "keyword": "open call artists",
+   "cluster": "“Which open calls are worth the entry fee?”",
+   "audience": "graduate",
+   "covered_by": "open-calls-rejected",
+   "why": "29 questions. Follow-up: a short list of open calls with no fee, checked monthly",
+   "score": 18
+  },
+  {
+   "source": "pain",
+   "keyword": "independent curator venue",
+   "cluster": "“How do I curate my first show with no venue?”",
+   "audience": "curator",
+   "covered_by": null,
+   "why": "17 questions and a note from the comments. No piece yet",
+   "score": 17
+  },
+  {
+   "source": "gsc",
+   "keyword": "open call deadline december",
+   "cluster": null,
+   "audience": null,
+   "why": "310 views in 28 days at position 14, no exact piece",
+   "score": 15
+  },
+  {
+   "source": "gsc",
+   "keyword": "artist taxes selling abroad",
+   "cluster": null,
+   "audience": null,
+   "why": "180 views, was 22. The new guide ranks 12th",
+   "score": 9
+  },
+  {
+   "source": "keys",
+   "keyword": "artist statement template",
+   "variants": [
+    "artist statement examples for painters",
+    "short artist statement"
+   ],
+   "cluster": "Writing",
+   "audience": "graduate",
+   "why": "Search suggests 10 versions of this query; your piece explains, but gives no template",
+   "score": 10
+  },
+  {
+   "source": "keys",
+   "keyword": "how to approach a gallery",
+   "variants": [
+    "email to a gallery template"
+   ],
+   "cluster": "Galleries",
+   "audience": "graduate",
+   "why": "Search suggests 9 versions; no piece of yours answers it",
+   "score": 9
+  },
+  {
+   "source": "keys",
+   "keyword": "how to start collecting art",
+   "variants": [
+    "buying art for the first time"
+   ],
+   "cluster": "Collecting",
+   "audience": "collector",
+   "why": "Search suggests 7 versions; the collectors piece is data, not a how-to",
+   "score": 7
+  },
+  {
+   "source": "telegram",
+   "keyword": null,
+   "cluster": "Survey: what emerging artists earned from sales in 2026",
+   "audience": null,
+   "why": "Digest, 2026-11-21",
+   "url": "https://example.com/digest/1",
+   "score": 3
+  },
+  {
+   "source": "telegram",
+   "keyword": null,
+   "cluster": "Museums start paying exhibition fees to living artists",
+   "audience": null,
+   "why": "Digest, 2026-11-14",
+   "url": "https://example.com/digest/2",
+   "score": 3
+  },
+  {
+   "source": "painmap",
+   "keyword": null,
+   "cluster": "Paying artists fairly",
+   "audience": "curator",
+   "why": "Artist fees missing in many small shows (demo)",
+   "use_case": "Guides",
+   "score": 4
+  },
+  {
+   "source": "painmap",
+   "keyword": null,
+   "cluster": "The second job eats the studio",
+   "audience": "daytime",
+   "why": "8–12 studio hours a week (demo)",
+   "use_case": "Essays",
+   "score": 4
+  }
+ ],
+ "notes": [
+  {
+   "id": "n-01",
+   "date": "2026-11-24",
+   "source": "Studio visit",
+   "text": "A curator spent 4 minutes on the walls and 20 on the sketchbooks. Show the process, not only the finished works.",
+   "tags": [
+    "studio visit",
+    "portfolio"
+   ],
+   "status": "seed",
+   "link": null
+  },
+  {
+   "id": "n-02",
+   "date": "2026-11-23",
+   "source": "Overheard at an opening",
+   "text": "“I priced it by what I would be sad to sell it for.” Best pricing rule I have heard this year.",
+   "tags": [
+    "pricing",
+    "quote"
+   ],
+   "status": "seed",
+   "link": null
+  },
+  {
+   "id": "n-03",
+   "date": "2026-11-22",
+   "source": "Reading",
+   "text": "Hyde's “The Gift”: art lives in two economies at once, the gift and the market. Every young artist is translating between them.",
+   "tags": [
+    "book",
+    "money"
+   ],
+   "status": "used",
+   "link": "studio-routine"
+  },
+  {
+   "id": "n-04",
+   "date": "2026-11-20",
+   "source": "Comments",
+   "text": "Seven readers asked the same thing under the curating piece: where do you find a first venue? That is the next piece.",
+   "tags": [
+    "curating",
+    "readers"
+   ],
+   "status": "idea",
+   "link": "curating-without-institution"
+  },
+  {
+   "id": "n-05",
+   "date": "2026-11-18",
+   "source": "Exhibition",
+   "text": "The best show this month had no wall texts at all. People talked to each other instead of reading.",
+   "tags": [
+    "exhibition",
+    "curating"
+   ],
+   "status": "seed",
+   "link": null
+  },
+  {
+   "id": "n-06",
+   "date": "2026-11-16",
+   "source": "My numbers",
+   "text": "Open calls this year: 40 sent, 3 accepted, €1,140 in fees. Half the fees went to calls I was never right for.",
+   "tags": [
+    "open calls",
+    "money"
+   ],
+   "status": "used",
+   "link": "open-calls-rejected"
+  },
+  {
+   "id": "n-07",
+   "date": "2026-11-13",
+   "source": "Conversation",
+   "text": "A gallerist: “We take 50% because we carry the risk of the next five shows, not this one.” Worth a follow-up.",
+   "tags": [
+    "gallery",
+    "quote"
+   ],
+   "status": "idea",
+   "link": "gallery-commission"
+  },
+  {
+   "id": "n-08",
+   "date": "2026-11-09",
+   "source": "Idea",
+   "text": "A piece written as a price list: what a first solo show actually costs, line by line, paid by whom.",
+   "tags": [
+    "solo show",
+    "money"
+   ],
+   "status": "used",
+   "link": "first-solo-show"
+  },
+  {
+   "id": "n-09",
+   "date": "2026-11-05",
+   "source": "Walk",
+   "text": "Artist-run spaces close because the founder burns out, not because nobody comes.",
+   "tags": [
+    "artist-run",
+    "burnout"
+   ],
+   "status": "seed",
+   "link": null
+  }
+ ],
+ "calendar": [
+  {
+   "date": "2026-06-27",
+   "kind": "article",
+   "title": "How to Price Your First Artworks Without Underselling",
+   "slug": "pricing-first-works",
+   "status": "Published"
+  },
+  {
+   "date": "2026-07-15",
+   "kind": "article",
+   "title": "I Applied to 40 Open Calls. Here Is What the Rejections Taught Me",
+   "slug": "open-calls-rejected",
+   "status": "Published"
+  },
+  {
+   "date": "2026-07-29",
+   "kind": "article",
+   "title": "The Real Cost of an Artist Residency, Line by Line",
+   "slug": "residency-real-cost",
+   "status": "Published"
+  },
+  {
+   "date": "2026-08-06",
+   "kind": "article",
+   "title": "Writing an Artist Statement People Actually Read",
+   "slug": "artist-statement",
+   "status": "Published"
+  },
+  {
+   "date": "2026-08-12",
+   "kind": "article",
+   "title": "Why Galleries Take 50% and What You Get for It",
+   "slug": "gallery-commission",
+   "status": "Published"
+  },
+  {
+   "date": "2026-08-18",
+   "kind": "article",
+   "title": "Notes From the Biennale: What Young Curators Look For",
+   "slug": "biennale-notes",
+   "status": "Published"
+  },
+  {
+   "date": "2026-08-25",
+   "kind": "article",
+   "title": "Side Jobs That Fund a Studio Practice",
+   "slug": "side-jobs-artists",
+   "status": "Published"
+  },
+  {
+   "date": "2026-08-31",
+   "kind": "article",
+   "title": "What an Art Fair Booth Really Costs a Young Gallery",
+   "slug": "art-fair-booth",
+   "status": "Published"
+  },
+  {
+   "date": "2026-09-06",
+   "kind": "article",
+   "title": "Studio Burnout Looks Like Productivity",
+   "slug": "studio-burnout",
+   "status": "Published"
+  },
+  {
+   "date": "2026-09-12",
+   "kind": "article",
+   "title": "Instagram Is Not Your Portfolio",
+   "slug": "instagram-artists",
+   "status": "Published"
+  },
+  {
+   "date": "2026-09-18",
+   "kind": "article",
+   "title": "How to Prepare for a Curator's Studio Visit",
+   "slug": "curator-studio-visit",
+   "status": "Published"
+  },
+  {
+   "date": "2026-09-25",
+   "kind": "article",
+   "title": "Grant Applications for Artists: A Plain Checklist",
+   "slug": "grant-applications",
+   "status": "Published"
+  },
+  {
+   "date": "2026-10-01",
+   "kind": "article",
+   "title": "Shipping Artworks Abroad Without Losing Your Fee",
+   "slug": "shipping-artworks",
+   "status": "Published"
+  },
+  {
+   "date": "2026-10-08",
+   "kind": "article",
+   "title": "Artist-Run Spaces Are the New Galleries",
+   "slug": "artist-run-spaces",
+   "status": "Published"
+  },
+  {
+   "date": "2026-10-14",
+   "kind": "article",
+   "title": "The Consignment Contract, Clause by Clause",
+   "slug": "consignment-contract",
+   "status": "Published"
+  },
+  {
+   "date": "2026-10-20",
+   "kind": "article",
+   "title": "Curating Without an Institution",
+   "slug": "curating-without-institution",
+   "status": "Published"
+  },
+  {
+   "date": "2026-10-26",
+   "kind": "article",
+   "title": "The Portfolio PDF Curators Open to Page Two",
+   "slug": "portfolio-pdf",
+   "status": "Published"
+  },
+  {
+   "date": "2026-10-28",
+   "kind": "ig_live",
+   "format": "instagram",
+   "title": "Studio photo and quote from What an Art Fair Booth Really Costs a Yo",
+   "status": "Posted",
+   "url": null
+  },
+  {
+   "date": "2026-10-31",
+   "kind": "ig_live",
+   "format": "threads",
+   "title": "Studio photo and quote from Writing an Artist Statement People Actua",
+   "status": "Posted",
+   "url": null
+  },
+  {
+   "date": "2026-11-02",
+   "kind": "article",
+   "title": "AI Images and Young Artists: One Year of Data",
+   "slug": "ai-images-artists",
+   "status": "Published"
+  },
+  {
+   "date": "2026-11-03",
+   "kind": "ig_live",
+   "format": "threads",
+   "title": "Thread from How to Price Your First Artworks Without",
+   "status": "Posted",
+   "url": null
+  },
+  {
+   "date": "2026-11-06",
+   "kind": "ig_live",
+   "format": "instagram",
+   "title": "Studio photo and quote from Curating Without an Institution",
+   "status": "Posted",
+   "url": null
+  },
+  {
+   "date": "2026-11-08",
+   "kind": "article",
+   "title": "Taxes for Artists Selling Abroad, Plainly",
+   "slug": "artist-taxes",
+   "status": "Published"
+  },
+  {
+   "date": "2026-11-09",
+   "kind": "ig_live",
+   "format": "linkedin",
+   "title": "Studio photo and quote from The Consignment Contract, Clause by Clau",
+   "status": "Posted",
+   "url": null
+  },
+  {
+   "date": "2026-11-12",
+   "kind": "ig_live",
+   "format": "threads",
+   "title": "Carousel from Grant Applications for Artists: A Plain ",
+   "status": "Posted",
+   "url": null
+  },
+  {
+   "date": "2026-11-13",
+   "kind": "article",
+   "title": "Who Buys Emerging Art in 2026",
+   "slug": "collectors-2026",
+   "status": "Published"
+  },
+  {
+   "date": "2026-11-15",
+   "kind": "article_upd",
+   "title": "Why Galleries Take 50% and What You Get for It",
+   "slug": "gallery-commission",
+   "status": "Updated"
+  },
+  {
+   "date": "2026-11-15",
+   "kind": "ig_live",
+   "format": "instagram",
+   "title": "Studio photo and quote from Side Jobs That Fund a Studio Practice",
+   "status": "Posted",
+   "url": null
+  },
+  {
+   "date": "2026-11-18",
+   "kind": "article",
+   "title": "Negotiating Your First Solo Show",
+   "slug": "first-solo-show",
+   "status": "Published"
+  },
+  {
+   "date": "2026-11-18",
+   "kind": "ig_live",
+   "format": "instagram",
+   "title": "Thread from Curating Without an Institution",
+   "status": "Posted",
+   "url": null
+  },
+  {
+   "date": "2026-11-21",
+   "kind": "ig_live",
+   "format": "linkedin",
+   "title": "Carousel from My Studio Routine as a Painter With a Da",
+   "status": "Posted",
+   "url": null
+  },
+  {
+   "date": "2026-11-22",
+   "kind": "article",
+   "title": "My Studio Routine as a Painter With a Day Job",
+   "slug": "studio-routine",
+   "status": "Published"
+  },
+  {
+   "date": "2026-11-22",
+   "kind": "plan",
+   "title": "What a Studio Visit Costs the Artist",
+   "status": "Draft",
+   "overdue": true,
+   "source": "workspace",
+   "id": "p-late"
+  },
+  {
+   "date": "2026-11-24",
+   "kind": "ig_live",
+   "format": "instagram",
+   "title": "Thread from The Real Cost of an Artist Residency, Li",
+   "status": "Posted",
+   "url": null
+  },
+  {
+   "date": "2026-11-27",
+   "kind": "plan",
+   "title": "Where to Find a First Venue When You Curate Alone",
+   "status": "Planned",
+   "overdue": false,
+   "source": "workspace",
+   "id": "p3"
+  },
+  {
+   "date": "2026-11-27",
+   "kind": "ig",
+   "format": "linkedin",
+   "title": "Thread from Negotiating Your First Solo Show",
+   "status": "Scheduled",
+   "url": null
+  },
+  {
+   "date": "2026-11-30",
+   "kind": "ig",
+   "format": "threads",
+   "title": "Thread from How to Price Your First Artworks Without",
+   "status": "Scheduled",
+   "url": null
+  },
+  {
+   "date": "2026-12-02",
+   "kind": "plan",
+   "title": "Raising Your Prices: The Email I Send to Collectors",
+   "status": "Planned",
+   "overdue": false,
+   "source": "workspace",
+   "id": "p8"
+  },
+  {
+   "date": "2026-12-03",
+   "kind": "ig",
+   "format": "instagram",
+   "title": "Studio photo and quote from The Real Cost of an Artist Residency, Li",
+   "status": "Scheduled",
+   "url": null
+  },
+  {
+   "date": "2026-12-06",
+   "kind": "ig",
+   "format": "linkedin",
+   "title": "Studio photo and quote from What an Art Fair Booth Really Costs a Yo",
+   "status": "Scheduled",
+   "url": null
+  },
+  {
+   "date": "2026-12-09",
+   "kind": "plan",
+   "title": "Open Calls With No Entry Fee, Checked Monthly",
+   "status": "Planned",
+   "overdue": false,
+   "source": "workspace",
+   "id": "p15"
+  }
+ ],
+ "calendar_notion": true,
+ "calendar_ig": true,
+ "stale_notion": 0
+}

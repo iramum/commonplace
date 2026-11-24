@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FFFFFF">
+<title>Commonplace — Oops, I wrote it again.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+/* Medium-like: white, ink #242424, hairlines, black pill buttons, yellow accent.
+   GT Super → Newsreader, Söhne → Inter, content serif → Source Serif 4 (free look-alikes). */
+:root{
+  --ink:#242424; --ink2:#191919; --body:#6B6B6B; --muted:#8C8C8C; --line:#F2F2F2; --line2:#E5E5E5;
+  --bg:#FFFFFF; --soft:#F9F9F9; --yellow:#FFC017; --yellow-pale:#FFFAE1; --green:#1A8917; --green-pale:#E8F3E8; --red:#C94A4A; --red-pale:#FBECEC;
+  --display:'Newsreader',Georgia,serif; --serif:'Source Serif 4',Georgia,serif; --sans:'Inter',-apple-system,system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+button{font:inherit;cursor:pointer;color:inherit}
+.top{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.top .in{display:flex;align-items:center;gap:16px;padding:12px 24px;max-width:1336px;margin:0 auto}
+.wordmark{font-family:var(--display);font-size:26px;font-weight:500;letter-spacing:-.02em}
+.wordmark span{font-family:var(--sans);font-size:12px;color:var(--body);font-weight:400;letter-spacing:0;margin-left:10px}
+.top .sp{flex:1}
+.avatar{width:32px;height:32px;border-radius:999px;background:var(--yellow-pale);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600}
+.wrap{display:flex;max-width:1336px;margin:0 auto}
+.side{width:232px;flex:none;padding:24px 16px;position:sticky;top:61px;height:calc(100vh - 61px);overflow:auto;border-right:1px solid var(--line)}
+.nav{display:block;width:100%;text-align:left;border:0;background:none;padding:9px 12px;border-radius:6px;color:var(--body);font-size:14px;margin-bottom:2px}
+.nav.on{color:var(--ink);font-weight:500;background:var(--soft)}
+.nav .b{float:right;font-size:11px;background:var(--yellow);color:var(--ink);border-radius:999px;padding:0 7px;font-weight:600}
+.nav.later{color:#B3B3B3}
+.side .sec{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin:18px 12px 6px}
+main{flex:1;min-width:0;padding:32px 40px 96px}
+.bottom{display:none}
+@media(max-width:899px){
+  .side{display:none} main{padding:20px 16px 110px} .top .in{padding:12px 16px}
+  .wordmark span{display:none}
+  .demo{display:none}
+  .bottom{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--bg);border-top:1px solid var(--line2);padding:6px 4px calc(6px + env(safe-area-inset-bottom))}
+  .bottom button{flex:1;border:0;background:none;padding:8px 2px;font-size:11px;color:var(--body)}
+  .bottom button.on{color:var(--ink);font-weight:600}
+}
+h1{font-family:var(--display);font-weight:400;font-size:44px;line-height:1.08;letter-spacing:-.02em;margin:0 0 6px}
+@media(max-width:899px){h1{font-size:32px}}
+h2{font-family:var(--display);font-weight:500;font-size:24px;letter-spacing:-.01em;margin:0}
+.lede{font-size:16px;color:var(--body);margin:0 0 24px}
+.date{font-size:13px;color:var(--body);margin-bottom:6px}
+.head{display:flex;align-items:baseline;gap:12px;margin:36px 0 14px}
+.head .sp{flex:1}
+.sub{color:var(--body);font-size:13px;margin:0 0 12px}
+.pill{display:inline-flex;align-items:center;height:22px;padding:0 9px;border-radius:999px;font-size:12px;background:var(--soft);color:var(--body);white-space:nowrap}
+.pill.y{background:var(--yellow);color:var(--ink)} .pill.yp{background:var(--yellow-pale);color:#7A5A00}
+.pill.g{background:var(--green-pale);color:var(--green)} .pill.r{background:var(--red-pale);color:var(--red)}
+.pill.k{background:var(--ink2);color:#fff}
+.btn{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 16px;border-radius:999px;border:1px solid var(--ink2);background:var(--ink2);color:#fff;font-size:13px;font-weight:500;white-space:nowrap;text-decoration:none}
+.btn.o{background:#fff;color:var(--ink2)}
+.btn.g{background:var(--green);border-color:var(--green)}
+.btn.sm{height:30px;padding:0 12px;font-size:12px}
+.btn[disabled]{opacity:.5}
+.link{border:0;background:none;padding:0;color:var(--green);font-size:13px;text-decoration:none}
+.card{border:1px solid var(--line2);border-radius:4px;padding:20px 22px;margin-bottom:14px;background:#fff}
+@media(max-width:899px){.card{padding:16px}}
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:8px}
+@media(max-width:1100px){.grid4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.stat{border:1px solid var(--line2);border-radius:4px;padding:16px 18px;text-align:left;background:#fff;width:100%}
+.stat.hl{background:var(--yellow-pale);border-color:#F5E3A3}
+.stat .l{font-size:13px;color:var(--body)}
+.stat .v{font-family:var(--display);font-size:38px;line-height:1.1;margin:6px 0 2px;font-variant-numeric:lining-nums}
+.stat .d{font-size:12px;color:var(--body)}
+.up{color:var(--green)} .down{color:var(--red)}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}
+@media(max-width:1100px){.cols{grid-template-columns:1fr}}
+.list{list-style:none;margin:0;padding:0}
+.row{display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--line);width:100%;text-align:left;background:none;border-left:0;border-right:0;border-top:0}
+.row:last-child{border-bottom:0}
+.row .pill{flex:none}
+.row .g{flex:1;min-width:0}
+.row .t{font-weight:500;font-size:15px;color:var(--ink)}
+.row .tt{font-family:var(--display);font-size:19px;line-height:1.25;color:var(--ink)}
+.row .m{font-size:13px;color:var(--body);margin-top:2px}
+.arrow{color:var(--muted)}
+.empty{color:var(--muted);font-size:13px;padding:8px 0}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 16px}
+.chip{height:32px;padding:0 14px;border-radius:999px;border:1px solid var(--line2);background:#fff;font-size:13px;color:var(--body)}
+.chip.on{border-color:var(--ink2);background:var(--ink2);color:#fff}
+.bar{display:flex;height:8px;border-radius:999px;overflow:hidden;background:var(--line);gap:2px;margin:10px 0 12px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12px;color:var(--body)}
+.dot{display:inline-block;width:9px;height:9px;border-radius:999px;margin-right:6px;vertical-align:0}
+/* darlings */
+.art .t{font-family:var(--display);font-size:22px;line-height:1.2}
+.art .slug{font-size:12px;color:var(--muted);margin-top:4px}
+.mets{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid var(--line);margin-top:14px}
+@media(min-width:900px){.mets{grid-template-columns:repeat(8,minmax(0,1fr))}}
+.met{padding:10px 8px 0 0}
+.met .k{font-size:11px;color:var(--muted)}
+.met .v{font-size:18px;font-variant-numeric:tabular-nums}
+.met .d{font-size:11px;min-height:14px}
+.spark{display:block;width:100%;height:42px;margin-top:12px}
+.spcap{font-size:11px;color:var(--muted)}
+.acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+details summary{cursor:pointer;color:var(--green);font-size:13px;margin-top:12px;list-style:none}
+details summary::-webkit-details-marker{display:none}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{font-weight:500;font-size:12px;color:var(--muted);text-align:left;padding:8px 8px 8px 0;border-bottom:1px solid var(--line2)}
+td{padding:10px 8px 10px 0;border-bottom:1px solid var(--line);vertical-align:top}
+td.n,th.n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+td.s{color:var(--muted);font-size:12px}
+.tw{overflow-x:auto}
+input[type=search],input[type=text],input[type=date],select,textarea{width:100%;border:1px solid var(--line2);border-radius:4px;background:#fff;padding:11px 12px;font:inherit;font-size:14px;color:var(--ink)}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--ink2)}
+/* notes = the commonplace book */
+.composer{border:1px solid var(--line2);border-radius:4px;padding:18px 20px;margin-bottom:20px}
+.composer textarea{border:0;padding:0;font-family:var(--serif);font-size:20px;line-height:1.5;resize:none;min-height:64px}
+.composer .bar2{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:10px;border-top:1px solid var(--line);padding-top:12px}
+.composer select,.composer input{width:auto;padding:7px 10px;font-size:13px}
+.notes{columns:2 320px;column-gap:24px}
+.note{break-inside:avoid;border-bottom:1px solid var(--line);padding:18px 0;margin:0}
+.note .src{font-size:12px;color:var(--muted);display:flex;gap:8px;align-items:center}
+.note .txt{font-family:var(--serif);font-size:18px;line-height:1.55;margin:8px 0 10px;color:var(--ink)}
+.note .tags{display:flex;gap:6px;flex-wrap:wrap}
+.note .tag{font-size:12px;color:var(--body);background:var(--soft);border-radius:999px;padding:2px 9px}
+.note .acts{margin-top:10px}
+.hero{background:var(--yellow-pale);border-radius:4px;padding:22px 24px;margin:6px 0 24px;display:flex;gap:16px;align-items:center}
+.hero .q{font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.45;flex:1}
+/* calendar */
+.cstrip{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
+@media(max-width:899px){.cstrip{display:flex;overflow-x:auto;margin:0 -16px;padding:0 16px}.cstrip .cday{min-width:118px}}
+.cday{border:1px solid var(--line);border-radius:4px;padding:8px;min-height:90px;display:flex;flex-direction:column;gap:4px;background:#fff}
+.cday.today{border-color:var(--ink2);box-shadow:inset 0 0 0 1px var(--ink2)}
+.cday.past{background:var(--soft)}
+.cday.out{opacity:.35}
+.cday .dh{display:flex;justify-content:space-between;font-size:11px;color:var(--muted)}
+.cday .dh b{font-weight:500;font-size:14px;color:var(--ink)}
+.ev{display:block;width:100%;text-align:left;border:0;border-radius:3px;padding:3px 6px;font-size:11px;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background:var(--soft);color:var(--ink)}
+.ev.article{background:var(--ink2);color:#fff}
+.ev.article_upd{background:#fff;box-shadow:inset 0 0 0 1px var(--ink2)}
+.ev.plan{background:var(--yellow-pale);color:#7A5A00}
+.ev.ig_live{background:var(--green-pale);color:var(--green)}
+.ev.ig{background:#fff;box-shadow:inset 0 0 0 1px var(--line2);color:var(--body)}
+.ev.overdue{background:var(--red-pale)!important;color:var(--red)!important;box-shadow:none!important}
+.cmonth{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
+.cmonth .wd{font-size:11px;color:var(--muted)}
+.cmonth .cday{min-height:104px}
+.agenda{display:none}
+@media(max-width:899px){.cmonth{display:none}.agenda{display:block}}
+/* dialog */
+.dlg-bg{position:fixed;inset:0;background:rgba(0,0,0,.25);z-index:50;display:flex;align-items:center;justify-content:center;padding:16px}
+.dlg{background:#fff;border-radius:4px;box-shadow:0 8px 40px rgba(0,0,0,.18);padding:26px;width:100%;max-width:520px;max-height:90vh;overflow:auto}
+.dlg label{display:block;font-size:12px;color:var(--muted);margin:12px 0 4px}
+.dlg pre{white-space:pre-wrap;font-family:var(--serif);font-size:15px;line-height:1.5;background:var(--soft);padding:14px;border-radius:4px;margin:10px 0 0}
+.toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:var(--ink2);color:#fff;border-radius:999px;padding:10px 18px;font-size:13px;z-index:60}
+.demo{white-space:nowrap;font-size:11px;color:#7A5A00;background:var(--yellow-pale);border-radius:999px;padding:2px 9px}
+</style>
+</head>
+<body>
+<header class="top"><div class="in">
+  <div class="wordmark">Commonplace<span>Oops, I wrote it again.</span></div>
+  <div class="sp"></div><span class="demo">Demo data</span>
+  <button class="btn sm o" id="refresh">Refresh</button>
+  <div class="avatar" title="Nora Vale">NV</div>
+</div></header>
+<div class="wrap"><aside class="side" id="side"></aside><main id="view"></main></div>
+<nav class="bottom" id="bottom"></nav>
+
+<script>
+(() => {
+const NAV=[['today','Today'],['notes','Notes'],['calendar','Calendar'],['ideas','Ideas'],['darlings','Darlings'],['readers','Readers'],['keywords','Keywords'],['research','Research'],['queue','Queue'],['how','How it works'],['social','Social']];
+const MOBILE=['today','notes','calendar','ideas','darlings'];
+const GN={A:'Working',B:'Growing',C:'Waved and faded',D:'Let it go?',N:'New'};
+const GC={A:'#1A8917',B:'#FFC017',C:'#E5E5E5',D:'#C94A4A',N:'#191919'};
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const store={get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const fmt=n=>Number(n||0).toLocaleString('en-US');
+const iso=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+const todayIso=()=>iso(new Date());
+const fdate=s=>{if(!s)return'';const d=new Date(s+'T12:00');return isNaN(d)?s:d.toLocaleDateString('en-GB',{day:'numeric',month:'short'})};
+let D=null, tab=new URLSearchParams(location.search).get('tab')||store.get('cp_tab','today');
+let dFilter='all', kwF='impr', kwQ='', iF='all', nF='all', rAud='all', calOff=0, layers={pieces:true,social:true};
+const MORE={};
+const art=s=>D.articles.find(a=>a.slug===s)||{slug:s,title:s};
+const persona=id=>(D.audiences.personas.find(p=>p.id===id)||{name:id||''}).name;
+function delta(c,p,low){if(p==null||c==null)return'';const d=Math.round((c-p)*10)/10;if(!d)return'<span style="color:var(--muted)">no change</span>';const good=low?d<0:d>0;return `<span class="${good?'up':'down'}">${d>0?'+':''}${fmt(d)}</span>`;}
+function toast(t){const e=document.createElement('div');e.className='toast';e.textContent=t;document.body.appendChild(e);setTimeout(()=>e.remove(),2400);}
+function capped(k,items,n,fn){const all=MORE[k],sh=all?items:items.slice(0,n);return sh.map(fn).join('')+(items.length>n?`<button class="link" data-more="${k}" style="margin-top:8px">${all?'Show less':'Show '+(items.length-n)+' more'}</button>`:'');}
+
+// ---- local state (demo): notes and plan live in this browser
+const myNotes=()=>store.get('cp_notes',[]);
+const myPlan=()=>store.get('cp_plan',[]);
+function notesAll(){return myNotes().concat(D.notes||[]).sort((a,b)=>b.date.localeCompare(a.date));}
+function calAll(){
+  const p=myPlan().map(x=>({date:x.date,kind:'plan',title:x.title,status:'Planned',overdue:x.date<todayIso(),source:'workspace',id:x.id}));
+  const moved=new Set(myPlan().map(x=>x.id));
+  return (D.calendar||[]).filter(e=>!moved.has(e.id)).concat(p).sort((a,b)=>a.date.localeCompare(b.date));
+}
+
+// ---------------------------------------------------------------- Today
+function vToday(){
+  const t=D.totals, hi=D.alerts.filter(a=>a.level!=='win'), win=D.alerts.filter(a=>a.level==='win');
+  const n=notesAll()[0];
+  const day=new Date().toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'});
+  let h=`<div class="date">${esc(day)}</div><h1>Good morning, Nora.</h1><p class="lede">${D.plan.length} things on today’s list. ${hi.filter(a=>a.level==='high').length} need you first.</p>`;
+  if(n) h+=`<div class="hero"><div class="q">“${esc(n.text)}”</div><button class="btn sm o" data-tab="notes">Your notes →</button></div>`;
+  h+=`<div class="grid4">
+   <button class="stat hl" data-tab="darlings"><div class="l">Reads, 28 days</div><div class="v">${fmt(t.clicks)}</div><div class="d">${delta(t.clicks,t.clicks_prev)} vs the 28 before</div></button>
+   <button class="stat" data-tab="darlings"><div class="l">Views</div><div class="v">${fmt(t.impr)}</div><div class="d">${delta(t.impr,t.impr_prev)}</div></button>
+   <button class="stat" data-tab="darlings"><div class="l">New followers</div><div class="v">${fmt(t.apply_clicks)}</div><div class="d">${delta(t.apply_clicks,t.apply_clicks_prev)}</div></button>
+   <button class="stat" data-tab="darlings"><div class="l">Pieces live</div><div class="v">${t.live}</div><div class="d">${t.groups.A||0} working, ${t.groups.D||0} to let go</div></button></div>`;
+  h+=calStrip();
+  h+=`<div class="cols"><div><div class="head"><h2>Today</h2></div><div class="list">${D.plan.map(p=>`<button class="row" data-open="${esc(p.slug)}"><div class="g"><div class="t">${esc(p.do)}</div><div class="m">${esc(art(p.slug).title)}</div><div class="m">${esc(p.why)}</div></div><span class="arrow">→</span></button>`).join('')}</div></div>
+   <div><div class="head"><h2>Needs attention</h2></div><div class="list">${capped('att',hi,4,a=>`<button class="row" data-open="${esc(a.slug)}"><span class="pill ${a.level==='high'?'r':''}">${a.level==='high'?'Now':'Watch'}</span><div class="g"><div class="t">${esc(art(a.slug).title)}</div><div class="m">${esc(a.text)}</div></div><span class="arrow">→</span></button>`)}</div>
+   <div class="head"><h2>Taking off</h2></div><div class="list">${win.map(a=>`<button class="row" data-open="${esc(a.slug)}"><span class="pill g">Up</span><div class="g"><div class="t">${esc(art(a.slug).title)}</div><div class="m">${esc(a.text)}</div></div><span class="arrow">→</span></button>`).join('')}</div></div></div>`;
+  h+=`<div class="cols"><div><div class="head"><h2>Searches that grow</h2></div><div class="tw"><table><tr><th>Query</th><th class="n">Views</th><th class="n">Was</th><th class="n">Pos.</th></tr>${D.rising_queries.map(q=>`<tr><td>${esc(q.query)}</td><td class="n">${q.impr}</td><td class="n">${q.prev}</td><td class="n">${q.pos}</td></tr>`).join('')}</table></div></div>
+   <div><div class="head"><h2>Done this week</h2></div><div class="list">${D.done.map(c=>`<div class="row"><span class="m" style="min-width:56px;margin:0">${esc(fdate(c.date))}</span><div class="g"><div class="m" style="color:var(--ink);margin:0">${esc(c.msg)}</div></div></div>`).join('')}</div></div></div>`;
+  return h;
+}
+
+// ---------------------------------------------------------------- Notes (the commonplace book)
+function vNotes(){
+  const all=notesAll(), list=all.filter(n=>nF==='all'||n.status===nF);
+  const c={seed:0,idea:0,used:0};all.forEach(n=>c[n.status]=(c[n.status]||0)+1);
+  return `<h1>Notes</h1><p class="lede">Your commonplace book. What you saw, heard and read, before it becomes a piece.</p>
+  <div class="composer"><textarea id="nt" placeholder="What did you notice today?"></textarea>
+   <div class="bar2"><select id="ns"><option>Exhibition</option><option>Studio visit</option><option>Overheard</option><option>Reading</option><option>Comments</option><option>Idea</option></select>
+   <input id="ng" type="text" placeholder="tags, comma separated" style="flex:1;min-width:160px"><button class="btn sm" id="nsave">Save note</button></div></div>
+  <div class="chips">${[['all','All ('+all.length+')'],['seed','Seeds ('+c.seed+')'],['idea','Ideas ('+c.idea+')'],['used','In a piece ('+c.used+')']].map(([k,l])=>`<button class="chip ${nF===k?'on':''}" data-nf="${k}">${l}</button>`).join('')}</div>
+  <div class="notes">${list.map(noteCard).join('')||'<p class="empty">Nothing here yet.</p>'}</div>`;
+}
+function noteCard(n){
+  const st={seed:['Seed',''],idea:['Idea','yp'],used:['In a piece','g']}[n.status]||['Seed',''];
+  return `<article class="note"><div class="src"><span>${esc(fdate(n.date))}</span><span>${esc(n.source)}</span><span class="pill ${st[1]}" style="margin-left:auto">${st[0]}</span></div>
+   <p class="txt">${esc(n.text)}</p><div class="tags">${(n.tags||[]).map(t=>`<span class="tag">#${esc(t)}</span>`).join('')}</div>
+   <div class="acts">${n.status==='used'&&n.link?`<button class="link" data-open="${esc(n.link)}">Used in “${esc(art(n.link).title)}” →</button>`:`
+     <button class="btn sm" data-write-note="${esc(n.id)}">Write a piece</button><button class="btn sm o" data-plan-note="${esc(n.id)}">Plan it</button>${n.link?`<button class="link" data-open="${esc(n.link)}">Related piece →</button>`:''}`}</div></article>`;
+}
+
+// ---------------------------------------------------------------- Calendar
+const KIND={article:'Published',article_upd:'Updated',plan:'Planned',ig_live:'Social: posted',ig:'Social: scheduled'};
+function evs(){return calAll().filter(e=>(e.kind==='ig'||e.kind==='ig_live')?layers.social:layers.pieces);}
+function chip(e){const a=e.overdue?`data-move="${esc(e.id)}"`:e.slug?`data-open="${esc(e.slug)}"`:'';return `<button class="ev ${e.kind} ${e.overdue?'overdue':''}" ${a} title="${esc(KIND[e.kind]+': '+e.title)}">${e.overdue?'↻ ':''}${esc(e.kind.startsWith('ig')?(e.format+': '+e.title):e.title)}</button>`;}
+function cell(d,list,extra=''){const t=iso(d),l=list.filter(e=>e.date===t);return `<div class="cday ${t===todayIso()?'today':t<todayIso()?'past':''} ${extra}"><div class="dh"><span>${d.toLocaleDateString('en-GB',{weekday:'short'})}</span><b>${d.getDate()}</b></div>${l.slice(0,4).map(chip).join('')}${l.length>4?`<span class="spcap">+${l.length-4}</span>`:''}</div>`;}
+function legend(){return `<div class="legend" style="margin-top:12px">${[['#191919','Published'],['#FFFAE1','Planned'],['#E8F3E8','Social: posted'],['#FBECEC','Missed the date']].map(([c,l])=>`<span><span class="dot" style="background:${c};box-shadow:inset 0 0 0 1px #E5E5E5"></span>${l}</span>`).join('')}</div>`;}
+function overdue(){const od=calAll().filter(e=>e.overdue);if(!od.length)return'';return `<div style="margin-top:14px">${od.map(e=>`<div class="row" style="border:0;background:var(--red-pale);border-radius:4px;padding:12px 14px"><div class="g"><div class="t">${esc(e.title)}</div><div class="m">Was planned for ${esc(fdate(e.date))}, not published</div></div><button class="btn sm" data-move="${esc(e.id)}">Move it</button></div>`).join('')}</div>`;}
+function calStrip(){
+  const now=new Date(),mon=new Date(now);mon.setDate(now.getDate()-((now.getDay()+6)%7));
+  const days=[...Array(14)].map((_,k)=>{const d=new Date(mon);d.setDate(mon.getDate()+k);return d;}),l=evs();
+  return `<div class="head"><h2>This week and next</h2><span class="sp"></span><button class="btn sm" data-plan-new="1">+ Plan a piece</button><button class="link" data-tab="calendar">Full calendar →</button></div>
+   <div class="cstrip">${days.slice(0,7).map(d=>cell(d,l)).join('')}</div><div style="height:8px"></div><div class="cstrip">${days.slice(7).map(d=>cell(d,l)).join('')}</div>${overdue()}${legend()}`;
+}
+function vCalendar(){
+  const base=new Date();base.setDate(1);base.setMonth(base.getMonth()+calOff);
+  const start=new Date(base);start.setDate(1-((base.getDay()+6)%7));
+  const cells=[...Array(42)].map((_,k)=>{const d=new Date(start);d.setDate(start.getDate()+k);return d;}),l=evs();
+  const m=l.filter(e=>e.date.slice(0,7)===iso(base).slice(0,7)),by={};m.forEach(e=>(by[e.date]=by[e.date]||[]).push(e));
+  return `<h1>Calendar</h1><p class="lede">What went out, what is planned, what missed its date. Published pieces and social posts are picked up automatically.</p>
+   <div class="head" style="margin-top:0"><button class="btn sm o" data-cal="-1">←</button><h2 style="min-width:180px;text-align:center">${esc(base.toLocaleDateString('en-GB',{month:'long',year:'numeric'}))}</h2><button class="btn sm o" data-cal="1">→</button><span class="sp"></span>
+   <button class="chip ${layers.pieces?'on':''}" data-layer="pieces">Pieces</button><button class="chip ${layers.social?'on':''}" data-layer="social">Social</button><button class="btn sm" data-plan-new="1">+ Plan a piece</button></div>
+   <div class="cmonth">${['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].map(w=>`<div class="wd">${w}</div>`).join('')}${cells.map(d=>cell(d,l,d.getMonth()===base.getMonth()?'':'out')).join('')}</div>
+   <div class="agenda">${Object.keys(by).sort().map(k=>`<div class="row" style="flex-direction:column"><div class="m">${esc(fdate(k))}</div>${by[k].map(chip).join('')}</div>`).join('')||'<p class="empty">Nothing this month.</p>'}</div>${overdue()}${legend()}`;
+}
+
+// ---------------------------------------------------------------- Ideas
+const SRC={note:['From your notes','yp'],pain:['Readers ask','r'],gsc:['Search demand','g'],keys:['Keyword, no piece',''],telegram:['From a digest','k'],painmap:['Reader pain','']};
+function ideasAll(){
+  const fromNotes=notesAll().filter(n=>n.status==='idea'||n.status==='seed').slice(0,4).map(n=>({source:'note',cluster:n.text,why:`${n.source}, ${fdate(n.date)}`,note:n.id}));
+  return fromNotes.concat(D.ideas);
+}
+function vIdeas(){
+  const all=ideasAll(), l=all.map((i,ix)=>({i,ix})).filter(({i})=>iF==='all'||i.source===iF), c={};all.forEach(i=>c[i.source]=(c[i.source]||0)+1);
+  return `<h1>What to write next</h1><p class="lede">Every morning Commonplace checks your notes, readers’ questions, search demand and the digests you follow against what you have already published. Only what is not written yet shows up here.</p>
+  <div class="chips">${[['all','All ('+all.length+')']].concat(Object.keys(SRC).filter(k=>c[k]).map(k=>[k,SRC[k][0]+' ('+c[k]+')'])).map(([k,l])=>`<button class="chip ${iF===k?'on':''}" data-if="${k}">${esc(l)}</button>`).join('')}</div>
+  <div class="cols"><div>${l.filter((_,k)=>k%2===0).map(idea).join('')}</div><div>${l.filter((_,k)=>k%2===1).map(idea).join('')}</div></div>`;
+}
+function idea({i,ix}){
+  const title=i.source==='pain'||i.source==='note'||i.source==='telegram'||i.source==='painmap'?i.cluster:i.keyword;
+  return `<div class="card"><div style="display:flex;gap:8px;align-items:center;margin-bottom:10px"><span class="pill ${SRC[i.source][1]}">${SRC[i.source][0]}</span><span style="flex:1"></span>${i.audience?`<span class="pill">${esc(persona(i.audience))}</span>`:''}</div>
+   <div style="font-family:var(--display);font-size:20px;line-height:1.3">${esc(title)}</div>${i.variants&&i.variants.length?`<div class="m" style="color:var(--muted);font-size:12px;margin-top:4px">${esc(i.variants.join(', '))}</div>`:''}
+   <p class="sub" style="margin:8px 0 0">${esc(i.why)}</p><div class="acts"><button class="btn sm" data-write="${ix}">Write with AI</button><button class="btn sm o" data-plan-idea="${ix}">Plan it</button>${i.url?`<a class="link" href="${esc(i.url)}" target="_blank" rel="noopener">Source →</a>`:''}</div></div>`;
+}
+function briefFor(title,why,aud){return `Write a Medium piece for The Open Studio.\n\nTopic: ${title}\nWhy now: ${why}${aud?`\nReader: ${persona(aud)}`:''}\n\nBefore the draft: check my published pieces so this is not a duplicate, pull reader questions from the comments and the forums, verify every number against a primary source.\nVoice: plain, first person, specific. No hype.\nStop after the outline and show me what you are unsure about.`;}
+function writeDialog(title,why,aud){
+  const txt=briefFor(title,why,aud);
+  dialog(`<h2>Write with AI</h2><p class="sub" style="margin-top:8px">Commonplace prepares the brief. In the real version this opens your AI writing session with it.</p><pre>${esc(txt)}</pre>
+   <div class="acts"><button class="btn" data-copy>Copy brief</button><button class="btn o" data-x>Close</button></div>`,(d,t)=>{if(t.dataset.copy!=null){navigator.clipboard?.writeText(txt).catch(()=>{});toast('Brief copied');d.remove();}});
+}
+
+// ---------------------------------------------------------------- Darlings
+function vDarlings(){
+  const l=D.articles.filter(a=>dFilter==='all'||a.group===dFilter);
+  return `<h1>Darlings</h1><p class="lede">Every piece you published, and which ones are still alive. Kill your darlings, but look at the numbers first.</p>
+  <div class="bar">${Object.keys(GN).map(g=>`<span style="width:${(D.totals.groups[g]||0)/D.totals.live*100}%;background:${GC[g]}"></span>`).join('')}</div>
+  <div class="chips">${[['all','All ('+D.articles.length+')']].concat(Object.keys(GN).map(g=>[g,GN[g]+' ('+(D.totals.groups[g]||0)+')'])).map(([k,l])=>`<button class="chip ${dFilter===k?'on':''}" data-df="${k}">${esc(l)}</button>`).join('')}</div>
+  ${l.map(darling).join('')}`;
+}
+function spark(w){const v=w.map(x=>x[2]),mx=Math.max(...v,1),W=300,H=42,st=W/(v.length-1);const p=v.map((x,i)=>`${(i*st).toFixed(1)},${(H-4-(x/mx)*(H-8)).toFixed(1)}`).join(' ');
+  return `<svg class="spark" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="Views by week"><polyline points="0,${H} ${p} ${W},${H}" fill="#FFFAE1"/><polyline points="${p}" fill="none" stroke="#242424" stroke-width="1.4" vector-effect="non-scaling-stroke"/></svg><div class="spcap">Views by week, last 12 weeks (this week so far)</div>`;}
+function darling(a){
+  const g=a.gsc,p=a.gsc_prev,ga=a.ga,gp=a.ga_prev,ix=a.index,bad=ix.verdict!=='PASS';
+  const pill={A:'g',B:'yp',C:'',D:'r',N:'k'}[a.group];
+  return `<div class="card art" id="a-${esc(a.slug)}" ${bad?'style="border-color:#E8B4B4"':''}><div style="display:flex;gap:12px;align-items:flex-start"><div style="flex:1;min-width:0"><div class="t">${esc(a.title)}</div>
+   <div class="slug">${esc(a.type)}, published ${esc(fdate(a.published))}, target search: ${esc(a.keyword)}</div></div><span class="pill ${pill}">${GN[a.group]}</span></div>
+   <div class="mets"><div class="met"><div class="k">Reads</div><div class="v">${fmt(g.clicks)}</div><div class="d">${delta(g.clicks,p.clicks)}</div></div>
+    <div class="met"><div class="k">Views</div><div class="v">${fmt(g.impr)}</div><div class="d">${delta(g.impr,p.impr)}</div></div>
+    <div class="met"><div class="k">Read ratio</div><div class="v">${g.ctr}%</div><div class="d"></div></div>
+    <div class="met"><div class="k">Google pos.</div><div class="v">${g.pos}</div><div class="d">${delta(g.pos,p.pos,true)}</div></div>
+    <div class="met"><div class="k">Avg read</div><div class="v">${ga.sessions?Math.round(ga.engaged_sec/ga.sessions/60*10)/10+' min':'—'}</div><div class="d"></div></div>
+    <div class="met"><div class="k">Followers</div><div class="v">${ga.apply_clicks}</div><div class="d">${delta(ga.apply_clicks,gp.apply_clicks)}</div></div>
+    <div class="met"><div class="k">Earned</div><div class="v">$${a.earnings}</div><div class="d"></div></div>
+    <div class="met"><div class="k">In Google</div><div class="v" style="font-size:14px;padding-top:3px">${bad?'<span class="down">no</span>':'yes'}</div><div class="d" style="color:var(--muted)">${esc(fdate(ix.last_crawl))}</div></div></div>
+   ${spark(a.weekly)}
+   <div class="acts"><a class="btn sm" href="${esc(a.url)}" target="_blank" rel="noopener">Open on Medium</a><a class="btn sm o" href="${esc(a.gsc_inspect_url)}" target="_blank" rel="noopener">Ask Google to index</a></div>
+   <details><summary>Searches that find it →</summary><div class="tw" style="margin-top:10px"><table><tr><th>Query</th><th class="n">Reads</th><th class="n">Views</th><th class="n">Pos.</th></tr>${a.top_queries.map(q=>`<tr><td>${esc(q[0])}</td><td class="n">${q[1]}</td><td class="n">${q[2]}</td><td class="n">${q[3]}</td></tr>`).join('')}</table></div></details></div>`;
+}
+
+// ---------------------------------------------------------------- Readers
+function vReaders(){
+  const A=D.audiences,mx=Math.max(...A.confirmed_pains.map(c=>c.apps));
+  const rows=D.pain_map.filter(r=>rAud==='all'||r.audience===rAud);
+  return `<h1>Readers</h1><p class="lede">${esc(A.rule)}</p>
+  <div class="cols">${[0,1].map(c=>`<div>${A.personas.filter((_,k)=>k%2===c).map(p=>`<div class="card"><div style="display:flex;gap:8px;align-items:baseline"><h2 style="font-size:21px;flex:1">${esc(p.name)}</h2><span class="pill ${p.weight==='core'?'k':p.weight==='growing'?'g':''}">${esc(p.weight)}</span></div>
+    <p class="sub" style="margin:6px 0 10px">${esc(p.who)}</p><div class="list">
+    ${[['Wants',p.jtbd],['What hurts',p.pain],['What we see',p.evidence],['What loses them',p.loses_us]].map(([k,v])=>`<div class="row" style="padding:9px 0"><div class="m" style="width:110px;flex:none;margin:0">${k}</div><div class="g" style="color:var(--ink)">${esc(v)}</div></div>`).join('')}</div></div>`).join('')}</div>`).join('')}</div>
+  <div class="head"><h2>What readers ask most</h2></div><div class="card">${A.confirmed_pains.map(c=>`<div class="row"><div class="g"><div class="t" style="font-family:var(--serif);font-weight:400;font-size:18px">${esc(c.pain)}</div><div class="m">${esc(persona(c.persona))}, ${esc(c.verdict)}</div>
+    <div class="bar" style="margin:8px 0 0;height:6px"><span style="width:${c.apps/mx*100}%;background:var(--ink2)"></span></div></div><span style="font-family:var(--display);font-size:28px">${c.apps}</span></div>`).join('')}<p class="sub" style="margin:12px 0 0">${esc(A.content_not_offer)}</p></div>
+  <div class="head"><h2>Pain map</h2></div>
+  <div class="chips">${[['all','All']].concat(A.personas.map(p=>[p.id,p.name.replace('The ','')])).map(([k,l])=>`<button class="chip ${rAud===k?'on':''}" data-ra="${k}">${esc(l)}</button>`).join('')}</div>
+  <div class="card tw"><table><tr><th>Pain</th><th>Number</th><th>Why nobody fixes it</th><th>Format</th><th>Source</th></tr>${rows.map(r=>`<tr><td><b style="font-weight:500">${esc(r.pain)}</b><div class="s" style="color:var(--muted);font-size:12px">${esc(persona(r.audience))}</div></td><td class="s">${esc(r.number)}</td><td class="s">${esc(r.why_bank)}</td><td class="s">${esc(r.use_case)}</td><td class="s">${r.source_status==='Verified'?'checked':'<span class="down">needs a source</span>'}</td></tr>`).join('')}</table></div>`;
+}
+
+// ---------------------------------------------------------------- Keywords, Research, Queue, How, Social
+function vKeywords(){
+  let k=D.keywords;if(kwF==='impr')k=k.filter(x=>x.impr>0);if(kwF==='free')k=k.filter(x=>!x.article);if(kwQ)k=k.filter(x=>(x.q+' '+x.cluster).toLowerCase().includes(kwQ.toLowerCase()));
+  k=k.slice().sort((a,b)=>b.impr-a.impr||(+b.suggest)-(+a.suggest));
+  return `<h1>Keywords</h1><p class="lede">${D.keywords.length} searches around your topics, matched with what Google already shows you for.</p>
+  <input type="search" id="kq" placeholder="Search keywords or clusters" value="${esc(kwQ)}" style="margin-bottom:12px">
+  <div class="chips">${[['impr','Already shown'],['free','No piece yet'],['all','All']].map(([f,l])=>`<button class="chip ${kwF===f?'on':''}" data-kf="${f}">${l}</button>`).join('')}</div>
+  <div class="card tw"><table><tr><th>Search</th><th>Cluster</th><th class="n">Views</th><th class="n">Pos.</th><th class="n">Suggest</th><th>Piece</th></tr>${k.slice(0,200).map(x=>`<tr><td>${esc(x.q)}</td><td class="s">${esc(x.cluster)}</td><td class="n">${x.impr||''}</td><td class="n">${x.pos??''}</td><td class="n">${esc(x.suggest)}</td><td class="s">${esc(x.article||'')}</td></tr>`).join('')}</table></div>`;
+}
+function vResearch(){
+  const r=(arr)=>arr.map(x=>`<div class="row"><div class="g"><div class="t" style="font-weight:400">${esc(x.slug||x.title)}</div><div class="m">${esc(fdate(x.date))}${x.questions?`, ${x.questions} questions`:''}${x.author?`, ${esc(x.author)}`:''}</div></div><span class="arrow">→</span></div>`).join('');
+  return `<h1>Research</h1><p class="lede">Reviews, readers’ questions from forums, questions people ask AI assistants, and your own research.</p>
+  <div class="cols"><div><div class="head"><h2>Your research</h2></div>${r(D.research_extra.docs.map(d=>({...d,slug:d.title})))}<div class="head"><h2>Reviews</h2></div>${r(D.audits.map(a=>({...a,slug:a.title})))}
+   <div class="head"><h2>Ranks, nobody reads</h2></div><div class="tw"><table><tr><th>Search</th><th>Piece</th><th class="n">Views</th><th class="n">Pos.</th></tr>${D.opportunities.map(o=>`<tr><td>${esc(o.query)}</td><td class="s">${esc(o.slug)}</td><td class="n">${o.impr}</td><td class="n">${o.pos}</td></tr>`).join('')}</table></div></div>
+   <div><div class="head"><h2>Forums</h2></div>${r(D.reddit)}<div class="head"><h2>Questions to AI assistants</h2></div>${r(D.ai)}
+   <div class="head"><h2>Digests you follow</h2></div>${D.telegram.map(f=>`<div class="card"><div class="m" style="color:var(--muted);font-size:12px">${esc(fdate(f.date))}</div>${f.headlines.map(h=>`<div class="row" style="padding:8px 0"><div class="g" style="color:var(--ink)">${esc(h)}</div></div>`).join('')}</div>`).join('')}</div></div>`;
+}
+function vQueue(){return `<h1>Queue</h1><p class="lede">Pieces that are written and waiting for the last step.</p>${D.queue.map(q=>`<div class="card"><div style="display:flex;gap:8px;align-items:center"><h2 style="flex:1;font-size:21px">${esc(q.slug.replace(/-/g,' '))}</h2><span class="pill yp">Waiting</span></div><p class="sub" style="margin:8px 0 0">${esc(q.status)}. ${esc(q.next)}</p><div class="acts"><button class="btn sm">Pick a cover</button><button class="btn sm o">Publish to Medium</button></div></div>`).join('')}`;}
+const PIPE=[['Every morning, on its own','Collects Medium stats, Google search, the digests you follow and your calendar; recalculates which pieces live and what to write','auto'],
+ ['Notes','You write down what you notice. Seeds turn into ideas, ideas into pieces','you'],['Ideas','Checked against what is already published, nothing duplicates','auto'],
+ ['Brief and draft','Reader questions, AI-assistant questions, fact check, plain-language check','ai'],['Cover','Three options to pick from','you'],['Publish','Only when you say so','you'],
+ ['Ask Google to index','One tap from the piece','you'],['Two to four weeks later','The piece lands in a group: working, ranks with few reads, faded, let it go','auto']];
+function vHow(){const lab={auto:['On its own','g'],ai:['AI','yp'],you:['You','k']};return `<h1>How it works</h1><p class="lede">From a note to a published piece, and what happens after.</p><div class="card">${PIPE.map((p,k)=>`<div class="row"><span style="font-family:var(--display);font-size:22px;width:36px">${String(k+1).padStart(2,'0')}</span><div class="g"><div class="t">${esc(p[0])}</div><div class="m">${esc(p[1])}</div></div><span class="pill ${lab[p[2]][1]}">${lab[p[2]][0]}</span></div>`).join('')}</div>`;}
+const vSocial=()=>`<h1>Social</h1><p class="lede">Posts cut from your pieces for Instagram, Threads and LinkedIn. Coming next.</p>`;
+
+// ---------------------------------------------------------------- dialogs
+function dialog(html,on){const d=document.createElement('div');d.className='dlg-bg';d.innerHTML=`<div class="dlg">${html}</div>`;document.body.appendChild(d);
+  d.addEventListener('click',e=>{const t=e.target;if(t===d||t.dataset.x!=null){d.remove();return;}on&&on(d,t);});return d;}
+function planDialog({title='',id=null}){
+  const tom=iso(new Date(Date.now()+864e5));
+  dialog(`<h2>${id?'Move it':'Plan a piece'}</h2><label>Title</label><input type="text" id="pt" value="${esc(title)}"><label>Publish on</label><input type="date" id="pd" value="${tom}">
+   <div class="acts"><button class="btn" data-save>Save</button><button class="btn o" data-x>Cancel</button></div>`,(d,t)=>{
+    if(t.dataset.save==null)return;const tt=d.querySelector('#pt').value.trim(),dd=d.querySelector('#pd').value;if(!tt||!dd)return;
+    const p=myPlan().filter(x=>x.id!==id);p.push({id:id||('p'+Date.now()),title:tt,date:dd});store.set('cp_plan',p);d.remove();render();toast('Planned for '+fdate(dd));});
+}
+
+// ---------------------------------------------------------------- shell
+function render(){
+  const badge={today:D.alerts.filter(a=>a.level==='high').length,notes:notesAll().filter(n=>n.status==='seed').length};
+  $('#side').innerHTML=NAV.map(([k,l],i)=>(i===5?'<div class="sec">Library</div>':'')+`<button class="nav ${tab===k?'on':''} ${k==='social'?'later':''}" data-tab="${k}">${l}${badge[k]?`<span class="b">${badge[k]}</span>`:''}</button>`).join('');
+  $('#bottom').innerHTML=NAV.filter(([k])=>MOBILE.includes(k)).map(([k,l])=>`<button class="${tab===k?'on':''}" data-tab="${k}">${l}</button>`).join('');
+  $('#view').innerHTML=({today:vToday,notes:vNotes,calendar:vCalendar,ideas:vIdeas,darlings:vDarlings,readers:vReaders,keywords:vKeywords,research:vResearch,queue:vQueue,how:vHow,social:vSocial})[tab]();
+}
+document.addEventListener('click',e=>{
+  const b=e.target.closest('button,[data-tab]');if(!b)return;const s=b.dataset;
+  if(s.tab){tab=s.tab;store.set('cp_tab',tab);render();scrollTo(0,0);}
+  else if(s.more){MORE[s.more]=!MORE[s.more];render();}
+  else if(s.df){dFilter=s.df;render();} else if(s.kf){kwF=s.kf;render();} else if(s.if){iF=s.if;render();} else if(s.nf){nF=s.nf;render();} else if(s.ra){rAud=s.ra;render();}
+  else if(s.cal){calOff+=+s.cal;render();} else if(s.layer){layers[s.layer]=!layers[s.layer];render();}
+  else if(s.open){tab='darlings';dFilter='all';render();const el=document.getElementById('a-'+s.open);if(el){el.scrollIntoView({block:'start'});scrollBy(0,-72);}}
+  else if(s.planNew){planDialog({});}
+  else if(s.move){const ev=calAll().find(x=>x.id===s.move);planDialog({title:ev?ev.title:'',id:s.move});}
+  else if(s.planIdea!=null){const i=ideasAll()[+s.planIdea];planDialog({title:i.keyword||i.cluster});}
+  else if(s.write!=null){const i=ideasAll()[+s.write];writeDialog(i.keyword&&i.source!=='pain'?i.keyword:i.cluster,i.why,i.audience);}
+  else if(s.writeNote){const n=notesAll().find(x=>x.id===s.writeNote);writeDialog(n.text,`From my notes: ${n.source}, ${fdate(n.date)}`);}
+  else if(s.planNote){const n=notesAll().find(x=>x.id===s.planNote);planDialog({title:n.text.slice(0,80)});}
+  else if(b.id==='nsave'){const t=$('#nt').value.trim();if(!t)return;const n={id:'m'+Date.now(),date:todayIso(),source:$('#ns').value,text:t,tags:$('#ng').value.split(',').map(x=>x.trim()).filter(Boolean),status:'seed',link:null};
+    store.set('cp_notes',[n].concat(myNotes()));render();toast('Saved to your notes');}
+  else if(b.id==='refresh'){toast('Demo: data is generated, nothing to refresh');}
+});
+document.addEventListener('input',e=>{if(e.target.id==='kq'){kwQ=e.target.value;const p=e.target.selectionStart;render();const i=$('#kq');i.focus();i.setSelectionRange(p,p);}});
+fetch('data/latest.json').then(r=>r.json()).then(j=>{D=j;render();}).catch(()=>{$('#view').innerHTML='<p class="empty">Could not load demo data. Serve the folder over http.</p>';});
+})();
+</script>
+</body>
+</html>
