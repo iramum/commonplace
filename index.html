@@ -24,7 +24,7 @@ button{font:inherit;cursor:pointer;color:inherit}
 .top .in{display:flex;align-items:center;gap:16px;padding:12px 24px;max-width:1336px;margin:0 auto}
 .logo{display:inline-flex;flex-direction:column;line-height:1;text-decoration:none;color:var(--ink)}
 .logo .w{font-family:var(--display);font-size:26px;font-weight:500;letter-spacing:-.02em;white-space:nowrap;display:inline-block;align-self:flex-start}
-.logo .t{font-family:var(--sans);font-size:15px;color:var(--body);font-weight:400;white-space:nowrap;margin-top:5px;display:inline-block;align-self:flex-start;letter-spacing:0}
+.logo .t{font-family:var(--sans);font-size:15.5px;color:var(--body);font-weight:400;white-space:nowrap;margin-top:5px;display:inline-block;align-self:flex-start;letter-spacing:0}
 .top .sp{flex:1}
 .avatar{width:32px;height:32px;border-radius:999px;background:var(--yellow-pale);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600}
 .wrap{display:flex;max-width:1336px;margin:0 auto}
@@ -40,7 +40,7 @@ main{flex:1;min-width:0;padding:32px 40px 96px}
 @media(max-width:899px){
   .side{display:none} main{padding:20px 16px 110px} .top .in{padding:12px 16px}
   .logo .w{font-size:22px}
-  .logo .t{font-size:12.55px;margin-top:4px}
+  .logo .t{font-size:12.9px;margin-top:4px}
   .demo{display:none}
   .bottom{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--bg);border-top:1px solid var(--line2);padding:6px 4px calc(6px + env(safe-area-inset-bottom))}
   .bottom button{flex:1;border:0;background:none;padding:8px 2px;font-size:11px;color:var(--body)}
@@ -79,7 +79,7 @@ h2{font-family:var(--display);font-weight:500;font-size:24px;letter-spacing:-.01
 .list{list-style:none;margin:0;padding:0}
 .row{display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--line);width:100%;text-align:left;background:none;border-left:0;border-right:0;border-top:0}
 .row:last-child{border-bottom:0}
-.row .pill{flex:none}
+.row .pill,.row .pill.g{flex:none}
 .row .g{flex:1;min-width:0}
 .row .t{font-weight:500;font-size:15px;color:var(--ink)}
 .row .tt{font-family:var(--display);font-size:19px;line-height:1.25;color:var(--ink)}
@@ -155,12 +155,54 @@ input:focus,textarea:focus,select:focus{outline:none;border-color:var(--ink2)}
 .dlg label{display:block;font-size:12px;color:var(--muted);margin:12px 0 4px}
 .dlg pre{white-space:pre-wrap;font-family:var(--serif);font-size:15px;line-height:1.5;background:var(--soft);padding:14px;border-radius:4px;margin:10px 0 0}
 .toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:var(--ink2);color:#fff;border-radius:999px;padding:10px 18px;font-size:13px;z-index:60}
+/* Today, top: header with big numbers + three cards (layout after the Matrix overview panel) */
+.topbar{display:flex;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:26px}
+.topbar .greet{flex:1;min-width:260px}
+.bignums{display:flex;gap:34px;flex-wrap:wrap}
+.bn{text-align:left;border:0;background:none;padding:0}
+.bn .v{font-family:var(--display);font-size:52px;line-height:1;letter-spacing:-.02em;font-variant-numeric:lining-nums}
+.bn .l{font-size:12px;color:var(--body);margin-top:6px}
+.bn .d{font-size:12px}
+@media(max-width:899px){.bignums{display:grid;grid-template-columns:1fr 1fr;gap:16px 22px;width:100%}.bn .v{font-size:38px}}
+.top3{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr) minmax(0,1fr);gap:16px;margin-bottom:8px}
+@media(max-width:1100px){.top3{grid-template-columns:1fr}}
+.c3{border:1px solid var(--line2);border-radius:4px;padding:18px 18px 16px;background:#fff;display:flex;flex-direction:column;min-width:0}
+.c3 .ch{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.c3 .ch h3{font-family:var(--display);font-weight:500;font-size:20px;margin:0;flex:1}
+.corner{width:30px;height:30px;border-radius:999px;border:1px solid var(--line2);background:#fff;display:inline-flex;align-items:center;justify-content:center;color:var(--ink);font-size:14px}
+.t2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.t2 button{background:var(--soft);border:0;border-radius:4px;padding:10px 12px;text-align:left}
+.t2 .k{font-size:12px;color:var(--body);display:flex;align-items:center;gap:6px}
+.t2 .k i{display:inline-block;width:10px;height:10px;border-radius:3px;border:1px solid var(--line2);background:#fff}
+.t2 .v{font-family:var(--display);font-size:30px;line-height:1.1;margin-top:6px}
+.t2 .miss{background:var(--red-pale)} .t2 .miss .v{color:var(--red)}
+.todo{margin-top:12px;border-top:1px solid var(--line);padding-top:4px}
+.todo .row{padding:10px 0}
+.seg{display:inline-flex;background:var(--line);border-radius:999px;padding:3px;gap:2px}
+.seg button{border:0;background:none;border-radius:999px;padding:5px 12px;font-size:12px;color:var(--body)}
+.seg button.on{background:#fff;color:var(--ink);font-weight:500;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.mcal{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;margin-top:12px}
+.mcal .wd{font-size:10px;color:var(--muted);text-align:center;padding-bottom:2px}
+.md{position:relative;height:30px;border:0;border-radius:6px;background:none;font-size:12px;color:var(--ink);display:flex;align-items:center;justify-content:center;padding:0}
+.md.out{color:#C8C8C8}
+.md.pub{background:var(--yellow)}
+.md.plan{box-shadow:inset 0 0 0 1.5px var(--yellow)}
+.md.miss{background:var(--red-pale);color:var(--red)}
+.md.today{background:var(--ink2);color:#fff}
+.md .sd{position:absolute;bottom:3px;left:50%;width:4px;height:4px;margin-left:-2px;border-radius:999px;background:var(--green)}
+.md.today .sd{background:#fff}
+.mleg{display:flex;gap:12px;flex-wrap:wrap;font-size:11px;color:var(--body);margin-top:10px}
+.mleg span{display:inline-flex;align-items:center;gap:5px}
+.mleg b{display:inline-block;width:10px;height:10px;border-radius:3px}
+.upc{margin-top:12px;border-top:1px solid var(--line);padding-top:4px}
+.upc .row{padding:9px 0}
+.qnote{font-family:var(--serif);font-size:21px;line-height:1.5;margin:4px 0 14px;flex:1}
 .demo{white-space:nowrap;font-size:11px;color:#7A5A00;background:var(--yellow-pale);border-radius:999px;padding:2px 9px}
 </style>
 </head>
 <body>
 <header class="top"><div class="in">
-  <a class="logo" href="index.html" aria-label="Commonplace, Oops, I wrote it again."><span class="w">Commonplace</span><span class="t">Oops, I wrote it again.</span></a>
+  <a class="logo" href="index.html" aria-label="Commonplace, Oops, I wrote it again."><span class="w">Common<span style="color:#FFC017">,</span>place</span><span class="t">Oops, I wrote it again.</span></a>
   <div class="sp"></div><span class="demo">Demo data</span>
   <button class="btn sm o" id="refresh">Refresh</button>
   <div class="avatar" title="Nora Vale">NV</div>
@@ -184,7 +226,7 @@ const iso=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${Str
 const todayIso=()=>iso(new Date());
 const fdate=s=>{if(!s)return'';const d=new Date(s+'T12:00');return isNaN(d)?s:d.toLocaleDateString('en-GB',{day:'numeric',month:'short'})};
 let D=null, tab=new URLSearchParams(location.search).get('tab')||store.get('cp_tab','today');
-let dFilter='all', kwF='impr', kwQ='', iF='all', nF='all', rAud='all', calOff=0, layers={pieces:true,social:true};
+let dFilter='all', kwF='impr', kwQ='', iF='all', nF='all', rAud='all', calOff=0, layers={pieces:true,social:true}, miniF='all';
 const MORE={};
 const art=s=>D.articles.find(a=>a.slug===s)||{slug:s,title:s};
 const persona=id=>(D.audiences.personas.find(p=>p.id===id)||{name:id||''}).name;
@@ -207,17 +249,45 @@ function vToday(){
   const t=D.totals, hi=D.alerts.filter(a=>a.level!=='win'), win=D.alerts.filter(a=>a.level==='win');
   const n=notesAll()[0];
   const day=new Date().toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'});
-  let h=`<div class="date">${esc(day)}</div><h1>Good morning, Nora.</h1><p class="lede">${D.plan.length} things on today’s list. ${hi.filter(a=>a.level==='high').length} need you first.</p>`;
-  if(n) h+=`<div class="hero"><div class="q">“${esc(n.text)}”</div><button class="btn sm o" data-tab="notes">Your notes →</button></div>`;
-  h+=`<div class="grid4">
-   <button class="stat hl" data-tab="darlings"><div class="l">Reads, 28 days</div><div class="v">${fmt(t.clicks)}</div><div class="d">${delta(t.clicks,t.clicks_prev)} vs the 28 before</div></button>
-   <button class="stat" data-tab="darlings"><div class="l">Views</div><div class="v">${fmt(t.impr)}</div><div class="d">${delta(t.impr,t.impr_prev)}</div></button>
-   <button class="stat" data-tab="darlings"><div class="l">New followers</div><div class="v">${fmt(t.apply_clicks)}</div><div class="d">${delta(t.apply_clicks,t.apply_clicks_prev)}</div></button>
-   <button class="stat" data-tab="darlings"><div class="l">Pieces live</div><div class="v">${t.live}</div><div class="d">${t.groups.A||0} working, ${t.groups.D||0} to let go</div></button></div>`;
-  h+=calStrip();
-  h+=`<div class="cols"><div><div class="head"><h2>Today</h2></div><div class="list">${D.plan.map(p=>`<button class="row" data-open="${esc(p.slug)}"><div class="g"><div class="t">${esc(p.do)}</div><div class="m">${esc(art(p.slug).title)}</div><div class="m">${esc(p.why)}</div></div><span class="arrow">→</span></button>`).join('')}</div></div>
-   <div><div class="head"><h2>Needs attention</h2></div><div class="list">${capped('att',hi,4,a=>`<button class="row" data-open="${esc(a.slug)}"><span class="pill ${a.level==='high'?'r':''}">${a.level==='high'?'Now':'Watch'}</span><div class="g"><div class="t">${esc(art(a.slug).title)}</div><div class="m">${esc(a.text)}</div></div><span class="arrow">→</span></button>`)}</div>
-   <div class="head"><h2>Taking off</h2></div><div class="list">${win.map(a=>`<button class="row" data-open="${esc(a.slug)}"><span class="pill g">Up</span><div class="g"><div class="t">${esc(art(a.slug).title)}</div><div class="m">${esc(a.text)}</div></div><span class="arrow">→</span></button>`).join('')}</div></div></div>`;
+  const high=hi.filter(a=>a.level==='high');
+  const cal=calAll(), td=todayIso(), wk=iso(new Date(Date.now()+7*864e5));
+  const dueWeek=cal.filter(e=>e.kind==='plan'&&!e.overdue&&e.date>=td&&e.date<=wk);
+  const missed=cal.filter(e=>e.overdue), seeds=notesAll().filter(x=>x.status==='seed');
+  // header: greeting left, big numbers right
+  let h=`<div class="topbar"><div class="greet"><div class="date">${esc(day)}</div><h1>Good morning, Nora.</h1><p class="lede" style="margin:0">${D.plan.length} things on today’s list. ${high.length} need you first.</p></div>
+   <div class="bignums">
+    <button class="bn" data-tab="darlings"><div class="v">${fmt(t.clicks)}</div><div class="l">Reads, 28 days</div><div class="d">${delta(t.clicks,t.clicks_prev)}</div></button>
+    <button class="bn" data-tab="darlings"><div class="v">${fmt(t.impr)}</div><div class="l">Views</div><div class="d">${delta(t.impr,t.impr_prev)}</div></button>
+    <button class="bn" data-tab="darlings"><div class="v">${fmt(t.apply_clicks)}</div><div class="l">New followers</div><div class="d">${delta(t.apply_clicks,t.apply_clicks_prev)}</div></button>
+    <button class="bn" data-tab="darlings"><div class="v">${t.live}</div><div class="l">Pieces live</div><div class="d" style="color:var(--body)">${t.groups.A||0} working</div></button></div></div>`;
+  // card 1: to do (2x2 tiles + the first two actions)
+  const c1=`<div class="c3"><div class="ch"><h3>To do</h3><button class="corner" data-tab="ideas" aria-label="Open ideas">↗</button></div>
+   <div class="t2"><button data-open="${esc((high[0]||{}).slug||'')}"><div class="k"><i></i>Needs you now</div><div class="v">${high.length}</div></button>
+    <button data-tab="calendar"><div class="k"><i></i>Due this week</div><div class="v">${dueWeek.length}</div></button>
+    <button data-tab="notes"><div class="k"><i></i>Seeds to grow</div><div class="v">${seeds.length}</div></button>
+    <button class="${missed.length?'miss':''}" data-tab="calendar"><div class="k"><i></i>Missed the date</div><div class="v">${missed.length}</div></button></div>
+   <div class="todo">${D.plan.map(p=>`<button class="row" data-open="${esc(p.slug)}"><div class="g"><div class="t" style="font-size:14px">${esc(p.do)}</div><div class="m">${esc(art(p.slug).title)}</div></div><span class="pill ${p.action==='gsc'?'r':'yp'}">${p.action==='gsc'?'Now':'Today'}</span></button>`).join('')}</div></div>`;
+  // card 2: mini calendar with a segmented control
+  const base=new Date();base.setDate(1);const start=new Date(base);start.setDate(1-((base.getDay()+6)%7));
+  const ev=cal.filter(e=>miniF==='all'||(miniF==='pieces'?!e.kind.startsWith('ig'):e.kind.startsWith('ig')));
+  const days=[...Array(35)].map((_,k)=>{const d=new Date(start);d.setDate(start.getDate()+k);return d;});
+  const md=d=>{const s=iso(d),l=ev.filter(e=>e.date===s);const pub=l.some(e=>e.kind==='article'),pl=l.some(e=>e.kind==='plan'&&!e.overdue),ms=l.some(e=>e.overdue),so=l.some(e=>e.kind.startsWith('ig'));
+    const cls=[d.getMonth()!==base.getMonth()?'out':'',s===td?'today':ms?'miss':pub?'pub':pl?'plan':''].join(' ');
+    return `<button class="md ${cls}" ${l.length?`data-tab="calendar" title="${esc(l.map(e=>e.title).join(', '))}"`:''}>${d.getDate()}${so?'<span class="sd"></span>':''}</button>`;};
+  const up=cal.filter(e=>e.date>=td&&(e.kind==='plan'||e.kind==='ig')).slice(0,3);
+  const c2=`<div class="c3"><div class="ch"><h3>Calendar</h3><button class="corner" data-tab="calendar" aria-label="Open calendar">↗</button></div>
+   <div class="seg">${[['all','All'],['pieces','Pieces'],['social','Social']].map(([k,l])=>`<button class="${miniF===k?'on':''}" data-mini="${k}">${l}</button>`).join('')}</div>
+   <div class="mcal">${['M','T','W','T','F','S','S'].map(w=>`<div class="wd">${w}</div>`).join('')}${days.map(md).join('')}</div>
+   <div class="mleg"><span><b style="background:#191919"></b>Today</span><span><b style="background:#FFC017"></b>Published</span><span><b style="box-shadow:inset 0 0 0 1.5px #FFC017"></b>Planned</span><span><b style="background:#FBECEC"></b>Missed</span></div>
+   <div class="upc"><div class="m" style="font-size:12px;color:var(--muted);margin:6px 0 0">Upcoming</div>${up.map(e=>`<div class="row"><span class="pill ${e.kind==='plan'?'yp':''}" style="min-width:58px;justify-content:center">${esc(fdate(e.date))}</span><div class="g"><div class="m" style="color:var(--ink);margin:0">${esc(e.kind.startsWith('ig')?e.format+': '+e.title:e.title)}</div></div></div>`).join('')||'<p class="empty">Nothing planned yet.</p>'}</div></div>`;
+  // card 3: the latest note (for a writer, this is the «person» card)
+  const c3=n?`<div class="c3" style="background:var(--yellow-pale);border-color:#F5E3A3"><div class="ch"><h3>Your latest note</h3><button class="corner" data-tab="notes" aria-label="Open notes">↗</button></div>
+   <div class="m" style="font-size:12px;color:#7A5A00">${esc(fdate(n.date))}, ${esc(n.source)}</div>
+   <p class="qnote">“${esc(n.text)}”</p><div class="tags" style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px">${(n.tags||[]).map(x=>`<span class="pill" style="background:#fff">#${esc(x)}</span>`).join('')}</div>
+   <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn sm" data-write-note="${esc(n.id)}">Write a piece</button><button class="btn sm o" data-plan-note="${esc(n.id)}">Plan it</button></div></div>`:'';
+  h+=`<div class="top3">${c1}${c2}${c3}</div>`;
+  h+=`<div class="cols"><div><div class="head"><h2>Needs attention</h2></div><div class="list">${capped('att',hi,4,a=>`<button class="row" data-open="${esc(a.slug)}"><span class="pill ${a.level==='high'?'r':''}">${a.level==='high'?'Now':'Watch'}</span><div class="g"><div class="t">${esc(art(a.slug).title)}</div><div class="m">${esc(a.text)}</div></div><span class="arrow">→</span></button>`)}</div></div>
+   <div><div class="head"><h2>Taking off</h2></div><div class="list">${win.map(a=>`<button class="row" data-open="${esc(a.slug)}"><span class="pill g">Up</span><div class="g"><div class="t">${esc(art(a.slug).title)}</div><div class="m">${esc(a.text)}</div></div><span class="arrow">→</span></button>`).join('')}</div></div></div>`;
   h+=`<div class="cols"><div><div class="head"><h2>Searches that grow</h2></div><div class="tw"><table><tr><th>Query</th><th class="n">Views</th><th class="n">Was</th><th class="n">Pos.</th></tr>${D.rising_queries.map(q=>`<tr><td>${esc(q.query)}</td><td class="n">${q.impr}</td><td class="n">${q.prev}</td><td class="n">${q.pos}</td></tr>`).join('')}</table></div></div>
    <div><div class="head"><h2>Done this week</h2></div><div class="list">${D.done.map(c=>`<div class="row"><span class="m" style="min-width:56px;margin:0">${esc(fdate(c.date))}</span><div class="g"><div class="m" style="color:var(--ink);margin:0">${esc(c.msg)}</div></div></div>`).join('')}</div></div></div>`;
   return h;
@@ -406,6 +476,7 @@ document.addEventListener('click',e=>{
   if(s.tab){tab=s.tab;store.set('cp_tab',tab);render();scrollTo(0,0);}
   else if(s.more){MORE[s.more]=!MORE[s.more];render();}
   else if(s.df){dFilter=s.df;render();} else if(s.kf){kwF=s.kf;render();} else if(s.if){iF=s.if;render();} else if(s.nf){nF=s.nf;render();} else if(s.ra){rAud=s.ra;render();}
+  else if(s.mini){miniF=s.mini;render();}
   else if(s.cal){calOff+=+s.cal;render();} else if(s.layer){layers[s.layer]=!layers[s.layer];render();}
   else if(s.open){tab='darlings';dFilter='all';render();const el=document.getElementById('a-'+s.open);if(el){el.scrollIntoView({block:'start'});scrollBy(0,-72);}}
   else if(s.planNew){planDialog({});}
