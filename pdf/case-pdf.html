@@ -66,45 +66,60 @@ ul { margin: 0; padding-left: 4.5mm; font-size: 8.6pt; line-height: 1.5; color: 
 .ia b { display: block; font: 500 12pt var(--display); margin-bottom: 1.5mm; }
 .ia li { font-size: 8.4pt; }
 .sw { display: grid; grid-template-columns: repeat(6, 1fr); gap: 2.5mm; }
+.cover { padding: 0; display: block; background: #fff; }
+.cv-left { position: absolute; left: 15mm; top: 14mm; bottom: 16mm; width: 112mm; display: flex; flex-direction: column; justify-content: space-between; }
+.cv-mid { display: flex; flex-direction: column; gap: 8mm; }
+.cv-left .logo .w { font-size: 46pt; }
+.cv-left .logo .t { font-size: 29.4pt; }
+.cv-left .lede { font-size: 12.5pt; max-width: 108mm; }
+.cv-bottom { display: flex; flex-direction: column; gap: 6mm; }
+.cv-bottom .meta { font-size: 8.6pt; }
+.cv-right { position: absolute; right: 0; top: 0; bottom: 0; width: 152mm; background: var(--ink2); overflow: hidden; }
+.cv-shot { position: absolute; left: 18mm; top: 36mm; width: 200mm; border-radius: 6px; overflow: hidden; box-shadow: 0 14mm 30mm rgba(0,0,0,.45); }
+.cv-shot img { width: 100%; display: block; }
+.cv-comma { position: absolute; left: 16mm; top: 2mm; font: 500 120pt/1 var(--display); color: var(--y); }
 .sw div { border-radius: 4px; height: 18mm; padding: 2mm; display: flex; flex-direction: column; justify-content: flex-end; font-size: 7pt; border: 1px solid var(--line); }
 </style>
 </head>
 <body>
 
 <!-- 1 COVER -->
-<section class="page" style="background:var(--yp)">
-  <div style="display:grid;grid-template-columns:1fr 1.3fr;gap:10mm;flex:1;align-items:center">
-    <div style="display:flex;flex-direction:column;gap:6mm">
-      <span class="eyebrow">Case study. Personal product, 2026</span>
-      <div class="logo"><span class="w">Common<i>,</i>place</span><span class="t">Oops, I wrote it again.</span></div>
-      <p class="lede">A workspace for writers who publish in several digital outlets. It keeps the notes you collect, shows which published pieces are still alive, suggests what to write next from evidence, and holds the texts about yourself you paste again and again.</p>
-      <dl class="meta">
-        <dt>Type</dt><dd>Personal project, a tool I wanted for my own writing</dd>
-        <dt>My role</dt><dd>Product &amp; UX Designer: concept, flows, architecture, prototype in code, UI, brand</dd>
-        <dt>Tools</dt><dd>Figma, AI-assisted prototyping in code (Claude Code), GitHub Pages</dd>
-        <dt>Time</dt><dd>09 to 11/2026</dd>
-      </dl>
-      <a class="cta" href="https://iramum.github.io/commonplace/">Open the interactive prototype →</a>
-      <p class="ctaurl">iramum.github.io/commonplace. Runs in the browser, desktop and phone. All data in the demo is invented.</p>
+<section class="page cover">
+  <div class="cv-left">
+    <span class="eyebrow">Case study</span>
+    <div class="cv-mid">
+      <div class="logo"><span class="w">Common<i>,</i>place</span><span class="t">Oops, I wrote it again.</span></div>
+      <p class="lede">A workspace for writers who publish in several digital outlets: notes, ideas, a calendar and the life of every published piece in one place.</p>
     </div>
-    <div class="box" style="box-shadow:0 10mm 24mm rgba(0,0,0,.08)"><img src="../shots/today.png" alt=""></div>
+    <div class="cv-bottom">
+      <dl class="meta">
+        <dt>Type</dt><dd>Personal product</dd>
+        <dt>Role</dt><dd>Product &amp; UX Designer</dd>
+        <dt>Tools</dt><dd>Figma, Claude Code, GitHub Pages</dd>
+        <dt>Time</dt><dd>09 to 11/2026</dd>
+      </dl>
+      <a class="cta" href="https://iramum.github.io/commonplace/">Open the prototype →</a>
+    </div>
   </div>
-  <div class="foot"><span>Irina Mumrikova. Product &amp; UX Designer</span><span>The writer, outlets, numbers and notes in the demo are fictional</span></div>
+  <div class="cv-right">
+    <div class="cv-shot"><img src="../shots/today.png" alt=""></div>
+  </div>
+  <div class="foot" style="right:auto"><span>Irina Mumrikova</span></div>
 </section>
 
 <!-- 2 THE TASK -->
 <section class="page">
-  <div class="sec"><span class="n">1</span><div><span class="eyebrow">Where it started</span><h2>I wanted to write, and kept not getting to it</h2></div></div>
+  <div class="sec"><span class="n">1</span><div><span class="eyebrow">Where it started</span><h2>I wanted to write, and kept not getting to it</h2></div></div>
   <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:10mm">
     <div style="display:flex;flex-direction:column;gap:4mm">
-      <p class="lede">I planned to write my own pieces about art, curating and AI, and kept not getting to it. My work with texts already lived in five places: analytics, Google Search Console, a content calendar, research files and notes. Adding my own writing on top meant one more round of tabs every morning.</p>
-      <p>So I asked myself what tool would make me write. Not another editor, there are good ones. A place that says what needs me this morning, keeps what I notice until it becomes a piece, and tells me honestly which pieces still live.</p>
-      <div class="card y" style="margin-top:1mm"><span class="k">The brief I gave myself</span><h3>One screen for the writer’s morning, with the data pulled in on its own</h3><p>Notes, ideas, a calendar, and the life of every published piece in one place. Readers’ questions and search demand as the source of topics. Publishing and letting a piece go stay the writer’s decisions.</p></div>
+      <p class="lede">I planned to write my own pieces about art, curating and AI, and kept not getting to it. My work with texts already lived in five places: analytics, Google Search Console, a content calendar, research files and notes. Adding my own writing on top meant one more round of tabs every morning.</p>
+      <p>So I asked myself what tool would make me write. Not another editor, there are good ones. A place that says what needs me this morning, keeps what I notice until it becomes a piece, and tells me honestly which pieces still live.</p>
+      <div class="card y" style="margin-top:1mm"><span class="k">The brief I gave myself</span><h3>One screen for the writer’s morning, with the data pulled in on its own</h3><p>Notes, ideas, a calendar, and the life of every published piece in one place. Readers’ questions and search demand as the source of topics. Publishing and letting a piece go stay the writer’s decisions.</p></div>
     </div>
     <div style="display:flex;flex-direction:column;gap:4mm">
-      <div class="card"><span class="k">My role</span><p>Concept, the writer’s jobs, the flow, the architecture, the prototype in code with a morning data robot, the visual language, the logo and icon.</p></div>
-      <div class="card"><span class="k">Scope of this case</span><p>Today, Notes, Calendar, Ideas, Darlings, Readers and About me, designed and built. Social posts are reserved in the menu and not designed yet.</p></div>
-      <div class="card"><span class="k">Honest status</span><p>A personal tool and a public demo on invented data. The flow and the screens are the ones I built; user testing with other writers is the next step.</p></div>
+      <div class="card"><span class="k">My role</span><p>Concept, the writer’s jobs, the flow, the architecture, the prototype in code with a morning data robot, the visual language, the logo and icon.</p></div>
+      <div class="card"><span class="k">Scope of this case</span><p>Today, Notes, Calendar, Ideas, Darlings, Readers and About me, designed and built. Social posts are reserved in the menu and not designed yet.</p></div>
+      <div class="card"><span class="k">Honest status</span><p>A personal tool and a public demo on invented data. The flow and the screens are the ones I built; user testing with other writers is the next step.</p></div>
     </div>
   </div>
   <div class="foot"><span>Commonplace</span><span>2</span></div>
@@ -112,75 +127,75 @@ ul { margin: 0; padding-left: 4.5mm; font-size: 8.6pt; line-height: 1.5; color: 
 
 <!-- 3 WHO -->
 <section class="page">
-  <div class="sec"><span class="n">2</span><div><span class="eyebrow">Who it is for</span><h2>Nora writes about art, curating and AI</h2></div></div>
-  <p style="max-width:180mm">A fictional writer built from my own situation: a publication on Medium, two digital magazines, readers who are young artists, artists with a day job, independent curators, and more people asking what AI changes in art. Three or four pieces a month next to curating and teaching.</p>
+  <div class="sec"><span class="n">2</span><div><span class="eyebrow">Who it is for</span><h2>Nora writes about art, curating and AI</h2></div></div>
+  <p style="max-width:180mm">A fictional writer built from my own situation: a publication on Medium, two digital magazines, readers who are young artists, artists with a day job, independent curators, and more people asking what AI changes in art. Three or four pieces a month next to curating and teaching.</p>
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:4mm">
-    <div class="card"><span class="k">When I start the day</span><h3>I want to see what needs me first, so I do not open several tabs before I write a line.</h3></div>
-    <div class="card"><span class="k">When I notice something</span><h3>I want to keep it in one place at a show or a studio visit, so it can grow into a piece later.</h3></div>
-    <div class="card"><span class="k">When I choose the next topic</span><h3>I want evidence that readers ask for it and that I have not written it already.</h3></div>
-    <div class="card"><span class="k">When I look back</span><h3>I want to know which pieces still live and which to let go, without opening every stats page.</h3></div>
-    <div class="card"><span class="k">When an editor asks who I am</span><h3>I want the right bio in the right length in one click.</h3></div>
-    <div class="card"><span class="k">When a planned piece slips</span><h3>I want the calendar to say so, not to keep pretending it is on track.</h3></div>
+    <div class="card"><span class="k">When I start the day</span><h3>I want to see what needs me first, so I do not open several tabs before I write a line.</h3></div>
+    <div class="card"><span class="k">When I notice something</span><h3>I want to keep it in one place at a show or a studio visit, so it can grow into a piece later.</h3></div>
+    <div class="card"><span class="k">When I choose the next topic</span><h3>I want evidence that readers ask for it and that I have not written it already.</h3></div>
+    <div class="card"><span class="k">When I look back</span><h3>I want to know which pieces still live and which to let go, without opening every stats page.</h3></div>
+    <div class="card"><span class="k">When an editor asks who I am</span><h3>I want the right bio in the right length in one click.</h3></div>
+    <div class="card"><span class="k">When a planned piece slips</span><h3>I want the calendar to say so, not to keep pretending it is on track.</h3></div>
   </div>
-  <p class="quote" style="margin-top:2mm">How might a writer start the morning with one screen that says what needs her, and end it with a piece instead of a tab count?</p>
+  <p class="quote" style="margin-top:2mm">How might a writer start the morning with one screen that says what needs her, and end it with a piece instead of a tab count?</p>
   <div class="foot"><span>Commonplace</span><span>3</span></div>
 </section>
 
 <!-- 4 FLOW -->
 <section class="page">
-  <div class="sec"><span class="n">3</span><div><span class="eyebrow">The flow</span><h2>From a note to a piece, and back</h2></div></div>
-  <p style="max-width:200mm">Eight steps. Five are the writer’s, one belongs to AI, two run on their own every morning. Measuring closes the loop: what readers ask in the comments comes back as notes and ideas.</p>
+  <div class="sec"><span class="n">3</span><div><span class="eyebrow">The flow</span><h2>From a note to a piece, and back</h2></div></div>
+  <p style="max-width:200mm">Eight steps. Five are the writer’s, one belongs to AI, two run on their own every morning. Measuring closes the loop: what readers ask in the comments comes back as notes and ideas.</p>
   <div class="flowrow">
-    <div class="st you"><b>Notice</b><span>A show, a studio visit, a book</span></div>
-    <div class="st you"><b>Note</b><span>Saved as a seed in Notes</span></div>
-    <div class="st auto"><b>Idea</b><span>Checked against what is already published</span></div>
-    <div class="st you"><b>Plan</b><span>A date in the calendar</span></div>
-    <div class="st ai"><b>Write with AI</b><span>Brief, readers’ questions, fact check</span></div>
-    <div class="st you"><b>Publish</b><span>Only on the writer’s word</span></div>
-    <div class="st you"><b>Index</b><span>One tap to Search Console</span></div>
-    <div class="st auto"><b>Measure</b><span>Darlings, every morning</span></div>
+    <div class="st you"><b>Notice</b><span>A show, a studio visit, a book</span></div>
+    <div class="st you"><b>Note</b><span>Saved as a seed in Notes</span></div>
+    <div class="st auto"><b>Idea</b><span>Checked against what is already published</span></div>
+    <div class="st you"><b>Plan</b><span>A date in the calendar</span></div>
+    <div class="st ai"><b>Write with AI</b><span>Brief, readers’ questions, fact check</span></div>
+    <div class="st you"><b>Publish</b><span>Only on the writer’s word</span></div>
+    <div class="st you"><b>Index</b><span>One tap to Search Console</span></div>
+    <div class="st auto"><b>Measure</b><span>Darlings, every morning</span></div>
   </div>
-  <div style="display:flex;gap:6mm;font-size:8pt;color:var(--body)"><span>■ Writer</span><span style="color:#7A5A00">■ AI</span><span style="color:var(--g)">■ Runs on its own</span><span style="margin-left:auto">↺ readers’ questions return as notes and ideas</span></div>
+  <div style="display:flex;gap:6mm;font-size:8pt;color:var(--body)"><span>■ Writer</span><span style="color:#7A5A00">■ AI</span><span style="color:var(--g)">■ Runs on its own</span><span style="margin-left:auto">↺ readers’ questions return as notes and ideas</span></div>
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin-top:2mm">
-    <div class="card"><span class="k">Decision 1</span><h3>Notes come first, not stats</h3><p>The writer’s own observations are the start of the loop. Numbers come second and only answer “does it still live”.</p></div>
-    <div class="card"><span class="k">Decision 2</span><h3>Nothing is suggested twice</h3><p>Every idea is checked against published pieces. If one exists, the card says so and offers a new angle instead.</p></div>
-    <div class="card"><span class="k">Decision 3</span><h3>AI drafts a brief, not the piece</h3><p>It collects questions and facts and stops after the outline. Publishing is always the writer’s call.</p></div>
+    <div class="card"><span class="k">Decision 1</span><h3>Notes come first, not stats</h3><p>The writer’s own observations are the start of the loop. Numbers come second and only answer “does it still live”.</p></div>
+    <div class="card"><span class="k">Decision 2</span><h3>Nothing is suggested twice</h3><p>Every idea is checked against published pieces. If one exists, the card says so and offers a new angle instead.</p></div>
+    <div class="card"><span class="k">Decision 3</span><h3>AI drafts a brief, not the piece</h3><p>It collects questions and facts and stops after the outline. Publishing is always the writer’s call.</p></div>
   </div>
   <div class="foot"><span>Commonplace</span><span>4</span></div>
 </section>
 
 <!-- 5 ARCHITECTURE -->
 <section class="page">
-  <div class="sec"><span class="n">3</span><div><span class="eyebrow">Architecture</span><h2>A morning robot fills one data file. The app only reads it.</h2></div></div>
+  <div class="sec"><span class="n">3</span><div><span class="eyebrow">Architecture</span><h2>A morning robot fills one data file. The app only reads it.</h2></div></div>
   <div class="arch">
-    <div class="col a1"><span class="lab">Sources</span><h3>Where the writer’s work lives</h3><ul><li>Stats of each outlet</li><li>Google Search Console</li><li>The calendar and plans</li><li>Digests and newsletters she follows</li><li>Readers’ questions and forums</li></ul></div>
+    <div class="col a1"><span class="lab">Sources</span><h3>Where the writer’s work lives</h3><ul><li>Stats of each outlet</li><li>Google Search Console</li><li>The calendar and plans</li><li>Digests and newsletters she follows</li><li>Readers’ questions and forums</li></ul></div>
     <div class="ar">→</div>
-    <div class="col a2"><span class="lab">Every morning, on its own</span><h3>The robot</h3><ul><li>Collects every source into one file</li><li>Sorts pieces: working, growing, faded, let it go, new</li><li>Finds what needs attention and what takes off</li><li>Suggests ideas that are not written yet</li></ul></div>
+    <div class="col a2"><span class="lab">Every morning, on its own</span><h3>The robot</h3><ul><li>Collects every source into one file</li><li>Sorts pieces: working, growing, faded, let it go, new</li><li>Finds what needs attention and what takes off</li><li>Suggests ideas that are not written yet</li></ul></div>
     <div class="ar">→</div>
-    <div class="col a3"><span class="lab">For the writer</span><h3>Commonplace</h3><p>A static page: opens fast on a phone, works on any server. Notes, plans and bios are kept on her device in the demo.</p></div>
+    <div class="col a3"><span class="lab">For the writer</span><h3>Commonplace</h3><p>A static page: opens fast on a phone, works on any server. Notes, plans and bios are kept on her device in the demo.</p></div>
   </div>
-  <h3 style="margin-top:2mm">The menu: work on top, me at the bottom</h3>
+  <h3 style="margin-top:2mm">The menu: work on top, me at the bottom</h3>
   <div class="ia">
-    <div><b>Write</b><ul><li>Today: the morning</li><li>Notes: the commonplace book</li><li>Calendar: out, planned, missed</li><li>Ideas: what to write next</li><li>Darlings: every published piece</li></ul></div>
-    <div><b>Know</b><ul><li>Readers: who reads and what they ask</li><li>Keywords: searches around the topics</li><li>Research: reviews, forums, questions to AI</li><li>Queue: written, waiting for the last step</li></ul></div>
-    <div><b>Me</b><ul><li>About me: bios to paste</li><li>How it works</li><li>Settings</li><li style="color:var(--muted)">Social: reserved</li></ul></div>
+    <div><b>Write</b><ul><li>Today: the morning</li><li>Notes: the commonplace book</li><li>Calendar: out, planned, missed</li><li>Ideas: what to write next</li><li>Darlings: every published piece</li></ul></div>
+    <div><b>Know</b><ul><li>Readers: who reads and what they ask</li><li>Keywords: searches around the topics</li><li>Research: reviews, forums, questions to AI</li><li>Queue: written, waiting for the last step</li></ul></div>
+    <div><b>Me</b><ul><li>About me: bios to paste</li><li>How it works</li><li>Settings</li><li style="color:var(--muted)">Social: reserved</li></ul></div>
   </div>
   <div class="foot"><span>Commonplace</span><span>5</span></div>
 </section>
 
 <!-- 6 BRAND -->
 <section class="page">
-  <div class="sec"><span class="n">4</span><div><span class="eyebrow">Name and logo</span><h2>A commonplace book, and a comma for a pause</h2></div></div>
+  <div class="sec"><span class="n">4</span><div><span class="eyebrow">Name and logo</span><h2>A commonplace book, and a comma for a pause</h2></div></div>
   <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:8mm;flex:1;min-height:0">
     <div style="display:flex;flex-direction:column;gap:3mm;min-height:0">
       <div class="box" style="margin-top:8mm"><img src="fig-logos.png" alt=""></div>
-      <p class="cap">Six directions in Figma. The comma inside the word won: it is a pause between the common thing you noticed and the place where you keep it.</p>
+      <p class="cap">Six directions in Figma. The comma inside the word won: it is a pause between the common thing you noticed and the place where you keep it.</p>
     </div>
     <div style="display:flex;flex-direction:column;gap:5mm;justify-content:center">
-      <div class="logo" style="transform:scale(.62);transform-origin:left top;height:30mm"><span class="w">Common<i>,</i>place</span><span class="t">Oops, I wrote it again.</span></div>
-      <div style="display:flex;gap:5mm;align-items:center"><img src="../icon.svg" alt="" style="width:26mm;height:26mm"><p>The app icon keeps only the comma: yellow on black.</p></div>
-      <div class="card"><span class="k">Names from writers’ language</span><p>Commonplace is the old name for a writer’s book of notes and quotes. Darlings, the screen of published pieces, comes from “kill your darlings”. The tagline is a wink: you keep coming back to write.</p></div>
-      <div class="card y"><span class="k">One rule</span><p>The tagline is set to exactly the width of the word, checked by pixels, on desktop and on the phone.</p></div>
+      <div class="logo" style="transform:scale(.62);transform-origin:left top;height:30mm"><span class="w">Common<i>,</i>place</span><span class="t">Oops, I wrote it again.</span></div>
+      <div style="display:flex;gap:5mm;align-items:center"><img src="../icon.svg" alt="" style="width:26mm;height:26mm"><p>The app icon keeps only the comma: yellow on black.</p></div>
+      <div class="card"><span class="k">Names from writers’ language</span><p>Commonplace is the old name for a writer’s book of notes and quotes. Darlings, the screen of published pieces, comes from “kill your darlings”. The tagline is a wink: you keep coming back to write.</p></div>
+      <div class="card y"><span class="k">One rule</span><p>The tagline is set to exactly the width of the word, checked by pixels, on desktop and on the phone.</p></div>
     </div>
   </div>
   <div class="foot"><span>Commonplace</span><span>6</span></div>
@@ -188,17 +203,17 @@ ul { margin: 0; padding-left: 4.5mm; font-size: 8.6pt; line-height: 1.5; color: 
 
 <!-- 7 TODAY -->
 <section class="page">
-  <div class="sec"><span class="n">5</span><div><span class="eyebrow">Final design: Today</span><h2>The morning in one screen</h2></div></div>
+  <div class="sec"><span class="n">5</span><div><span class="eyebrow">Final design: Today</span><h2>The morning in one screen</h2></div></div>
   <div style="display:grid;grid-template-columns:1.9fr 1fr;gap:7mm;flex:1;min-height:0">
     <div class="box" style="align-self:start"><img src="../shots/today.png" alt="">
       <span class="mk" style="left:56%;top:7%">1</span><span class="mk" style="left:30%;top:33%">2</span><span class="mk" style="left:59%;top:27%">3</span><span class="mk" style="left:84%;top:27%">4</span><span class="mk" style="left:44%;top:59%">5</span><span class="mk" style="left:21%;top:91%">6</span></div>
     <div class="notes">
-      <div class="note"><span class="sq">1</span><div><h3>Four numbers, big</h3><p>Reads, views, new followers, pieces live, each against the 28 days before.</p></div></div>
-      <div class="note"><span class="sq">2</span><div><h3>To do</h3><p>Four counters: needs you now, due this week, seeds to grow, missed the date. Missed turns red.</p></div></div>
-      <div class="note"><span class="sq">3</span><div><h3>Calendar</h3><p>A month at a glance with a segmented control: all, pieces, social. Yellow is published, outlined is planned.</p></div></div>
-      <div class="note"><span class="sq">4</span><div><h3>Your latest note</h3><p>For a writer, this is the face of the screen. One tap turns it into a brief or a plan.</p></div></div>
-      <div class="note"><span class="sq">5</span><div><h3>Today’s list</h3><p>What to do and on which piece. Red means now.</p></div></div>
-      <div class="note"><span class="sq">6</span><div><h3>Needs attention and taking off</h3><p>What dropped, what fell out of the index, and what grew, to learn from.</p></div></div>
+      <div class="note"><span class="sq">1</span><div><h3>Four numbers, big</h3><p>Reads, views, new followers, pieces live, each against the 28 days before.</p></div></div>
+      <div class="note"><span class="sq">2</span><div><h3>To do</h3><p>Four counters: needs you now, due this week, seeds to grow, missed the date. Missed turns red.</p></div></div>
+      <div class="note"><span class="sq">3</span><div><h3>Calendar</h3><p>A month at a glance with a segmented control: all, pieces, social. Yellow is published, outlined is planned.</p></div></div>
+      <div class="note"><span class="sq">4</span><div><h3>Your latest note</h3><p>For a writer, this is the face of the screen. One tap turns it into a brief or a plan.</p></div></div>
+      <div class="note"><span class="sq">5</span><div><h3>Today’s list</h3><p>What to do and on which piece. Red means now.</p></div></div>
+      <div class="note"><span class="sq">6</span><div><h3>Needs attention and taking off</h3><p>What dropped, what fell out of the index, and what grew, to learn from.</p></div></div>
     </div>
   </div>
   <div class="foot"><span>Commonplace</span><span>7</span></div>
@@ -206,16 +221,16 @@ ul { margin: 0; padding-left: 4.5mm; font-size: 8.6pt; line-height: 1.5; color: 
 
 <!-- 8 NOTES -->
 <section class="page">
-  <div class="sec"><span class="n">5</span><div><span class="eyebrow">Final design: Notes</span><h2>The commonplace book itself</h2></div></div>
+  <div class="sec"><span class="n">5</span><div><span class="eyebrow">Final design: Notes</span><h2>The commonplace book itself</h2></div></div>
   <div style="display:grid;grid-template-columns:1.9fr 1fr;gap:7mm;flex:1;min-height:0">
     <div class="box" style="align-self:start"><img src="../shots/notes.png" alt="">
       <span class="mk" style="left:40%;top:23%">1</span><span class="mk" style="left:28%;top:39%">2</span><span class="mk" style="left:56%;top:46%">3</span><span class="mk" style="left:27%;top:59%">4</span><span class="mk" style="left:76%;top:69%">5</span></div>
     <div class="notes">
-      <div class="note"><span class="sq">1</span><div><h3>One field</h3><p>“What did you notice today?” A source and tags, nothing else to fill.</p></div></div>
-      <div class="note"><span class="sq">2</span><div><h3>Seeds, ideas, in a piece</h3><p>Every note has a stage, so the book shows what is still waiting.</p></div></div>
-      <div class="note"><span class="sq">3</span><div><h3>Set like reading</h3><p>Notes are in a book serif, the tools around them in a plain sans.</p></div></div>
-      <div class="note"><span class="sq">4</span><div><h3>From note to work</h3><p>Write a piece opens a brief, Plan it puts a date in the calendar.</p></div></div>
-      <div class="note"><span class="sq">5</span><div><h3>Where it went</h3><p>A used note links to the piece it became.</p></div></div>
+      <div class="note"><span class="sq">1</span><div><h3>One field</h3><p>“What did you notice today?” A source and tags, nothing else to fill.</p></div></div>
+      <div class="note"><span class="sq">2</span><div><h3>Seeds, ideas, in a piece</h3><p>Every note has a stage, so the book shows what is still waiting.</p></div></div>
+      <div class="note"><span class="sq">3</span><div><h3>Set like reading</h3><p>Notes are in a book serif, the tools around them in a plain sans.</p></div></div>
+      <div class="note"><span class="sq">4</span><div><h3>From note to work</h3><p>Write a piece opens a brief, Plan it puts a date in the calendar.</p></div></div>
+      <div class="note"><span class="sq">5</span><div><h3>Where it went</h3><p>A used note links to the piece it became.</p></div></div>
     </div>
   </div>
   <div class="foot"><span>Commonplace</span><span>8</span></div>
@@ -223,32 +238,32 @@ ul { margin: 0; padding-left: 4.5mm; font-size: 8.6pt; line-height: 1.5; color: 
 
 <!-- 9 IDEAS + CALENDAR -->
 <section class="page">
-  <div class="sec"><span class="n">5</span><div><span class="eyebrow">Final design: Ideas and Calendar</span><h2>What to write next, and when it goes out</h2></div></div>
+  <div class="sec"><span class="n">5</span><div><span class="eyebrow">Final design: Ideas and Calendar</span><h2>What to write next, and when it goes out</h2></div></div>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:6mm;flex:1;min-height:0">
     <div><div class="box crop" style="height:92mm"><img src="../shots/ideas.png" alt=""></div>
-      <h3 style="margin-top:3mm">Ideas from five sources</h3><p>Her notes, readers’ questions, search demand, searches with no piece yet, and digests she follows. Each card says why now, for which reader, and offers Write with AI or Plan it.</p></div>
+      <h3 style="margin-top:3mm">Ideas from five sources</h3><p>Her notes, readers’ questions, search demand, searches with no piece yet, and digests she follows. Each card says why now, for which reader, and offers Write with AI or Plan it.</p></div>
     <div><div class="box crop" style="height:92mm"><img src="../shots/calendar.png" alt=""></div>
-      <h3 style="margin-top:3mm">A calendar that does not pretend</h3><p>Published pieces and social posts are picked up from where they live. A plan that missed its date turns red with one action: move it.</p></div>
+      <h3 style="margin-top:3mm">A calendar that does not pretend</h3><p>Published pieces and social posts are picked up from where they live. A plan that missed its date turns red with one action: move it.</p></div>
   </div>
   <div class="foot"><span>Commonplace</span><span>9</span></div>
 </section>
 
 <!-- 10 DARLINGS -->
 <section class="page">
-  <div class="sec"><span class="n">5</span><div><span class="eyebrow">Final design: Darlings</span><h2>Kill your darlings, but look at the numbers first</h2></div></div>
+  <div class="sec"><span class="n">5</span><div><span class="eyebrow">Final design: Darlings</span><h2>Kill your darlings, but look at the numbers first</h2></div></div>
   <div style="display:grid;grid-template-columns:1.25fr 1fr;gap:7mm;flex:1;min-height:0">
     <div class="box" style="align-self:start"><img src="../shots/darlings.png" alt="">
       <span class="mk" style="left:58%;top:20%">1</span><span class="mk" style="left:89%;top:30%">2</span><span class="mk" style="left:47%;top:39%">3</span><span class="mk" style="left:60%;top:45%">4</span></div>
     <div style="display:flex;flex-direction:column;gap:3mm">
       <div class="notes">
-        <div class="note"><span class="sq">1</span><div><h3>Five groups</h3><p>Working, growing, waved and faded, let it go?, new. The question mark is deliberate: the data suggests, the writer decides.</p></div></div>
-        <div class="note"><span class="sq">2</span><div><h3>Where it lives</h3><p>Each piece shows its outlet: Medium or a magazine.</p></div></div>
-        <div class="note"><span class="sq">3</span><div><h3>Eight numbers</h3><p>Reads, views, read ratio, Google position, read time, followers, earnings, index.</p></div></div>
-        <div class="note"><span class="sq">4</span><div><h3>Twelve weeks of views</h3><p>The shape of the curve says more than any single number.</p></div></div>
+        <div class="note"><span class="sq">1</span><div><h3>Five groups</h3><p>Working, growing, waved and faded, let it go?, new. The question mark is deliberate: the data suggests, the writer decides.</p></div></div>
+        <div class="note"><span class="sq">2</span><div><h3>Where it lives</h3><p>Each piece shows its outlet: Medium or a magazine.</p></div></div>
+        <div class="note"><span class="sq">3</span><div><h3>Eight numbers</h3><p>Reads, views, read ratio, Google position, read time, followers, earnings, index.</p></div></div>
+        <div class="note"><span class="sq">4</span><div><h3>Twelve weeks of views</h3><p>The shape of the curve says more than any single number.</p></div></div>
       </div>
-      <span class="lab" style="margin-top:2mm">Next iteration, in Figma</span>
+      <span class="lab" style="margin-top:2mm">Next iteration, in Figma</span>
       <div class="box"><img src="fig-darling.png" alt=""></div>
-      <p class="cap">Eight numbers become one chart with a segmented control: reads, views, followers, earned. Each bar is a day this month, the yellow tick is the same day last month.</p>
+      <p class="cap">Eight numbers become one chart with a segmented control: reads, views, followers, earned. Each bar is a day this month, the yellow tick is the same day last month.</p>
     </div>
   </div>
   <div class="foot"><span>Commonplace</span><span>10</span></div>
@@ -256,33 +271,33 @@ ul { margin: 0; padding-left: 4.5mm; font-size: 8.6pt; line-height: 1.5; color: 
 
 <!-- 11 READERS + ABOUT -->
 <section class="page">
-  <div class="sec"><span class="n">5</span><div><span class="eyebrow">Final design: Readers and About me</span><h2>Write for people, and introduce yourself in one click</h2></div></div>
+  <div class="sec"><span class="n">5</span><div><span class="eyebrow">Final design: Readers and About me</span><h2>Write for people, and introduce yourself in one click</h2></div></div>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:6mm;flex:1;min-height:0">
     <div><div class="box crop" style="height:92mm"><img src="../shots/readers.png" alt=""></div>
-      <h3 style="margin-top:3mm">Readers</h3><p>Five reader types with what they want, what hurts and what loses them, the questions they ask most, and a pain map with sources. Keyword tools were nearly blind for the niche, readers’ own questions filled the gap.</p></div>
+      <h3 style="margin-top:3mm">Readers</h3><p>Five reader types with what they want, what hurts and what loses them, the questions they ask most, and a pain map with sources. Keyword tools were nearly blind for the niche, readers’ own questions filled the gap.</p></div>
     <div><div class="box crop" style="height:92mm"><img src="../shots/about.png" alt=""></div>
-      <h3 style="margin-top:3mm">About me</h3><p>One line, short third person, short first person, CV line, speaker intro. Word count, where each was last used, edit in place, copy. Every editor and festival asks for a different length.</p></div>
+      <h3 style="margin-top:3mm">About me</h3><p>One line, short third person, short first person, CV line, speaker intro. Word count, where each was last used, edit in place, copy. Every editor and festival asks for a different length.</p></div>
   </div>
   <div class="foot"><span>Commonplace</span><span>11</span></div>
 </section>
 
 <!-- 12 VISUAL -->
 <section class="page">
-  <div class="sec"><span class="n">6</span><div><span class="eyebrow">Visual language</span><h2>The desk next to the page</h2></div></div>
+  <div class="sec"><span class="n">6</span><div><span class="eyebrow">Visual language</span><h2>The desk next to the page</h2></div></div>
   <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:8mm;flex:1;min-height:0">
     <div style="display:flex;flex-direction:column;gap:3mm">
-      <p>The writer lives on Medium, so the tool borrows its calm: a serif for what is read, a plain sans for the tools, black pill buttons, hairlines, one yellow accent. Medium’s own fonts are licensed, so free look-alikes stand in.</p>
-      <div class="card"><span class="k">Type</span><p><span style="font:500 15pt var(--display);color:var(--ink)">Newsreader</span> headlines and numbers<br><span style="font:400 13pt var(--serif);color:var(--ink)">Source Serif 4</span> notes and quotes<br><span style="font:500 11pt var(--sans);color:var(--ink)">Inter</span> interface</p></div>
+      <p>The writer lives on Medium, so the tool borrows its calm: a serif for what is read, a plain sans for the tools, black pill buttons, hairlines, one yellow accent. Medium’s own fonts are licensed, so free look-alikes stand in.</p>
+      <div class="card"><span class="k">Type</span><p><span style="font:500 15pt var(--display);color:var(--ink)">Newsreader</span> headlines and numbers<br><span style="font:400 13pt var(--serif);color:var(--ink)">Source Serif 4</span> notes and quotes<br><span style="font:500 11pt var(--sans);color:var(--ink)">Inter</span> interface</p></div>
       <div class="sw">
         <div style="background:#242424;color:#fff">Ink #242424</div><div style="background:#6B6B6B;color:#fff">Body #6B6B6B</div><div style="background:#E5E5E5">Line #E5E5E5</div>
         <div style="background:#FFC017">Yellow #FFC017</div><div style="background:#1A8917;color:#fff">Growing #1A8917</div><div style="background:#C94A4A;color:#fff">Missed #C94A4A</div>
       </div>
-      <div class="card y"><span class="k">Rules</span><ul><li>Yellow marks what is the writer’s: published days, her latest note, the comma</li><li>Green only for what grows, red only for what missed a date or fell out of the index</li><li>No middle dots, no em dashes in the interface copy</li></ul></div>
+      <div class="card y"><span class="k">Rules</span><ul><li>Yellow marks what is the writer’s: published days, her latest note, the comma</li><li>Green only for what grows, red only for what missed a date or fell out of the index</li><li>No middle dots, no em dashes in the interface copy</li></ul></div>
     </div>
     <div style="display:flex;flex-direction:column;gap:3mm;min-height:0">
-      <span class="lab">Component: segmented control and comparison bars</span>
+      <span class="lab">Component: segmented control and comparison bars</span>
       <div class="box"><img src="fig-chart.png" alt=""></div>
-      <p class="cap">A segmented control switches the metric, not the page. Bars on a grey track, a yellow tick for the same day last month: every bar answers “better or worse than a month ago”.</p>
+      <p class="cap">A segmented control switches the metric, not the page. Bars on a grey track, a yellow tick for the same day last month: every bar answers “better or worse than a month ago”.</p>
     </div>
   </div>
   <div class="foot"><span>Commonplace</span><span>12</span></div>
@@ -290,12 +305,12 @@ ul { margin: 0; padding-left: 4.5mm; font-size: 8.6pt; line-height: 1.5; color: 
 
 <!-- 13 PHONE -->
 <section class="page">
-  <div class="sec"><span class="n">6</span><div><span class="eyebrow">On the phone</span><h2>The same morning, in a browser on the way</h2></div></div>
+  <div class="sec"><span class="n">6</span><div><span class="eyebrow">On the phone</span><h2>The same morning, in a browser on the way</h2></div></div>
   <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:8mm;flex:1;min-height:0;align-items:center">
     <div class="fit" style="height:150mm"><img src="../shots/phone.png" alt=""></div>
     <div style="display:flex;flex-direction:column;gap:4mm">
-      <p class="lede">Notes happen at a show or in a studio, not at a desk. The phone view keeps the five daily tabs in a bottom bar and puts the composer one tap away.</p>
-      <div class="card"><span class="k">What changes on the phone</span><ul><li>The side menu becomes a bottom bar: Today, Notes, Calendar, Ideas, Darlings</li><li>The four numbers sit in a two by two grid</li><li>The month calendar turns into a list by day</li><li>No horizontal scroll at 390 pixels, checked on every screen</li></ul></div>
+      <p class="lede">Notes happen at a show or in a studio, not at a desk. The phone view keeps the five daily tabs in a bottom bar and puts the composer one tap away.</p>
+      <div class="card"><span class="k">What changes on the phone</span><ul><li>The side menu becomes a bottom bar: Today, Notes, Calendar, Ideas, Darlings</li><li>The four numbers sit in a two by two grid</li><li>The month calendar turns into a list by day</li><li>No horizontal scroll at 390 pixels, checked on every screen</li></ul></div>
     </div>
   </div>
   <div class="foot"><span>Commonplace</span><span>13</span></div>
@@ -303,22 +318,22 @@ ul { margin: 0; padding-left: 4.5mm; font-size: 8.6pt; line-height: 1.5; color: 
 
 <!-- 14 OUTCOME -->
 <section class="page">
-  <div class="sec"><span class="n">7</span><div><span class="eyebrow">Outcome</span><h2>What it does now, and what is next</h2></div></div>
+  <div class="sec"><span class="n">7</span><div><span class="eyebrow">Outcome</span><h2>What it does now, and what is next</h2></div></div>
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:5mm">
-    <div class="card"><span class="k">Before</span><p>Notes scattered, stats in every outlet, a calendar that said a piece was ready when it never went out, a bio written again for every editor.</p></div>
-    <div class="card y"><span class="k">After</span><p>One morning screen, a book of notes that turns into ideas, ideas checked against what exists, a calendar that marks slips, a bio in one click.</p></div>
-    <div class="card"><span class="k">Under the hood</span><p>A scheduled job collects the data every morning on its own. The app is one static page that reads one file: fast on a phone, easy to move to any server.</p></div>
+    <div class="card"><span class="k">Before</span><p>Notes scattered, stats in every outlet, a calendar that said a piece was ready when it never went out, a bio written again for every editor.</p></div>
+    <div class="card y"><span class="k">After</span><p>One morning screen, a book of notes that turns into ideas, ideas checked against what exists, a calendar that marks slips, a bio in one click.</p></div>
+    <div class="card"><span class="k">Under the hood</span><p>A scheduled job collects the data every morning on its own. The app is one static page that reads one file: fast on a phone, easy to move to any server.</p></div>
   </div>
   <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:5mm">
-    <div class="card"><span class="k">What I would do next</span><ul><li>Pitches to editors: who got which pitch, replied, accepted, paid</li><li>An inbox for readers’ questions, each one into a note, an idea or a reply</li><li>AI suggests changes to a fading piece, the writer accepts or skips each</li><li>Social posts cut from each piece</li></ul></div>
-    <div class="card"><span class="k">What I would test</span><ul><li>Five writers, one week each, the morning only</li><li>Time from opening the app to the first written line</li><li>How many notes become pieces in a month</li><li>Which bio lengths get copied most</li></ul></div>
-    <div class="card"><span class="k">What I learned</span><p>Designing for myself made every shortcut obvious, and every dishonest number too. The turn came from asking what I do first in the morning: not stats, a note. Building in code let me throw versions away the same day.</p></div>
+    <div class="card"><span class="k">What I would do next</span><ul><li>Pitches to editors: who got which pitch, replied, accepted, paid</li><li>An inbox for readers’ questions, each one into a note, an idea or a reply</li><li>AI suggests changes to a fading piece, the writer accepts or skips each</li><li>Social posts cut from each piece</li></ul></div>
+    <div class="card"><span class="k">What I would test</span><ul><li>Five writers, one week each, the morning only</li><li>Time from opening the app to the first written line</li><li>How many notes become pieces in a month</li><li>Which bio lengths get copied most</li></ul></div>
+    <div class="card"><span class="k">What I learned</span><p>Designing for myself made every shortcut obvious, and every dishonest number too. The turn came from asking what I do first in the morning: not stats, a note. Building in code let me throw versions away the same day.</p></div>
   </div>
   <div style="display:flex;flex-direction:column;gap:3mm;margin-top:2mm">
-    <a class="cta" href="https://iramum.github.io/commonplace/">Open the interactive prototype →</a>
-    <p class="ctaurl" style="margin-top:0">iramum.github.io/commonplace. Case on the web: iramum.github.io/commonplace/case.html</p>
+    <a class="cta" href="https://iramum.github.io/commonplace/">Open the interactive prototype →</a>
+    <p class="ctaurl" style="margin-top:0">iramum.github.io/commonplace. Case on the web: iramum.github.io/commonplace/case.html</p>
   </div>
-  <div class="foot"><span>Irina Mumrikova. Product &amp; UX Designer</span><span>14</span></div>
+  <div class="foot"><span>Irina Mumrikova. Product &amp; UX Designer</span><span>14</span></div>
 </section>
 
 </body>
