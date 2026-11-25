@@ -31,7 +31,7 @@ h1{font:400 46pt/.92 var(--voice);letter-spacing:-.02em;margin:1mm 0 4mm}
 h1 em{font-style:italic}
 .lead{font-size:11pt;line-height:1.5;max-width:150mm;margin-bottom:5mm}
 .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:0 4mm;border-top:.4mm solid var(--ink);margin-bottom:6mm}
-.facts div{padding:2mm 0;border-bottom:.25mm solid var(--line)}
+.facts>div{padding:2mm 0;border-bottom:.25mm solid var(--line)}
 .k{font:700 6pt var(--case);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .facts .v{font-size:8pt;margin-top:.8mm;line-height:1.35}
 .who{display:flex;gap:4mm;align-items:center;margin:1.5mm 0 3mm}
@@ -45,8 +45,11 @@ h1 em{font-style:italic}
 .stage{background:var(--stage);border:.25mm solid #F1D27A;border-radius:3mm;position:relative}
 .stage .tag{position:absolute;left:3mm;top:2.2mm;font:700 5.5pt var(--case);letter-spacing:.12em;text-transform:uppercase;color:#5E4A00}
 .p1 .stage{padding:9mm 8mm 7mm;display:flex;justify-content:center;gap:6mm;align-items:flex-start}
-.phone{background:#141414;border-radius:6mm;padding:1.4mm}
-.phone img{border-radius:4.8mm}
+/* devices drawn like a blueprint: one ink line, white body, the whole screen inside */
+.phone{position:relative;background:#fff;border:.35mm solid var(--ink);border-radius:5mm;padding:4.2mm 1.4mm 3mm}
+.phone::before{content:"";position:absolute;left:50%;top:1.3mm;width:9mm;height:1.8mm;margin-left:-4.5mm;border:.3mm solid var(--ink);border-radius:1mm}
+.phone::after{content:"";position:absolute;left:50%;bottom:1.1mm;width:10mm;margin-left:-5mm;border-top:.4mm solid var(--ink)}
+.phone img{border-radius:.8mm;border:.15mm solid var(--line)}
 .p1 .phone{width:40mm}
 .steps{list-style:none;display:grid;grid-template-columns:repeat(8,1fr);gap:2mm;margin-top:4mm;counter-reset:s}
 .steps li{counter-increment:s;border-top:.5mm solid var(--ink);padding-top:1.5mm;font-size:7pt;line-height:1.3}
@@ -68,15 +71,16 @@ h1 em{font-style:italic}
 .m .t b{font:400 17pt/1 var(--voice);font-variant-numeric:lining-nums tabular-nums}
 .m .t span{font-size:6.8pt;color:var(--muted)}
 .ill{height:23mm;width:auto;margin:1.5mm 0 1mm -1mm;align-self:flex-start}
-.say{font:italic 400 11.5pt/1.15 var(--voice);margin-bottom:1.5mm;min-height:8.5mm}
-.st{font-size:7.6pt;line-height:1.4;margin-bottom:2mm}
+/* fixed heights for the quote and the line under it, so every yellow stage starts on the same line */
+.say{font:italic 400 11.5pt/1.15 var(--voice);margin-bottom:1.5mm;height:9.6mm;overflow:hidden}
+.st{font-size:7.6pt;line-height:1.4;margin-bottom:2mm;height:11.6mm;overflow:hidden}
 .m .stage{height:58mm;padding:6mm 2.5mm 2.5mm;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .m .stage .phone{height:100%;width:auto;display:flex}
 .m .stage .phone img{height:100%;width:auto}
 .m .stage .win img{max-height:48mm;width:100%;object-fit:cover;object-position:top left}
-.win{background:#fff;border-radius:1.2mm;overflow:hidden;border:.25mm solid #E4D7AE;width:100%}
-.win .bar{height:2.6mm;background:#F3F3F1;border-bottom:.2mm solid #E4E4E1;display:flex;gap:.8mm;align-items:center;padding-left:1.4mm}
-.win .bar i{width:1mm;height:1mm;border-radius:50%;background:#D5D5D1}
+.win{background:#fff;border-radius:1.2mm;overflow:hidden;border:.35mm solid var(--ink);width:100%}
+.win .bar{height:2.8mm;background:#fff;border-bottom:.3mm solid var(--ink);display:flex;gap:.8mm;align-items:center;padding-left:1.4mm}
+.win .bar i{width:1.1mm;height:1.1mm;border-radius:50%;border:.25mm solid var(--ink)}
 .why{background:var(--soft);border-radius:1.5mm;padding:2mm 2.4mm;margin-top:2mm;font-size:7pt;line-height:1.4}
 .why .k{font-size:5.5pt;margin-bottom:.6mm;color:var(--ink)}
 .learn{border-top:.4mm solid var(--ink);padding-top:2mm;display:flex;flex-direction:column;gap:3mm}
