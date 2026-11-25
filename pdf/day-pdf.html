@@ -67,10 +67,13 @@ h1 em{font-style:italic}
 .cols{display:grid;gap:4.5mm;flex:1;min-height:0}
 .c5{grid-template-columns:repeat(5,minmax(0,1fr))}
 .m{display:flex;flex-direction:column;min-width:0;border-top:.4mm solid var(--ink);padding-top:2mm}
-.m .t{display:flex;align-items:baseline;gap:2mm}
+.m .t{display:flex;align-items:baseline;gap:2mm;order:1;margin-bottom:1.6mm}
+.m>*{order:2}
+.m>.ill{order:0}
+.m .t b{display:none}
 .m .t b{font:400 17pt/1 var(--voice);font-variant-numeric:lining-nums tabular-nums}
-.m .t span{font-size:6.8pt;color:var(--muted)}
-.ill{height:30mm;width:30mm;margin:1.5mm 0 1.5mm;align-self:flex-start;border-radius:1.5mm}
+.m .t span{font-size:7.2pt;color:var(--body)}
+.ill{height:32mm;width:32mm;margin:0 0 1.4mm;align-self:flex-start;border-radius:1.5mm}
 /* fixed heights for the quote and the line under it, so every yellow stage starts on the same line */
 .say{font:italic 400 11.5pt/1.15 var(--voice);margin-bottom:1.5mm;height:9.6mm;overflow:hidden}
 .st{font-size:7.6pt;line-height:1.4;margin-bottom:2mm;height:11.6mm;overflow:hidden}

@@ -77,13 +77,15 @@ h2{font:400 clamp(34px,4vw,52px)/1.02 var(--voice);letter-spacing:-.01em;margin:
 .daynav a:hover,.daynav a:focus-visible{border-color:var(--ink)}
 .scene{position:relative;display:grid;grid-template-columns:230px minmax(0,1fr);gap:0 36px;padding-block:64px 8px;scroll-margin-top:12px}
 /* Nora, drawn: one black line, beside the time rail */
-.time .ill{display:block;width:210px;max-width:100%;margin:18px 0 0 -4px;border-radius:10px}
+/* the picture sits on the rail dot; the place is its caption; the hour is drawn on the picture, so the number is for screen readers only */
+.time{display:flex;flex-direction:column}
+.time .ill{order:-1;display:block;width:210px;max-width:100%;margin:0;border-radius:10px}
 @media(min-width:901px){.time{position:sticky;top:24px;align-self:start;grid-row:1/span 2}}
 .scene::before{content:"";position:absolute;left:10px;top:0;bottom:0;width:1.5px;background:var(--line2)}
 .time{position:relative;padding-left:34px}
-.time::before{content:"";position:absolute;left:4px;top:14px;width:14px;height:14px;border-radius:50%;background:var(--ink);box-shadow:0 0 0 5px #fff}
-.time b{display:block;font:400 44px/1 var(--voice);font-variant-numeric:lining-nums tabular-nums}
-.time span{display:block;font-size:13px;color:var(--muted);margin-top:6px;line-height:1.35}
+.time::before{content:"";position:absolute;left:4px;top:22px;width:14px;height:14px;border-radius:50%;background:var(--ink);box-shadow:0 0 0 5px #fff}
+.time b{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.time span{display:block;font-size:14px;color:var(--body);margin-top:10px;line-height:1.35;max-width:210px}
 .story{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 48px;align-items:start}
 .say{grid-column:1/-1;font:italic 400 clamp(30px,3.4vw,44px)/1.1 var(--voice);margin:0 0 18px;text-wrap:balance}
 .story>p{margin:0;max-width:520px}
@@ -128,8 +130,7 @@ footer{border-top:1px solid var(--line);padding-block:32px 64px;font-size:14px;c
  .persona{grid-template-columns:1fr;gap:32px}
  .scene{grid-template-columns:1fr;padding-left:34px}
  .time{margin-left:-34px;margin-bottom:10px}
- .time b{display:inline;font-size:36px}.time span{display:inline;margin-left:10px}
- .time .ill{width:170px;margin:10px 0 0 -6px}
+ .time .ill{width:180px}
  .story{grid-template-columns:1fr;gap:14px}
  .stage{grid-column:1;padding:44px 18px 22px;margin-top:22px}
  .phone{width:250px}
