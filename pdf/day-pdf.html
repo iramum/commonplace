@@ -70,14 +70,15 @@ h1 em{font-style:italic}
 .m .t{display:flex;align-items:baseline;gap:2mm}
 .m .t b{font:400 17pt/1 var(--voice);font-variant-numeric:lining-nums tabular-nums}
 .m .t span{font-size:6.8pt;color:var(--muted)}
-.ill{height:23mm;width:auto;margin:1.5mm 0 1mm -1mm;align-self:flex-start}
+.ill{height:30mm;width:30mm;margin:1.5mm 0 1.5mm;align-self:flex-start;border-radius:1.5mm}
 /* fixed heights for the quote and the line under it, so every yellow stage starts on the same line */
 .say{font:italic 400 11.5pt/1.15 var(--voice);margin-bottom:1.5mm;height:9.6mm;overflow:hidden}
 .st{font-size:7.6pt;line-height:1.4;margin-bottom:2mm;height:11.6mm;overflow:hidden}
 .m .stage{height:58mm;padding:6mm 2.5mm 2.5mm;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .m .stage .phone{height:100%;width:auto;display:flex}
 .m .stage .phone img{height:100%;width:auto}
-.m .stage .win img{max-height:48mm;width:100%;object-fit:cover;object-position:top left}
+.m .stage .win{width:auto;max-width:100%}
+.m .stage .win img{max-height:47mm;max-width:100%;width:auto;height:auto}
 .win{background:#fff;border-radius:1.2mm;overflow:hidden;border:.35mm solid var(--ink);width:100%}
 .win .bar{height:2.8mm;background:#fff;border-bottom:.3mm solid var(--ink);display:flex;gap:.8mm;align-items:center;padding-left:1.4mm}
 .win .bar i{width:1.1mm;height:1.1mm;border-radius:50%;border:.25mm solid var(--ink)}
@@ -141,23 +142,23 @@ h1 em{font-style:italic}
   <div class="top"><b>Irina Mumrikova</b>Product &amp; UX Design<span class="sp"></span><span class="chip">Case study</span><span class="prod"><img src="../icon-180.png" alt=""><b>Commonplace</b></span></div>
   <div class="dayh"><h2>One Wednesday in November</h2><p>Morning to late afternoon. The phone catches, the laptop decides.</p></div>
   <div class="cols c5">
-    <div class="m"><div class="t"><b>07:30</b><span>Kitchen</span></div><img class="ill" src="../shots/day/nora/0730.svg" alt="">
+    <div class="m"><div class="t"><b>07:30</b><span>Kitchen</span></div><img class="ill" src="../shots/day/nora-gpt/0730.webp" alt="">
       <p class="say">“What needs me first?”</p><p class="st">The first line answers: four things today, two need her first. Numbers come second.</p>
       <div class="stage"><div class="phone"><img src="../shots/day/0730-today.webp" alt=""></div></div>
       <div class="why"><div class="k">Why</div>A count before a chart. On the phone, a bottom bar with the daily tabs.</div></div>
-    <div class="m"><div class="t"><b>08:15</b><span>At the desk</span></div><img class="ill" src="../shots/day/nora/0815.svg" alt="">
+    <div class="m"><div class="t"><b>08:15</b><span>At the desk</span></div><img class="ill" src="../shots/day/nora-gpt/0815.webp" alt="">
       <p class="say">“Why did the burnout piece drop?”</p><p class="st">On the laptop: what needs attention and what is taking off.</p>
       <div class="stage"><div class="win"><div class="bar"><i></i><i></i><i></i></div><img src="../shots/day/crop-0815-attention.webp" alt=""></div></div>
       <div class="why"><div class="k">Why</div>Red only where she must act, green only where something grows.</div></div>
-    <div class="m"><div class="t"><b>13:10</b><span>An opening</span></div><img class="ill" src="../shots/day/nora/1310.svg" alt="">
+    <div class="m"><div class="t"><b>13:10</b><span>An opening</span></div><img class="ill" src="../shots/day/nora-gpt/1310.webp" alt="">
       <p class="say">“Write it down before it's gone.”</p><p class="st">One line, a source, two tags, and the phone goes back in the pocket.</p>
       <div class="stage"><div class="phone"><img src="../shots/day/1310-note.webp" alt=""></div></div>
       <div class="why"><div class="k">Why</div>One field that grows, 16 px inputs, every note starts as a seed.</div></div>
-    <div class="m"><div class="t"><b>16:00</b><span>Café, late lunch</span></div><img class="ill" src="../shots/day/nora/1600.svg" alt="">
+    <div class="m"><div class="t"><b>16:00</b><span>Café, late lunch</span></div><img class="ill" src="../shots/day/nora-gpt/1600.webp" alt="">
       <p class="say">“What should I write next?”</p><p class="st">Ideas from her notes, readers' questions, search demand and digests.</p>
       <div class="stage"><div class="win"><div class="bar"><i></i><i></i><i></i></div><img src="../shots/day/crop-1600-ideas.webp" alt=""></div></div>
       <div class="why"><div class="k">Why</div>Each idea is checked against what she has already published.</div></div>
-    <div class="m"><div class="t"><b>16:15</b><span>Still at the café</span></div><img class="ill" src="../shots/day/nora/1615.svg" alt="">
+    <div class="m"><div class="t"><b>16:15</b><span>Still at the café</span></div><img class="ill" src="../shots/day/nora-gpt/1615.webp" alt="">
       <p class="say">“Help me start. Don't write it for me.”</p><p class="st">Commonplace prepares the brief for AI, with the rules she writes by.</p>
       <div class="stage"><div class="win"><div class="bar"><i></i><i></i><i></i></div><img src="../shots/day/crop-1615-brief.webp" alt=""></div></div>
       <div class="why"><div class="k">Why</div>AI drafts and checks facts. She writes and decides.</div></div>
@@ -170,19 +171,19 @@ h1 em{font-style:italic}
   <div class="top"><b>Irina Mumrikova</b>Product &amp; UX Design<span class="sp"></span><span class="chip">Case study</span><span class="prod"><img src="../icon-180.png" alt=""><b>Commonplace</b></span></div>
   <div class="dayh"><h2>Evening, and the next morning</h2><p>The plan, the bio, the slip, and what still lives.</p></div>
   <div class="cols c5">
-    <div class="m"><div class="t"><b>16:40</b><span>Café, leaving</span></div><img class="ill" src="../shots/day/nora/1640.svg" alt="">
+    <div class="m"><div class="t"><b>16:40</b><span>Café, leaving</span></div><img class="ill" src="../shots/day/nora-gpt/1640.webp" alt="">
       <p class="say">“Give it a date, or it never happens.”</p><p class="st">The title comes from the idea; she only picks the day.</p>
       <div class="stage"><div class="win"><div class="bar"><i></i><i></i><i></i></div><img src="../shots/day/crop-1640-plan.webp" alt=""></div></div>
       <div class="why"><div class="k">Why</div>Only plans are typed by hand. Published dates come from the outlets.</div></div>
-    <div class="m"><div class="t"><b>18:00</b><span>Walking home</span></div><img class="ill" src="../shots/day/nora/1800.svg" alt="">
+    <div class="m"><div class="t"><b>18:00</b><span>Walking home</span></div><img class="ill" src="../shots/day/nora-gpt/1800.webp" alt="">
       <p class="say">“Could you send us a short bio?”</p><p class="st">About me keeps five lengths. One click to copy.</p>
       <div class="stage"><div class="win"><div class="bar"><i></i><i></i><i></i></div><img src="../shots/day/crop-1800-bio.webp" alt=""></div></div>
       <div class="why"><div class="k">Why</div>Every editor asks for a different length; it used to live in an old email.</div></div>
-    <div class="m"><div class="t"><b>22:40</b><span>A friend's party</span></div><img class="ill" src="../shots/day/nora/2240.svg" alt="">
+    <div class="m"><div class="t"><b>22:40</b><span>A friend's party</span></div><img class="ill" src="../shots/day/nora-gpt/2240.webp" alt="">
       <p class="say">“I didn't publish the studio-visit piece.”</p><p class="st">The missed plan is red. She moves it to Thursday between two conversations.</p>
       <div class="stage"><div class="phone"><img src="../shots/day/2240-calendar.webp" alt=""></div></div>
       <div class="why"><div class="k">Why</div>A slipped plan turns red on its own. Moving it is one sheet away.</div></div>
-    <div class="m"><div class="t"><b>07:00</b><span>Next morning, in bed</span></div><img class="ill" src="../shots/day/nora/0700.svg" alt="">
+    <div class="m"><div class="t"><b>07:00</b><span>Next morning, in bed</span></div><img class="ill" src="../shots/day/nora-gpt/0700.webp" alt="">
       <p class="say">“Which pieces still live?”</p><p class="st">Darlings: five groups, twelve weeks of views per piece.</p>
       <div class="stage"><div class="win"><div class="bar"><i></i><i></i><i></i></div><img src="../shots/day/crop-0700-darlings.webp" alt=""></div></div>
       <div class="why"><div class="k">Why</div>The data suggests, she decides. Readers' questions return as notes.</div></div>
