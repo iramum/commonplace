@@ -44,8 +44,12 @@ main{flex:1;min-width:0;padding:32px 40px 96px}
   .logo .w{font-size:22px}
   .logo .t{font-size:12.9px;margin-top:4px}
   .bottom{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--bg);border-top:1px solid var(--line2);padding:6px 4px calc(6px + env(safe-area-inset-bottom))}
-  .bottom button{flex:1;border:0;background:none;padding:8px 2px;font-size:11px;color:var(--body)}
-  .bottom button.on{color:var(--ink);font-weight:600}
+  .bottom button{flex:1;border:0;background:none;padding:9px 2px 7px;color:var(--muted);display:flex;justify-content:center}
+  .bottom button.on{color:var(--ink)}
+  .bottom .ic{position:relative;display:block;width:24px;height:24px}
+  .bottom .ic svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .bottom button.on .ic svg{stroke-width:2.1}
+  .bottom button.on .ic::after{content:"";position:absolute;left:50%;bottom:-7px;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:var(--ink)}
 }
 h1{font-family:var(--display);font-weight:400;font-size:44px;line-height:1.08;letter-spacing:-.02em;margin:0 0 6px}
 @media(max-width:899px){h1{font-size:32px}}
@@ -253,7 +257,7 @@ button,a,.chip,.nav{-webkit-tap-highlight-color:transparent;touch-action:manipul
   .how-pill{display:none}
   .how-pill-m{display:inline-flex;margin-top:6px}
   .bottom button{position:relative;font-size:11.5px;padding:10px 2px}
-  .bottom button .b{display:inline-block;vertical-align:1px;margin-left:3px;min-width:15px;height:15px;line-height:15px;padding:0 4px;font-size:9.5px;background:var(--yellow);border-radius:999px;font-weight:600;color:var(--ink)}
+  .bottom button .b{position:absolute;top:-5px;right:-9px;min-width:15px;height:15px;line-height:15px;padding:0 4px;font-size:9.5px;text-align:center;background:var(--yellow);border-radius:999px;font-weight:600;color:var(--ink)}
   .toast{bottom:calc(76px + env(safe-area-inset-bottom))}
   .dlg-bg{align-items:flex-end;padding:0}
   .dlg{max-width:none;border-radius:12px 12px 0 0;padding:22px 18px calc(22px + env(safe-area-inset-bottom));max-height:88vh}
@@ -283,6 +287,14 @@ const NAV=[['today','Today'],['notes','Notes'],['calendar','Calendar'],['ideas',
 const GROUPS=[['Write',['today','notes','calendar','ideas','darlings']],['Know',['readers','keywords','research','queue']]];
 const BOTTOM=['about','how','settings'];
 const MOBILE=['today','notes','calendar','ideas','darlings'];
+const ICON={
+ today:'<circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/>',
+ notes:'<path d="M15.5 4.5l4 4L9 19H5v-4z"/><path d="M13.5 6.5l4 4"/>',
+ calendar:'<rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/>',
+ ideas:'<path d="M9 17.5h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.6.5 1 1.2 1 2V16h5.2v-.2c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z"/>',
+ darlings:'<path d="M12 20s-7.5-4.4-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.6-7.5 10-7.5 10z"/>',
+ more:'<circle cx="5.5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="18.5" cy="12" r="1.3"/>'};
+const ico=k=>`<svg viewBox="0 0 24 24" aria-hidden="true">${ICON[k]}</svg>`;
 const GN={A:'Working',B:'Growing',C:'Waved and faded',D:'Let it go?',N:'New'};
 const GC={A:'#1A8917',B:'#FFC017',C:'#E5E5E5',D:'#C94A4A',N:'#191919'};
 const $=s=>document.querySelector(s);
@@ -549,8 +561,8 @@ function render(){
   const badge={today:D.alerts.filter(a=>a.level==='high').length,notes:notesAll().filter(n=>n.status==='seed').length};
   const nb=k=>{const l=NAV.find(x=>x[0]===k)[1];return `<button class="nav ${tab===k?'on':''} ${k==='settings'?'later':''}" data-tab="${k}">${l}${badge[k]?`<span class="b">${badge[k]}</span>`:''}</button>`;};
   $('#side').innerHTML=GROUPS.map(([t,ks])=>`<div class="grp"><div class="sec">${t}</div>${ks.map(nb).join('')}</div>`).join('')+`<div class="bottomgrp">${BOTTOM.map(nb).join('')}</div>`;
-  $('#bottom').innerHTML=NAV.filter(([k])=>MOBILE.includes(k)).map(([k,l])=>`<button class="${tab===k?'on':''}" data-tab="${k}" ${tab===k?'aria-current="page"':''}>${l}${badge[k]?`<span class="b">${badge[k]}</span>`:''}</button>`).join('')
-    +`<button class="${MOBILE.includes(tab)?'':'on'}" data-tab="more">More</button>`;
+  $('#bottom').innerHTML=NAV.filter(([k])=>MOBILE.includes(k)).map(([k,l])=>`<button class="${tab===k?'on':''}" data-tab="${k}" aria-label="${l}" title="${l}" ${tab===k?'aria-current="page"':''}><span class="ic">${ico(k)}${badge[k]?`<span class="b">${badge[k]}</span>`:''}</span></button>`).join('')
+    +`<button class="${MOBILE.includes(tab)?'':'on'}" data-tab="more" aria-label="More" title="More"><span class="ic">${ico('more')}</span></button>`;
   if(tab==='more'&&wide())tab='today';
   $('#view').innerHTML=({more:vMore,about:vAbout,settings:vSettings,today:vToday,notes:vNotes,calendar:vCalendar,ideas:vIdeas,darlings:vDarlings,readers:vReaders,keywords:vKeywords,research:vResearch,queue:vQueue,how:vHow,social:vSocial})[tab]();
 }
