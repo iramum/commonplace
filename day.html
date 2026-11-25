@@ -108,11 +108,11 @@ h2{font:400 clamp(34px,4vw,52px)/1.02 var(--voice);letter-spacing:-.01em;margin:
 .phone::after{content:"";position:absolute;left:50%;bottom:9px;width:84px;margin-left:-42px;border-top:2px solid var(--ink);border-radius:2px}
 .phone img{border-radius:6px;border:1px solid var(--line2)}
 .show{margin-top:8px}
-.show .stage{grid-column:auto;margin:0;padding:64px 56px 56px}
-.show .mark{position:absolute;right:40px;top:-520px;font:800 1000px/1 'Newsreader',Georgia,serif;color:#fff;opacity:1;pointer-events:none;user-select:none}
+.show .stage{grid-column:auto;margin:0;padding:64px 56px 56px;background:linear-gradient(220deg,#FFD45C 0%,#FFE9A6 38%,#FFF7E0 70%,#F1EFEA 100%)}
+.show .mark{position:absolute;right:26px;top:-14px;width:230px;height:auto;fill:#fff;pointer-events:none}
 .show .win,.show .phone{position:relative;z-index:1}
-.show .win{width:76%}
-.show .phone{position:absolute;right:7%;bottom:48px;width:240px;padding:28px 8px 18px;transform:rotate(12deg);box-shadow:0 24px 50px rgba(60,40,0,.18)}
+.show .win{width:68%}
+.show .phone{position:absolute;right:5%;bottom:-210px;width:236px;padding:28px 8px 18px;transform:rotate(12deg);box-shadow:0 24px 50px rgba(60,40,0,.18)}
 .show .phone::before{top:9px;width:60px;margin-left:-30px;height:13px}
 .show .phone::after{bottom:7px;width:64px;margin-left:-32px}
 
@@ -161,8 +161,8 @@ footer{border-top:1px solid var(--line);padding-block:32px 64px;font-size:14px;c
  .win .bar span{display:none}
  .show .stage{padding:44px 18px 40px}
  .show .win{display:none}
- .show .mark{font-size:620px;top:-340px;right:-50px}
- .show .phone{position:relative;right:auto;bottom:auto;margin:0 auto;width:72%;transform:rotate(6deg)}
+ .show .mark{width:120px;top:-8px;right:10px}
+ .show .phone{position:relative;right:auto;bottom:auto;margin:30px 0 0 4%;width:66%;transform:rotate(6deg)}
  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 </style>
@@ -189,7 +189,7 @@ footer{border-top:1px solid var(--line);padding-block:32px 64px;font-size:14px;c
 </section>
 
 <section class="in show" aria-label="The product">
-  <figure class="stage"><span class="mark" aria-hidden="true">,</span><span class="tag">In the app, the Today screen</span><div class="win"><div class="bar"><i></i><i></i><i></i><span>commonplace / today</span></div><img src="shots/day/hero-today.webp" width="1600" height="1339" alt="Today on desktop: four numbers, to-do, calendar and the last note"></div><div class="phone"><img src="shots/day/0730-today.webp" width="780" height="1690" alt="Today on the phone"></div></figure>
+  <figure class="stage"><svg class="mark" viewBox="0 0 26.5 49.75" aria-hidden="true"><path d="M 0 47.52000427246094 C 4.454999923706055 44.165003299713135 7.782500743865967 40.83750247955322 9.982501029968262 37.53750228881836 C 12.237501621246338 34.2925021648407 13.365001678466797 30.690001487731934 13.365001678466797 26.73000144958496 C 13.365001678466797 24.530001401901245 12.732500791549683 22.660000920295715 11.467500686645508 21.1200008392334 C 10.257500648498535 19.52500092983246 8.8000009059906 18.177501320838928 7.095000743865967 17.07750129699707 C 5.445000648498535 15.977501153945923 3.9875006675720215 15.015000581741333 2.7225005626678467 14.190000534057617 C 1.5125001668930054 13.365000486373901 0.9074999690055847 12.595000863075256 0.9074999690055847 11.880001068115234 C 0.9074999690055847 8.305000305175781 2.062500238418579 5.44499945640564 4.372500419616699 3.299999237060547 C 6.6825010776519775 1.0999996662139893 9.73500108718872 0 13.530000686645508 0 C 17.325001001358032 0 20.4325008392334 1.2650001049041748 22.852500915527344 3.7950003147125244 C 25.27250099182129 6.325000524520874 26.482500076293945 9.90000057220459 26.482500076293945 14.520000457763672 C 26.482500076293945 17.43500065803528 26.042500495910645 20.350001335144043 25.162500381469727 23.26500129699707 C 24.28250026702881 26.23500156402588 22.87999975681305 29.205003023147583 20.954999923706055 32.17500305175781 C 19.084999442100525 35.14500331878662 16.610000371932983 38.087502241134644 13.530000686645508 41.00250244140625 C 10.450001001358032 43.97250270843506 6.710000514984131 46.88750219345093 2.310000419616699 49.747501373291016 L 0 47.52000427246094 Z"/></svg><span class="tag">In the app, the Today screen</span><div class="win"><div class="bar"><i></i><i></i><i></i><span>commonplace / today</span></div><img src="shots/day/hero-today.webp" width="1600" height="911" alt="Today on desktop: four numbers, to-do, calendar and the last note"></div><div class="phone"><img src="shots/day/0730-today.webp" width="780" height="1690" alt="Today on the phone"></div></figure>
 </section>
 
 <section class="in persona" aria-labelledby="who">
