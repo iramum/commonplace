@@ -182,7 +182,7 @@ footer{border-top:1px solid var(--line);padding-block:32px 64px;font-size:14px;c
 </section>
 
 <section class="in show" aria-label="The product">
-  <figure class="cover"><img class="nora" src="shots/day/nora-hero.webp" width="1671" height="941" alt="Nora, a writer on art, curating and sound, at home with a laptop, a coffee and her books"><div class="win"><div class="bar"><i></i><i></i><i></i><span>commonplace / today</span></div><img src="shots/day/hero-today.webp" width="1600" height="911" alt="Today on desktop: four numbers, to-do, calendar and the last note"></div></figure>
+  <figure class="cover"><img class="nora" src="shots/day/nora-hero-3.webp" width="1671" height="941" alt="Nora, a writer on art, curating and sound, at home with a laptop, a coffee and her books"><div class="win"><div class="bar"><i></i><i></i><i></i><span>commonplace / today</span></div><img src="shots/day/hero-today.webp" width="1600" height="911" alt="Today on desktop: four numbers, to-do, calendar and the last note"></div></figure>
 </section>
 
 <section class="in persona" aria-labelledby="who">
@@ -348,7 +348,7 @@ while((n=w.nextNode())){if(n.nodeValue.trim())n.nodeValue=n.nodeValue.replace(re
 </script>
 <script>/* earlier drawing series for comparison: day.html?ill=a, ?ill=b, ?ill=c */
 (function(){var m=location.search.match(/[?&]ill=([abc])/);if(!m)return;var d={a:'/nora-gpt/',b:'/nora-gpt-b/',c:'/nora-gpt-c/'}[m[1]];document.querySelectorAll('img.ill').forEach(function(i){i.src=i.getAttribute('src').replace('/nora-gpt-d/',d)})})()</script>
-<script>/* hero illustration, variant 2 for comparison: day.html?hero=2 */
-if(/[?&]hero=2/.test(location.search)){var h=document.querySelector('.cover .nora');if(h)h.src='shots/day/nora-hero-2.webp'}</script>
+<script>/* earlier hero illustrations for comparison: day.html?hero=1, ?hero=2 */
+(function(){var m=location.search.match(/[?&]hero=([12])/),h=document.querySelector('.cover .nora');if(m&&h)h.src=m[1]=='1'?'shots/day/nora-hero.webp':'shots/day/nora-hero-2.webp'})()</script>
 </body>
 </html>
