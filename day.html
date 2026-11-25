@@ -75,7 +75,10 @@ h2{font:400 clamp(34px,4vw,52px)/1.02 var(--voice);letter-spacing:-.01em;margin:
 .daynav{display:flex;flex-wrap:wrap;gap:6px;margin:24px 0 0;padding:0;list-style:none}
 .daynav a{display:inline-block;font:600 13px var(--case);text-decoration:none;border:1.5px solid var(--line2);border-radius:999px;padding:5px 12px;font-variant-numeric:tabular-nums}
 .daynav a:hover,.daynav a:focus-visible{border-color:var(--ink)}
-.scene{position:relative;display:grid;grid-template-columns:130px minmax(0,1fr);gap:0 36px;padding-block:64px 8px;scroll-margin-top:12px}
+.scene{position:relative;display:grid;grid-template-columns:230px minmax(0,1fr);gap:0 36px;padding-block:64px 8px;scroll-margin-top:12px}
+/* Nora, drawn: one black line, beside the time rail */
+.time .ill{display:block;width:200px;max-width:100%;margin:18px 0 0 -8px}
+@media(min-width:901px){.time{position:sticky;top:24px;align-self:start;grid-row:1/span 2}}
 .scene::before{content:"";position:absolute;left:10px;top:0;bottom:0;width:1.5px;background:var(--line2)}
 .time{position:relative;padding-left:34px}
 .time::before{content:"";position:absolute;left:4px;top:14px;width:14px;height:14px;border-radius:50%;background:var(--ink);box-shadow:0 0 0 5px #fff}
@@ -123,6 +126,7 @@ footer{border-top:1px solid var(--line);padding-block:32px 64px;font-size:14px;c
  .scene{grid-template-columns:1fr;padding-left:34px}
  .time{margin-left:-34px;margin-bottom:10px}
  .time b{display:inline;font-size:36px}.time span{display:inline;margin-left:10px}
+ .time .ill{width:170px;margin:10px 0 0 -6px}
  .story{grid-template-columns:1fr;gap:14px}
  .stage{grid-column:1;padding:44px 18px 22px;margin-top:22px}
  .phone{width:250px}
@@ -188,7 +192,7 @@ footer{border-top:1px solid var(--line);padding-block:32px 64px;font-size:14px;c
 <section class="in dayhead" id="day" aria-labelledby="dayh">
   <p class="eyebrow">The day</p>
   <h2 id="dayh">One Wednesday in November</h2>
-  <p>Nine moments, from the first coffee to the next morning. The phone is for catching things, the desk is for deciding. Everything on a yellow stage is the app itself.</p>
+  <p>Nine moments, from the first coffee to the next morning: kitchen, desk, an opening, a café, the street, a party, bed. The phone is for catching things, the laptop is for deciding. Everything on a yellow stage is the app itself.</p>
   <ul class="daynav">
     <li><a href="#t0730">07:30</a></li><li><a href="#t0815">08:15</a></li><li><a href="#t1310">13:10</a></li><li><a href="#t1600">16:00</a></li>
     <li><a href="#t1615">16:15</a></li><li><a href="#t1640">16:40</a></li><li><a href="#t1800">18:00</a></li><li><a href="#t2240">22:40</a></li><li><a href="#t0700">07:00</a></li>
@@ -197,7 +201,7 @@ footer{border-top:1px solid var(--line);padding-block:32px 64px;font-size:14px;c
 
 <div class="in">
 <article class="scene" id="t0730">
-  <div class="time"><b>07:30</b><span>Kitchen, phone</span></div>
+  <div class="time"><b>07:30</b><span>Kitchen, phone</span><img class="ill" src="shots/day/nora/0730.svg" width="600" height="600" alt="Nora in the kitchen with coffee and her phone"></div>
   <div class="story">
     <p class="say">“What needs me first?”</p>
     <p>Before coffee is finished, Nora opens Commonplace on the phone. The first line answers her question: four things on today's list, two need her first. The numbers come second.</p>
@@ -207,7 +211,7 @@ footer{border-top:1px solid var(--line);padding-block:32px 64px;font-size:14px;c
 </article>
 
 <article class="scene" id="t0815">
-  <div class="time"><b>08:15</b><span>At the desk</span></div>
+  <div class="time"><b>08:15</b><span>At the desk</span><img class="ill" src="shots/day/nora/0815.svg" width="600" height="600" alt="Nora at her desk, frowning at the laptop"></div>
   <div class="story">
     <p class="say">“Why did the burnout piece drop?”</p>
     <p>On the laptop the same screen shows more: what needs attention and what is taking off. One piece fell out of Google, another lost half its views. A third was picked up by a Medium digest.</p>
@@ -217,7 +221,7 @@ footer{border-top:1px solid var(--line);padding-block:32px 64px;font-size:14px;c
 </article>
 
 <article class="scene" id="t1310">
-  <div class="time"><b>13:10</b><span>An opening, phone in hand</span></div>
+  <div class="time"><b>13:10</b><span>An opening, phone in hand</span><img class="ill" src="shots/day/nora/1310.svg" width="600" height="600" alt="Nora at a gallery opening, typing on her phone"></div>
   <div class="story">
     <p class="say">“Write it down before it's gone.”</p>
     <p>At a gallery opening the artist asks visitors to whisper the price of a work. Nobody says a number out loud. Nora types one line, picks the source, adds two tags, and puts the phone away.</p>
@@ -227,17 +231,17 @@ footer{border-top:1px solid var(--line);padding-block:32px 64px;font-size:14px;c
 </article>
 
 <article class="scene" id="t1600">
-  <div class="time"><b>16:00</b><span>Back at the desk</span></div>
+  <div class="time"><b>16:00</b><span>Café, late lunch</span><img class="ill" src="shots/day/nora/1600.svg" width="600" height="600" alt="Nora at a cafe table, lunch and laptop"></div>
   <div class="story">
     <p class="say">“What should I write next?”</p>
-    <p>Ideas collects five sources: her own notes, readers' questions from the comments, search demand, keywords with no piece yet, and the digests she follows. Each one is checked against what she has already published.</p>
+    <p>Over a late lunch in a café, she opens Ideas on the laptop. It collects five sources: her own notes, readers' questions from the comments, search demand, keywords with no piece yet, and the digests she follows. Each one is checked against what she has already published.</p>
     <div class="why"><div class="k">Why it looks like this</div><p>Every idea says where it comes from and why now. A second piece on a topic that already has one is easy to write by accident; here it cannot show up.</p></div>
   </div>
   <figure class="stage"><span class="tag">In the app, desktop</span><div class="win"><div class="bar"><i></i><i></i><i></i><span>commonplace / ideas</span></div><img src="shots/day/1600-ideas.webp" width="1600" height="1111" alt="Ideas screen with sources as filters"></div></figure>
 </article>
 
 <article class="scene" id="t1615">
-  <div class="time"><b>16:15</b><span>Desk</span></div>
+  <div class="time"><b>16:15</b><span>Still at the café</span><img class="ill" src="shots/day/nora/1615.svg" width="600" height="600" alt="Nora typing at the cafe"></div>
   <div class="story">
     <p class="say">“Help me start. Don't write it for me.”</p>
     <p>“How do I price my work?” came up 38 times in the comments. A piece already exists, so the new angle is when and how to raise prices. Nora presses Write with AI. Commonplace prepares the brief: the topic, why now, who reads it, and her rules.</p>
@@ -247,7 +251,7 @@ footer{border-top:1px solid var(--line);padding-block:32px 64px;font-size:14px;c
 </article>
 
 <article class="scene" id="t1640">
-  <div class="time"><b>16:40</b><span>Desk</span></div>
+  <div class="time"><b>16:40</b><span>Café, before leaving</span><img class="ill" src="shots/day/nora/1640.svg" width="600" height="600" alt="Nora writing a date at the cafe"></div>
   <div class="story">
     <p class="say">“Give it a date, or it never happens.”</p>
     <p>Another question from readers, which open calls are worth the entry fee, gets a slot in the calendar. The title comes along from the idea; she only picks the day.</p>
@@ -257,20 +261,20 @@ footer{border-top:1px solid var(--line);padding-block:32px 64px;font-size:14px;c
 </article>
 
 <article class="scene" id="t1800">
-  <div class="time"><b>18:00</b><span>An email from an editor</span></div>
+  <div class="time"><b>18:00</b><span>Walking home, an email</span><img class="ill" src="shots/day/nora/1800.svg" width="600" height="600" alt="Nora walking home, answering on her phone"></div>
   <div class="story">
     <p class="say">“Could you send us a short bio?”</p>
-    <p>A magazine needs a bio for the contributor page. Nora opens About me, takes the short version in the third person, and copies it in one click.</p>
+    <p>On the way home an email arrives: a magazine needs a bio for the contributor page. Nora opens About me, takes the short version in the third person, and copies it in one click.</p>
     <div class="why"><div class="k">Why it looks like this</div><p>Every editor, festival and grant asks for a bio of a different length, and it always lives in an old email. Five versions, a word count, where each was last used, edit in place, copy.</p></div>
   </div>
   <figure class="stage"><span class="tag">In the app, desktop</span><div class="win"><div class="bar"><i></i><i></i><i></i><span>commonplace / about me</span></div><img src="shots/day/1800-bio.webp" width="1600" height="1111" alt="About me with five bios and a Copied message"></div></figure>
 </article>
 
 <article class="scene" id="t2240">
-  <div class="time"><b>22:40</b><span>Sofa, phone</span></div>
+  <div class="time"><b>22:40</b><span>A friend's party, phone</span><img class="ill" src="shots/day/nora/2240.svg" width="600" height="600" alt="Nora at a party, glass in hand"></div>
   <div class="story">
     <p class="say">“I didn't publish the studio-visit piece.”</p>
-    <p>It was planned for Monday. The calendar does not pretend: the plan is red, with one action. She moves it to Thursday from the sofa, and the evening is over.</p>
+    <p>At a friend's party she still glances at the phone. The piece was planned for Monday and did not go out. The calendar does not pretend: the plan is red, with one action. She moves it to Thursday between two conversations and puts the phone away.</p>
     <div class="why"><div class="k">Why it looks like this</div><p>In content calendars many statuses go stale because a person has to update them. Here a slipped plan turns red on its own, and moving it is a sheet from the bottom of the screen, one thumb away.</p></div>
   </div>
   <figure class="stage"><span class="tag">In the app, phone</span><div class="phones">
@@ -280,7 +284,7 @@ footer{border-top:1px solid var(--line);padding-block:32px 64px;font-size:14px;c
 </article>
 
 <article class="scene" id="t0700">
-  <div class="time"><b>07:00</b><span>Next morning</span></div>
+  <div class="time"><b>07:00</b><span>Next morning, in bed</span><img class="ill" src="shots/day/nora/0700.svg" width="600" height="600" alt="Nora in bed with her laptop, next morning"></div>
   <div class="story">
     <p class="say">“Which pieces still live?”</p>
     <p>Overnight a scheduled job collected the numbers. Darlings shows every piece in one of five groups: working, growing, waved and faded, let it go?, new. Twelve weeks of views per piece.</p>
