@@ -108,9 +108,11 @@ h2{font:400 clamp(34px,4vw,52px)/1.02 var(--voice);letter-spacing:-.01em;margin:
 .phone::after{content:"";position:absolute;left:50%;bottom:9px;width:84px;margin-left:-42px;border-top:2px solid var(--ink);border-radius:2px}
 .phone img{border-radius:6px;border:1px solid var(--line2)}
 .show{margin-top:8px}
-.show .stage{grid-column:auto;margin:0;padding:60px 56px 56px}
-.show .win{width:80%}
-.show .phone{position:absolute;right:56px;bottom:56px;width:230px;padding:28px 8px 18px}
+.show .stage{grid-column:auto;margin:0;padding:64px 56px 56px}
+.show .mark{position:absolute;right:40px;top:-520px;font:800 1000px/1 'Newsreader',Georgia,serif;color:#fff;opacity:1;pointer-events:none;user-select:none}
+.show .win,.show .phone{position:relative;z-index:1}
+.show .win{width:76%}
+.show .phone{position:absolute;right:7%;bottom:48px;width:240px;padding:28px 8px 18px;transform:rotate(12deg);box-shadow:0 24px 50px rgba(60,40,0,.18)}
 .show .phone::before{top:9px;width:60px;margin-left:-30px;height:13px}
 .show .phone::after{bottom:7px;width:64px;margin-left:-32px}
 
@@ -157,9 +159,10 @@ footer{border-top:1px solid var(--line);padding-block:32px 64px;font-size:14px;c
  .phones .phone::after{width:56px;margin-left:-28px;bottom:6px}
  .phones .phone:only-child{width:72%}
  .win .bar span{display:none}
- .show .stage{padding:44px 18px 22px}
+ .show .stage{padding:44px 18px 40px}
  .show .win{display:none}
- .show .phone{position:relative;right:auto;bottom:auto;margin:0 auto;width:72%}
+ .show .mark{font-size:620px;top:-340px;right:-50px}
+ .show .phone{position:relative;right:auto;bottom:auto;margin:0 auto;width:72%;transform:rotate(6deg)}
  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 </style>
@@ -186,7 +189,7 @@ footer{border-top:1px solid var(--line);padding-block:32px 64px;font-size:14px;c
 </section>
 
 <section class="in show" aria-label="The product">
-  <figure class="stage"><span class="tag">In the app, the Today screen</span><div class="win"><div class="bar"><i></i><i></i><i></i><span>commonplace / today</span></div><img src="shots/day/hero-today.webp" width="1600" height="1111" alt="Today on desktop: four numbers, to-do, calendar and the last note"></div><div class="phone"><img src="shots/day/0730-today.webp" width="780" height="1690" alt="Today on the phone"></div></figure>
+  <figure class="stage"><span class="mark" aria-hidden="true">,</span><span class="tag">In the app, the Today screen</span><div class="win"><div class="bar"><i></i><i></i><i></i><span>commonplace / today</span></div><img src="shots/day/hero-today.webp" width="1600" height="1339" alt="Today on desktop: four numbers, to-do, calendar and the last note"></div><div class="phone"><img src="shots/day/0730-today.webp" width="780" height="1690" alt="Today on the phone"></div></figure>
 </section>
 
 <section class="in persona" aria-labelledby="who">
