@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Commonplace, a day with Nora</title>
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Newsreader:opsz,wght@6..72,500&family=Inter:wght@400&display=swap" rel="stylesheet">
+<style>
+/* Case study as one day of the user.
+   Two voices, never mixed: the case (my narration) is Manrope + Instrument Serif on white;
+   the app (Commonplace itself) always sits on a yellow gradient stage, inside a browser window or a phone. */
+:root{
+ --ink:#1D1E20;--body:#55585E;--muted:#8A8D93;--line:#ECECEA;--line2:#DEDEDB;--soft:#F6F6F4;
+ --brand:#FFC017;--brand-pale:#FFF4D1;--green:#1A8917;
+ --stage:linear-gradient(140deg,#FFD45C 0%,#FFE9A6 38%,#FFF7E0 70%,#F1EFEA 100%);
+ --stage-edge:#F1D27A;
+ --case:'Manrope',system-ui,sans-serif;--voice:'Instrument Serif',Georgia,serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--ink);font:17px/1.6 var(--case);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{display:block;max-width:100%;height:auto}
+figure{margin:0}
+.in{max-width:1200px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+
+/* my header, not the product's */
+header.top{border-bottom:1px solid var(--line)}
+header.top .in{display:flex;align-items:center;gap:16px;padding-block:16px}
+.me{text-decoration:none;font:700 16px var(--case);letter-spacing:-.01em}
+.me span{font-weight:400;color:var(--body)}
+.sp{flex:1}
+.btn{display:inline-flex;align-items:center;height:40px;padding:0 18px;border-radius:999px;background:var(--ink);color:#fff;text-decoration:none;font:600 14px var(--case);white-space:nowrap}
+.btn.o{background:#fff;color:var(--ink);border:1.5px solid var(--ink)}
+
+/* hero */
+.hero{padding-block:64px 44px}
+.label{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.chip{display:inline-block;font:700 12px var(--case);letter-spacing:.12em;text-transform:uppercase;background:var(--ink);color:#fff;border-radius:4px;padding:6px 10px}
+.prod{display:inline-flex;align-items:center;gap:10px;font-size:14px;color:var(--body)}
+.prod img{width:28px;height:28px;border-radius:7px}
+.prod b{font:500 19px 'Newsreader',Georgia,serif;color:var(--ink);letter-spacing:-.01em}
+h1{font:400 clamp(52px,8vw,104px)/.95 var(--voice);letter-spacing:-.02em;margin:22px 0 22px;text-wrap:balance}
+h1 em{font-style:italic}
+h2{font:400 clamp(34px,4vw,52px)/1.02 var(--voice);letter-spacing:-.01em;margin:0 0 14px;text-wrap:balance}
+.lead{font-size:clamp(18px,1.8vw,21px);line-height:1.55;max-width:700px;margin:0 0 30px}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 24px;border-top:1.5px solid var(--ink);margin:0 0 28px}
+.facts>div{padding:14px 0;border-bottom:1px solid var(--line2)}
+.facts .k{font:700 11px var(--case);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.facts .v{font-size:15px;margin-top:4px;line-height:1.45}
+.ctas{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.ctas .mute{font-size:14px;color:var(--muted)}
+
+/* persona */
+.persona{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:56px;padding-block:72px;border-top:1px solid var(--line)}
+.eyebrow{font:700 12px var(--case);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+.who{display:flex;gap:16px;align-items:center;margin:0 0 18px}
+.av{width:60px;height:60px;border-radius:50%;background:var(--brand-pale);display:grid;place-items:center;font:700 18px var(--case);flex:none}
+.who b{display:block;font:400 34px/1 var(--voice)}
+.who span{font-size:14px;color:var(--body)}
+.persona p{margin:0 0 14px;max-width:540px}
+.needs{list-style:none;margin:0;padding:0;display:grid;gap:0;border-top:1.5px solid var(--ink)}
+.needs li{padding:16px 0;border-bottom:1px solid var(--line2)}
+.needs li span{font:700 11px var(--case);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.needs li b{display:block;font:400 25px/1.25 var(--voice);margin-top:4px}
+.note{font-size:13px;color:var(--muted)}
+
+/* the day */
+.dayhead{padding-block:64px 0;border-top:1px solid var(--line)}
+.dayhead p{max-width:640px;color:var(--body);margin:0}
+.daynav{display:flex;flex-wrap:wrap;gap:6px;margin:24px 0 0;padding:0;list-style:none}
+.daynav a{display:inline-block;font:600 13px var(--case);text-decoration:none;border:1.5px solid var(--line2);border-radius:999px;padding:5px 12px;font-variant-numeric:tabular-nums}
+.daynav a:hover,.daynav a:focus-visible{border-color:var(--ink)}
+.scene{position:relative;display:grid;grid-template-columns:130px minmax(0,1fr);gap:0 36px;padding-block:64px 8px;scroll-margin-top:12px}
+.scene::before{content:"";position:absolute;left:10px;top:0;bottom:0;width:1.5px;background:var(--line2)}
+.time{position:relative;padding-left:34px}
+.time::before{content:"";position:absolute;left:4px;top:14px;width:14px;height:14px;border-radius:50%;background:var(--ink);box-shadow:0 0 0 5px #fff}
+.time b{display:block;font:400 44px/1 var(--voice);font-variant-numeric:lining-nums tabular-nums}
+.time span{display:block;font-size:13px;color:var(--muted);margin-top:6px;line-height:1.35}
+.story{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 48px;align-items:start}
+.say{grid-column:1/-1;font:italic 400 clamp(30px,3.4vw,44px)/1.1 var(--voice);margin:0 0 18px;text-wrap:balance}
+.story>p{margin:0;max-width:520px}
+.why{background:var(--soft);border-radius:6px;padding:16px 18px}
+.why .k{font:700 11px var(--case);letter-spacing:.12em;text-transform:uppercase}
+.why p{font-size:15px;line-height:1.55;margin:6px 0 0}
+
+/* the app: always on the stage */
+.stage{grid-column:2;position:relative;margin:28px 0 0;background:var(--stage);border-radius:18px;padding:52px 48px 48px;border:1px solid var(--stage-edge);overflow:hidden}
+.stage .tag{position:absolute;left:20px;top:16px;font:700 11px var(--case);letter-spacing:.12em;text-transform:uppercase;color:#5E4A00;display:flex;gap:8px;align-items:center}
+.stage .tag::before{content:"";width:8px;height:8px;border-radius:50%;background:#5E4A00}
+.win{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(60,40,0,.45),0 0 0 1px rgba(0,0,0,.06)}
+.win .bar{display:flex;align-items:center;gap:6px;padding:10px 14px;background:#F3F3F1;border-bottom:1px solid #E4E4E1}
+.win .bar i{width:10px;height:10px;border-radius:50%;background:#DADAD6}
+.win .bar span{flex:1;text-align:center;font:12px var(--case);color:var(--muted);margin-right:40px}
+.phones{display:flex;gap:40px;justify-content:center;flex-wrap:wrap}
+.phone{width:290px;max-width:100%;border-radius:44px;background:#141414;padding:11px;box-shadow:0 30px 60px -28px rgba(60,40,0,.55)}
+.phone img{border-radius:34px}
+
+/* loop + learned */
+.loop{padding-block:80px 64px;border-top:1px solid var(--line);margin-top:64px}
+.steps{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:10px;counter-reset:s}
+.steps li{counter-increment:s;border-top:2px solid var(--ink);padding-top:10px;font-size:14px;line-height:1.35}
+.steps li::before{content:counter(s,decimal-leading-zero);display:block;font:400 28px var(--voice);margin-bottom:4px}
+.steps li b{display:block;font-weight:700}
+.steps li span{color:var(--body)}
+.steps li.ai{border-color:var(--brand)}
+.steps li.auto{border-color:var(--green)}
+.legend{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--body);margin-top:16px}
+.legend i{display:inline-block;width:18px;height:2px;vertical-align:4px;margin-right:6px}
+.back{margin-top:14px;font-size:15px;color:var(--body)}
+.learn{padding-block:64px 88px;border-top:1px solid var(--line)}
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:22px}
+.three div{border-top:1.5px solid var(--ink);padding-top:14px;font-size:15px;line-height:1.6}
+.three b{display:block;font:400 26px/1.15 var(--voice);margin-bottom:8px}
+footer{border-top:1px solid var(--line);padding-block:32px 64px;font-size:14px;color:var(--body)}
+
+@media(max-width:900px){
+ .persona{grid-template-columns:1fr;gap:32px}
+ .scene{grid-template-columns:1fr;padding-left:34px}
+ .time{margin-left:-34px;margin-bottom:10px}
+ .time b{display:inline;font-size:36px}.time span{display:inline;margin-left:10px}
+ .story{grid-template-columns:1fr;gap:14px}
+ .stage{grid-column:1;padding:44px 18px 22px;margin-top:22px}
+ .phone{width:250px}
+ .phones{gap:18px}
+ .steps{grid-template-columns:repeat(4,minmax(0,1fr));row-gap:18px}
+ .three{grid-template-columns:1fr}
+ .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:600px){
+ .in{padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+ .me span{display:none}
+ .btn .long{display:none}
+ .hero{padding-block:40px 28px}
+ .scene{padding-left:26px}.time{margin-left:-26px}
+ .stage{margin-left:-8px;margin-right:-8px;border-radius:14px}
+ .phones .phone{width:calc(50% - 9px);border-radius:30px;padding:7px}.phones .phone img{border-radius:24px}
+ .phones .phone:only-child{width:72%}
+ .win .bar span{display:none}
+ .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+</style>
+</head>
+<body>
+<header class="top"><div class="in">
+  <a class="me" href="https://iramum.github.io/ux-portfolio/">Irina Mumrikova <span>Product &amp; UX Design</span></a>
+  <span class="sp"></span>
+  <a class="btn" href="index.html">Open<span class="long">&nbsp;the</span>&nbsp;prototype</a>
+</div></header>
+
+<main>
+<section class="in hero">
+  <div class="label"><span class="chip">Case study</span><span class="prod"><img src="icon-180.png" alt="" width="28" height="28"><b>Commonplace</b>personal product, 2026</span></div>
+  <h1>A day with <em>Nora</em></h1>
+  <p class="lead">Commonplace is a workspace for writers who publish in several digital outlets. Instead of a tour of features, this case follows one writer through one day and shows what the product does at each moment, and why.</p>
+  <div class="facts">
+    <div><div class="k">My role</div><div class="v">Product and UX design, flow, information architecture, UI</div></div>
+    <div><div class="k">Built with</div><div class="v">Figma, AI-assisted coding (Claude Code)</div></div>
+    <div><div class="k">Platform</div><div class="v">Web app, phone and desktop</div></div>
+    <div><div class="k">Status</div><div class="v">Working prototype on invented data</div></div>
+  </div>
+  <div class="ctas"><a class="btn" href="index.html">Open the prototype</a><a class="btn o" href="#day">Start the day</a><span class="mute">The writer, outlets, numbers, notes and quotes are invented.</span></div>
+</section>
+
+<section class="in persona" aria-labelledby="who">
+  <div>
+    <p class="eyebrow">The user</p>
+    <div class="who"><div class="av">NV</div><div><b id="who">Nora Vale</b><span>Writer on contemporary art, curating and AI, Berlin</span></div></div>
+    <p>She runs a publication on Medium and contributes to two digital magazines. She writes three or four pieces a month next to curating and teaching. Her readers are young artists, artists with a day job, independent curators, and more and more people who ask what AI changes in art.</p>
+    <p>Her material comes from everywhere: an opening, a studio visit, a comment under an old piece. Her numbers live in four different places. Her plans live in her head.</p>
+    <p class="note">Nora is a demo persona. The product, the screens and the flow are real.</p>
+  </div>
+  <div>
+    <p class="eyebrow">What she needs</p>
+    <ul class="needs">
+      <li><span>When I start the day</span><b>I want to see what needs me first, before I open five tabs.</b></li>
+      <li><span>When I notice something</span><b>I want to keep it in one place, so it can grow into a piece.</b></li>
+      <li><span>When I choose the next topic</span><b>I want evidence that readers ask for it and that I have not written it already.</b></li>
+      <li><span>When a plan slips</span><b>I want the calendar to tell me honestly.</b></li>
+    </ul>
+  </div>
+</section>
+
+<section class="in dayhead" id="day" aria-labelledby="dayh">
+  <p class="eyebrow">The day</p>
+  <h2 id="dayh">One Wednesday in November</h2>
+  <p>Nine moments, from the first coffee to the next morning. The phone is for catching things, the desk is for deciding. Everything on a yellow stage is the app itself.</p>
+  <ul class="daynav">
+    <li><a href="#t0730">07:30</a></li><li><a href="#t0815">08:15</a></li><li><a href="#t1310">13:10</a></li><li><a href="#t1600">16:00</a></li>
+    <li><a href="#t1615">16:15</a></li><li><a href="#t1640">16:40</a></li><li><a href="#t1800">18:00</a></li><li><a href="#t2240">22:40</a></li><li><a href="#t0700">07:00</a></li>
+  </ul>
+</section>
+
+<div class="in">
+<article class="scene" id="t0730">
+  <div class="time"><b>07:30</b><span>Kitchen, phone</span></div>
+  <div class="story">
+    <p class="say">“What needs me first?”</p>
+    <p>Before coffee is finished, Nora opens Commonplace on the phone. The first line answers her question: four things on today's list, two need her first. The numbers come second.</p>
+    <div class="why"><div class="k">Why it looks like this</div><p>A count before a chart: a writer does not start the day by reading analytics. On the phone the side panel becomes a bottom bar with the five daily tabs.</p></div>
+  </div>
+  <figure class="stage"><span class="tag">In the app, phone</span><div class="phones"><div class="phone"><img src="shots/day/0730-today.webp" width="780" height="1690" alt="Today on the phone: greeting, four numbers and the to-do card"></div></div></figure>
+</article>
+
+<article class="scene" id="t0815">
+  <div class="time"><b>08:15</b><span>At the desk</span></div>
+  <div class="story">
+    <p class="say">“Why did the burnout piece drop?”</p>
+    <p>On the laptop the same screen shows more: what needs attention and what is taking off. One piece fell out of Google, another lost half its views. A third was picked up by a Medium digest.</p>
+    <div class="why"><div class="k">Why it looks like this</div><p>Red only where she has to act, green only where something grows, everything else stays quiet. Every row opens the piece itself, not another dashboard.</p></div>
+  </div>
+  <figure class="stage"><span class="tag">In the app, desktop</span><div class="win"><div class="bar"><i></i><i></i><i></i><span>commonplace / today</span></div><img src="shots/day/0815-attention.webp" width="1600" height="1111" alt="Needs attention and Taking off on Today, desktop"></div></figure>
+</article>
+
+<article class="scene" id="t1310">
+  <div class="time"><b>13:10</b><span>An opening, phone in hand</span></div>
+  <div class="story">
+    <p class="say">“Write it down before it's gone.”</p>
+    <p>At a gallery opening the artist asks visitors to whisper the price of a work. Nobody says a number out loud. Nora types one line, picks the source, adds two tags, and puts the phone away.</p>
+    <div class="why"><div class="k">Why it looks like this</div><p>One field, no title, no folder. The field grows with the text, inputs are 16 px so the phone does not zoom. Every note starts as a seed: a commonplace book is where writers have kept material for centuries.</p></div>
+  </div>
+  <figure class="stage"><span class="tag">In the app, phone</span><div class="phones"><div class="phone"><img src="shots/day/1310-note.webp" width="780" height="1690" alt="Notes on the phone with a new note being typed"></div></div></figure>
+</article>
+
+<article class="scene" id="t1600">
+  <div class="time"><b>16:00</b><span>Back at the desk</span></div>
+  <div class="story">
+    <p class="say">“What should I write next?”</p>
+    <p>Ideas collects five sources: her own notes, readers' questions from the comments, search demand, keywords with no piece yet, and the digests she follows. Each one is checked against what she has already published.</p>
+    <div class="why"><div class="k">Why it looks like this</div><p>Every idea says where it comes from and why now. A second piece on a topic that already has one is easy to write by accident; here it cannot show up.</p></div>
+  </div>
+  <figure class="stage"><span class="tag">In the app, desktop</span><div class="win"><div class="bar"><i></i><i></i><i></i><span>commonplace / ideas</span></div><img src="shots/day/1600-ideas.webp" width="1600" height="1111" alt="Ideas screen with sources as filters"></div></figure>
+</article>
+
+<article class="scene" id="t1615">
+  <div class="time"><b>16:15</b><span>Desk</span></div>
+  <div class="story">
+    <p class="say">“Help me start. Don't write it for me.”</p>
+    <p>“How do I price my work?” came up 38 times in the comments. A piece already exists, so the new angle is when and how to raise prices. Nora presses Write with AI. Commonplace prepares the brief: the topic, why now, who reads it, and her rules.</p>
+    <div class="why"><div class="k">Why it looks like this</div><p>The brief carries the rules she writes by: check for duplicates, verify every number against a primary source, plain voice, stop after the outline. AI drafts and checks, she writes and decides.</p></div>
+  </div>
+  <figure class="stage"><span class="tag">In the app, desktop</span><div class="win"><div class="bar"><i></i><i></i><i></i><span>commonplace / ideas / write with AI</span></div><img src="shots/day/1615-brief.webp" width="1600" height="1111" alt="Write with AI dialog with a prepared brief"></div></figure>
+</article>
+
+<article class="scene" id="t1640">
+  <div class="time"><b>16:40</b><span>Desk</span></div>
+  <div class="story">
+    <p class="say">“Give it a date, or it never happens.”</p>
+    <p>Another question from readers, which open calls are worth the entry fee, gets a slot in the calendar. The title comes along from the idea; she only picks the day.</p>
+    <div class="why"><div class="k">Why it looks like this</div><p>A plan is the only thing she types by hand. What was published and when comes from the outlets themselves, so the calendar never depends on a status someone forgot to update.</p></div>
+  </div>
+  <figure class="stage"><span class="tag">In the app, desktop</span><div class="win"><div class="bar"><i></i><i></i><i></i><span>commonplace / ideas / plan</span></div><img src="shots/day/1640-plan.webp" width="1600" height="1111" alt="Plan a piece dialog with title and date"></div></figure>
+</article>
+
+<article class="scene" id="t1800">
+  <div class="time"><b>18:00</b><span>An email from an editor</span></div>
+  <div class="story">
+    <p class="say">“Could you send us a short bio?”</p>
+    <p>A magazine needs a bio for the contributor page. Nora opens About me, takes the short version in the third person, and copies it in one click.</p>
+    <div class="why"><div class="k">Why it looks like this</div><p>Every editor, festival and grant asks for a bio of a different length, and it always lives in an old email. Five versions, a word count, where each was last used, edit in place, copy.</p></div>
+  </div>
+  <figure class="stage"><span class="tag">In the app, desktop</span><div class="win"><div class="bar"><i></i><i></i><i></i><span>commonplace / about me</span></div><img src="shots/day/1800-bio.webp" width="1600" height="1111" alt="About me with five bios and a Copied message"></div></figure>
+</article>
+
+<article class="scene" id="t2240">
+  <div class="time"><b>22:40</b><span>Sofa, phone</span></div>
+  <div class="story">
+    <p class="say">“I didn't publish the studio-visit piece.”</p>
+    <p>It was planned for Monday. The calendar does not pretend: the plan is red, with one action. She moves it to Thursday from the sofa, and the evening is over.</p>
+    <div class="why"><div class="k">Why it looks like this</div><p>In content calendars many statuses go stale because a person has to update them. Here a slipped plan turns red on its own, and moving it is a sheet from the bottom of the screen, one thumb away.</p></div>
+  </div>
+  <figure class="stage"><span class="tag">In the app, phone</span><div class="phones">
+    <div class="phone"><img src="shots/day/2240-calendar.webp" width="780" height="1690" alt="Calendar on the phone with a missed plan in red"></div>
+    <div class="phone"><img src="shots/day/2245-move.webp" width="780" height="1690" alt="Move it sheet with a new date"></div>
+  </div></figure>
+</article>
+
+<article class="scene" id="t0700">
+  <div class="time"><b>07:00</b><span>Next morning</span></div>
+  <div class="story">
+    <p class="say">“Which pieces still live?”</p>
+    <p>Overnight a scheduled job collected the numbers. Darlings shows every piece in one of five groups: working, growing, waved and faded, let it go?, new. Twelve weeks of views per piece.</p>
+    <div class="why"><div class="k">Why it looks like this</div><p>“Kill your darlings” is writers' advice. The question mark is deliberate: the data suggests, she decides. What readers asked in the comments comes back as notes and ideas, and the day starts again.</p></div>
+  </div>
+  <figure class="stage"><span class="tag">In the app, desktop</span><div class="win"><div class="bar"><i></i><i></i><i></i><span>commonplace / darlings</span></div><img src="shots/day/0700-darlings.webp" width="1600" height="1111" alt="Darlings: pieces in groups with numbers and sparklines"></div></figure>
+</article>
+</div>
+
+<section class="in loop" aria-labelledby="looph">
+  <p class="eyebrow">The flow</p>
+  <h2 id="looph">The day is a loop</h2>
+  <p style="max-width:640px;color:var(--body);margin:0">Read from above, the day is one flow from a noticed detail to a measured piece. Five steps are hers, one belongs to AI, two run on their own.</p>
+  <ol class="steps">
+    <li><b>Notice</b><span>an opening, a studio, a comment</span></li>
+    <li><b>Note</b><span>a seed in Notes</span></li>
+    <li class="auto"><b>Idea</b><span>checked against what exists</span></li>
+    <li><b>Plan</b><span>a date in the calendar</span></li>
+    <li class="ai"><b>Write with AI</b><span>brief, questions, fact check</span></li>
+    <li><b>Publish</b><span>only on her word</span></li>
+    <li><b>Index</b><span>one tap to Search Console</span></li>
+    <li class="auto"><b>Measure</b><span>Darlings, every morning</span></li>
+  </ol>
+  <div class="legend"><span><i style="background:#1D1E20"></i>Her step</span><span><i style="background:#FFC017"></i>AI</span><span><i style="background:#1A8917"></i>Runs on its own</span></div>
+  <p class="back">Measuring closes the loop: readers' questions come back as notes and ideas.</p>
+</section>
+
+<section class="in learn" aria-labelledby="learnh">
+  <p class="eyebrow">What I learned</p>
+  <h2 id="learnh">What the day taught the design</h2>
+  <div class="three">
+    <div><b>Design for moments, not features</b>Each screen answers one sentence she would say at one moment of the day. Features that did not answer any of them stayed out.</div>
+    <div><b>Phone to catch, desk to decide</b>On the phone: the morning count, a note, moving a plan. On the desk: ideas, briefs, numbers. The same product, two different jobs.</div>
+    <div><b>The human decides</b>AI prepares the brief and checks facts. Publishing, moving a date and letting a piece go are always her call.</div>
+  </div>
+  <div class="ctas" style="margin-top:40px"><a class="btn" href="index.html">Open the prototype</a><a class="btn o" href="index.html?tab=notes">Start with Notes</a></div>
+</section>
+</main>
+
+<footer><div class="in">Case study by Irina Mumrikova. Commonplace is a personal project. The writer, outlets, numbers, notes and quotes in the demo are invented.</div></footer>
+<script>
+// no hanging short words at line ends: glue them to the next word
+(()=>{const re=/(^|\s)(a|an|the|of|to|in|on|at|by|for|and|or|with|from|as|is|it|I|no|not|one|its|into|so|if|be|do|my|up|than|she|her|you)\s+/gi;
+const w=document.createTreeWalker(document.querySelector('main'),NodeFilter.SHOW_TEXT);let n;
+while((n=w.nextNode())){if(n.nodeValue.trim())n.nodeValue=n.nodeValue.replace(re,(m,s,word)=>s+word+' ')}})();
+</script>
+</body>
+</html>

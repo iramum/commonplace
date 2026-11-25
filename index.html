@@ -43,7 +43,6 @@ main{flex:1;min-width:0;padding:32px 40px 96px}
   .side{display:none} main{padding:20px 16px 110px} .top .in{padding:12px 16px}
   .logo .w{font-size:22px}
   .logo .t{font-size:12.9px;margin-top:4px}
-  .demo{display:none}
   .bottom{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--bg);border-top:1px solid var(--line2);padding:6px 4px calc(6px + env(safe-area-inset-bottom))}
   .bottom button{flex:1;border:0;background:none;padding:8px 2px;font-size:11px;color:var(--body)}
   .bottom button.on{color:var(--ink);font-weight:600}
@@ -200,6 +199,72 @@ input:focus,textarea:focus,select:focus{outline:none;border-color:var(--ink2)}
 .upc .row{padding:9px 0}
 .qnote{font-family:var(--serif);font-size:21px;line-height:1.5;margin:4px 0 14px;flex:1}
 .demo{white-space:nowrap;font-size:11px;color:#7A5A00;background:var(--yellow-pale);border-radius:999px;padding:2px 9px}
+
+/* ---- layout pass, 24 Nov 2026: phone, tablet, desktop ---- */
+html{-webkit-text-size-adjust:100%}
+button,a,.chip,.nav{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.link{text-align:left}
+.acts{align-items:center}
+/* list rows: status pills share one width, so titles line up */
+.list .row>.pill:first-child,.upc .row>.pill:first-child{min-width:54px;justify-content:center}
+/* reading measure for long serif text */
+.biotext,.note .txt,.hero .q{max-width:70ch}
+/* mini calendar: days of other months stay readable on yellow */
+.md.out{opacity:.45;color:var(--ink)}
+/* calendar layer toggles are filters, not actions: outlined, with a tick */
+.chip.tg.on{background:#fff;color:var(--ink);border-color:var(--ink2)}
+.chip.tg.on::before{content:"✓ "}
+.calhead .ctl{display:flex;gap:8px;align-items:center}
+.lg{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+/* more menu (phone) */
+.morelist .row{align-items:center;padding:16px 0}
+.morelist .row .t{font-size:16px}
+/* tablet: keep two cards side by side, note full width */
+@media(min-width:700px) and (max-width:1100px){
+  .top3{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .top3>.c3:nth-child(3){grid-column:1/-1}
+}
+@media(max-width:1100px){.cols{grid-template-columns:minmax(0,1fr)}}
+.hide-m{}
+.how-pill-m{display:none}
+@media(max-width:899px){
+  .top .in{gap:10px}
+  #refresh{display:none}
+  .demo{display:inline-block}
+  .head{flex-wrap:wrap;row-gap:10px}
+  .calhead h2{min-width:0!important;flex:1;font-size:21px;white-space:nowrap}
+  .calhead .sp{display:none}
+  .calhead .ctl{width:100%;display:flex;gap:8px;flex-wrap:wrap}
+  .calhead .ctl .btn{margin-left:auto}
+  .btn.sm{height:36px;padding:0 14px;font-size:13px}
+  .chip{height:36px}
+  input[type=search],input[type=text],input[type=date],select,textarea,.composer select,.composer input{font-size:16px}
+  .composer{padding:14px 16px}
+  .composer textarea{font-size:19px}
+  .composer .bar2 select{flex:1;min-width:0}
+  .composer .bar2 input{flex:1 1 100%!important;order:3}
+  .composer .bar2 .btn{order:4;width:100%;justify-content:center}
+  .agenda .row{gap:6px}
+  .agenda .ev{white-space:normal;font-size:13px;padding:7px 9px;line-height:1.35}
+  .agenda .m.td{color:var(--ink);font-weight:600}
+  .profile{flex-wrap:wrap}
+  .profile .pbtn{width:100%;justify-content:center}
+  .hide-m{display:none}
+  .how-pill{display:none}
+  .how-pill-m{display:inline-flex;margin-top:6px}
+  .bottom button{position:relative;font-size:11.5px;padding:10px 2px}
+  .bottom button .b{display:inline-block;vertical-align:1px;margin-left:3px;min-width:15px;height:15px;line-height:15px;padding:0 4px;font-size:9.5px;background:var(--yellow);border-radius:999px;font-weight:600;color:var(--ink)}
+  .toast{bottom:calc(76px + env(safe-area-inset-bottom))}
+  .dlg-bg{align-items:flex-end;padding:0}
+  .dlg{max-width:none;border-radius:12px 12px 0 0;padding:22px 18px calc(22px + env(safe-area-inset-bottom));max-height:88vh}
+  .dlg .acts .btn{flex:1;justify-content:center}
+  /* pain map: rows become cards */
+  .pm tr:first-child{display:none}
+  .pm tr{display:block;padding:12px 0;border-bottom:1px solid var(--line)}
+  .pm tr:last-child{border-bottom:0}
+  .pm td{display:block;border:0;padding:2px 0}
+  .pm td[data-k]::before{content:attr(data-k) ": ";color:var(--muted)}
+}
 </style>
 </head>
 <body>
@@ -234,6 +299,12 @@ const art=s=>D.articles.find(a=>a.slug===s)||{slug:s,title:s};
 const persona=id=>(D.audiences.personas.find(p=>p.id===id)||{name:id||''}).name;
 function delta(c,p,low){if(p==null||c==null)return'';const d=Math.round((c-p)*10)/10;if(!d)return'<span style="color:var(--muted)">no change</span>';const good=low?d<0:d>0;return `<span class="${good?'up':'down'}">${d>0?'+':''}${fmt(d)}</span>`;}
 function toast(t){const e=document.createElement('div');e.className='toast';e.textContent=t;document.body.appendChild(e);setTimeout(()=>e.remove(),2400);}
+const FMT={instagram:'Instagram',threads:'Threads',linkedin:'LinkedIn'};
+const evTitle=e=>e.kind.startsWith('ig')?(FMT[e.format]||e.format)+': '+e.title:e.title;
+const isoDates=s=>String(s??'').replace(/\b(\d{4}-\d{2}-\d{2})\b/g,m=>fdate(m));
+// two columns on wide screens keep reading order left-right; on narrow screens one list in the original order
+const wide=()=>matchMedia('(min-width:1101px)').matches;
+function twoCols(items,fn){if(!wide())return `<div>${items.map(fn).join('')}</div>`;return `<div class="cols"><div>${items.filter((_,k)=>k%2===0).map(fn).join('')}</div><div>${items.filter((_,k)=>k%2===1).map(fn).join('')}</div></div>`;}
 function capped(k,items,n,fn){const all=MORE[k],sh=all?items:items.slice(0,n);return sh.map(fn).join('')+(items.length>n?`<button class="link" data-more="${k}" style="margin-top:8px">${all?'Show less':'Show '+(items.length-n)+' more'}</button>`:'');}
 
 // ---- local state (demo): notes and plan live in this browser
@@ -281,7 +352,7 @@ function vToday(){
    <div class="seg">${[['all','All'],['pieces','Pieces'],['social','Social']].map(([k,l])=>`<button class="${miniF===k?'on':''}" data-mini="${k}">${l}</button>`).join('')}</div>
    <div class="mcal">${['M','T','W','T','F','S','S'].map(w=>`<div class="wd">${w}</div>`).join('')}${days.map(md).join('')}</div>
    <div class="mleg"><span><b style="background:#191919"></b>Today</span><span><b style="background:#FFC017"></b>Published</span><span><b style="box-shadow:inset 0 0 0 1.5px #FFC017"></b>Planned</span><span><b style="background:#FBECEC"></b>Missed</span></div>
-   <div class="upc"><div class="m" style="font-size:12px;color:var(--muted);margin:6px 0 0">Upcoming</div>${up.map(e=>`<div class="row"><span class="pill ${e.kind==='plan'?'yp':''}" style="min-width:58px;justify-content:center">${esc(fdate(e.date))}</span><div class="g"><div class="m" style="color:var(--ink);margin:0">${esc(e.kind.startsWith('ig')?e.format+': '+e.title:e.title)}</div></div></div>`).join('')||'<p class="empty">Nothing planned yet.</p>'}</div></div>`;
+   <div class="upc"><div class="m" style="font-size:12px;color:var(--muted);margin:6px 0 0">Upcoming</div>${up.map(e=>`<div class="row"><span class="pill ${e.kind==='plan'?'yp':''}" style="min-width:58px;justify-content:center">${esc(fdate(e.date))}</span><div class="g"><div class="m" style="color:var(--ink);margin:0">${esc(evTitle(e))}</div></div></div>`).join('')||'<p class="empty">Nothing planned yet.</p>'}</div></div>`;
   // card 3: the latest note (for a writer, this is the «person» card)
   const c3=n?`<div class="c3" style="background:var(--yellow-pale);border-color:#F5E3A3"><div class="ch"><h3>Your latest note</h3><button class="corner" data-tab="notes" aria-label="Open notes">↗</button></div>
    <div class="m" style="font-size:12px;color:#7A5A00">${esc(fdate(n.date))}, ${esc(n.source)}</div>
@@ -317,9 +388,9 @@ function noteCard(n){
 // ---------------------------------------------------------------- Calendar
 const KIND={article:'Published',article_upd:'Updated',plan:'Planned',ig_live:'Social: posted',ig:'Social: scheduled'};
 function evs(){return calAll().filter(e=>(e.kind==='ig'||e.kind==='ig_live')?layers.social:layers.pieces);}
-function chip(e){const a=e.overdue?`data-move="${esc(e.id)}"`:e.slug?`data-open="${esc(e.slug)}"`:'';return `<button class="ev ${e.kind} ${e.overdue?'overdue':''}" ${a} title="${esc(KIND[e.kind]+': '+e.title)}">${e.overdue?'↻ ':''}${esc(e.kind.startsWith('ig')?(e.format+': '+e.title):e.title)}</button>`;}
-function cell(d,list,extra=''){const t=iso(d),l=list.filter(e=>e.date===t);return `<div class="cday ${t===todayIso()?'today':t<todayIso()?'past':''} ${extra}"><div class="dh"><span>${d.toLocaleDateString('en-GB',{weekday:'short'})}</span><b>${d.getDate()}</b></div>${l.slice(0,4).map(chip).join('')}${l.length>4?`<span class="spcap">+${l.length-4}</span>`:''}</div>`;}
-function legend(){return `<div class="legend" style="margin-top:12px">${[['#191919','Published'],['#FFFAE1','Planned'],['#E8F3E8','Social: posted'],['#FBECEC','Missed the date']].map(([c,l])=>`<span><span class="dot" style="background:${c};box-shadow:inset 0 0 0 1px #E5E5E5"></span>${l}</span>`).join('')}</div>`;}
+function chip(e){const a=e.overdue?`data-move="${esc(e.id)}"`:e.slug?`data-open="${esc(e.slug)}"`:'';return `<button class="ev ${e.kind} ${e.overdue?'overdue':''}" ${a} title="${esc(KIND[e.kind]+': '+e.title)}">${e.overdue?'↻ ':''}${esc(evTitle(e))}</button>`;}
+function cell(d,list,extra='',wd=true){const t=iso(d),l=list.filter(e=>e.date===t);return `<div class="cday ${t===todayIso()?'today':t<todayIso()?'past':''} ${extra}"><div class="dh"><span>${wd?d.toLocaleDateString('en-GB',{weekday:'short'}):''}</span><b>${d.getDate()}</b></div>${l.slice(0,4).map(chip).join('')}${l.length>4?`<span class="spcap">+${l.length-4}</span>`:''}</div>`;}
+function legend(){return `<div class="legend" style="margin-top:12px">${[['background:#191919','Published'],['background:#fff;box-shadow:inset 0 0 0 1px #191919','Updated'],['background:#FFFAE1;box-shadow:inset 0 0 0 1px #FFC017','Planned'],['background:#E8F3E8','Social: posted'],['background:#fff;box-shadow:inset 0 0 0 1px #E5E5E5','Social: scheduled'],['background:#FBECEC;box-shadow:inset 0 0 0 1px #C94A4A','Missed the date']].map(([c,l])=>`<span><span class="lg" style="${c}"></span>${l}</span>`).join('')}</div>`;}
 function overdue(){const od=calAll().filter(e=>e.overdue);if(!od.length)return'';return `<div style="margin-top:14px">${od.map(e=>`<div class="row" style="border:0;background:var(--red-pale);border-radius:4px;padding:12px 14px"><div class="g"><div class="t">${esc(e.title)}</div><div class="m">Was planned for ${esc(fdate(e.date))}, not published</div></div><button class="btn sm" data-move="${esc(e.id)}">Move it</button></div>`).join('')}</div>`;}
 function calStrip(){
   const now=new Date(),mon=new Date(now);mon.setDate(now.getDate()-((now.getDay()+6)%7));
@@ -333,10 +404,10 @@ function vCalendar(){
   const cells=[...Array(42)].map((_,k)=>{const d=new Date(start);d.setDate(start.getDate()+k);return d;}),l=evs();
   const m=l.filter(e=>e.date.slice(0,7)===iso(base).slice(0,7)),by={};m.forEach(e=>(by[e.date]=by[e.date]||[]).push(e));
   return `<h1>Calendar</h1><p class="lede">What went out, what is planned, what missed its date. Published pieces and social posts are picked up automatically.</p>
-   <div class="head" style="margin-top:0"><button class="btn sm o" data-cal="-1">←</button><h2 style="min-width:180px;text-align:center">${esc(base.toLocaleDateString('en-GB',{month:'long',year:'numeric'}))}</h2><button class="btn sm o" data-cal="1">→</button><span class="sp"></span>
-   <button class="chip ${layers.pieces?'on':''}" data-layer="pieces">Pieces</button><button class="chip ${layers.social?'on':''}" data-layer="social">Social</button><button class="btn sm" data-plan-new="1">+ Plan a piece</button></div>
-   <div class="cmonth">${['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].map(w=>`<div class="wd">${w}</div>`).join('')}${cells.map(d=>cell(d,l,d.getMonth()===base.getMonth()?'':'out')).join('')}</div>
-   <div class="agenda">${Object.keys(by).sort().map(k=>`<div class="row" style="flex-direction:column"><div class="m">${esc(fdate(k))}</div>${by[k].map(chip).join('')}</div>`).join('')||'<p class="empty">Nothing this month.</p>'}</div>${overdue()}${legend()}`;
+   <div class="head calhead" style="margin-top:0"><button class="btn sm o" data-cal="-1" aria-label="Previous month">←</button><h2 style="min-width:180px;text-align:center">${esc(base.toLocaleDateString('en-GB',{month:'long',year:'numeric'}))}</h2><button class="btn sm o" data-cal="1" aria-label="Next month">→</button><span class="sp"></span>
+   <div class="ctl"><button class="chip tg ${layers.pieces?'on':''}" data-layer="pieces" aria-pressed="${layers.pieces}">Pieces</button><button class="chip tg ${layers.social?'on':''}" data-layer="social" aria-pressed="${layers.social}">Social</button><button class="btn sm" data-plan-new="1">+ Plan a piece</button></div></div>
+   <div class="cmonth">${['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].map(w=>`<div class="wd">${w}</div>`).join('')}${cells.map(d=>cell(d,l,d.getMonth()===base.getMonth()?'':'out',false)).join('')}</div>
+   <div class="agenda">${Object.keys(by).sort().map(k=>`<div class="row" style="flex-direction:column"><div class="m ${k===todayIso()?'td':''}">${esc(new Date(k+'T12:00').toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short'}))}${k===todayIso()?', today':''}</div>${by[k].map(chip).join('')}</div>`).join('')||'<p class="empty">Nothing this month.</p>'}</div>${overdue()}${legend()}`;
 }
 
 // ---------------------------------------------------------------- Ideas
@@ -349,13 +420,14 @@ function vIdeas(){
   const all=ideasAll(), l=all.map((i,ix)=>({i,ix})).filter(({i})=>iF==='all'||i.source===iF), c={};all.forEach(i=>c[i.source]=(c[i.source]||0)+1);
   return `<h1>What to write next</h1><p class="lede">Every morning Commonplace checks your notes, readers’ questions, search demand and the digests you follow against what you have already published. Only what is not written yet shows up here.</p>
   <div class="chips">${[['all','All ('+all.length+')']].concat(Object.keys(SRC).filter(k=>c[k]).map(k=>[k,SRC[k][0]+' ('+c[k]+')'])).map(([k,l])=>`<button class="chip ${iF===k?'on':''}" data-if="${k}">${esc(l)}</button>`).join('')}</div>
-  <div class="cols"><div>${l.filter((_,k)=>k%2===0).map(idea).join('')}</div><div>${l.filter((_,k)=>k%2===1).map(idea).join('')}</div></div>`;
+  ${twoCols(l,idea)}`;
 }
+const ideaTitle=i=>i.source==='pain'||i.source==='note'||i.source==='telegram'||i.source==='painmap'?i.cluster:i.keyword;
 function idea({i,ix}){
-  const title=i.source==='pain'||i.source==='note'||i.source==='telegram'||i.source==='painmap'?i.cluster:i.keyword;
+  const title=ideaTitle(i);
   return `<div class="card"><div style="display:flex;gap:8px;align-items:center;margin-bottom:10px"><span class="pill ${SRC[i.source][1]}">${SRC[i.source][0]}</span><span style="flex:1"></span>${i.audience?`<span class="pill">${esc(persona(i.audience))}</span>`:''}</div>
    <div style="font-family:var(--display);font-size:20px;line-height:1.3">${esc(title)}</div>${i.variants&&i.variants.length?`<div class="m" style="color:var(--muted);font-size:12px;margin-top:4px">${esc(i.variants.join(', '))}</div>`:''}
-   <p class="sub" style="margin:8px 0 0">${esc(i.why)}</p><div class="acts"><button class="btn sm" data-write="${ix}">Write with AI</button><button class="btn sm o" data-plan-idea="${ix}">Plan it</button>${i.url?`<a class="link" href="${esc(i.url)}" target="_blank" rel="noopener">Source →</a>`:''}</div></div>`;
+   <p class="sub" style="margin:8px 0 0">${esc(isoDates(i.why))}</p><div class="acts"><button class="btn sm" data-write="${ix}">Write with AI</button><button class="btn sm o" data-plan-idea="${ix}">Plan it</button>${i.url?`<a class="link" href="${esc(i.url)}" target="_blank" rel="noopener">Source →</a>`:''}</div></div>`;
 }
 function briefFor(title,why,aud){return `Write a piece for The Open Studio on Medium (or pitch it to Atlas Review / Gallery Notes).\n\nTopic: ${title}\nWhy now: ${why}${aud?`\nReader: ${persona(aud)}`:''}\n\nBefore the draft: check my published pieces so this is not a duplicate, pull reader questions from the comments and the forums, verify every number against a primary source.\nVoice: plain, first person, specific. No hype.\nStop after the outline and show me what you are unsure about.`;}
 function writeDialog(title,why,aud){
@@ -397,14 +469,14 @@ function vReaders(){
   const A=D.audiences,mx=Math.max(...A.confirmed_pains.map(c=>c.apps));
   const rows=D.pain_map.filter(r=>rAud==='all'||r.audience===rAud);
   return `<h1>Readers</h1><p class="lede">${esc(A.rule)}</p>
-  <div class="cols">${[0,1].map(c=>`<div>${A.personas.filter((_,k)=>k%2===c).map(p=>`<div class="card"><div style="display:flex;gap:8px;align-items:baseline"><h2 style="font-size:21px;flex:1">${esc(p.name)}</h2><span class="pill ${p.weight==='core'?'k':p.weight==='growing'?'g':''}">${esc(p.weight)}</span></div>
+  ${twoCols(A.personas,p=>`<div class="card"><div style="display:flex;gap:8px;align-items:baseline"><h2 style="font-size:21px;flex:1">${esc(p.name)}</h2><span class="pill ${p.weight==='core'?'k':p.weight==='growing'?'g':''}">${esc(p.weight)}</span></div>
     <p class="sub" style="margin:6px 0 10px">${esc(p.who)}</p><div class="list">
-    ${[['Wants',p.jtbd],['What hurts',p.pain],['What we see',p.evidence],['What loses them',p.loses_us]].map(([k,v])=>`<div class="row" style="padding:9px 0"><div class="m" style="width:110px;flex:none;margin:0">${k}</div><div class="g" style="color:var(--ink)">${esc(v)}</div></div>`).join('')}</div></div>`).join('')}</div>`).join('')}</div>
+    ${[['Wants',p.jtbd],['What hurts',p.pain],['What we see',p.evidence],['What loses them',p.loses_us]].map(([k,v])=>`<div class="row" style="padding:9px 0"><div class="m" style="width:110px;flex:none;margin:0">${k}</div><div class="g" style="color:var(--ink)">${esc(v)}</div></div>`).join('')}</div></div>`)}
   <div class="head"><h2>What readers ask most</h2></div><div class="card">${A.confirmed_pains.map(c=>`<div class="row"><div class="g"><div class="t" style="font-family:var(--serif);font-weight:400;font-size:18px">${esc(c.pain)}</div><div class="m">${esc(persona(c.persona))}, ${esc(c.verdict)}</div>
     <div class="bar" style="margin:8px 0 0;height:6px"><span style="width:${c.apps/mx*100}%;background:var(--ink2)"></span></div></div><span style="font-family:var(--display);font-size:28px">${c.apps}</span></div>`).join('')}<p class="sub" style="margin:12px 0 0">${esc(A.content_not_offer)}</p></div>
   <div class="head"><h2>Pain map</h2></div>
   <div class="chips">${[['all','All']].concat(A.personas.map(p=>[p.id,p.name.replace('The ','')])).map(([k,l])=>`<button class="chip ${rAud===k?'on':''}" data-ra="${k}">${esc(l)}</button>`).join('')}</div>
-  <div class="card tw"><table><tr><th>Pain</th><th>Number</th><th>Why nobody fixes it</th><th>Format</th><th>Source</th></tr>${rows.map(r=>`<tr><td><b style="font-weight:500">${esc(r.pain)}</b><div class="s" style="color:var(--muted);font-size:12px">${esc(persona(r.audience))}</div></td><td class="s">${esc(r.number)}</td><td class="s">${esc(r.why_bank)}</td><td class="s">${esc(r.use_case)}</td><td class="s">${r.source_status==='Verified'?'checked':'<span class="down">needs a source</span>'}</td></tr>`).join('')}</table></div>`;
+  <div class="card tw"><table class="pm"><tr><th>Pain</th><th>Number</th><th>Why nobody fixes it</th><th>Format</th><th>Source</th></tr>${rows.map(r=>`<tr><td><b style="font-weight:500">${esc(r.pain)}</b><div class="s" style="color:var(--muted);font-size:12px">${esc(persona(r.audience))}</div></td><td class="s" data-k="Number">${esc(r.number)}</td><td class="s" data-k="Why nobody fixes it">${esc(r.why_bank)}</td><td class="s" data-k="Format">${esc(r.use_case)}</td><td class="s" data-k="Source">${r.source_status==='Verified'?'checked':'<span class="down">needs a source</span>'}</td></tr>`).join('')}</table></div>`;
 }
 
 // ---------------------------------------------------------------- Keywords, Research, Queue, How, Social
@@ -414,7 +486,7 @@ function vKeywords(){
   return `<h1>Keywords</h1><p class="lede">${D.keywords.length} searches around your topics, matched with what Google already shows you for.</p>
   <input type="search" id="kq" placeholder="Search keywords or clusters" value="${esc(kwQ)}" style="margin-bottom:12px">
   <div class="chips">${[['impr','Already shown'],['free','No piece yet'],['all','All']].map(([f,l])=>`<button class="chip ${kwF===f?'on':''}" data-kf="${f}">${l}</button>`).join('')}</div>
-  <div class="card tw"><table><tr><th>Search</th><th>Cluster</th><th class="n">Views</th><th class="n">Pos.</th><th class="n">Suggest</th><th>Piece</th></tr>${k.slice(0,200).map(x=>`<tr><td>${esc(x.q)}</td><td class="s">${esc(x.cluster)}</td><td class="n">${x.impr||''}</td><td class="n">${x.pos??''}</td><td class="n">${esc(x.suggest)}</td><td class="s">${esc(x.article||'')}</td></tr>`).join('')}</table></div>`;
+  <div class="card tw"><table><tr><th>Search</th><th class="hide-m">Cluster</th><th class="n">Views</th><th class="n">Pos.</th><th class="n hide-m">Suggest</th><th>Piece</th></tr>${k.slice(0,200).map(x=>`<tr><td>${esc(x.q)}</td><td class="s hide-m">${esc(x.cluster)}</td><td class="n">${x.impr||''}</td><td class="n">${x.pos??''}</td><td class="n hide-m">${esc(x.suggest)}</td><td class="s" style="word-break:break-word">${esc(x.article||'')}</td></tr>`).join('')}</table></div>`;
 }
 function vResearch(){
   const r=(arr)=>arr.map(x=>`<div class="row"><div class="g"><div class="t" style="font-weight:400">${esc(x.slug||x.title)}</div><div class="m">${esc(fdate(x.date))}${x.questions?`, ${x.questions} questions`:''}${x.author?`, ${esc(x.author)}`:''}</div></div><span class="arrow">→</span></div>`).join('');
@@ -424,12 +496,12 @@ function vResearch(){
    <div><div class="head"><h2>Forums</h2></div>${r(D.reddit)}<div class="head"><h2>Questions to AI assistants</h2></div>${r(D.ai)}
    <div class="head"><h2>Digests you follow</h2></div>${D.telegram.map(f=>`<div class="card"><div class="m" style="color:var(--muted);font-size:12px">${esc(fdate(f.date))}</div>${f.headlines.map(h=>`<div class="row" style="padding:8px 0"><div class="g" style="color:var(--ink)">${esc(h)}</div></div>`).join('')}</div>`).join('')}</div></div>`;
 }
-function vQueue(){return `<h1>Queue</h1><p class="lede">Pieces that are written and waiting for the last step.</p>${D.queue.map(q=>`<div class="card"><div style="display:flex;gap:8px;align-items:center"><h2 style="flex:1;font-size:21px">${esc(q.slug.replace(/-/g,' '))}</h2><span class="pill yp">Waiting</span></div><p class="sub" style="margin:8px 0 0">${esc(q.status)}. ${esc(q.next)}</p><div class="acts"><button class="btn sm">Pick a cover</button><button class="btn sm o">Publish to Medium</button></div></div>`).join('')}`;}
+function vQueue(){return `<h1>Queue</h1><p class="lede">Pieces that are written and waiting for the last step.</p>${D.queue.map(q=>{const a=D.articles.find(x=>x.slug===q.slug),t=q.title||(a&&a.title)||q.slug.replace(/-/g,' ').replace(/^./,c=>c.toUpperCase());return `<div class="card"><div style="display:flex;gap:8px;align-items:flex-start"><h2 style="flex:1;font-size:21px;min-width:0">${esc(t)}</h2><span class="pill yp">Waiting</span></div><p class="sub" style="margin:8px 0 0">${esc(q.status)}. ${esc(q.next)}</p><div class="acts"><button class="btn sm" data-demo="Covers open here in the real version">Pick a cover</button><button class="btn sm o" data-demo="Publishing happens only on your word, in the real version">Publish to Medium</button></div></div>`;}).join('')}`;}
 const PIPE=[['Every morning, on its own','Collects Medium stats, Google search, the digests you follow and your calendar; recalculates which pieces live and what to write','auto'],
  ['Notes','You write down what you notice. Seeds turn into ideas, ideas into pieces','you'],['Ideas','Checked against what is already published, nothing duplicates','auto'],
  ['Brief and draft','Reader questions, AI-assistant questions, fact check, plain-language check','ai'],['Cover','Three options to pick from','you'],['Publish','Only when you say so','you'],
  ['Ask Google to index','One tap from the piece','you'],['Two to four weeks later','The piece lands in a group: working, ranks with few reads, faded, let it go','auto']];
-function vHow(){const lab={auto:['On its own','g'],ai:['AI','yp'],you:['You','k']};return `<h1>How it works</h1><p class="lede">From a note to a published piece, and what happens after.</p><div class="card">${PIPE.map((p,k)=>`<div class="row"><span style="font-family:var(--display);font-size:22px;width:36px">${String(k+1).padStart(2,'0')}</span><div class="g"><div class="t">${esc(p[0])}</div><div class="m">${esc(p[1])}</div></div><span class="pill ${lab[p[2]][1]}">${lab[p[2]][0]}</span></div>`).join('')}</div>`;}
+function vHow(){const lab={auto:['On its own','g'],ai:['AI','yp'],you:['You','k']};return `<h1>How it works</h1><p class="lede">From a note to a published piece, and what happens after.</p><div class="card">${PIPE.map((p,k)=>`<div class="row"><span style="font-family:var(--display);font-size:22px;width:36px">${String(k+1).padStart(2,'0')}</span><div class="g"><div class="t">${esc(p[0])}</div><div class="m">${esc(p[1])}</div><span class="pill how-pill-m ${lab[p[2]][1]}">${lab[p[2]][0]}</span></div><span class="pill how-pill ${lab[p[2]][1]}">${lab[p[2]][0]}</span></div>`).join('')}</div>`;}
 const vSocial=()=>`<h1>Social</h1><p class="lede">Posts cut from your pieces for Instagram, Threads and LinkedIn. Coming next.</p>`;
 
 
@@ -438,15 +510,22 @@ function bios(){const own=store.get('cp_bios',{});return D.profile.bios.map(b=>(
 function vAbout(){
   const P=D.profile, used=P.used||[];
   return `<h1>About me</h1><p class="lede">The texts you paste again and again: for an editor, a festival programme, a CV or a grant. Edit once, copy anywhere.</p>
-  <div class="card" style="display:flex;gap:18px;align-items:center"><div class="avatar" style="width:56px;height:56px;font-size:18px">NV</div>
-   <div style="flex:1"><div style="font-family:var(--display);font-size:24px">${esc(P.name)}</div><div class="m" style="color:var(--body)">${esc(P.role)}, ${esc(P.city)}</div>
+  <div class="card profile" style="display:flex;gap:14px 18px;align-items:center"><div class="avatar" style="width:56px;height:56px;font-size:18px;flex:none">NV</div>
+   <div style="flex:1;min-width:0;overflow-wrap:anywhere"><div style="font-family:var(--display);font-size:24px">${esc(P.name)}</div><div class="m" style="color:var(--body)">${esc(P.role)}, ${esc(P.city)}</div>
    <div class="m" style="color:var(--muted);font-size:13px;margin-top:4px">${esc(P.email)}, ${esc(P.site)}, ${P.links.map(esc).join(', ')}</div></div>
-   <button class="btn sm o" data-copy-contact="1">Copy contact</button></div>
+   <button class="btn sm o pbtn" data-copy-contact="1">Copy contact</button></div>
   ${bios().map(b=>{const w=b.text.trim().split(/\s+/).length;const u=used.find(x=>x.bio===b.id);
    return `<div class="card"><div style="display:flex;gap:10px;align-items:baseline"><h2 style="font-size:20px;flex:1">${esc(b.label)}</h2><span class="pill">${w} words</span></div>
-    <p class="sub" style="margin:4px 0 10px">For ${esc(b.for.charAt(0).toLowerCase()+b.for.slice(1))}${u?`. Last used: ${esc(u.where)}, ${esc(fdate(u.date))}`:''}</p>
+    <p class="sub" style="margin:4px 0 10px">For ${esc(/^[A-Z][A-Z]/.test(b.for)?b.for:b.for.charAt(0).toLowerCase()+b.for.slice(1))}${u?`. Last used: ${esc(u.where)}, ${esc(fdate(u.date))}`:''}</p>
     <div class="biotext" contenteditable="true" data-bio="${esc(b.id)}" style="font-family:var(--serif);font-size:18px;line-height:1.55;outline:none;border-left:3px solid var(--yellow);padding-left:14px">${esc(b.text)}</div>
     <div class="acts"><button class="btn sm" data-copy-bio="${esc(b.id)}">Copy</button><span class="sub" style="margin:0;align-self:center">Click the text to edit, it is saved on this device.</span></div></div>`;}).join('')}`;
+}
+// phone: everything that does not fit the bottom bar
+function vMore(){
+  const it=k=>{const l=NAV.find(x=>x[0]===k)[1];return `<button class="row" data-tab="${k}"><div class="g"><div class="t">${esc(l)}</div></div><span class="arrow">→</span></button>`;};
+  return `<h1>More</h1><div class="head" style="margin-top:20px"><h2 style="font-size:20px">Know</h2></div><div class="list morelist">${GROUPS[1][1].map(it).join('')}</div>
+   <div class="head" style="margin-top:28px"><h2 style="font-size:20px">You</h2></div><div class="list morelist">${BOTTOM.map(it).join('')}</div>
+   <p class="sub" style="margin-top:28px"><a class="link" href="case.html">Read the case study →</a></p>`;
 }
 const vSettings=()=>`<h1>Settings</h1><p class="lede">Connected sources: Medium stats, Google Search Console, your calendar and the digests you follow. In the demo everything runs on invented data.</p>`;
 document.addEventListener('focusout',e=>{const b=e.target.closest&&e.target.closest('[data-bio]');if(!b)return;const own=store.get('cp_bios',{});own[b.dataset.bio]=b.innerText.trim();store.set('cp_bios',own);});
@@ -470,8 +549,10 @@ function render(){
   const badge={today:D.alerts.filter(a=>a.level==='high').length,notes:notesAll().filter(n=>n.status==='seed').length};
   const nb=k=>{const l=NAV.find(x=>x[0]===k)[1];return `<button class="nav ${tab===k?'on':''} ${k==='settings'?'later':''}" data-tab="${k}">${l}${badge[k]?`<span class="b">${badge[k]}</span>`:''}</button>`;};
   $('#side').innerHTML=GROUPS.map(([t,ks])=>`<div class="grp"><div class="sec">${t}</div>${ks.map(nb).join('')}</div>`).join('')+`<div class="bottomgrp">${BOTTOM.map(nb).join('')}</div>`;
-  $('#bottom').innerHTML=NAV.filter(([k])=>MOBILE.includes(k)).map(([k,l])=>`<button class="${tab===k?'on':''}" data-tab="${k}">${l}</button>`).join('');
-  $('#view').innerHTML=({about:vAbout,settings:vSettings,today:vToday,notes:vNotes,calendar:vCalendar,ideas:vIdeas,darlings:vDarlings,readers:vReaders,keywords:vKeywords,research:vResearch,queue:vQueue,how:vHow,social:vSocial})[tab]();
+  $('#bottom').innerHTML=NAV.filter(([k])=>MOBILE.includes(k)).map(([k,l])=>`<button class="${tab===k?'on':''}" data-tab="${k}" ${tab===k?'aria-current="page"':''}>${l}${badge[k]?`<span class="b">${badge[k]}</span>`:''}</button>`).join('')
+    +`<button class="${MOBILE.includes(tab)?'':'on'}" data-tab="more">More</button>`;
+  if(tab==='more'&&wide())tab='today';
+  $('#view').innerHTML=({more:vMore,about:vAbout,settings:vSettings,today:vToday,notes:vNotes,calendar:vCalendar,ideas:vIdeas,darlings:vDarlings,readers:vReaders,keywords:vKeywords,research:vResearch,queue:vQueue,how:vHow,social:vSocial})[tab]();
 }
 document.addEventListener('click',e=>{
   const b=e.target.closest('button,[data-tab]');if(!b)return;const s=b.dataset;
@@ -483,15 +564,20 @@ document.addEventListener('click',e=>{
   else if(s.open){tab='darlings';dFilter='all';render();const el=document.getElementById('a-'+s.open);if(el){el.scrollIntoView({block:'start'});scrollBy(0,-72);}}
   else if(s.planNew){planDialog({});}
   else if(s.move){const ev=calAll().find(x=>x.id===s.move);planDialog({title:ev?ev.title:'',id:s.move});}
-  else if(s.planIdea!=null){const i=ideasAll()[+s.planIdea];planDialog({title:i.keyword||i.cluster});}
+  else if(s.planIdea!=null){const i=ideasAll()[+s.planIdea];planDialog({title:ideaTitle(i).replace(/^[“"]|[”"]$/g,'')});}
   else if(s.write!=null){const i=ideasAll()[+s.write];writeDialog(i.keyword&&i.source!=='pain'?i.keyword:i.cluster,i.why,i.audience);}
   else if(s.writeNote){const n=notesAll().find(x=>x.id===s.writeNote);writeDialog(n.text,`From my notes: ${n.source}, ${fdate(n.date)}`);}
   else if(s.planNote){const n=notesAll().find(x=>x.id===s.planNote);planDialog({title:n.text.slice(0,80)});}
   else if(b.id==='nsave'){const t=$('#nt').value.trim();if(!t)return;const n={id:'m'+Date.now(),date:todayIso(),source:$('#ns').value,text:t,tags:$('#ng').value.split(',').map(x=>x.trim()).filter(Boolean),status:'seed',link:null};
     store.set('cp_notes',[n].concat(myNotes()));render();toast('Saved to your notes');}
+  else if(s.demo){toast('Demo: '+s.demo);}
   else if(b.id==='refresh'){toast('Demo: data is generated, nothing to refresh');}
 });
+// the note field grows with the text, so a long note never scrolls out of sight
+document.addEventListener('input',e=>{if(e.target.id==='nt'){e.target.style.height='auto';e.target.style.height=e.target.scrollHeight+'px';}});
 document.addEventListener('input',e=>{if(e.target.id==='kq'){kwQ=e.target.value;const p=e.target.selectionStart;render();const i=$('#kq');i.focus();i.setSelectionRange(p,p);}});
+let wasWide=wide();addEventListener('resize',()=>{if(D&&wide()!==wasWide){wasWide=wide();render();}});
+if(!NAV.some(x=>x[0]===tab)&&tab!=='more')tab='today';
 fetch('data/latest.json').then(r=>r.json()).then(j=>{D=j;render();}).catch(()=>{$('#view').innerHTML='<p class="empty">Could not load demo data. Serve the folder over http.</p>';});
 })();
 </script>

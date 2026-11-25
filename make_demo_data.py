@@ -259,7 +259,7 @@ calendar.append({"date": d(-2), "kind": "plan", "title": "What a Studio Visit Co
 for off in range(-27, 15, 3):
     live = off <= 0
     calendar.append({"date": d(off), "kind": "ig_live" if live else "ig", "format": random.choice(["instagram", "threads", "linkedin"]),
-                     "title": random.choice(["Carousel from", "Studio photo and quote from", "Thread from"]) + " " + random.choice(articles)["title"][:40],
+                     "title": random.choice(["Carousel from", "Studio photo and quote from", "Thread from"]) + " " + random.choice(articles)["title"],
                      "status": "Posted" if live else "Scheduled", "url": None})
 calendar.sort(key=lambda e: e["date"])
 
@@ -314,5 +314,7 @@ data = {
     "calendar_notion": True, "calendar_ig": True, "stale_notion": 0,
 }
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
-json.dump(data, open(OUT, "w"), ensure_ascii=False, indent=1)
+with open(OUT + ".tmp", "w", encoding="utf-8") as fh:   # write to .tmp first: a failed run must not empty latest.json
+    json.dump(data, fh, ensure_ascii=False, indent=1)
+os.replace(OUT + ".tmp", OUT)
 print("written", OUT, len(articles), "pieces,", len(notes), "notes,", len(calendar), "calendar events,", len(keywords), "keys")

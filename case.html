@@ -66,10 +66,31 @@ p{margin:0 0 18px}
 footer{border-top:1px solid var(--line);padding:40px 0 80px;font-family:var(--sans);font-size:14px;color:var(--body)}
 .pill{display:inline-block;font-family:var(--sans);font-size:12px;padding:2px 9px;border-radius:999px;background:var(--line);color:var(--body)}
 @media(max-width:760px){.logo .w{font-size:22px}.logo .t{font-size:12.9px;margin-top:4px}}
+/* layout pass, 24 Nov 2026 */
+.chap{padding-left:24px;padding-right:24px}
+.col.chap,.wide.chap{padding-top:72px;padding-bottom:72px}
+.facts>div{padding:16px 16px 16px 0}
+.facts div div{padding:0}
+.btn{white-space:nowrap}
+.btn+.btn{margin-left:8px}
+.quote,.list,.jobs,.decisions{max-width:100%}
+@media(max-width:760px){
+  header .in{padding:12px 16px;gap:10px}
+  header .kicker{display:none}
+  .btn .long{display:none}
+  .col,.wide,.chap{padding-left:20px;padding-right:20px}
+  .col.chap,.wide.chap{padding-top:52px;padding-bottom:52px}
+  .quote{font-size:22px;padding-left:16px}
+  .note{grid-template-columns:1fr;gap:2px;margin-bottom:36px}
+  .note b{margin-top:8px}
+  .shot{margin-top:20px}
+  .btn+.btn{margin-left:0;margin-top:8px}
+  p .btn{display:flex;justify-content:center;width:100%}
+}
 </style>
 </head>
 <body>
-<header><div class="in"><a class="logo" href="index.html" aria-label="Commonplace, Oops, I wrote it again."><span class="w">Common<span style="color:#FFC017">,</span>place</span><span class="t">Oops, I wrote it again.</span></a><span class="kicker">Case study</span><span class="sp"></span><a class="btn" href="index.html">Open the prototype</a></div></header>
+<header><div class="in"><a class="logo" href="index.html" aria-label="Commonplace, Oops, I wrote it again."><span class="w">Common<span style="color:#FFC017">,</span>place</span><span class="t">Oops, I wrote it again.</span></a><span class="kicker">Case study</span><span class="sp"></span><a class="btn" href="index.html">Open<span class="long">&nbsp;the</span>&nbsp;prototype</a></div></header>
 
 <section class="col" style="padding-top:64px">
   <div class="kicker">Personal product, 2026</div>
@@ -83,7 +104,7 @@ footer{border-top:1px solid var(--line);padding:40px 0 80px;font-family:var(--sa
     <div><div class="k">Status</div><div class="v">Personal tool, demo on invented data</div></div>
   </div>
 </section>
-<div class="wide"><div class="hero"><img src="shots/today.png" alt="Commonplace, the Today screen: greeting, latest note as a quote, reads and views, a two-week calendar and the plan for the day"></div></div>
+<div class="wide"><div class="hero"><picture><source media="(max-width:760px)" srcset="shots/phone-a.png"><img src="shots/today.png" alt="Commonplace, the Today screen: greeting, reads and views, to-do, a month calendar and the latest note"></picture></div></div>
 
 <section class="col chap" style="margin-top:72px">
   <div class="num"><span class="sq"></span>01 Where it comes from</div>
