@@ -132,6 +132,37 @@ h2{font:400 clamp(34px,4vw,52px)/1.02 var(--voice);letter-spacing:-.01em;margin:
 .ov4 .win{position:absolute;z-index:1;right:max(24px,calc(50% - 600px));bottom:0;width:min(44%,620px);box-shadow:0 28px 60px rgba(40,30,10,.18)}
 .ov5 .win{position:relative;z-index:1;width:min(76%,960px);margin:-7% auto 0;box-shadow:0 28px 60px rgba(40,30,10,.18)}
 @media (max-width:900px){.ov4{padding-bottom:0}.ov4 .win,.ov5 .win{position:relative;left:auto;bottom:auto;width:auto;margin:-10% 18px 0}}
+.hero6{padding-block:0 8px}
+.h6{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:640px;margin-bottom:40px}
+.h6text{background:var(--brand);padding:64px 56px 56px max(24px,calc(50vw - 576px));display:flex;flex-direction:column;justify-content:center}
+.h6text .kind{color:var(--ink)}
+.hero6 h1{font-size:clamp(52px,6.6vw,100px);margin:20px 0}
+.hero6 .btn.o{background:transparent}
+.h6pic{margin:0;background:#fff;overflow:hidden}
+.h6pic img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.hero7{padding-block:48px 8px}
+.h7head{text-align:center}.h7head .label{align-items:center}
+.hero7 h1{font-size:clamp(56px,9vw,140px);margin:16px 0 28px}
+.h7stage{position:relative;padding:40px 12% 60px}
+.h7stage .win{position:relative;z-index:2;box-shadow:0 30px 70px rgba(40,30,10,.18)}
+.h7stage .st{position:absolute;z-index:3;width:19%;height:auto;background:#fff;padding:8px;box-shadow:0 14px 34px rgba(40,30,10,.18);border-radius:4px}
+.h7stage .s1{left:0;top:0;transform:rotate(-7deg)}
+.h7stage .s2{right:1%;top:-10px;transform:rotate(6deg)}
+.h7stage .s3{right:3%;bottom:0;transform:rotate(-5deg)}
+.h7stage .s4{left:2%;bottom:20px;transform:rotate(5deg)}
+.h7foot{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:24px 56px;align-items:end;margin:28px 0}
+.h7foot .lead{margin:0}.h7foot .ctas{justify-content:flex-end}
+.hero8{padding-block:56px 8px}
+.h8grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:56px;align-items:end;margin-bottom:40px}
+.hero8 h1{font-size:clamp(56px,8vw,124px);margin:18px 0 0}
+.hero8 .lead{margin-bottom:22px}
+.h8strip{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:10px}
+.h8strip img{display:block;width:100%;height:auto;border-radius:6px}
+.h8times{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:10px;margin:10px 0 36px;font-size:12px;color:var(--body)}
+.h8times b{display:block;font:600 13px var(--case);color:var(--ink)}
+@media (max-width:900px){.h6{grid-template-columns:1fr}.h6pic{order:-1}.h6text{padding:36px 18px}
+ .h7stage{padding:0 0 20px}.h7stage .st{width:30%}.h7stage .s3,.h7stage .s4{display:none}.h7foot,.h8grid{grid-template-columns:1fr}.h7foot .ctas{justify-content:flex-start}
+ .h8strip{grid-template-columns:repeat(3,minmax(0,1fr))}.h8times{display:none}}
 .show{margin-top:8px}
 .cover{position:relative;margin:0;padding-bottom:13%}
 .cover .nora{display:block;width:80%;height:auto;margin-left:auto;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 7%,#000 95%,transparent 100%),linear-gradient(to bottom,#000 92%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent 0,#000 7%,#000 95%,transparent 100%),linear-gradient(to bottom,#000 92%,transparent 100%);mask-composite:intersect}
@@ -279,6 +310,49 @@ footer{border-top:1px solid var(--line);padding-block:32px 64px;font-size:14px;c
     <div><div class="k">Platform</div><div class="v">Web app, phone and desktop</div></div>
     <div><div class="k">Status</div><div class="v">Working prototype on invented data</div></div>
   </div>
+  </div>
+</section>
+
+<section class="hero6" hidden>
+  <div class="h6">
+    <div class="h6text"><div class="label"><span class="prod"><b>Commonplace</b><img src="icon-180.png" alt="" width="42" height="42"></span><span class="kind">Personal product, 2026</span></div><h1>A day with <em>Nora</em></h1><p class="lead">Commonplace is a workspace for writers who publish in several digital outlets. Instead of a tour of features, this case follows one writer through one day and shows what the product does at each moment, and why.</p><div class="ctas"><a class="btn" href="index.html">Open the prototype</a><a class="btn o" href="#day">Start the day</a><span class="mute">The writer, outlets, numbers, notes and quotes are invented.</span></div></div>
+    <figure class="h6pic"><img src="shots/day/nora-hero-3-tall.webp" width="850" height="1051" alt="Nora at home with a laptop and a coffee"></figure>
+  </div>
+  <div class="in"><div class="facts">
+    <div><div class="k">My role</div><div class="v">Product and UX design, flow, information architecture, UI</div></div>
+    <div><div class="k">Built with</div><div class="v">Figma, AI-assisted coding (Claude Code)</div></div>
+    <div><div class="k">Platform</div><div class="v">Web app, phone and desktop</div></div>
+    <div><div class="k">Status</div><div class="v">Working prototype on invented data</div></div>
+  </div></div>
+</section>
+
+<section class="in hero7" hidden>
+  <div class="h7head"><div class="label"><span class="prod"><b>Commonplace</b><img src="icon-180.png" alt="" width="42" height="42"></span><span class="kind">Personal product, 2026</span></div><h1>A day with <em>Nora</em></h1></div>
+  <div class="h7stage">
+    <img class="st s1" src="shots/day/nora-gpt-e/0730.webp" width="402" height="402" alt="">
+    <img class="st s2" src="shots/day/nora-gpt-e/1600.webp" width="402" height="402" alt="">
+    <img class="st s3" src="shots/day/nora-gpt-e/2240.webp" width="402" height="402" alt="">
+    <img class="st s4" src="shots/day/nora-gpt-e/1310.webp" width="402" height="402" alt="">
+    <div class="win"><div class="bar"><i></i><i></i><i></i><span>commonplace / today</span></div><img src="shots/day/hero-today.webp" width="1600" height="917" alt="Today on desktop: four numbers, to-do, calendar and the last note"></div>
+  </div>
+  <div class="h7foot"><p class="lead">Commonplace is a workspace for writers who publish in several digital outlets. Instead of a tour of features, this case follows one writer through one day and shows what the product does at each moment, and why.</p><div class="ctas"><a class="btn" href="index.html">Open the prototype</a><a class="btn o" href="#day">Start the day</a><span class="mute">The writer, outlets, numbers, notes and quotes are invented.</span></div></div>
+  <div class="facts">
+    <div><div class="k">My role</div><div class="v">Product and UX design, flow, information architecture, UI</div></div>
+    <div><div class="k">Built with</div><div class="v">Figma, AI-assisted coding (Claude Code)</div></div>
+    <div><div class="k">Platform</div><div class="v">Web app, phone and desktop</div></div>
+    <div><div class="k">Status</div><div class="v">Working prototype on invented data</div></div>
+  </div>
+</section>
+
+<section class="in hero8" hidden>
+  <div class="h8grid"><div><div class="label"><span class="prod"><b>Commonplace</b><img src="icon-180.png" alt="" width="42" height="42"></span><span class="kind">Personal product, 2026</span></div><h1>A day with <em>Nora</em></h1></div><div><p class="lead">Commonplace is a workspace for writers who publish in several digital outlets. Instead of a tour of features, this case follows one writer through one day and shows what the product does at each moment, and why.</p><div class="ctas"><a class="btn" href="index.html">Open the prototype</a><a class="btn o" href="#day">Start the day</a><span class="mute">The writer, outlets, numbers, notes and quotes are invented.</span></div></div></div>
+  <div class="h8strip"><img src="shots/day/nora-gpt-e/0730.webp" width="402" height="402" alt=""><img src="shots/day/nora-gpt-e/0815.webp" width="402" height="402" alt=""><img src="shots/day/nora-gpt-e/1310.webp" width="402" height="402" alt=""><img src="shots/day/nora-gpt-e/1600.webp" width="402" height="402" alt=""><img src="shots/day/nora-gpt-e/1615.webp" width="402" height="402" alt=""><img src="shots/day/nora-gpt-e/1640.webp" width="402" height="402" alt=""><img src="shots/day/nora-gpt-e/1800.webp" width="402" height="402" alt=""><img src="shots/day/nora-gpt-e/2240.webp" width="402" height="402" alt=""><img src="shots/day/nora-gpt-e/0700.webp" width="402" height="402" alt=""></div>
+  <div class="h8times"><span><b>07:30</b>Kitchen</span><span><b>08:15</b>Desk</span><span><b>13:10</b>Opening</span><span><b>16:00</b>Café</span><span><b>16:15</b>Café</span><span><b>16:40</b>Café</span><span><b>18:00</b>Street</span><span><b>22:40</b>Party</span><span><b>07:00</b>Next morning</span></div>
+  <div class="facts">
+    <div><div class="k">My role</div><div class="v">Product and UX design, flow, information architecture, UI</div></div>
+    <div><div class="k">Built with</div><div class="v">Figma, AI-assisted coding (Claude Code)</div></div>
+    <div><div class="k">Platform</div><div class="v">Web app, phone and desktop</div></div>
+    <div><div class="k">Status</div><div class="v">Working prototype on invented data</div></div>
   </div>
 </section>
 
@@ -451,7 +525,7 @@ while((n=w.nextNode())){if(n.nodeValue.trim())n.nodeValue=n.nodeValue.replace(re
 (function(){var m=location.search.match(/[?&]ill=([abcd])/);if(!m)return;var d={a:'/nora-gpt/',b:'/nora-gpt-b/',c:'/nora-gpt-c/',d:'/nora-gpt-d/'}[m[1]];document.querySelectorAll('img.ill').forEach(function(i){i.src=i.getAttribute('src').replace('/nora-gpt-e/',d)})})()</script>
 <script>/* earlier hero illustrations for comparison: day.html?hero=1, ?hero=2 */
 (function(){var m=location.search.match(/[?&]hero=([12])/),h=document.querySelector('.cover .nora');if(m&&h)h.src=m[1]=='1'?'shots/day/nora-hero.webp':'shots/day/nora-hero-2.webp'})()</script>
-<script>/* other opening layouts for comparison: day.html?top=2 .. ?top=5 */
-(function(){var m=location.search.match(/[?&]top=([2-5])/);if(!m)return;var n=m[1];document.querySelector('.hero').hidden=true;document.querySelector('.show').hidden=true;document.querySelector('.hero'+n).hidden=false;if(n<4)document.querySelector('.show2').hidden=false})()</script>
+<script>/* other opening layouts for comparison: day.html?top=2 .. ?top=8 */
+(function(){var m=location.search.match(/[?&]top=([2-8])/);if(!m)return;var n=+m[1];document.querySelector('.hero').hidden=true;document.querySelector('.show').hidden=true;document.querySelector('.hero'+n).hidden=false;if(n<4||n==6||n==8)document.querySelector('.show2').hidden=false})()</script>
 </body>
 </html>
