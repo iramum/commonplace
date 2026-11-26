@@ -127,6 +127,11 @@ h2{font:400 clamp(34px,4vw,52px)/1.02 var(--voice);letter-spacing:-.01em;margin:
 .h3foot .ctas{margin:0;justify-content:flex-end}
 .h3foot .facts{grid-column:1/-1;margin-top:28px}
 @media (max-width:900px){.h3foot{grid-template-columns:1fr}.h3foot .ctas{justify-content:flex-start}}
+.ov4,.ov5{position:relative}
+.ov4{padding-bottom:9%}
+.ov4 .win{position:absolute;z-index:1;left:max(24px,calc(50% - 576px));bottom:0;width:min(46%,640px);box-shadow:0 28px 60px rgba(40,30,10,.18)}
+.ov5 .win{position:relative;z-index:1;width:min(70%,900px);margin:-22% auto 0;box-shadow:0 28px 60px rgba(40,30,10,.18)}
+@media (max-width:900px){.ov4{padding-bottom:0}.ov4 .win,.ov5 .win{position:relative;left:auto;bottom:auto;width:auto;margin:-10% 18px 0}}
 .show{margin-top:8px}
 .cover{position:relative;margin:0;padding-bottom:13%}
 .cover .nora{display:block;width:80%;height:auto;margin-left:auto;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 7%,#000 95%,transparent 100%),linear-gradient(to bottom,#000 92%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent 0,#000 7%,#000 95%,transparent 100%),linear-gradient(to bottom,#000 92%,transparent 100%);mask-composite:intersect}
@@ -229,6 +234,42 @@ footer{border-top:1px solid var(--line);padding-block:32px 64px;font-size:14px;c
     <h1>A day with <em>Nora</em></h1>
   </div>
   <figure class="h3pic"><img src="shots/day/nora-hero-3.webp" width="1671" height="941" alt="Nora, a writer on art, curating and sound, at home with a laptop, a coffee and her books"></figure>
+  <div class="in h3foot">
+    <p class="lead">Commonplace is a workspace for writers who publish in several digital outlets. Instead of a tour of features, this case follows one writer through one day and shows what the product does at each moment, and why.</p>
+    <div class="ctas"><a class="btn" href="index.html">Open the prototype</a><a class="btn o" href="#day">Start the day</a><span class="mute">The writer, outlets, numbers, notes and quotes are invented.</span></div>
+    <div class="facts">
+    <div><div class="k">My role</div><div class="v">Product and UX design, flow, information architecture, UI</div></div>
+    <div><div class="k">Built with</div><div class="v">Figma, AI-assisted coding (Claude Code)</div></div>
+    <div><div class="k">Platform</div><div class="v">Web app, phone and desktop</div></div>
+    <div><div class="k">Status</div><div class="v">Working prototype on invented data</div></div>
+  </div>
+  </div>
+</section>
+
+<section class="hero3 hero4" hidden>
+  <div class="in h3head">
+    <div class="label"><span class="prod"><b>Commonplace</b><img src="icon-180.png" alt="" width="42" height="42"></span><span class="kind">Personal product, 2026</span></div>
+    <h1>A day with <em>Nora</em></h1>
+  </div>
+  <figure class="h3pic ov4"><img src="shots/day/nora-hero-3.webp" width="1671" height="941" alt="Nora, a writer on art, curating and sound, at home with a laptop, a coffee and her books"><div class="win"><div class="bar"><i></i><i></i><i></i><span>commonplace / today</span></div><img src="shots/day/hero-today.webp" width="1600" height="911" alt="Today on desktop: four numbers, to-do, calendar and the last note"></div></figure>
+  <div class="in h3foot">
+    <p class="lead">Commonplace is a workspace for writers who publish in several digital outlets. Instead of a tour of features, this case follows one writer through one day and shows what the product does at each moment, and why.</p>
+    <div class="ctas"><a class="btn" href="index.html">Open the prototype</a><a class="btn o" href="#day">Start the day</a><span class="mute">The writer, outlets, numbers, notes and quotes are invented.</span></div>
+    <div class="facts">
+    <div><div class="k">My role</div><div class="v">Product and UX design, flow, information architecture, UI</div></div>
+    <div><div class="k">Built with</div><div class="v">Figma, AI-assisted coding (Claude Code)</div></div>
+    <div><div class="k">Platform</div><div class="v">Web app, phone and desktop</div></div>
+    <div><div class="k">Status</div><div class="v">Working prototype on invented data</div></div>
+  </div>
+  </div>
+</section>
+
+<section class="hero3 hero5" hidden>
+  <div class="in h3head">
+    <div class="label"><span class="prod"><b>Commonplace</b><img src="icon-180.png" alt="" width="42" height="42"></span><span class="kind">Personal product, 2026</span></div>
+    <h1>A day with <em>Nora</em></h1>
+  </div>
+  <figure class="h3pic ov5"><img src="shots/day/nora-hero-3.webp" width="1671" height="941" alt="Nora, a writer on art, curating and sound, at home with a laptop, a coffee and her books"><div class="win"><div class="bar"><i></i><i></i><i></i><span>commonplace / today</span></div><img src="shots/day/hero-today.webp" width="1600" height="911" alt="Today on desktop: four numbers, to-do, calendar and the last note"></div></figure>
   <div class="in h3foot">
     <p class="lead">Commonplace is a workspace for writers who publish in several digital outlets. Instead of a tour of features, this case follows one writer through one day and shows what the product does at each moment, and why.</p>
     <div class="ctas"><a class="btn" href="index.html">Open the prototype</a><a class="btn o" href="#day">Start the day</a><span class="mute">The writer, outlets, numbers, notes and quotes are invented.</span></div>
@@ -410,7 +451,7 @@ while((n=w.nextNode())){if(n.nodeValue.trim())n.nodeValue=n.nodeValue.replace(re
 (function(){var m=location.search.match(/[?&]ill=([abcd])/);if(!m)return;var d={a:'/nora-gpt/',b:'/nora-gpt-b/',c:'/nora-gpt-c/',d:'/nora-gpt-d/'}[m[1]];document.querySelectorAll('img.ill').forEach(function(i){i.src=i.getAttribute('src').replace('/nora-gpt-e/',d)})})()</script>
 <script>/* earlier hero illustrations for comparison: day.html?hero=1, ?hero=2 */
 (function(){var m=location.search.match(/[?&]hero=([12])/),h=document.querySelector('.cover .nora');if(m&&h)h.src=m[1]=='1'?'shots/day/nora-hero.webp':'shots/day/nora-hero-2.webp'})()</script>
-<script>/* other opening layouts for comparison: day.html?top=2, ?top=3 */
-(function(){var m=location.search.match(/[?&]top=([23])/);if(!m)return;document.querySelector('.hero').hidden=true;document.querySelector('.show').hidden=true;document.querySelector('.hero'+m[1]).hidden=false;document.querySelector('.show2').hidden=false})()</script>
+<script>/* other opening layouts for comparison: day.html?top=2 .. ?top=5 */
+(function(){var m=location.search.match(/[?&]top=([2-5])/);if(!m)return;var n=m[1];document.querySelector('.hero').hidden=true;document.querySelector('.show').hidden=true;document.querySelector('.hero'+n).hidden=false;if(n<4)document.querySelector('.show2').hidden=false})()</script>
 </body>
 </html>
