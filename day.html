@@ -38,7 +38,7 @@ header.top .in{display:flex;align-items:center;gap:16px;padding-block:16px}
 .btn.o{background:#fff;color:var(--ink);border:1.5px solid var(--ink)}
 
 /* hero */
-.hero{padding-block:64px 44px}
+.hero{padding-block:40px 28px}
 .label{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
 .prod{display:inline-flex;align-items:center;gap:12px}
 .prod img{width:42px;height:42px;border-radius:10px}
@@ -163,7 +163,14 @@ h2{font:400 clamp(34px,4vw,52px)/1.02 var(--voice);letter-spacing:-.01em;margin:
 @media (max-width:900px){.h6{grid-template-columns:1fr}.h6pic{order:-1}.h6text{padding:36px 18px}
  .h7stage{padding:0 0 20px}.h7stage .st{width:30%}.h7stage .s3,.h7stage .s4{display:none}.h7foot,.h8grid{grid-template-columns:1fr}.h7foot .ctas{justify-content:flex-start}
  .h8strip{grid-template-columns:repeat(3,minmax(0,1fr))}.h8times{display:none}}
-.show{margin-top:8px}
+.htop{display:flex;align-items:flex-end;justify-content:space-between;gap:24px 40px;flex-wrap:wrap}
+.htop h1{margin:0}
+.htop .label{align-items:flex-end;text-align:right;padding-bottom:14px}
+.intro{padding-block:56px 8px}
+.intro .lead{margin-bottom:28px}
+.intro .facts{margin-bottom:28px}
+@media (max-width:760px){section.show{margin-top:8px}.htop .label{align-items:flex-start;text-align:left;padding-bottom:0;order:-1}.intro{padding-top:32px}}
+.show{margin-top:-44px}
 .cover{position:relative;margin:0;padding-bottom:13%}
 .cover .nora{display:block;width:80%;height:auto;margin-left:auto;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 7%,#000 95%,transparent 100%),linear-gradient(to bottom,#000 92%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent 0,#000 7%,#000 95%,transparent 100%),linear-gradient(to bottom,#000 92%,transparent 100%);mask-composite:intersect}
 .cover .win{position:absolute;z-index:1;left:0;bottom:0;width:54%;box-shadow:0 28px 60px rgba(40,30,10,.16)}
@@ -225,8 +232,17 @@ footer{border-top:1px solid var(--line);padding-block:32px 64px;font-size:14px;c
 
 <main>
 <section class="in hero">
-  <div class="label"><span class="prod"><b>Commonplace</b><img src="icon-180.png" alt="" width="42" height="42"></span><span class="kind">Personal product, 2026</span></div>
+  <div class="htop">
   <h1>A day with <em>Nora</em></h1>
+  <div class="label"><span class="prod"><b>Commonplace</b><img src="icon-180.png" alt="" width="42" height="42"></span><span class="kind">Personal product, 2026</span></div>
+  </div>
+</section>
+
+<section class="in show" aria-label="The product">
+  <figure class="cover"><img class="nora" src="shots/day/nora-hero-3.webp" width="1671" height="1051" alt="Nora, a writer on art, curating and sound, at home with a laptop, a coffee and her books"><div class="win"><div class="bar"><i></i><i></i><i></i><span>commonplace / today</span></div><img src="shots/day/hero-today.webp" width="1600" height="917" alt="Today on desktop: four numbers, to-do, calendar and the last note"></div></figure>
+</section>
+
+<section class="in intro">
   <p class="lead">Commonplace is a workspace for writers who publish in several digital outlets. Instead of a tour of features, this case follows one writer through one day and shows what the product does at each moment, and why.</p>
   <div class="facts">
     <div><div class="k">My role</div><div class="v">Product and UX design, flow, information architecture, UI</div></div>
@@ -235,10 +251,6 @@ footer{border-top:1px solid var(--line);padding-block:32px 64px;font-size:14px;c
     <div><div class="k">Status</div><div class="v">Working prototype on invented data</div></div>
   </div>
   <div class="ctas"><a class="btn" href="index.html">Open the prototype</a><a class="btn o" href="#day">Start the day</a><span class="mute">The writer, outlets, numbers, notes and quotes are invented.</span></div>
-</section>
-
-<section class="in show" aria-label="The product">
-  <figure class="cover"><img class="nora" src="shots/day/nora-hero-3.webp" width="1671" height="1051" alt="Nora, a writer on art, curating and sound, at home with a laptop, a coffee and her books"><div class="win"><div class="bar"><i></i><i></i><i></i><span>commonplace / today</span></div><img src="shots/day/hero-today.webp" width="1600" height="917" alt="Today on desktop: four numbers, to-do, calendar and the last note"></div></figure>
 </section>
 
 <section class="in hero2" hidden>
