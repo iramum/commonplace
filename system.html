@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Commonplace, design system</title>
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+/* ---- the app's own stylesheet, copied verbatim by build_system.py ---- */
+
+/* Medium-like: white, ink #242424, hairlines, black pill buttons, yellow accent.
+   GT Super → Newsreader, Söhne → Inter, content serif → Source Serif 4 (free look-alikes). */
+:root{
+  --ink:#242424; --ink2:#191919; --body:#6B6B6B; --muted:#8C8C8C; --line:#F2F2F2; --line2:#E5E5E5;
+  --bg:#FFFFFF; --soft:#F9F9F9; --yellow:#FFC017; --yellow-pale:#FFFAE1; --green:#1A8917; --green-pale:#E8F3E8; --red:#C94A4A; --red-pale:#FBECEC;
+  --display:'Newsreader',Georgia,serif; --serif:'Source Serif 4',Georgia,serif; --sans:'Inter',-apple-system,system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+button{font:inherit;cursor:pointer;color:inherit}
+.top{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.top .in{display:flex;align-items:center;gap:16px;padding:12px 24px;max-width:1336px;margin:0 auto}
+.logo{display:inline-flex;flex-direction:column;line-height:1;text-decoration:none;color:var(--ink)}
+.logo .w{font-family:var(--display);font-size:26px;font-weight:500;letter-spacing:-.02em;white-space:nowrap;display:inline-block;align-self:flex-start}
+.logo .t{font-family:var(--sans);font-size:15.5px;color:var(--body);font-weight:400;white-space:nowrap;margin-top:5px;display:inline-block;align-self:flex-start;letter-spacing:0}
+.top .sp{flex:1}
+.avatar{width:32px;height:32px;border-radius:999px;background:var(--yellow-pale);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600}
+.wrap{display:flex;max-width:1336px;margin:0 auto}
+.side{width:232px;flex:none;padding:28px 16px 20px;position:sticky;top:61px;height:calc(100vh - 61px);overflow:auto;border-right:1px solid var(--line);display:flex;flex-direction:column}
+.side .grp{margin-bottom:26px}.side .bottomgrp{margin-top:auto;padding-top:16px;border-top:1px solid var(--line)}
+.nav{display:block;width:100%;text-align:left;border:0;background:none;padding:10px 12px;border-radius:6px;color:var(--body);font-size:14px;margin-bottom:4px}
+.nav.on{color:var(--ink);font-weight:500;background:var(--soft)}
+.nav .b{float:right;font-size:11px;background:var(--yellow);color:var(--ink);border-radius:999px;padding:0 7px;font-weight:600}
+.nav.later{color:#B3B3B3}
+.side .sec{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin:0 12px 8px}
+main{flex:1;min-width:0;padding:32px 40px 96px}
+.bottom{display:none}
+@media(max-width:899px){
+  .side{display:none} main{padding:20px 16px 110px} .top .in{padding:12px 16px}
+  .logo .w{font-size:22px}
+  .logo .t{font-size:12.9px;margin-top:4px}
+  .bottom{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--bg);border-top:1px solid var(--line2);padding:6px 4px calc(6px + env(safe-area-inset-bottom))}
+  .bottom button{flex:1;border:0;background:none;padding:9px 2px 7px;color:var(--muted);display:flex;justify-content:center}
+  .bottom button.on{color:var(--ink)}
+  .bottom .ic{position:relative;display:block;width:24px;height:24px}
+  .bottom .ic svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .bottom button.on .ic svg{stroke-width:2.1}
+  .bottom button.on .ic::after{content:"";position:absolute;left:50%;bottom:-7px;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:var(--ink)}
+}
+h1{font-family:var(--display);font-weight:400;font-size:44px;line-height:1.08;letter-spacing:-.02em;margin:0 0 6px}
+@media(max-width:899px){h1{font-size:32px}}
+h2{font-family:var(--display);font-weight:500;font-size:24px;letter-spacing:-.01em;margin:0}
+.lede{font-size:16px;color:var(--body);margin:0 0 24px}
+.date{font-size:13px;color:var(--body);margin-bottom:6px}
+.head{display:flex;align-items:baseline;gap:12px;margin:36px 0 14px}
+.head .sp{flex:1}
+.sub{color:var(--body);font-size:13px;margin:0 0 12px}
+.pill{display:inline-flex;align-items:center;height:22px;padding:0 9px;border-radius:999px;font-size:12px;background:var(--soft);color:var(--body);white-space:nowrap}
+.pill.y{background:var(--yellow);color:var(--ink)} .pill.yp{background:var(--yellow-pale);color:#7A5A00}
+.pill.g{background:var(--green-pale);color:var(--green)} .pill.r{background:var(--red-pale);color:var(--red)}
+.pill.k{background:var(--ink2);color:#fff}
+.btn{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 16px;border-radius:999px;border:1px solid var(--ink2);background:var(--ink2);color:#fff;font-size:13px;font-weight:500;white-space:nowrap;text-decoration:none}
+.btn.o{background:#fff;color:var(--ink2)}
+.btn.g{background:var(--green);border-color:var(--green)}
+.btn.sm{height:30px;padding:0 12px;font-size:12px}
+.btn[disabled]{opacity:.5}
+.link{border:0;background:none;padding:0;color:var(--green);font-size:13px;text-decoration:none}
+.card{border:1px solid var(--line2);border-radius:4px;padding:20px 22px;margin-bottom:14px;background:#fff}
+@media(max-width:899px){.card{padding:16px}}
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:8px}
+@media(max-width:1100px){.grid4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.stat{border:1px solid var(--line2);border-radius:4px;padding:16px 18px;text-align:left;background:#fff;width:100%}
+.stat.hl{background:var(--yellow-pale);border-color:#F5E3A3}
+.stat .l{font-size:13px;color:var(--body)}
+.stat .v{font-family:var(--display);font-size:38px;line-height:1.1;margin:6px 0 2px;font-variant-numeric:lining-nums}
+.stat .d{font-size:12px;color:var(--body)}
+.up{color:var(--green)} .down{color:var(--red)}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}
+@media(max-width:1100px){.cols{grid-template-columns:1fr}}
+.list{list-style:none;margin:0;padding:0}
+.row{display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--line);width:100%;text-align:left;background:none;border-left:0;border-right:0;border-top:0}
+.row:last-child{border-bottom:0}
+.row .pill,.row .pill.g{flex:none}
+.row .g{flex:1;min-width:0}
+.row .t{font-weight:500;font-size:15px;color:var(--ink)}
+.row .tt{font-family:var(--display);font-size:19px;line-height:1.25;color:var(--ink)}
+.row .m{font-size:13px;color:var(--body);margin-top:2px}
+.arrow{color:var(--muted)}
+.empty{color:var(--muted);font-size:13px;padding:8px 0}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 16px}
+.chip{height:32px;padding:0 14px;border-radius:999px;border:1px solid var(--line2);background:#fff;font-size:13px;color:var(--body)}
+.chip.on{border-color:var(--ink2);background:var(--ink2);color:#fff}
+.bar{display:flex;height:8px;border-radius:999px;overflow:hidden;background:var(--line);gap:2px;margin:10px 0 12px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12px;color:var(--body)}
+.dot{display:inline-block;width:9px;height:9px;border-radius:999px;margin-right:6px;vertical-align:0}
+/* darlings */
+.art .t{font-family:var(--display);font-size:22px;line-height:1.2}
+.art .slug{font-size:12px;color:var(--muted);margin-top:4px}
+.mets{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid var(--line);margin-top:14px}
+@media(min-width:900px){.mets{grid-template-columns:repeat(8,minmax(0,1fr))}}
+.met{padding:10px 8px 0 0}
+.met .k{font-size:11px;color:var(--muted)}
+.met .v{font-size:18px;font-variant-numeric:tabular-nums}
+.met .d{font-size:11px;min-height:14px}
+.spark{display:block;width:100%;height:42px;margin-top:12px}
+.spcap{font-size:11px;color:var(--muted)}
+.acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+details summary{cursor:pointer;color:var(--green);font-size:13px;margin-top:12px;list-style:none}
+details summary::-webkit-details-marker{display:none}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{font-weight:500;font-size:12px;color:var(--muted);text-align:left;padding:8px 8px 8px 0;border-bottom:1px solid var(--line2)}
+td{padding:10px 8px 10px 0;border-bottom:1px solid var(--line);vertical-align:top}
+td.n,th.n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+td.s{color:var(--muted);font-size:12px}
+.tw{overflow-x:auto}
+input[type=search],input[type=text],input[type=date],select,textarea{width:100%;border:1px solid var(--line2);border-radius:4px;background:#fff;padding:11px 12px;font:inherit;font-size:14px;color:var(--ink)}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--ink2)}
+select{-webkit-appearance:none;appearance:none;padding-right:34px;cursor:pointer;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23191919' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 13px center}
+/* notes = the commonplace book */
+.composer{border:1px solid var(--line2);border-radius:4px;padding:18px 20px;margin-bottom:20px}
+.composer textarea{border:0;padding:0;font-family:var(--serif);font-size:20px;line-height:1.5;resize:none;min-height:64px}
+.composer .bar2{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:10px;border-top:1px solid var(--line);padding-top:12px}
+.composer select,.composer input{width:auto;height:34px;padding:0 14px;font-size:13px;border-radius:999px;line-height:32px}
+.composer select{padding-right:34px}
+.notes{columns:2 320px;column-gap:24px}
+.note{break-inside:avoid;border-bottom:1px solid var(--line);padding:18px 0;margin:0}
+.note .src{font-size:12px;color:var(--muted);display:flex;gap:8px;align-items:center}
+.note .txt{font-family:var(--serif);font-size:18px;line-height:1.55;margin:8px 0 10px;color:var(--ink)}
+.note .tags{display:flex;gap:6px;flex-wrap:wrap}
+.note .tag{font-size:12px;color:var(--body);background:var(--soft);border-radius:999px;padding:2px 9px}
+.note .acts{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.nphoto{display:block;max-width:100%;width:320px;border-radius:4px;margin:6px 0 10px;border:1px solid var(--line2)}
+.c3 .nphoto{width:100%;max-height:150px;object-fit:cover;margin:0 0 12px}
+.photo-btn{display:inline-flex;align-items:center;gap:6px}
+.link.photo-btn{color:var(--body)}
+.photo-btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.ppv{display:flex;align-items:center;gap:8px;margin-top:10px}
+.ppv img{width:64px;height:64px;object-fit:cover;border-radius:4px;border:1px solid var(--line2)}
+.hero{background:var(--yellow-pale);border-radius:4px;padding:22px 24px;margin:6px 0 24px;display:flex;gap:16px;align-items:center}
+.hero .q{font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.45;flex:1}
+/* calendar */
+.cstrip{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
+@media(max-width:899px){.cstrip{display:flex;overflow-x:auto;margin:0 -16px;padding:0 16px}.cstrip .cday{min-width:118px}}
+.cday{border:1px solid var(--line);border-radius:4px;padding:8px;min-height:90px;display:flex;flex-direction:column;gap:4px;background:#fff}
+.cday.today{border-color:var(--ink2);box-shadow:inset 0 0 0 1px var(--ink2)}
+.cday.past{background:var(--soft)}
+.cday.out{opacity:.35}
+.cday .dh{display:flex;justify-content:space-between;font-size:11px;color:var(--muted)}
+.cday .dh b{font-weight:500;font-size:14px;color:var(--ink)}
+.ev{display:block;width:100%;text-align:left;border:0;border-radius:3px;padding:3px 6px;font-size:11px;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background:var(--soft);color:var(--ink)}
+.ev.article{background:var(--ink2);color:#fff}
+.ev.article_upd{background:#fff;box-shadow:inset 0 0 0 1px var(--ink2)}
+.ev.plan{background:var(--yellow-pale);color:#7A5A00}
+.ev.ig_live{background:var(--green-pale);color:var(--green)}
+.ev.ig{background:#fff;box-shadow:inset 0 0 0 1px var(--line2);color:var(--body)}
+.ev.overdue{background:var(--red-pale)!important;color:var(--red)!important;box-shadow:none!important}
+.cmonth{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
+.cmonth .wd{font-size:11px;color:var(--muted)}
+.cmonth .cday{min-height:104px}
+.agenda{display:none}
+@media(max-width:899px){.cmonth{display:none}.agenda{display:block}}
+/* dialog */
+.dlg-bg{position:fixed;inset:0;background:rgba(25,25,25,.5);z-index:50;display:flex;align-items:center;justify-content:center;padding:16px}
+.dlg{background:#fff;border-radius:8px;box-shadow:0 12px 48px rgba(0,0,0,.35);padding:26px;width:100%;max-width:520px;max-height:90vh;overflow:auto}
+.dlg label{display:block;font-size:12px;color:var(--muted);margin:12px 0 4px}
+.dlg pre{white-space:pre-wrap;font-family:var(--serif);font-size:15px;line-height:1.5;background:var(--soft);padding:14px;border-radius:4px;margin:10px 0 0}
+.toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:var(--ink2);color:#fff;border-radius:999px;padding:10px 18px;font-size:13px;z-index:60}
+/* Today, top: header with big numbers + three cards (layout after the Matrix overview panel) */
+.topbar{display:flex;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:26px}
+.topbar .greet{flex:1;min-width:260px}
+.bignums{display:flex;gap:34px;flex-wrap:wrap}
+.bn{text-align:left;border:0;background:none;padding:0}
+.bn .v{font-family:var(--display);font-size:52px;line-height:1;letter-spacing:-.02em;font-variant-numeric:lining-nums}
+.bn .l{font-size:12px;color:var(--body);margin-top:6px}
+.bn .d{font-size:12px}
+@media(max-width:899px){.bignums{display:grid;grid-template-columns:1fr 1fr;gap:16px 22px;width:100%}.bn .v{font-size:38px}}
+.top3{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr) minmax(0,1fr);gap:16px;margin-bottom:8px}
+@media(max-width:1100px){.top3{grid-template-columns:1fr}}
+.c3{border:1px solid var(--line2);border-radius:4px;padding:18px 18px 16px;background:#fff;display:flex;flex-direction:column;min-width:0}
+.c3 .ch{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.c3 .ch h3{font-family:var(--display);font-weight:500;font-size:20px;margin:0;flex:1}
+.corner{width:30px;height:30px;border-radius:999px;border:1px solid var(--line2);background:#fff;display:inline-flex;align-items:center;justify-content:center;color:var(--ink);font-size:14px}
+.t2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.t2 button{background:var(--soft);border:0;border-radius:4px;padding:10px 12px;text-align:left}
+.t2 .k{font-size:12px;color:var(--body);display:flex;align-items:center;gap:6px}
+.t2 .k i{display:inline-block;width:10px;height:10px;border-radius:3px;border:1px solid var(--line2);background:#fff}
+.t2 .v{font-family:var(--display);font-size:30px;line-height:1.1;margin-top:6px}
+.t2 .miss .v{color:var(--red)} .t2 .miss .k i{background:var(--red);border-color:var(--red)}
+.todo{margin-top:12px;border-top:1px solid var(--line);padding-top:4px}
+.todo .row{padding:10px 0}
+.seg{display:inline-flex;background:var(--line);border-radius:999px;padding:3px;gap:2px}
+.seg button{border:0;background:none;border-radius:999px;padding:5px 12px;font-size:12px;color:var(--body)}
+.seg button.on{background:#fff;color:var(--ink);font-weight:500;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.mcal{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;margin-top:12px}
+.mcal .wd{font-size:10px;color:var(--muted);text-align:center;padding-bottom:2px}
+.md{position:relative;height:30px;border:0;border-radius:6px;background:none;font-size:12px;color:var(--ink);display:flex;align-items:center;justify-content:center;padding:0}
+.md.out{color:#C8C8C8}
+.md.pub{background:var(--yellow)}
+.md.plan{box-shadow:inset 0 0 0 1.5px var(--yellow)}
+.md.miss{background:none;color:var(--red);font-weight:600;box-shadow:inset 0 0 0 1.5px var(--red)}
+.md.today{background:var(--ink2);color:#fff}
+.md .sd{position:absolute;bottom:3px;left:50%;width:4px;height:4px;margin-left:-2px;border-radius:999px;background:var(--green)}
+.md.today .sd{background:#fff}
+.mleg{display:flex;gap:12px;flex-wrap:wrap;font-size:11px;color:var(--body);margin-top:10px}
+.mleg span{display:inline-flex;align-items:center;gap:5px}
+.mleg b{display:inline-block;width:10px;height:10px;border-radius:3px}
+.upc{margin-top:12px;border-top:1px solid var(--line);padding-top:4px}
+.upc .row{padding:9px 0}
+.qnote{font-family:var(--serif);font-size:21px;line-height:1.5;margin:4px 0 14px;flex:1}
+.demo{white-space:nowrap;font-size:11px;color:#7A5A00;background:var(--yellow-pale);border-radius:999px;padding:2px 9px}
+
+/* ---- layout pass, 24 Nov 2026: phone, tablet, desktop ---- */
+html{-webkit-text-size-adjust:100%}
+button,a,.chip,.nav{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.link{text-align:left}
+.acts{align-items:center}
+/* list rows: status pills share one width, so titles line up */
+.list .row>.pill:first-child,.upc .row>.pill:first-child{min-width:54px;justify-content:center}
+/* reading measure for long serif text */
+.biotext,.note .txt,.hero .q{max-width:70ch}
+/* mini calendar: days of other months stay readable on yellow */
+.md.out{opacity:.45;color:var(--ink)}
+/* calendar layer toggles are filters, not actions: outlined, with a tick */
+.chip.tg.on{background:#fff;color:var(--ink);border-color:var(--ink2)}
+.chip.tg.on::before{content:"✓ "}
+.calhead .ctl{display:flex;gap:8px;align-items:center}
+.lg{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+/* more menu (phone) */
+.morelist .row{align-items:center;padding:16px 0}
+.morelist .row .t{font-size:16px}
+/* tablet: keep two cards side by side, note full width */
+@media(min-width:700px) and (max-width:1100px){
+  .top3{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .top3>.c3:nth-child(3){grid-column:1/-1}
+}
+@media(max-width:1100px){.cols{grid-template-columns:minmax(0,1fr)}}
+.hide-m{}
+.how-pill-m{display:none}
+@media(max-width:899px){
+  .top .in{gap:10px}
+  #refresh{display:none}
+  .demo{display:inline-block}
+  .head{flex-wrap:wrap;row-gap:10px}
+  .calhead h2{min-width:0!important;flex:1;font-size:21px;white-space:nowrap}
+  .calhead .sp{display:none}
+  .calhead .ctl{width:100%;display:flex;gap:8px;flex-wrap:wrap}
+  .calhead .ctl .btn{margin-left:auto}
+  .btn.sm{height:36px;padding:0 14px;font-size:13px}
+  .chip{height:36px}
+  input[type=search],input[type=text],input[type=date],select,textarea,.composer select,.composer input{font-size:16px}
+  .composer{padding:14px 16px}
+  .composer textarea{font-size:19px}
+  .composer .bar2 select{flex:1;min-width:0}
+  .composer .bar2 input{flex:1 1 100%!important;order:3}
+  .composer .bar2 .btn{order:4;width:100%;justify-content:center}
+  .agenda .row{gap:6px}
+  .agenda .ev{white-space:normal;font-size:13px;padding:7px 9px;line-height:1.35}
+  .agenda .m.td{color:var(--ink);font-weight:600}
+  .profile{flex-wrap:wrap}
+  .profile .pbtn{width:100%;justify-content:center}
+  .hide-m{display:none}
+  .how-pill{display:none}
+  .how-pill-m{display:inline-flex;margin-top:6px}
+  .bottom button{position:relative;font-size:11.5px;padding:10px 2px}
+  .bottom button .b{position:absolute;top:-5px;right:-9px;min-width:15px;height:15px;line-height:15px;padding:0 4px;font-size:9.5px;text-align:center;background:var(--yellow);border-radius:999px;font-weight:600;color:var(--ink)}
+  .toast{bottom:calc(76px + env(safe-area-inset-bottom))}
+  .dlg-bg{align-items:flex-end;padding:0}
+  .dlg{max-width:none;border-radius:12px 12px 0 0;padding:22px 18px calc(22px + env(safe-area-inset-bottom));max-height:88vh}
+  .dlg .acts .btn{flex:1;justify-content:center}
+  /* pain map: rows become cards */
+  .pm tr:first-child{display:none}
+  .pm tr{display:block;padding:12px 0;border-bottom:1px solid var(--line)}
+  .pm tr:last-child{border-bottom:0}
+  .pm td{display:block;border:0;padding:2px 0}
+  .pm td[data-k]::before{content:attr(data-k) ": ";color:var(--muted)}
+}
+
+/* ---- this page ---- */
+body{background:#fff}
+.sys{max-width:1120px;margin:0 auto;padding:40px 24px 80px}
+.sys header{display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line2);padding-bottom:24px;margin-bottom:8px}
+.sys header a.back{font-size:13px;color:var(--body)}
+.sys section{display:grid;grid-template-columns:220px minmax(0,1fr);gap:24px 40px;padding:40px 0;border-bottom:1px solid var(--line)}
+.sys section>h2{font-size:26px}
+.sys section>h2 small{display:block;font:400 13px var(--sans);color:var(--body);margin-top:8px;letter-spacing:0;line-height:1.5}
+.sys .bigh{font-family:var(--display);font-size:64px;line-height:1;letter-spacing:-.03em;margin:28px 0 12px}
+.sys .intro{font-size:17px;color:var(--body);max-width:680px;line-height:1.55;margin:0 0 8px}
+.pr{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.pr div{background:var(--soft);border-radius:4px;padding:16px 18px}
+.pr b{display:block;font-family:var(--display);font-weight:500;font-size:19px;margin-bottom:4px}
+.pr span{color:var(--body);font-size:13.5px}
+.sws{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+.sw{display:grid;grid-template-columns:44px 1fr;column-gap:12px;align-items:center}
+.sw .chipc{grid-row:span 3;width:44px;height:44px;border-radius:8px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
+.sw b{font-weight:600;font-size:13px} .sw code{font-size:12px;color:var(--body)} .sw span{font-size:12px;color:var(--muted)}
+.ty>div{display:grid;grid-template-columns:170px minmax(0,1fr);gap:16px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--line)}
+.ty .k{font-size:12px;color:var(--muted)}
+.spec{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:18px}
+.spec+.cap,.cap{font-size:12px;color:var(--muted);margin:-6px 0 22px}
+.icons{display:flex;flex-wrap:wrap;gap:12px}
+.ic1{width:96px;height:84px;border:1px solid var(--line2);border-radius:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;font-size:11px;color:var(--body)}
+.ic1 svg{width:24px;height:24px;fill:none;stroke:var(--ink);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.barx{display:flex;max-width:390px;border:1px solid var(--line2);border-radius:8px;padding:6px 4px}
+.barx button{flex:1;border:0;background:none;padding:9px 2px 7px;color:var(--muted);display:flex;justify-content:center}
+.barx button.on{color:var(--ink)}
+.barx .ic{position:relative;display:block;width:24px;height:24px}
+.barx .ic svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.barx button.on .ic svg{stroke-width:2.1}
+.barx button.on .ic::after{content:"";position:absolute;left:50%;bottom:-7px;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:var(--ink)}
+.barx .b{position:absolute;top:-5px;right:-9px;min-width:15px;height:15px;line-height:15px;padding:0 4px;font-size:9.5px;text-align:center;background:var(--yellow);border-radius:999px;font-weight:600;color:var(--ink)}
+.mini{display:grid;grid-template-columns:repeat(7,40px);gap:4px}
+.toastx{display:inline-block;background:var(--ink2);color:#fff;border-radius:999px;padding:10px 18px;font-size:13px}
+.dlgx{background:rgba(25,25,25,.5);border-radius:8px;padding:28px;max-width:560px}
+.dlgx .dlg{box-shadow:0 12px 48px rgba(0,0,0,.35)}
+.mark{display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+.mark img{width:88px;height:88px;border-radius:20px}
+@media (max-width:760px){.sys section{grid-template-columns:1fr}.pr{grid-template-columns:1fr}.ty>div{grid-template-columns:1fr}.sys .bigh{font-size:44px}}
+</style>
+</head>
+<body>
+<main class="sys">
+<header><a class="logo" href="index.html" aria-label="Commonplace"><span class="w">Common<span style="color:#FFC017">,</span>place</span><span class="t">Oops, I wrote it again.</span></a><a class="back" href="day.html">Back to the case</a></header>
+
+<div class="bigh">Design system</div>
+<p class="intro">Every colour, type style and component on this page is taken from the working prototype. The page is built from the app's own stylesheet, so nothing here is drawn separately.</p>
+
+<section><h2>Principles</h2><div class="pr">
+ <div><b>Calm like a reading app</b><span>White, hairlines, black pill buttons. The base is borrowed from Medium, where writers already feel at home.</span></div>
+ <div><b>Yellow means hers</b><span>Her notes, her published pieces, her badges and the comma. Yellow is never a warning.</span></div>
+ <div><b>Red only where she must act</b><span>A red number, never a red block. Green only where something grows.</span></div>
+ <div><b>A count before a chart</b><span>Large serif numbers answer first. Detail sits one tap deeper.</span></div>
+</div></section>
+
+<section><h2>Colour<small>13 tokens, defined once in :root.</small></h2><div class="sws"><div class="sw"><span class="chipc" style="background:#242424"></span><b>ink</b><code>#242424</code><span>Text, primary buttons</span></div><div class="sw"><span class="chipc" style="background:#191919"></span><b>ink2</b><code>#191919</code><span>Buttons, today, active chip</span></div><div class="sw"><span class="chipc" style="background:#6B6B6B"></span><b>body</b><code>#6B6B6B</code><span>Secondary text</span></div><div class="sw"><span class="chipc" style="background:#8C8C8C"></span><b>muted</b><code>#8C8C8C</code><span>Labels, hints</span></div><div class="sw"><span class="chipc" style="background:#E5E5E5"></span><b>line2</b><code>#E5E5E5</code><span>Borders</span></div><div class="sw"><span class="chipc" style="background:#F2F2F2"></span><b>line</b><code>#F2F2F2</code><span>Hairlines</span></div><div class="sw"><span class="chipc" style="background:#F9F9F9"></span><b>soft</b><code>#F9F9F9</code><span>Tiles, quiet fills</span></div><div class="sw"><span class="chipc" style="background:#FFC017"></span><b>yellow</b><code>#FFC017</code><span>Hers: published, badges, the comma</span></div><div class="sw"><span class="chipc" style="background:#FFFAE1"></span><b>yellow-pale</b><code>#FFFAE1</code><span>Her notes, planned</span></div><div class="sw"><span class="chipc" style="background:#1A8917"></span><b>green</b><code>#1A8917</code><span>Growth, links</span></div><div class="sw"><span class="chipc" style="background:#E8F3E8"></span><b>green-pale</b><code>#E8F3E8</code><span>Up, posted</span></div><div class="sw"><span class="chipc" style="background:#C94A4A"></span><b>red</b><code>#C94A4A</code><span>Only where she must act</span></div><div class="sw"><span class="chipc" style="background:#FBECEC"></span><b>red-pale</b><code>#FBECEC</code><span>Now</span></div></div></section>
+
+<section><h2>Type<small>Free look-alikes of Medium's faces.</small></h2><div class="ty">
+ <div><span class="k">Display, Newsreader 44</span><h1 style="margin:0">Good morning, Nora.</h1></div>
+ <div><span class="k">Section, Newsreader 24</span><h2>Needs attention</h2></div>
+ <div><span class="k">Number, Newsreader 52</span><div class="bn"><div class="v">3,114</div></div></div>
+ <div><span class="k">Note, Source Serif 4, 21</span><p class="qnote" style="margin:0">“A curator spent 4 minutes on the walls and 20 on the sketchbooks.”</p></div>
+ <div><span class="k">Interface, Inter 14</span><div>4 things on today’s list. 2 need you first.</div></div>
+ <div><span class="k">Label, Inter 12</span><div style="font-size:12px;color:var(--body)">Reads, 28 days</div></div>
+</div></section>
+
+<section><h2>Buttons and links</h2><div>
+ <div class="spec"><button class="btn">Save note</button><button class="btn o">Plan it</button><button class="btn sm">Write a piece</button><button class="btn sm o photo-btn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l2-2.5h6L17 8h3v11H4z"/><circle cx="12" cy="13.5" r="3.5"/></svg>Add photo</button><button class="btn g">Publish</button><button class="link">Related piece →</button><button class="corner">↗</button></div>
+ <p class="cap">Pills, 36 px and 30 px. One filled button per group.</p>
+</div></section>
+
+<section><h2>Status pills and chips</h2><div>
+ <div class="spec"><span class="pill r">Now</span><span class="pill yp">Today</span><span class="pill g">Up</span><span class="pill">Watch</span><span class="pill y">2</span><span class="pill k">Draft</span></div>
+ <div class="spec"><button class="chip on">All (11)</button><button class="chip">Seeds (5)</button><button class="chip">Ideas (3)</button><button class="chip tg on">Pieces</button></div>
+ <div class="spec"><div class="seg"><button class="on">All</button><button>Pieces</button><button>Social</button></div></div>
+</div></section>
+
+<section><h2>Numbers and tiles</h2><div>
+ <div class="spec" style="gap:40px"><div class="bn"><div class="v">3,114</div><div class="l">Reads, 28 days</div><div class="d" style="color:var(--green)">+625</div></div><div class="bn"><div class="v">117</div><div class="l">New followers</div><div class="d" style="color:var(--green)">+15</div></div></div>
+ <div class="t2" style="max-width:340px"><button><div class="k"><i></i>Needs you now</div><div class="v">2</div></button><button><div class="k"><i></i>Due this week</div><div class="v">1</div></button><button><div class="k"><i></i>Seeds to grow</div><div class="v">4</div></button><button class="miss"><div class="k"><i></i>Missed the date</div><div class="v">1</div></button></div>
+ <p class="cap" style="margin-top:10px">The missed tile keeps the same grey as its neighbours. Only the number and the marker are red.</p>
+</div></section>
+
+<section><h2>Calendar days</h2><div>
+ <div class="mini"><button class="md miss">23</button><button class="md ">24</button><button class="md pub">25</button><button class="md today">26</button><button class="md ">27</button><button class="md plan">28</button><button class="md out">29</button></div>
+ <div class="mleg" style="margin-top:12px"><span><b style="background:#191919"></b>Today</span><span><b style="background:#FFC017"></b>Published</span><span><b style="box-shadow:inset 0 0 0 1.5px #FFC017"></b>Planned</span><span><b style="box-shadow:inset 0 0 0 1.5px #C94A4A"></b>Missed</span></div>
+</div></section>
+
+<section><h2>Cards</h2><div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px">
+ <div class="c3"><div class="ch"><h3>To do</h3><button class="corner">↗</button></div><div class="todo" style="margin:0;border:0"><button class="row"><div class="g"><div class="t" style="font-size:14px">Ask Google to index it again</div><div class="m">Instagram Is Not Your Portfolio</div></div><span class="pill r">Now</span></button><button class="row"><div class="g"><div class="t" style="font-size:14px">Find out why it dropped</div><div class="m">Studio Burnout Looks Like Productivity</div></div><span class="pill yp">Today</span></button></div></div>
+ <div class="c3" style="background:var(--yellow-pale);border-color:#F5E3A3"><div class="ch"><h3>Your latest note</h3><button class="corner">↗</button></div><div class="m" style="font-size:12px;color:#7A5A00">25 Nov, Studio visit</div><p class="qnote">“A curator spent 4 minutes on the walls and 20 on the sketchbooks.”</p><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn sm">Write a piece</button><button class="btn sm o">Plan it</button></div></div>
+</div></section>
+
+<section><h2>Inputs</h2><div>
+ <div class="composer" style="max-width:720px"><textarea placeholder="What did you notice today?"></textarea><div class="bar2"><select><option>Exhibition</option><option>Studio visit</option></select><input type="text" placeholder="tags, comma separated" style="flex:1;min-width:160px"><button class="btn sm o photo-btn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l2-2.5h6L17 8h3v11H4z"/><circle cx="12" cy="13.5" r="3.5"/></svg>Add photo</button><button class="btn sm">Save note</button></div></div>
+ <p class="cap">One field, no title, no folder. Controls share one height and the pill shape. 16 px on phones so the page does not zoom.</p>
+</div></section>
+
+<section><h2>Icons<small>One line weight, 1.6, round joins. On the phone they replace text labels.</small></h2><div>
+ <div class="icons"><div class="ic1"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg><span>Today</span></div><div class="ic1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 4.5l4 4L9 19H5v-4z"/><path d="M13.5 6.5l4 4"/></svg><span>Notes</span></div><div class="ic1"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg><span>Calendar</span></div><div class="ic1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 17.5h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.6.5 1 1.2 1 2V16h5.2v-.2c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z"/></svg><span>Ideas</span></div><div class="ic1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.4-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.6-7.5 10-7.5 10z"/></svg><span>Darlings</span></div><div class="ic1"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5.5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="18.5" cy="12" r="1.3"/></svg><span>More</span></div><div class="ic1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l2-2.5h6L17 8h3v11H4z"/><circle cx="12" cy="13.5" r="3.5"/></svg><span>Add photo</span></div></div>
+ <div class="barx" style="margin-top:20px"><button class="on"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg><span class="b">2</span></span></button><button><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 4.5l4 4L9 19H5v-4z"/><path d="M13.5 6.5l4 4"/></svg><span class="b">4</span></span></button><button><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg></span></button><button><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 17.5h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.6.5 1 1.2 1 2V16h5.2v-.2c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z"/></svg></span></button><button><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.4-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.6-7.5 10-7.5 10z"/></svg></span></button><button><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5.5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="18.5" cy="12" r="1.3"/></svg></span></button></div>
+ <p class="cap" style="margin-top:10px">Phone tab bar: badge on the icon, a dot under the open tab.</p>
+</div></section>
+
+<section><h2>Feedback</h2><div>
+ <div class="spec"><span class="toastx">Saved to your notes</span><span class="toastx">Photo added to the note</span></div>
+ <div class="dlgx"><div class="dlg" style="max-width:none"><h2 style="margin:0 0 4px">Plan a piece</h2><label>Title</label><input type="text" value="Which open calls are worth the entry fee?"><label>Publish on</label><input type="date" value="2026-11-28"><div style="display:flex;gap:8px;margin-top:16px"><button class="btn">Save</button><button class="btn o">Cancel</button></div></div></div>
+ <p class="cap" style="margin-top:10px">Dialogs sit on a dark veil, so it is clear the page behind is paused.</p>
+</div></section>
+
+<section><h2>Logo</h2><div class="mark"><span class="logo"><span class="w" style="font-size:44px">Common<span style="color:#FFC017">,</span>place</span><span class="t" style="font-size:26px">Oops, I wrote it again.</span></span><img src="icon-180.png" alt="App icon: a yellow comma on black"></div></section>
+</main>
+</body>
+</html>
