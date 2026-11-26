@@ -278,6 +278,26 @@ button,a,.chip,.nav{-webkit-tap-highlight-color:transparent;touch-action:manipul
   .pm td{display:block;border:0;padding:2px 0}
   .pm td[data-k]::before{content:attr(data-k) ": ";color:var(--muted)}
 }
+/* ---- Ideas: empty head, ideas put together from the writer's own notes and pieces ---- */
+.ehead{display:flex;gap:12px 18px;align-items:center;flex-wrap:wrap;background:var(--ink2);color:#fff;border-radius:4px;padding:18px 22px;margin:0 0 20px}
+.ehead .q{font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.4;flex:1;min-width:240px}
+.ehead .btn{background:var(--yellow);border-color:var(--yellow);color:var(--ink2)}
+.ehead .btn.o{background:transparent;border-color:#fff;color:#fff}
+.ehead .link{color:#fff;opacity:.8}
+.vars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media(max-width:1250px){.vars{grid-template-columns:minmax(0,1fr)}}
+.var{border:1px solid var(--line2);border-radius:4px;padding:18px 18px 16px;background:#fff;display:flex;flex-direction:column;min-width:0}
+.var .rec{font-size:12px;color:var(--muted);margin-bottom:8px}
+.var .vt{font-family:var(--display);font-size:22px;line-height:1.2;margin:0 0 8px}
+.var .ang{font-family:var(--serif);font-size:16px;line-height:1.5;color:var(--ink);margin:0 0 12px}
+.var .from{border-top:1px solid var(--line);padding-top:8px;margin-top:auto}
+.var .from .fk{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:4px 0 6px}
+.var .from .it{display:flex;gap:8px;align-items:flex-start;padding:5px 0;font-size:13px;color:var(--body)}
+.var .from .it .pill{flex:none;height:20px;font-size:11px}
+.var .from .it .w2{display:block;font-size:12px;color:var(--muted)}
+.var .chk{font-size:12px;color:var(--green);margin:10px 0 0}
+.var .chk.w{color:#7A5A00}
+.ehskip{background:var(--soft);border-radius:4px;padding:10px 12px;font-size:12px;color:var(--body);margin-top:12px}
 </style>
 </head>
 <body>
@@ -448,8 +468,37 @@ function ideasAll(){
 function vIdeas(){
   const all=ideasAll(), l=all.map((i,ix)=>({i,ix})).filter(({i})=>iF==='all'||i.source===iF), c={};all.forEach(i=>c[i.source]=(c[i.source]||0)+1);
   return `<h1>What to write next</h1><p class="lede">Every morning Commonplace checks your notes, readers’ questions, search demand and the digests you follow against what you have already published. Only what is not written yet shows up here.</p>
+  ${emptyHead()}
   <div class="chips">${[['all','All ('+all.length+')']].concat(Object.keys(SRC).filter(k=>c[k]).map(k=>[k,SRC[k][0]+' ('+c[k]+')'])).map(([k,l])=>`<button class="chip ${iF===k?'on':''}" data-if="${k}">${esc(l)}</button>`).join('')}</div>
   ${twoCols(l,idea)}`;
+}
+// Empty head: a few ideas put together from the writer's own notes, pieces and saved questions.
+// The sets are in the data as references; dates, titles and groups are read from the data here.
+let eh=-1;const ehNo=new Set();
+const ehSets=()=>D.empty_head||[];
+const cut=(s,n)=>{s=String(s||'');return s.length>n?s.slice(0,n).replace(/\s+\S*$/,'')+'…':s;};
+function ehRef(f){
+  if(f.note){const n=notesAll().find(x=>x.id===f.note);if(!n)return null;return [n.status==='seed'?'Seed':'Note',n.status==='seed'?'':'yp',cut(n.text,90),`${n.source}, ${fdate(n.date)}`];}
+  if(f.piece){const a=art(f.piece);return ['Old piece','k',`“${a.title}”`,`${GN[a.group]||''}, ${a.publication}`];}
+  if(f.ask)return ['Readers ask','r',`${f.ask}, ${f.n} times`];
+  if(f.digest)return ['Digest','g',f.digest];
+  if(f.pain)return ['Reader pain','',f.pain];
+  return null;}
+const ehVar=(s,i)=>ehSets()[s].vars[i];
+// in the brief the notes go in full, one per line
+const ehWhy=v=>`${v.angle}\nBuilt from:\n${v.from.map(f=>{const n=f.note&&notesAll().find(x=>x.id===f.note),r=ehRef(f);if(!r)return'';return '- '+(n?`${n.text} (${n.source}, ${fdate(n.date)})`:r[2]+(r[3]?' ('+r[3]+')':''));}).filter(Boolean).join('\n')}`;
+function emptyHead(){
+  const S=ehSets();if(!S.length)return'';
+  if(eh<0)return `<div class="ehead"><div class="q">Empty head today? Commonplace can put a few ideas together from your own notes and pieces.</div><button class="btn" data-eh="0">Put something together</button></div>`;
+  const s=S[eh],vs=s.vars.map((v,i)=>({v,i})).filter(({i})=>!ehNo.has(eh+'-'+i));
+  const pl=calAll().find(e=>e.id===s.skip.plan);
+  return `<div class="ehead"><div class="q">${vs.length?'Ideas from your own notes and pieces. Pick one, or ask for another set.':'Nothing left in this set.'}</div><button class="btn o" data-eh="next">Another set</button><button class="link" data-eh="close">Close</button></div>
+   <div class="vars">${vs.map(({v,i})=>{const c=v.check.close?art(v.check.close):null;return `<div class="var"><div class="rec">${esc(v.recipe)}</div><div class="vt">${esc(v.title)}</div><p class="ang">${esc(v.angle)}</p>
+    <div class="from"><div class="fk">Built from</div>${v.from.map(ehRef).filter(Boolean).map(([p,c2,t,w])=>`<div class="it"><span class="pill ${c2}">${esc(p)}</span><span>${esc(t)}${w?`<span class="w2">${esc(w)}</span>`:''}</span></div>`).join('')}</div>
+    <p class="chk ${c?'w':''}">${c?`≈ Close to “${esc(c.title)}” (${esc(GN[c.group])}). `:'✓ '}${esc(v.check.text)}</p>
+    <div class="acts"><button class="btn sm" data-eh-write="${eh}-${i}">Write with AI</button><button class="btn sm o" data-eh-plan="${eh}-${i}">Plan it</button><span class="pill">${esc(persona(v.reader))}</span><button class="link" data-eh-no="${eh}-${i}" style="margin-left:auto;color:var(--body)">Not this</button></div></div>`;}).join('')}</div>
+   <div class="ehskip">Skipped 1: ${esc(s.skip.ask)} is already planned${pl?' for '+esc(fdate(pl.date)):''}. Built only from your notes, your pieces and the questions you saved. Nothing here is written for you.</div>
+   <div style="height:24px"></div>`;
 }
 const ideaTitle=i=>i.source==='pain'||i.source==='note'||i.source==='telegram'||i.source==='painmap'?i.cluster:i.keyword;
 function idea({i,ix}){
@@ -589,6 +638,10 @@ document.addEventListener('click',e=>{
   else if(s.more){MORE[s.more]=!MORE[s.more];render();}
   else if(s.df){dFilter=s.df;render();} else if(s.kf){kwF=s.kf;render();} else if(s.if){iF=s.if;render();} else if(s.nf){nF=s.nf;render();} else if(s.ra){rAud=s.ra;render();}
   else if(s.mini){miniF=s.mini;render();}
+  else if(s.eh){eh=s.eh==='close'?-1:s.eh==='next'?(eh+1)%ehSets().length:+s.eh;render();}
+  else if(s.ehNo){ehNo.add(s.ehNo);render();}
+  else if(s.ehWrite){const [a,b]=s.ehWrite.split('-').map(Number),v=ehVar(a,b);writeDialog(v.title,ehWhy(v),v.reader);}
+  else if(s.ehPlan){const [a,b]=s.ehPlan.split('-').map(Number);planDialog({title:ehVar(a,b).title});}
   else if(s.cal){calOff+=+s.cal;render();} else if(s.layer){layers[s.layer]=!layers[s.layer];render();}
   else if(s.open){tab='darlings';dFilter='all';render();const el=document.getElementById('a-'+s.open);if(el){el.scrollIntoView({block:'start'});scrollBy(0,-72);}}
   else if(s.planNew){planDialog({});}

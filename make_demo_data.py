@@ -247,6 +247,42 @@ ideas = [
     {"source": "painmap", "keyword": None, "cluster": "The second job eats the studio", "audience": "daytime", "why": "8–12 studio hours a week (demo)", "use_case": "Essays", "score": 4},
 ]
 
+# ---------------------------------------------------------------- empty head
+# “Nothing to write about today?” Ideas put together from what the writer already has: two or three of her own
+# notes, pieces and saved reader questions per idea. Only references here (note ids, slugs, plan ids):
+# dates, titles and groups are read from the data by the app. No dates in this block, so it can be added
+# to an existing latest.json without regenerating it (see add_empty_head.py).
+empty_head = [
+    {"vars": [
+        {"recipe": "Two notes that meet, and a question readers keep asking", "title": "Three People, One Price Tag",
+         "angle": "The artist prices by what she would be sad to lose. The gallerist prices by the risk of the next five shows. Same work, two prices, and the reader is stuck in between.",
+         "reader": "graduate", "from": [{"note": "n-02"}, {"note": "n-07"}, {"ask": "“How do I price my work?”", "n": 38}],
+         "check": {"close": "pricing-first-works", "text": "A follow-up, not a repeat."}},
+        {"recipe": "A faded piece and a fresh note", "title": "What the Algorithm Missed",
+         "angle": "A month after letting an algorithm curate a show, back in a studio: the one thing it could not see.",
+         "reader": "curator", "from": [{"piece": "ai-curating"}, {"note": "n-10"}],
+         "check": {"text": "Not written yet. Brings back a faded piece."}},
+        {"recipe": "Two “Let it go?” pieces that could become one", "title": "Who Looks After the People Who Run the Space?",
+         "angle": "Artist-run spaces close because the founder burns out. One honest piece instead of two that did not land.",
+         "reader": "curator", "from": [{"piece": "artist-run-spaces"}, {"piece": "studio-burnout"}, {"note": "n-09"}],
+         "check": {"text": "Not written yet. Replaces two weak pieces."}}],
+     "skip": {"ask": "“Which open calls are worth the entry fee?”", "plan": "p15"}},
+    {"vars": [
+        {"recipe": "A faded piece and a fresh note", "title": "Send the Sketchbook, Not Only the PDF",
+         "angle": "A curator spent 4 minutes on the walls and 20 on the sketchbooks. What that means for the portfolio you send.",
+         "reader": "graduate", "from": [{"piece": "portfolio-pdf"}, {"note": "n-01"}],
+         "check": {"text": "Not written yet. Brings back a faded piece."}},
+        {"recipe": "An old seed and a faded piece", "title": "The Show With No Wall Texts",
+         "angle": "The best show this month had no wall texts, and people talked to each other. What young curators can take from that.",
+         "reader": "curator", "from": [{"note": "n-05"}, {"piece": "biennale-notes"}],
+         "check": {"text": "Not written yet."}},
+        {"recipe": "A digest headline and a reader pain", "title": "Who Pays the Artist When the Show Is Free?",
+         "angle": "Museums start paying exhibition fees. Small shows mostly do not. A plain look at who pays whom.",
+         "reader": "daytime", "from": [{"digest": "Museums start paying exhibition fees to living artists"}, {"pain": "Artist fees missing in many small shows"}, {"note": "n-07"}],
+         "check": {"close": "gallery-commission", "text": "A different question."}}],
+     "skip": {"ask": "“How do I curate my first show with no venue?”", "plan": "p3"}},
+]
+
 # ---------------------------------------------------------------- calendar
 calendar = []
 for a in articles:
@@ -310,7 +346,7 @@ data = {
                   "personas": personas, "confirmed_pains": confirmed,
                   "content_not_offer": "Asked about, but not worth a piece yet: which brushes, which camera for artwork photos, studio lighting."},
     "pain_map": pain_map, "research_extra": {"docs": research_docs, "sections": [], "pains": [], "ideas": []},
-    "telegram": feeds, "ideas": ideas, "notes": notes, "calendar": calendar, "profile": profile, "publications": PUBS,
+    "telegram": feeds, "ideas": ideas, "empty_head": empty_head, "notes": notes, "calendar": calendar, "profile": profile, "publications": PUBS,
     "calendar_notion": True, "calendar_ig": True, "stale_notion": 0,
 }
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
