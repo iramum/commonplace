@@ -119,11 +119,13 @@ td.s{color:var(--muted);font-size:12px}
 .tw{overflow-x:auto}
 input[type=search],input[type=text],input[type=date],select,textarea{width:100%;border:1px solid var(--line2);border-radius:4px;background:#fff;padding:11px 12px;font:inherit;font-size:14px;color:var(--ink)}
 input:focus,textarea:focus,select:focus{outline:none;border-color:var(--ink2)}
+select{-webkit-appearance:none;appearance:none;padding-right:34px;cursor:pointer;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23191919' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 13px center}
 /* notes = the commonplace book */
 .composer{border:1px solid var(--line2);border-radius:4px;padding:18px 20px;margin-bottom:20px}
 .composer textarea{border:0;padding:0;font-family:var(--serif);font-size:20px;line-height:1.5;resize:none;min-height:64px}
 .composer .bar2{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:10px;border-top:1px solid var(--line);padding-top:12px}
-.composer select,.composer input{width:auto;padding:7px 10px;font-size:13px}
+.composer select,.composer input{width:auto;height:34px;padding:0 14px;font-size:13px;border-radius:999px;line-height:32px}
+.composer select{padding-right:34px}
 .notes{columns:2 320px;column-gap:24px}
 .note{break-inside:avoid;border-bottom:1px solid var(--line);padding:18px 0;margin:0}
 .note .src{font-size:12px;color:var(--muted);display:flex;gap:8px;align-items:center}
