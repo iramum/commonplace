@@ -131,6 +131,28 @@ h2{font:400 clamp(34px,4vw,52px)/1.02 var(--voice);letter-spacing:-.01em;margin:
 .three b{display:block;font:400 26px/1.15 var(--voice);margin-bottom:8px}
 footer{border-top:1px solid var(--line);padding-block:32px 64px;font-size:14px;color:var(--body)}
 
+/* behind the day: research, architecture and flow, iterations (three blocks) */
+.ux{padding-block:72px 64px;border-top:1px solid var(--line)}
+.ux .intro{max-width:680px;color:var(--body);margin:0}
+.so{margin-top:26px;border-top:1.5px solid var(--ink);padding-top:14px;display:grid;grid-template-columns:200px minmax(0,1fr);gap:8px 24px;font-size:15px;line-height:1.55}
+.so .k{font:700 11px var(--case);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.src{font-size:13px;color:var(--muted);margin-top:18px;max-width:900px}
+.diagram{margin-top:28px;overflow-x:auto}
+.diagram svg{display:block;width:100%;min-width:760px;height:auto;font-family:var(--case)}
+.diagram figcaption{font-size:14px;color:var(--body);margin-top:10px;max-width:760px}
+.dg-l{font-weight:700;font-size:15px;fill:var(--ink)}
+.dg-s{font-size:12.5px;fill:var(--body)}
+.dg-h{font-weight:700;font-size:11px;letter-spacing:.12em;fill:var(--muted)}
+.iters{display:grid;gap:40px;margin-top:30px}
+.it2{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:14px 40px;align-items:start;border-top:1.5px solid var(--ink);padding-top:14px}
+.it2 b{display:block;font:400 26px/1.15 var(--voice);margin-bottom:8px}
+.it2 p{margin:0;font-size:15px;line-height:1.6}
+.it2 img{grid-column:1/-1;border:1px solid var(--line2);border-radius:8px}
+.it2 .cap{grid-column:1/-1;font-size:13px;color:var(--muted);margin-top:-6px}
+.pairs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
+.swipe{display:none;font-size:13px;color:var(--muted);margin:22px 0 -16px}
+@media(max-width:900px){.swipe{display:block}.so{grid-template-columns:1fr}.it2{grid-template-columns:1fr}.pairs{grid-template-columns:1fr}}
+
 @media(max-width:900px){
  .persona{grid-template-columns:1fr;gap:32px}
  .scene{grid-template-columns:1fr;padding-left:34px}
@@ -310,22 +332,108 @@ footer{border-top:1px solid var(--line);padding-block:32px 64px;font-size:14px;c
 </article>
 </div>
 
-<section class="in loop" aria-labelledby="looph">
-  <p class="eyebrow">The flow</p>
-  <h2 id="looph">The day is a loop</h2>
-  <p style="max-width:640px;color:var(--body);margin:0">Read from above, the day is one flow from a noticed detail to a measured piece. Five steps are hers, one belongs to AI, two run on their own.</p>
-  <ol class="steps">
-    <li><b>Notice</b><span>an opening, a studio, a comment</span></li>
-    <li><b>Note</b><span>a seed in Notes</span></li>
-    <li class="auto"><b>Idea</b><span>checked against what exists</span></li>
-    <li><b>Plan</b><span>a date in the calendar</span></li>
-    <li class="ai"><b>Write with AI</b><span>brief, questions, fact check</span></li>
-    <li><b>Publish</b><span>only on her word</span></li>
-    <li><b>Index</b><span>one tap to Search Console</span></li>
-    <li class="auto"><b>Measure</b><span>Darlings, every morning</span></li>
-  </ol>
-  <div class="legend"><span><i style="background:#1D1E20"></i>Her step</span><span><i style="background:#FFC017"></i>AI</span><span><i style="background:#1A8917"></i>Runs on its own</span></div>
-  <p class="back">Measuring closes the loop: readers' questions come back as notes and ideas.</p>
+<!-- behind the day, three blocks: research, architecture and flow, decisions and iterations -->
+<section class="in ux" id="research" aria-labelledby="resh">
+  <p class="eyebrow">Research</p>
+  <h2 id="resh">What writers already struggle with</h2>
+  <p class="intro">Desk research in November 2026: 34 sources, from journalist surveys to writers' own posts and the pricing pages of the tools they use. No interviews and no user tests; every point below comes from a source I opened.</p>
+  <div class="three">
+    <div><b>Writing comes after another job</b>37% of journalists publish under their own name, yet only 6% of creator journalists earn their full income from it. One freelancer: “it's difficult to find the time and the energy after a full day at work.”</div>
+    <div><b>The numbers disagree</b>“Substack says 15 people clicked the friend link. Medium says 2.” Many writers still track their pieces by outlet in a spreadsheet they built themselves.</div>
+    <div><b>Ideas run out</b>A newsletter writer found it “increasingly difficult to come up with new ideas about what to write” after the first editions. In Google Trends, “writing ideas” is searched far more than any analytics term.</div>
+  </div>
+  <div class="so">
+    <div class="k">Before publishing</div><div>Notion and Obsidian keep notes, but know nothing of what was published where. No tool I found takes a note to an idea to a plan. This is where Commonplace works.</div>
+    <div class="k">After publishing</div><div>Authory archives bylines across outlets, Narrareach schedules and counts across platforms. Commonplace does not compete there; it asks one question, which pieces still live.</div>
+    <div class="k">What it changed</div><div>Today counts before it charts. Ideas never shows a topic that is already written. Empty head starts from her own notes, not from a blank page.</div>
+  </div>
+  <p class="src">Sources: Muck Rack, State of Journalism 2026 and State of Creator Journalism 2025; Reuters Institute, 2024; Linda Caroll, 2023; Write Up, 2024; Buttondown, 2023; vendor pricing pages, 26 Nov 2026; Google Trends, worldwide, five years.</p>
+</section>
+
+<section class="in ux" id="architecture" aria-labelledby="iah">
+  <p class="eyebrow">Architecture and flow</p>
+  <h2 id="iah">Twelve screens, one loop</h2>
+  <p class="intro">The screens are grouped by what she does with them: write, know, and keep herself at hand. On the phone the five Write screens are the tab bar; everything else sits under More.</p>
+  <p class="swipe">Both diagrams scroll sideways →</p>
+  <figure class="diagram" aria-label="Information architecture: three groups of screens">
+    <svg viewBox="0 0 1100 380" role="img" aria-labelledby="ia-t"><title id="ia-t">Commonplace has three groups. Write: Today, Notes, Calendar, Ideas, Darlings. Know: Readers, Keywords, Research, Queue. You: About me, How it works, Settings.</title>
+      <g fill="none" stroke="#1D1E20" stroke-width="1.5">
+        <path d="M550 48V70M200 70H910M200 70V92M560 70V92M910 70V92"/>
+      </g>
+      <rect x="470" y="8" width="160" height="40" rx="8" fill="#FFF4D1" stroke="#1D1E20" stroke-width="1.5"/>
+      <text class="dg-l" x="550" y="33" text-anchor="middle">Commonplace</text>
+      <text class="dg-h" x="40" y="112">WRITE, THE PHONE TAB BAR</text>
+      <text class="dg-h" x="400" y="112">KNOW</text>
+      <text class="dg-h" x="760" y="112">YOU</text>
+      <rect x="26" y="124" width="5" height="230" rx="2" fill="#FFC017"/>
+      <g fill="#fff" stroke="#1D1E20" stroke-width="1.5">
+        <rect x="40" y="124" width="320" height="38" rx="6"/><rect x="40" y="172" width="320" height="38" rx="6"/><rect x="40" y="220" width="320" height="38" rx="6"/><rect x="40" y="268" width="320" height="38" rx="6"/><rect x="40" y="316" width="320" height="38" rx="6"/>
+        <rect x="400" y="124" width="320" height="38" rx="6"/><rect x="400" y="172" width="320" height="38" rx="6"/><rect x="400" y="220" width="320" height="38" rx="6"/><rect x="400" y="268" width="320" height="38" rx="6"/>
+        <rect x="760" y="124" width="300" height="38" rx="6"/><rect x="760" y="172" width="300" height="38" rx="6"/><rect x="760" y="220" width="300" height="38" rx="6"/>
+      </g>
+      <g class="dg-l">
+        <text x="54" y="148">Today</text><text x="54" y="196">Notes</text><text x="54" y="244">Calendar</text><text x="54" y="292">Ideas</text><text x="54" y="340">Darlings</text>
+        <text x="414" y="148">Readers</text><text x="414" y="196">Keywords</text><text x="414" y="244">Research</text><text x="414" y="292">Queue</text>
+        <text x="774" y="148">About me</text><text x="774" y="196">How it works</text><text x="774" y="244">Settings</text>
+      </g>
+      <g class="dg-s" text-anchor="end">
+        <text x="346" y="148">what needs me now</text><text x="346" y="196">seeds, photos, tags</text><text x="346" y="244">planned, published, missed</text><text x="346" y="292">what to write next, empty head</text><text x="346" y="340">which pieces still live</text>
+        <text x="706" y="148">five personas</text><text x="706" y="196">searches with no piece</text><text x="706" y="244">forums, reviews, digests</text><text x="706" y="292">the last step before publishing</text>
+        <text x="1046" y="148">five bios to copy</text><text x="1046" y="196">the loop, for the first visit</text><text x="1046" y="244">connected sources</text>
+      </g>
+    </svg>
+  </figure>
+  <figure class="diagram" aria-label="The flow from a noticed detail to a measured piece and back">
+    <svg viewBox="0 0 1100 340" role="img" aria-labelledby="fl-t"><title id="fl-t">Notice, note, ideas checked against what exists. Anything to write? Yes: pick an idea. No: Empty head puts three ideas together. Then Write with AI, plan it, publish on her word, and Darlings weeks later. Faded pieces and readers' questions come back as ideas.</title>
+      <defs><marker id="fl-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1D1E20"/></marker></defs>
+      <g fill="none" stroke="#1D1E20" stroke-width="1.5">
+        <g marker-end="url(#fl-a)"><path d="M190 57H226"/><path d="M400 57H436"/><path d="M620 57H666"/><path d="M830 57H876"/><path d="M750 97V136"/><path d="M980 90V258"/><path d="M880 295H844"/><path d="M660 295H624"/><path d="M440 295H404"/></g>
+        <path d="M850 173H980"/>
+        <path d="M310 262V228H530V94" stroke-dasharray="5 5" marker-end="url(#fl-a)"/>
+      </g>
+      <circle cx="980" cy="173" r="4" fill="#1D1E20"/>
+      <g fill="#fff" stroke="#1D1E20" stroke-width="1.5">
+        <rect x="20" y="24" width="170" height="66" rx="8"/><rect x="230" y="24" width="170" height="66" rx="8"/><rect x="440" y="24" width="180" height="66" rx="8"/>
+        <path d="M750 17L830 57L750 97L670 57Z"/>
+        <rect x="880" y="24" width="200" height="66" rx="8"/><rect x="650" y="140" width="200" height="66" rx="8"/>
+        <rect x="880" y="262" width="200" height="66" rx="8"/><rect x="660" y="262" width="180" height="66" rx="8"/><rect x="440" y="262" width="180" height="66" rx="8"/><rect x="220" y="262" width="180" height="66" rx="8"/>
+      </g>
+      <g>
+        <rect x="20" y="24" width="6" height="66" fill="#1D1E20"/><rect x="230" y="24" width="6" height="66" fill="#1D1E20"/><rect x="440" y="24" width="6" height="66" fill="#1A8917"/>
+        <rect x="880" y="24" width="6" height="66" fill="#1D1E20"/><rect x="650" y="140" width="6" height="66" fill="#1A8917"/>
+        <rect x="880" y="262" width="6" height="66" fill="#FFC017"/><rect x="660" y="262" width="6" height="66" fill="#1D1E20"/><rect x="440" y="262" width="6" height="66" fill="#1D1E20"/><rect x="220" y="262" width="6" height="66" fill="#1A8917"/>
+      </g>
+      <g class="dg-l">
+        <text x="40" y="52">Notice</text><text x="250" y="52">Note</text><text x="460" y="52">Ideas</text><text x="900" y="52">Pick an idea</text><text x="670" y="168">Empty head</text>
+        <text x="900" y="290">Write with AI</text><text x="680" y="290">Plan it</text><text x="460" y="290">Publish</text><text x="240" y="290">Darlings</text>
+        <text x="750" y="53" text-anchor="middle" style="font-size:13px">Anything</text><text x="750" y="69" text-anchor="middle" style="font-size:13px">to write?</text>
+      </g>
+      <g class="dg-s">
+        <text x="40" y="74">an opening, a comment</text><text x="250" y="74">a seed in Notes</text><text x="460" y="74">checked for repeats</text><text x="900" y="74">from the list</text><text x="670" y="190">three ideas from her notes</text>
+        <text x="900" y="312">a brief, not a draft</text><text x="680" y="312">a date in the calendar</text><text x="460" y="312">on the outlet, her word</text><text x="240" y="312">weeks later: still alive?</text>
+        <text x="840" y="48">yes</text><text x="758" y="124">no</text>
+        <text x="330" y="250">faded pieces and readers' questions come back as ideas</text>
+      </g>
+    </svg>
+    <figcaption><span class="legend" style="margin:0"><span><i style="background:#1D1E20"></i>Her step</span><span><i style="background:#FFC017"></i>AI</span><span><i style="background:#1A8917"></i>Runs on its own</span></span></figcaption>
+  </figure>
+  <p class="src">Drawn from the working prototype. Next: the twelve screens fold into five, Today, Notes, Ideas, Pieces and Audience.</p>
+</section>
+
+<section class="in ux" id="iterations" aria-labelledby="ith">
+  <p class="eyebrow">Decisions and iterations</p>
+  <h2 id="ith">What I tried and dropped</h2>
+  <p class="intro">There were no paper sketches: the iterations happened in the working prototype. Each version was built, compared side by side, and cut.</p>
+  <div class="iters">
+    <div class="it2"><div><b>Eight openings, one kept</b><p>I built eight first screens for this page: Nora full width with the product over her, a yellow panel beside her, the whole day as a strip of nine drawings, the Today window with stickers. I kept the plainest one: the text first, then Nora with the product laid over her. Nora matters; the product matters more.</p></div><div></div>
+      <img src="shots/day/iter-openings.webp" width="1968" height="682" alt="Eight versions of this page's first screen, side by side" loading="lazy"><p class="cap">Openings 1 to 8. Number 1 is the one on this page.</p></div>
+    <div class="it2"><div><b>Five series of Nora</b><p>I drew Nora with ChatGPT in five series before one held together with the opening picture: the white streak, the red scarf, yellow only as an accent.</p></div><div></div>
+      <img src="shots/day/iter-series.webp" width="1856" height="360" alt="The 07:30 drawing in five series, A to E" loading="lazy"><p class="cap">07:30 in series A to E. Series E is the one on this page.</p></div>
+    <div class="pairs">
+      <div class="it2" style="grid-template-columns:1fr"><div><b>Today, rearranged twice</b><p>I moved the latest note before the calendar, then back: with the calendar in the middle the row reads as her day, and the note on the right is her. The missed-date tile lost its red fill; red stays on the number and the marker, so the screen does not shout.</p></div></div>
+      <div class="it2" style="grid-template-columns:1fr"><div><b>A logo fitted by hand</b><p>The tagline under the wordmark has to match its width. A script that measured the text in the browser kept getting it wrong because of optical sizes and side bearings, so the sizes are set by pixels, one pair for desktop and one for the phone.</p></div></div>
+    </div>
+  </div>
 </section>
 
 <section class="in learn" aria-labelledby="learnh">
