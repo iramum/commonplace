@@ -131,7 +131,7 @@ h2{font:400 clamp(34px,4vw,52px)/1.02 var(--voice);letter-spacing:-.01em;margin:
 .three b{display:block;font:400 26px/1.15 var(--voice);margin-bottom:8px}
 footer{border-top:1px solid var(--line);padding-block:32px 64px;font-size:14px;color:var(--body)}
 
-/* behind the day: research, architecture and flow, iterations (three blocks) */
+/* behind the day: research, architecture and flow */
 .ux{padding-block:72px 64px;border-top:1px solid var(--line)}
 .ux .intro{max-width:680px;color:var(--body);margin:0}
 .so{margin-top:26px;border-top:1.5px solid var(--ink);padding-top:14px;display:grid;grid-template-columns:200px minmax(0,1fr);gap:8px 24px;font-size:15px;line-height:1.55}
@@ -143,16 +143,8 @@ footer{border-top:1px solid var(--line);padding-block:32px 64px;font-size:14px;c
 .dg-l{font-weight:700;font-size:15px;fill:var(--ink)}
 .dg-s{font-size:12.5px;fill:var(--body)}
 .dg-h{font-weight:700;font-size:11px;letter-spacing:.12em;fill:var(--muted)}
-.iters{display:grid;gap:40px;margin-top:30px}
-.it2{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:14px 40px;align-items:start;border-top:1.5px solid var(--ink);padding-top:14px}
-.it2 b{display:block;font:400 26px/1.15 var(--voice);margin-bottom:8px}
-.it2 p{margin:0;font-size:15px;line-height:1.6}
-.it2 img{grid-column:1/-1;border:1px solid var(--line2);border-radius:8px}
-.it2 .cap{grid-column:1/-1;font-size:13px;color:var(--muted);margin-top:-6px}
-.pairs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
 .swipe{display:none;font-size:13px;color:var(--muted);margin:22px 0 -16px}
-@media(max-width:900px){.swipe{display:block}.so{grid-template-columns:1fr}.it2{grid-template-columns:1fr}.pairs{grid-template-columns:1fr}}
-
+@media(max-width:900px){.swipe{display:block}.so{grid-template-columns:1fr}}
 @media(max-width:900px){
  .persona{grid-template-columns:1fr;gap:32px}
  .scene{grid-template-columns:1fr;padding-left:34px}
@@ -332,20 +324,50 @@ footer{border-top:1px solid var(--line);padding-block:32px 64px;font-size:14px;c
 </article>
 </div>
 
-<!-- behind the day, three blocks: research, architecture and flow, decisions and iterations -->
+<!-- behind the day: research, architecture and flow -->
 <section class="in ux" id="research" aria-labelledby="resh">
   <p class="eyebrow">Research</p>
   <h2 id="resh">What writers already struggle with</h2>
-  <p class="intro">Desk research in November 2026: 34 sources, from journalist surveys to writers' own posts and the pricing pages of the tools they use. No interviews and no user tests; every point below comes from a source I opened.</p>
-  <div class="three">
-    <div><b>Writing comes after another job</b>37% of journalists publish under their own name, yet only 6% of creator journalists earn their full income from it. One freelancer: “it's difficult to find the time and the energy after a full day at work.”</div>
-    <div><b>The numbers disagree</b>“Substack says 15 people clicked the friend link. Medium says 2.” Many writers still track their pieces by outlet in a spreadsheet they built themselves.</div>
-    <div><b>Ideas run out</b>A newsletter writer found it “increasingly difficult to come up with new ideas about what to write” after the first editions. In Google Trends, “writing ideas” is searched far more than any analytics term.</div>
-  </div>
+  <p class="intro">Desk research in November 2026: 34 sources and a Google Trends check. No interviews and no user tests yet. Every point below is traced to its source in my research notes.</p>
+  <p class="swipe">The diagram scrolls sideways →</p>
+  <figure class="diagram" aria-label="Research: where I looked, what writers run into, what Commonplace does about it">
+    <svg viewBox="0 0 1100 400" role="img" aria-labelledby="rs-t"><title id="rs-t">Five kinds of sources lead to three problems. No time to write leads to Today. The numbers don't match leads to Darlings. Nothing to write about leads to Ideas and Empty head.</title>
+      <defs><marker id="rs-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1D1E20"/></marker></defs>
+      <text class="dg-h" x="20" y="24">WHERE I LOOKED, 34 SOURCES</text>
+      <text class="dg-h" x="380" y="24">WHAT WRITERS RUN INTO</text>
+      <text class="dg-h" x="780" y="24">WHAT COMMONPLACE DOES ABOUT IT</text>
+      <g fill="none" stroke="#1D1E20" stroke-width="1.5">
+        <path d="M280 70H320"/><path d="M280 140H320"/><path d="M280 210H320"/><path d="M280 280H320"/><path d="M280 350H320"/>
+        <path d="M320 70V350"/>
+        <path d="M320 90H376" marker-end="url(#rs-a)"/><path d="M320 210H376" marker-end="url(#rs-a)"/><path d="M320 330H376" marker-end="url(#rs-a)"/>
+        <path d="M720 90H776" marker-end="url(#rs-a)"/><path d="M720 210H776" marker-end="url(#rs-a)"/><path d="M720 330H776" marker-end="url(#rs-a)"/>
+      </g>
+      <g fill="#fff" stroke="#1D1E20" stroke-width="1.5">
+        <rect x="20" y="40" width="260" height="60" rx="8"/><rect x="20" y="110" width="260" height="60" rx="8"/><rect x="20" y="180" width="260" height="60" rx="8"/><rect x="20" y="250" width="260" height="60" rx="8"/><rect x="20" y="320" width="260" height="60" rx="8"/>
+        <rect x="380" y="40" width="340" height="100" rx="8"/><rect x="380" y="160" width="340" height="100" rx="8"/><rect x="380" y="280" width="340" height="100" rx="8"/>
+      </g>
+      <g fill="#FFF4D1" stroke="#1D1E20" stroke-width="1.5">
+        <rect x="780" y="40" width="300" height="100" rx="8"/><rect x="780" y="160" width="300" height="100" rx="8"/><rect x="780" y="280" width="300" height="100" rx="8"/>
+      </g>
+      <g class="dg-l">
+        <text x="36" y="65">Surveys of journalists</text><text x="36" y="135">Writers' own posts</text><text x="36" y="205">Tools and their APIs</text><text x="36" y="275">News about platforms</text><text x="36" y="345">Google Trends</text>
+        <text x="396" y="68">No time to write</text><text x="396" y="188">The numbers don't match</text><text x="396" y="308">Nothing to write about</text>
+        <text x="796" y="68">Today</text><text x="796" y="188">Darlings</text><text x="796" y="308">Ideas and Empty head</text>
+      </g>
+      <g class="dg-s">
+        <text x="36" y="86">5 reports, 2024 to 2026</text><text x="36" y="156">5 posts, 2018 to 2024</text><text x="36" y="226">19 pricing pages and API docs</text><text x="36" y="296">5 articles and pages</text><text x="36" y="366">10 search terms, five years</text>
+        <text x="396" y="92">Writing happens in the evening, after a day job.</text><text x="396" y="112">Only 6% of independent writers live on it.</text>
+        <text x="396" y="212">Every platform counts in its own way: “Substack</text><text x="396" y="232">says 15 people clicked… Medium says 2.”</text><text x="396" y="252">So writers keep their own spreadsheets.</text>
+        <text x="396" y="332">After the first months new topics get harder.</text><text x="396" y="352">“Writing ideas” is searched far more than</text><text x="396" y="372">any analytics term.</text>
+        <text x="796" y="92">One screen: what needs me now.</text><text x="796" y="112">The numbers come second.</text>
+        <text x="796" y="212">One count per piece, across outlets.</text><text x="796" y="232">Which pieces still live, which faded.</text>
+        <text x="796" y="332">Ideas made from her own notes and</text><text x="796" y="352">readers' questions, never a repeat.</text>
+      </g>
+    </svg>
+  </figure>
   <div class="so">
-    <div class="k">Before publishing</div><div>Notion and Obsidian keep notes, but know nothing of what was published where. No tool I found takes a note to an idea to a plan. This is where Commonplace works.</div>
-    <div class="k">After publishing</div><div>Authory archives bylines across outlets, Narrareach schedules and counts across platforms. Commonplace does not compete there; it asks one question, which pieces still live.</div>
-    <div class="k">What it changed</div><div>Today counts before it charts. Ideas never shows a topic that is already written. Empty head starts from her own notes, not from a blank page.</div>
+    <div class="k">Before publishing</div><div>Notes apps like Notion and Obsidian keep notes, but do not know what was published where. No tool I found leads from a note to an idea to a plan. This is where Commonplace works.</div>
+    <div class="k">After publishing</div><div>Authory keeps an archive of published pieces, Narrareach posts and counts across platforms. Commonplace does not compete there.</div>
   </div>
   <p class="src">Sources: Muck Rack, State of Journalism 2026 and State of Creator Journalism 2025; Reuters Institute, 2024; Linda Caroll, 2023; Write Up, 2024; Buttondown, 2023; vendor pricing pages, 26 Nov 2026; Google Trends, worldwide, five years.</p>
 </section>
@@ -417,23 +439,7 @@ footer{border-top:1px solid var(--line);padding-block:32px 64px;font-size:14px;c
     </svg>
     <figcaption><span class="legend" style="margin:0"><span><i style="background:#1D1E20"></i>Her step</span><span><i style="background:#FFC017"></i>AI</span><span><i style="background:#1A8917"></i>Runs on its own</span></span></figcaption>
   </figure>
-  <p class="src">Drawn from the working prototype. Next: the twelve screens fold into five, Today, Notes, Ideas, Pieces and Audience.</p>
-</section>
-
-<section class="in ux" id="iterations" aria-labelledby="ith">
-  <p class="eyebrow">Decisions and iterations</p>
-  <h2 id="ith">What I tried and dropped</h2>
-  <p class="intro">There were no paper sketches: the iterations happened in the working prototype. Each version was built, compared side by side, and cut.</p>
-  <div class="iters">
-    <div class="it2"><div><b>Eight openings, one kept</b><p>I built eight first screens for this page: Nora full width with the product over her, a yellow panel beside her, the whole day as a strip of nine drawings, the Today window with stickers. I kept the plainest one: the text first, then Nora with the product laid over her. Nora matters; the product matters more.</p></div><div></div>
-      <img src="shots/day/iter-openings.webp" width="1968" height="682" alt="Eight versions of this page's first screen, side by side" loading="lazy"><p class="cap">Openings 1 to 8. Number 1 is the one on this page.</p></div>
-    <div class="it2"><div><b>Five series of Nora</b><p>I drew Nora with ChatGPT in five series before one held together with the opening picture: the white streak, the red scarf, yellow only as an accent.</p></div><div></div>
-      <img src="shots/day/iter-series.webp" width="1856" height="360" alt="The 07:30 drawing in five series, A to E" loading="lazy"><p class="cap">07:30 in series A to E. Series E is the one on this page.</p></div>
-    <div class="pairs">
-      <div class="it2" style="grid-template-columns:1fr"><div><b>Today, rearranged twice</b><p>I moved the latest note before the calendar, then back: with the calendar in the middle the row reads as her day, and the note on the right is her. The missed-date tile lost its red fill; red stays on the number and the marker, so the screen does not shout.</p></div></div>
-      <div class="it2" style="grid-template-columns:1fr"><div><b>A logo fitted by hand</b><p>The tagline under the wordmark has to match its width. A script that measured the text in the browser kept getting it wrong because of optical sizes and side bearings, so the sizes are set by pixels, one pair for desktop and one for the phone.</p></div></div>
-    </div>
-  </div>
+  <p class="src">Drawn from the working prototype.</p>
 </section>
 
 <section class="in learn" aria-labelledby="learnh">
